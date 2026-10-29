@@ -16,21 +16,7 @@ get_header();
 				<h1 class="big" data-lines><?php the_title(); ?></h1>
 			</div>
 			<section class="sec" style="padding-top:0">
-				<?php if ( is_singular( 'bieres' ) ) : $smash_b = smash_beer(); ?>
-					<?php if ( $smash_b['label'] ) : ?>
-						<?php echo wp_get_attachment_image( $smash_b['label'], 'smash-label', false, array( 'alt' => sprintf( __( 'Étiquette de la bière %s', 'smash' ), $smash_b['name'] ) ) ); ?>
-					<?php endif; ?>
-					<dl class="prose">
-						<?php foreach ( smash_map( 'beer' ) as $smash_name => $smash_field ) : ?>
-							<?php if ( 'image' !== $smash_field['type'] && '' !== $smash_b[ $smash_name ] ) : ?>
-								<dt class="mono"><?php echo esc_html( $smash_field['label'] ); ?></dt>
-								<dd><?php echo wp_kses_post( $smash_b[ $smash_name ] ); ?></dd>
-							<?php endif; ?>
-						<?php endforeach; ?>
-					</dl>
-				<?php else : ?>
-					<div class="prose"><?php the_content(); ?></div>
-				<?php endif; ?>
+				<div class="prose"><?php the_content(); ?></div>
 			</section>
 		<?php endwhile; ?>
 	<?php else : ?>

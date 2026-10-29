@@ -379,3 +379,9 @@ html.lenis,html.lenis body{height:auto}
 .lab__card img,.flat img,.tile img,.post div img,.mega__labs i img,.hero__img img,.teaser__img img,.brew__photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block}
 .mega__labs i{position:relative;overflow:hidden}
 .tile span{z-index:1}
+/* Catalogue : sans JS, les trois gammes s'affichent à la suite */
+.js .tabpanel[hidden]{display:none}
+.tabpanel + .tabpanel{margin-top:8vh}
+.js .tabpanel + .tabpanel{margin-top:0}
+.tabpanel:focus{outline:none}
+.lab-wrap[hidden]{display:none}

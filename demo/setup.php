@@ -44,6 +44,16 @@ if ( $smash_front ) {
 	}
 }
 
+// En-têtes des pages intérieures (groupe « En-tête de page »).
+foreach ( $smash_site['page_fields'] ?? array() as $smash_slug => $smash_fields ) {
+	$smash_page = get_page_by_path( $smash_slug );
+	if ( $smash_page ) {
+		foreach ( $smash_fields as $smash_key => $smash_value ) {
+			update_post_meta( $smash_page->ID, $smash_key, $smash_value );
+		}
+	}
+}
+
 // Contenus par défaut de WordPress : inutiles ici.
 foreach ( array( 'hello-world' => 'post', 'sample-page' => 'page' ) as $smash_slug => $smash_type ) {
 	$smash_post = get_page_by_path( $smash_slug, OBJECT, $smash_type );

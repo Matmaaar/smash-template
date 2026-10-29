@@ -476,5 +476,17 @@
     "insta_image_1": "img:can-affluence.jpg",
     "insta_image_2": "img:label-affluence.jpg",
     "insta_image_3": "img:hero.jpg"
+  },
+  "page_fields": {
+    "nos-bieres": {
+      "intro_kick": "nos bières",
+      "intro_title": "la qualité\navant tout.",
+      "intro_text": "Une gamme permanente de classiques revisités, et une gamme éphémère brassée selon nos envies. Clique sur une étiquette pour ouvrir sa fiche."
+    }
+  },
+  "range_descriptions": {
+    "perm": "Nos classiques, toujours à la pompe.",
+    "eph": "Brassées en petite quantité, disponibles jusqu'à épuisement.",
+    "old": "Toutes les éphémères déjà sorties, depuis le premier brassin."
   }
 }

@@ -188,8 +188,10 @@ def main():
             roles[page['role']] = page['slug']
         pid += 1
 
+    desc = {RANGE_TERMS[k][0]: v for k, v in DATA.get('range_descriptions', {}).items()}
     terms_xml = ''.join(
-        f'<wp:term><wp:term_taxonomy>{tax}</wp:term_taxonomy><wp:term_slug>{cdata(s)}</wp:term_slug><wp:term_name>{cdata(l)}</wp:term_name></wp:term>'
+        f'<wp:term><wp:term_taxonomy>{tax}</wp:term_taxonomy><wp:term_slug>{cdata(s)}</wp:term_slug><wp:term_name>{cdata(l)}</wp:term_name>'
+        f'<wp:term_description>{cdata(desc.get(s, ""))}</wp:term_description></wp:term>'
         for tax, group in (('type-de-bieres', RANGE_TERMS.values()), ('type-de-location', LOCATION_TERMS.items()))
         for s, l in group)
 
@@ -224,6 +226,7 @@ def main():
         'front_page': roles.get('front'),
         'posts_page': roles.get('posts'),
         'cta': DATA['cta'],
+        'page_fields': DATA.get('page_fields', {}),
         # Champs de l'accueil : « img:fichier » devient l'ID de la pièce jointe ; « page:slug » est résolu par setup.php.
         'front': {k: (photos[v[4:]] if v.startswith('img:') else v) for k, v in DATA['front'].items()},
     }

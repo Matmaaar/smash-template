@@ -178,3 +178,25 @@ function smash_latest_post() {
 	$posts = get_posts( array( 'numberposts' => 1, 'post_type' => 'post' ) );
 	return $posts ? $posts[0] : null;
 }
+
+/**
+ * Un champ texte d'une page (ex. intro_kick, intro_title, intro_text).
+ */
+function smash_page_field( $post_id, $name ) {
+	$value = $post_id ? smash_raw( $post_id, $name ) : '';
+	return is_scalar( $value ) ? trim( (string) $value ) : '';
+}
+
+/**
+ * Gammes du catalogue : clé du thème => ancre d'URL (liens du méga-menu, onglets).
+ */
+function smash_range_anchors() {
+	return array( 'perm' => 'permanentes', 'eph' => 'ephemeres', 'old' => 'anciennes' );
+}
+
+/**
+ * La page catalogue « nos bières » (slug du site actuel).
+ */
+function smash_catalog_page() {
+	return get_page_by_path( 'nos-bieres' );
+}

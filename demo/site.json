@@ -47,6 +47,13 @@
     "title": "devis tireuse",
     "page": "location-tireuses-a-bieres"
   },
+  "page_fields": {
+    "nos-bieres": {
+      "intro_kick": "nos bières",
+      "intro_title": "la qualité\navant tout.",
+      "intro_text": "Une gamme permanente de classiques revisités, et une gamme éphémère brassée selon nos envies. Clique sur une étiquette pour ouvrir sa fiche."
+    }
+  },
   "front": {
     "hero_kick": "microbrasserie craft · rennes",
     "hero_title": "fabrique\nde bières.",

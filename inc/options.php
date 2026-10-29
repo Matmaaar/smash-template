@@ -88,6 +88,22 @@ add_action( 'acf/init', function () {
 		'hide_on_screen' => array( 'the_content' ),
 	) );
 
+	// En-tête des pages intérieures (template-parts/page-head.php).
+	acf_add_local_field_group( array(
+		'key'      => 'group_smash_page_head',
+		'title'    => __( 'En-tête de page', 'smash' ),
+		'position' => 'acf_after_title',
+		'fields'   => array(
+			array( 'key' => 'field_smash_intro_kick', 'name' => 'intro_kick', 'label' => __( 'Sur-titre', 'smash' ), 'type' => 'text' ),
+			array( 'key' => 'field_smash_intro_title', 'name' => 'intro_title', 'label' => __( 'Titre affiché (H1)', 'smash' ), 'type' => 'textarea', 'rows' => 2, 'new_lines' => '', 'instructions' => __( 'Retour à la ligne = saut de ligne dans le titre. Vide : titre de la page.', 'smash' ) ),
+			array( 'key' => 'field_smash_intro_text', 'name' => 'intro_text', 'label' => __( 'Texte d\'introduction', 'smash' ), 'type' => 'textarea', 'rows' => 3, 'new_lines' => '' ),
+		),
+		'location' => array( array(
+			array( 'param' => 'post_type', 'operator' => '==', 'value' => 'page' ),
+			array( 'param' => 'page_type', 'operator' => '!=', 'value' => 'front_page' ),
+		) ),
+	) );
+
 	// Groupes « démo » des bières et de l'équipe, générés depuis le mapping.
 	// Sur le vrai site, leurs propres groupes ACF prennent le relais (SMASH_DEMO_FIELDS = false).
 	if ( ! SMASH_DEMO_FIELDS ) {

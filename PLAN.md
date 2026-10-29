@@ -9,20 +9,26 @@
 
 Une session = **une étape**. On coche, on note ce qui reste, on commit, on s'arrête.
 
+**Ordre validé le 29/10** : la base Playground d'abord, le scraping à la fin. Le design va encore bouger, donc on veut vite une base solide sur Playground pour itérer dessus. Le contenu réel ne dépend pas du design et vient en dernier.
+
+Dès que le thème existe, **on itère le design directement dans le thème**. `maquette/` devient une référence figée, pour ne pas maintenir deux versions.
+
+Contenu de démo provisoire : celui de la maquette (tableaux JS `PERM`, `EPH`, `OLD`, `POSTS`, `TEAM`, `KEGS`, plus les textes et `maquette/img/`), converti en un petit WXR avec les vrais slugs. Il couvre 6 permanentes, quelques éphémères et anciennes, environ 5 articles, les 10 membres et toutes les pages du sitemap.
+
 | # | Étape | Statut | Notes |
 |---|---|---|---|
 | 0 | Plan, analyse du site, maquette dans `maquette/` | ✅ fait | relevé du 29/10/2026 |
-| 1 | Contenu : script de scraping → `demo/` | ⬜ à faire | |
-| 2a | Socle : `style.css`, `functions.php`, `inc/` de base, CSS et polices | ⬜ à faire | |
-| 2b | Header (méga-menu), footer, porte d'âge | ⬜ à faire | |
-| 2c | Accueil + `.wp-env.json` + `blueprint.json` | ⬜ à faire | |
-| 3 | Bières : mapping, « nos bières », taxonomie, fiche, Product | ⬜ à faire | |
-| 4 | Location + Gravity Forms / mode démo, FAQPage | ⬜ à faire | |
-| 5a | Blog + article (BlogPosting) | ⬜ à faire | |
-| 5b | Brasserie, contact, téléchargements, pages légales, plan du site, 404, recherche, README | ⬜ à faire | |
-| 6 | Vérification complète + lien Playground testé | ⬜ à faire | |
+| 1 | **Socle + pipeline Playground** : `style.css`, `functions.php`, `inc/` de base (setup, assets, fields-map, data, options), CSS et polices, `index.php`, petit WXR de démo tiré de la maquette, `blueprint.json`, `.wp-env.json`. Objectif : le thème s'active sur Playground, toutes les URL du sitemap répondent | ⬜ à faire | le repo doit être public pour Playground |
+| 2 | Header (méga-menu), footer, porte d'âge, accueil | ⬜ à faire | |
+| 3 | Bières : « nos bières », taxonomie, fiche, Product | ⬜ à faire | |
+| 4 | Location (mode démo et Gravity Forms), FAQPage | ⬜ à faire | |
+| 5 | Blog et article, brasserie, contact, téléchargements, pages légales, plan du site, 404, recherche | ⬜ à faire | découper en 5a / 5b si besoin |
+| 6 | *Itérations design* (autant de sessions que nécessaire) | ⬜ à faire | |
+| 7 | **Scraping du contenu réel** (§5) : remplace le WXR provisoire, avec le même format et les mêmes slugs | ⬜ à faire | décider repo public ou release (§5) |
+| 8 | Vérification complète (§8) + README + lien Playground final | ⬜ à faire | |
 
 **Journal des sessions** (le plus récent en haut) :
+- 29/10/2026 : nouvel ordre des étapes (base Playground d'abord, scraping à la fin).
 - 29/10/2026 : analyse du site public, plan, maquette ajoutée au repo.
 
 ---
@@ -209,16 +215,9 @@ Lien : `https://playground.wordpress.net/?blueprint-url=https://raw.githubuserco
 
 ---
 
-## 7. Étapes de développement (un commit par étape)
+## 7. Étapes de développement
 
-1. **Contenu** : script de scraping, puis `demo/` généré et relu (on vérifie le wording et les images).
-2. **Socle, header, footer, accueil** :
-   - `inc/*` de base, CSS et polices, porte d'âge, méga-menu ;
-   - `front-page.php` avec la dernière série (dernier article et ses bières liées) et le mur d'étiquettes ;
-   - `.wp-env.json` et `blueprint.json`.
-3. **Bières** : mapping et `smash_beer()`, page « nos bières » avec ses onglets, taxonomie, fiche, JSON-LD Product.
-4. **Location** : tarifs rendus en HTML (Gravity Forms ou options), `location.js` sans valeur en dur, endpoint REST (Gravity Forms ou mode démo), FAQ et FAQPage.
-5. **Le reste** : blog, article (BlogPosting), brasserie (membres), contact (Gravity Forms 3 ou formulaire démo), téléchargements, pages légales, plan du site, 404, recherche, README.
+Voir le tableau de la section 0 : il fait référence pour l'ordre et le statut.
 
 ## 8. Vérification
 

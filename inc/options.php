@@ -37,6 +37,10 @@ add_action( 'acf/init', function () {
 		'linkedin'  => array( 'url', __( 'LinkedIn', 'smash' ) ),
 		'untappd'   => array( 'url', __( 'Untappd', 'smash' ) ),
 		'warning'   => array( 'text', __( 'Mention « abus d\'alcool »', 'smash' ) ),
+		'age_title'   => array( 'text', __( 'Porte d\'âge : question', 'smash' ) ),
+		'age_yes'     => array( 'text', __( 'Porte d\'âge : bouton oui', 'smash' ) ),
+		'age_no'      => array( 'text', __( 'Porte d\'âge : bouton non', 'smash' ) ),
+		'age_refused' => array( 'text', __( 'Porte d\'âge : message si non', 'smash' ) ),
 	);
 	$fields = array();
 	foreach ( $infos as $name => list( $type, $label ) ) {
@@ -54,6 +58,34 @@ add_action( 'acf/init', function () {
 		'title'    => __( 'Infos smash', 'smash' ),
 		'fields'   => $fields,
 		'location' => array( array( array( 'param' => 'options_page', 'operator' => '==', 'value' => 'smash-infos' ) ) ),
+	) );
+
+	// Textes de la page d'accueil (front-page.php).
+	$fields = array();
+	foreach ( smash_front_fields() as $name => list( $type, $label ) ) {
+		$field = array(
+			'key'   => 'field_smash_front_' . $name,
+			'name'  => $name,
+			'label' => $label,
+			'type'  => $type,
+		);
+		if ( 'textarea' === $type ) {
+			$field += array( 'rows' => 2, 'new_lines' => '' );
+		} elseif ( 'image' === $type ) {
+			$field += array( 'return_format' => 'id', 'preview_size' => 'medium' );
+		} elseif ( 'page_link' === $type ) {
+			$field = array_merge( $field, array( 'type' => 'post_object', 'post_type' => array( 'page' ), 'return_format' => 'id', 'allow_null' => 1 ) );
+		} elseif ( 'tab' === $type ) {
+			$field['placement'] = 'top';
+		}
+		$fields[] = $field;
+	}
+	acf_add_local_field_group( array(
+		'key'            => 'group_smash_front',
+		'title'          => __( 'Accueil', 'smash' ),
+		'fields'         => $fields,
+		'location'       => array( array( array( 'param' => 'page_type', 'operator' => '==', 'value' => 'front_page' ) ) ),
+		'hide_on_screen' => array( 'the_content' ),
 	) );
 
 	// Groupes « démo » des bières et de l'équipe, générés depuis le mapping.
@@ -85,3 +117,51 @@ add_action( 'acf/init', function () {
 		) );
 	}
 } );
+
+/**
+ * Champs de la page d'accueil : nom => [type ACF, libellé].
+ * Les titres en `textarea` passent à la ligne comme dans la maquette.
+ */
+function smash_front_fields() {
+	return array(
+		'tab_hero'        => array( 'tab', __( 'Hero', 'smash' ) ),
+		'hero_kick'       => array( 'text', __( 'Sur-titre', 'smash' ) ),
+		'hero_title'      => array( 'textarea', __( 'Titre (H1)', 'smash' ) ),
+		'hero_text'       => array( 'textarea', __( 'Texte', 'smash' ) ),
+		'hero_btn_label'  => array( 'text', __( 'Bouton : texte', 'smash' ) ),
+		'hero_btn_link'   => array( 'page_link', __( 'Bouton : page', 'smash' ) ),
+		'hero_image'      => array( 'image', __( 'Image de fond', 'smash' ) ),
+		'tab_perm'        => array( 'tab', __( 'Gamme permanente', 'smash' ) ),
+		'perm_kick'       => array( 'text', __( 'Sur-titre', 'smash' ) ),
+		'perm_title'      => array( 'textarea', __( 'Titre', 'smash' ) ),
+		'perm_btn_label'  => array( 'text', __( 'Bouton : texte', 'smash' ) ),
+		'perm_btn_link'   => array( 'page_link', __( 'Bouton : page', 'smash' ) ),
+		'tab_series'      => array( 'tab', __( 'Dernière série', 'smash' ) ),
+		'series_kick'     => array( 'text', __( 'Sur-titre (suivi de la date du dernier article)', 'smash' ) ),
+		'series_btn_label'=> array( 'text', __( 'Bouton : texte', 'smash' ) ),
+		'tab_wall'        => array( 'tab', __( 'Mur d\'étiquettes', 'smash' ) ),
+		'wall_kick'       => array( 'text', __( 'Sur-titre', 'smash' ) ),
+		'wall_title'      => array( 'textarea', __( 'Titre', 'smash' ) ),
+		'wall_text'       => array( 'textarea', __( 'Texte', 'smash' ) ),
+		'tab_brew'        => array( 'tab', __( 'La brasserie', 'smash' ) ),
+		'brew_kick'       => array( 'text', __( 'Sur-titre', 'smash' ) ),
+		'brew_text'       => array( 'textarea', __( 'Texte', 'smash' ) ),
+		'brew_btn_label'  => array( 'text', __( 'Bouton : texte', 'smash' ) ),
+		'brew_btn_link'   => array( 'page_link', __( 'Bouton : page', 'smash' ) ),
+		'brew_image'      => array( 'image', __( 'Image', 'smash' ) ),
+		'tab_loc'         => array( 'tab', __( 'Location', 'smash' ) ),
+		'loc_kick'        => array( 'text', __( 'Sur-titre', 'smash' ) ),
+		'loc_title'       => array( 'textarea', __( 'Titre', 'smash' ) ),
+		'loc_text'        => array( 'textarea', __( 'Texte', 'smash' ) ),
+		'loc_btn_label'   => array( 'text', __( 'Bouton : texte', 'smash' ) ),
+		'loc_btn_link'    => array( 'page_link', __( 'Bouton : page', 'smash' ) ),
+		'loc_image'       => array( 'image', __( 'Image', 'smash' ) ),
+		'tab_insta'       => array( 'tab', __( 'Instagram', 'smash' ) ),
+		'insta_kick'      => array( 'text', __( 'Sur-titre', 'smash' ) ),
+		'insta_title'     => array( 'textarea', __( 'Titre', 'smash' ) ),
+		'insta_btn_label' => array( 'text', __( 'Bouton : texte (lien = Instagram dans « Infos smash »)', 'smash' ) ),
+		'insta_image_1'   => array( 'image', __( 'Image 1', 'smash' ) ),
+		'insta_image_2'   => array( 'image', __( 'Image 2', 'smash' ) ),
+		'insta_image_3'   => array( 'image', __( 'Image 3', 'smash' ) ),
+	);
+}

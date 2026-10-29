@@ -1,6 +1,9 @@
 {
   "_note": "Contenu de démo PROVISOIRE, repris de maquette/index.html (étape 1). Il sera remplacé par le contenu réel aspiré du site (étape 7).",
-  "site": { "name": "smash", "description": "fabrique de bières" },
+  "site": {
+    "name": "smash",
+    "description": "fabrique de bières"
+  },
   "options": {
     "address": "4 bis K, rue du Lieutenant Colonel Dubois<br>35000 Rennes",
     "hours": "du lundi au vendredi<br>9 h – 18 h",
@@ -11,71 +14,467 @@
     "facebook": "https://www.facebook.com/profile.php?id=61550190754099",
     "linkedin": "https://www.linkedin.com/company/brasserie-smash/",
     "untappd": "https://untappd.com/brasserie_smash",
-    "warning": "L'abus d'alcool est dangereux pour la santé, à consommer avec modération."
+    "warning": "L'abus d'alcool est dangereux pour la santé, à consommer avec modération.",
+    "age_title": "t'as 18 ans ?",
+    "age_yes": "oui, on y va",
+    "age_no": "non",
+    "age_refused": "reviens dans quelques années, on t'en gardera une."
   },
   "beers": [
-    { "slug": "aquatrip", "name": "Aquatrip", "range": "perm", "rent": true, "style": "Bohemian Pilsner", "abv": "4,5", "c": ["#e9d9a6", "#c8a24a"],
-      "intro": "Délicate, désaltérante, et qui se boit toute seule.", "formats": "fût 30 L · canette 44 cl",
-      "malts": "Orge, blé", "hops": "Patho, Saaz", "yeast": "W34-70", "look": "Or pâle, légèrement trouble, belle mousse",
+    {
+      "slug": "aquatrip",
+      "name": "Aquatrip",
+      "range": "perm",
+      "rent": true,
+      "style": "Bohemian Pilsner",
+      "abv": "4,5",
+      "c": [
+        "#e9d9a6",
+        "#c8a24a"
+      ],
+      "intro": "Délicate, désaltérante, et qui se boit toute seule.",
+      "formats": "fût 30 L · canette 44 cl",
+      "malts": "Orge, blé",
+      "hops": "Patho, Saaz",
+      "yeast": "W34-70",
+      "look": "Or pâle, légèrement trouble, belle mousse",
       "desc": "Légèrement maltée, une pointe d'amertume, des notes herbacées, une bouche vive et pétillante.",
-      "when": "Au bar, devant le match, à la maison, à l'apéro, au déjeuner ou au dîner.", "food": "Charcuterie, anchois, plats épicés, fish & chips." },
-    { "slug": "affluence", "name": "Affluence", "range": "perm", "rent": true, "style": "NEIPA", "abv": "6", "label": "label-affluence.jpg", "photo": "can-affluence.jpg",
-      "intro": "L'affluence, c'est cette sensation que tu as lors des soirées où il fait bon : la fête est dans l'air.", "formats": "fût 30 L · canette 44 cl" },
-    { "slug": "pasadena", "name": "Pasadena", "range": "perm", "rent": true, "style": "West Coast IPA", "abv": "6", "c": ["#ff9f6b", "#d9483b"], "formats": "fût 30 L · canette 44 cl" },
-    { "slug": "weizh", "name": "Weizh", "range": "perm", "rent": true, "style": "Wheat", "abv": "5", "c": ["#f5efe0", "#e3c56f"], "formats": "fût 30 L · canette 44 cl" },
-    { "slug": "sp-95", "name": "SP 95", "range": "perm", "rent": true, "style": "Golden Ale", "abv": "6", "c": ["#ffd84d", "#f08a24"], "formats": "fût 30 L · canette 44 cl" },
-    { "slug": "rye-bomb", "name": "Rye Bomb", "range": "perm", "rent": true, "style": "Triple belge", "abv": "8", "c": ["#7b4a2e", "#2d1a10"], "dark": true, "formats": "fût 20 L · canette 33 cl" },
-    { "slug": "tropicool", "name": "Tropicool", "range": "eph", "style": "Catharina sour", "abv": "7,2", "c": ["#ff8fc7", "#ffd23f"] },
-    { "slug": "deluge", "name": "Déluge", "range": "eph", "style": "Double NEIPA · collab", "abv": "8", "c": ["#3a5bff", "#9ad1ff"], "dark": true },
-    { "slug": "fungarr", "name": "Fungarr", "range": "eph", "style": "Breizh bock", "abv": "6,2", "c": ["#6b3b1f", "#e2b35a"], "dark": true },
-    { "slug": "crypto", "name": "Crypto", "range": "eph", "style": "Gose", "abv": "3,8", "c": ["#2ec4a6", "#e8f6c9"] },
-    { "slug": "avalou", "name": "Avalou", "range": "old", "style": "Collab cidre", "c": ["#c7e36b", "#e2574c"] },
-    { "slug": "zero", "name": "0,0 %", "range": "old", "style": "Sans alcool", "abv": "0", "c": ["#f2f2f2", "#9aa0a6"] },
-    { "slug": "serie-20", "name": "Série #20", "range": "old", "style": "Éphémère", "c": ["#ff5a36", "#ffd1b8"] },
-    { "slug": "serie-19", "name": "Série #19", "range": "old", "style": "Éphémère", "c": ["#8a5cff", "#ffd1f0"], "dark": true },
-    { "slug": "serie-18", "name": "Série #18", "range": "old", "style": "Éphémère", "c": ["#1f8a70", "#bff2c9"], "dark": true },
-    { "slug": "serie-17", "name": "Série #17", "range": "old", "style": "Éphémère", "c": ["#ffb627", "#ff5a36"] }
+      "when": "Au bar, devant le match, à la maison, à l'apéro, au déjeuner ou au dîner.",
+      "food": "Charcuterie, anchois, plats épicés, fish & chips."
+    },
+    {
+      "slug": "affluence",
+      "name": "Affluence",
+      "range": "perm",
+      "rent": true,
+      "style": "NEIPA",
+      "abv": "6",
+      "label": "label-affluence.jpg",
+      "photo": "can-affluence.jpg",
+      "intro": "L'affluence, c'est cette sensation que tu as lors des soirées où il fait bon : la fête est dans l'air.",
+      "formats": "fût 30 L · canette 44 cl"
+    },
+    {
+      "slug": "pasadena",
+      "name": "Pasadena",
+      "range": "perm",
+      "rent": true,
+      "style": "West Coast IPA",
+      "abv": "6",
+      "c": [
+        "#ff9f6b",
+        "#d9483b"
+      ],
+      "formats": "fût 30 L · canette 44 cl"
+    },
+    {
+      "slug": "weizh",
+      "name": "Weizh",
+      "range": "perm",
+      "rent": true,
+      "style": "Wheat",
+      "abv": "5",
+      "c": [
+        "#f5efe0",
+        "#e3c56f"
+      ],
+      "formats": "fût 30 L · canette 44 cl"
+    },
+    {
+      "slug": "sp-95",
+      "name": "SP 95",
+      "range": "perm",
+      "rent": true,
+      "style": "Golden Ale",
+      "abv": "6",
+      "c": [
+        "#ffd84d",
+        "#f08a24"
+      ],
+      "formats": "fût 30 L · canette 44 cl"
+    },
+    {
+      "slug": "rye-bomb",
+      "name": "Rye Bomb",
+      "range": "perm",
+      "rent": true,
+      "style": "Triple belge",
+      "abv": "8",
+      "c": [
+        "#7b4a2e",
+        "#2d1a10"
+      ],
+      "dark": true,
+      "formats": "fût 20 L · canette 33 cl"
+    },
+    {
+      "slug": "tropicool",
+      "name": "Tropicool",
+      "range": "eph",
+      "style": "Catharina sour",
+      "abv": "7,2",
+      "c": [
+        "#ff8fc7",
+        "#ffd23f"
+      ]
+    },
+    {
+      "slug": "deluge",
+      "name": "Déluge",
+      "range": "eph",
+      "style": "Double NEIPA · collab",
+      "abv": "8",
+      "c": [
+        "#3a5bff",
+        "#9ad1ff"
+      ],
+      "dark": true
+    },
+    {
+      "slug": "fungarr",
+      "name": "Fungarr",
+      "range": "eph",
+      "style": "Breizh bock",
+      "abv": "6,2",
+      "c": [
+        "#6b3b1f",
+        "#e2b35a"
+      ],
+      "dark": true
+    },
+    {
+      "slug": "crypto",
+      "name": "Crypto",
+      "range": "eph",
+      "style": "Gose",
+      "abv": "3,8",
+      "c": [
+        "#2ec4a6",
+        "#e8f6c9"
+      ]
+    },
+    {
+      "slug": "avalou",
+      "name": "Avalou",
+      "range": "old",
+      "style": "Collab cidre",
+      "c": [
+        "#c7e36b",
+        "#e2574c"
+      ]
+    },
+    {
+      "slug": "zero",
+      "name": "0,0 %",
+      "range": "old",
+      "style": "Sans alcool",
+      "abv": "0",
+      "c": [
+        "#f2f2f2",
+        "#9aa0a6"
+      ]
+    },
+    {
+      "slug": "serie-20",
+      "name": "Série #20",
+      "range": "old",
+      "style": "Éphémère",
+      "c": [
+        "#ff5a36",
+        "#ffd1b8"
+      ]
+    },
+    {
+      "slug": "serie-19",
+      "name": "Série #19",
+      "range": "old",
+      "style": "Éphémère",
+      "c": [
+        "#8a5cff",
+        "#ffd1f0"
+      ],
+      "dark": true
+    },
+    {
+      "slug": "serie-18",
+      "name": "Série #18",
+      "range": "old",
+      "style": "Éphémère",
+      "c": [
+        "#1f8a70",
+        "#bff2c9"
+      ],
+      "dark": true
+    },
+    {
+      "slug": "serie-17",
+      "name": "Série #17",
+      "range": "old",
+      "style": "Éphémère",
+      "c": [
+        "#ffb627",
+        "#ff5a36"
+      ]
+    }
   ],
   "posts": [
-    { "slug": "bieres-ephemeres-serie-21", "title": "bières éphémères : série #21", "date": "2026-04-28", "beers": ["tropicool", "deluge", "fungarr", "crypto"],
-      "intro": "Nouvelle fournée d'éphémères, brassées en petite quantité et disponibles jusqu'à épuisement. Quand c'est fini, c'est fini." },
-    { "slug": "bieres-ephemeres-serie-20", "title": "bières éphémères : série #20", "date": "2026-03-23", "beers": ["serie-20", "avalou"] },
-    { "slug": "bieres-ephemeres-serie-19", "title": "bières éphémères : série #19", "date": "2026-03-05", "beers": ["serie-19", "crypto"] },
-    { "slug": "bieres-ephemeres-serie-18", "title": "bières éphémères : série #18", "date": "2026-02-01", "beers": ["serie-18", "deluge"] },
-    { "slug": "bieres-ephemeres-serie-17", "title": "bières éphémères : série #17", "date": "2026-01-15", "beers": ["serie-17", "fungarr"] },
-    { "slug": "bieres-ephemeres-0-0", "title": "bières éphémères : 0,0 %", "date": "2025-12-31", "beers": ["zero"] },
-    { "slug": "bieres-ephemeres-serie-16", "title": "bières éphémères : série #16", "date": "2025-12-29", "beers": ["serie-20", "tropicool"] },
-    { "slug": "bieres-ephemeres-novembre", "title": "bières éphémères : novembre", "date": "2025-11-19", "beers": ["serie-19", "serie-17"] },
-    { "slug": "biere-ephemere-avalou", "title": "bière éphémère : avalou", "date": "2025-11-05", "beers": ["avalou"] }
+    {
+      "slug": "bieres-ephemeres-serie-21",
+      "title": "bières éphémères : série #21",
+      "date": "2026-04-28",
+      "beers": [
+        "tropicool",
+        "deluge",
+        "fungarr",
+        "crypto"
+      ],
+      "intro": "Nouvelle fournée d'éphémères, brassées en petite quantité et disponibles jusqu'à épuisement. Quand c'est fini, c'est fini."
+    },
+    {
+      "slug": "bieres-ephemeres-serie-20",
+      "title": "bières éphémères : série #20",
+      "date": "2026-03-23",
+      "beers": [
+        "serie-20",
+        "avalou"
+      ]
+    },
+    {
+      "slug": "bieres-ephemeres-serie-19",
+      "title": "bières éphémères : série #19",
+      "date": "2026-03-05",
+      "beers": [
+        "serie-19",
+        "crypto"
+      ]
+    },
+    {
+      "slug": "bieres-ephemeres-serie-18",
+      "title": "bières éphémères : série #18",
+      "date": "2026-02-01",
+      "beers": [
+        "serie-18",
+        "deluge"
+      ]
+    },
+    {
+      "slug": "bieres-ephemeres-serie-17",
+      "title": "bières éphémères : série #17",
+      "date": "2026-01-15",
+      "beers": [
+        "serie-17",
+        "fungarr"
+      ]
+    },
+    {
+      "slug": "bieres-ephemeres-0-0",
+      "title": "bières éphémères : 0,0 %",
+      "date": "2025-12-31",
+      "beers": [
+        "zero"
+      ]
+    },
+    {
+      "slug": "bieres-ephemeres-serie-16",
+      "title": "bières éphémères : série #16",
+      "date": "2025-12-29",
+      "beers": [
+        "serie-20",
+        "tropicool"
+      ]
+    },
+    {
+      "slug": "bieres-ephemeres-novembre",
+      "title": "bières éphémères : novembre",
+      "date": "2025-11-19",
+      "beers": [
+        "serie-19",
+        "serie-17"
+      ]
+    },
+    {
+      "slug": "biere-ephemere-avalou",
+      "title": "bière éphémère : avalou",
+      "date": "2025-11-05",
+      "beers": [
+        "avalou"
+      ]
+    }
   ],
   "team": [
-    ["antonin", "Antonin", "resp. production", "Passé par Gallia et Prizm Brewing. Créatif et exigeant sur la qualité."],
-    ["jean", "Jean", "commercial & marketing", "Et remplissage des fûts."],
-    ["arthur", "Arthur", "logistique", "Préparation, stock, livraisons."],
-    ["ronan", "Ronan", "opérateur", "Réparations, enfûtage, brassage, fermentation."],
-    ["tristan", "Tristan", "brasseur", "Passé par une grande brasserie."],
-    ["iwan", "Iwan", "communication", "Réseaux, site, photos."],
-    ["eline", "Eline", "commerciale", "Biérologue / zythologue, formée au CFA 3B de Vitré."],
-    ["meriadec", "Mériadec", "apprenti logistique & prod", "Passé par le café et le vin."],
-    ["adrien", "Adrien", "apprenti brasseur", "A débuté dans le craft au Canada."],
-    ["porter", "Porter", "chien de garde", "Il garde. Surtout la gamelle."]
+    [
+      "antonin",
+      "Antonin",
+      "resp. production",
+      "Passé par Gallia et Prizm Brewing. Créatif et exigeant sur la qualité."
+    ],
+    [
+      "jean",
+      "Jean",
+      "commercial & marketing",
+      "Et remplissage des fûts."
+    ],
+    [
+      "arthur",
+      "Arthur",
+      "logistique",
+      "Préparation, stock, livraisons."
+    ],
+    [
+      "ronan",
+      "Ronan",
+      "opérateur",
+      "Réparations, enfûtage, brassage, fermentation."
+    ],
+    [
+      "tristan",
+      "Tristan",
+      "brasseur",
+      "Passé par une grande brasserie."
+    ],
+    [
+      "iwan",
+      "Iwan",
+      "communication",
+      "Réseaux, site, photos."
+    ],
+    [
+      "eline",
+      "Eline",
+      "commerciale",
+      "Biérologue / zythologue, formée au CFA 3B de Vitré."
+    ],
+    [
+      "meriadec",
+      "Mériadec",
+      "apprenti logistique & prod",
+      "Passé par le café et le vin."
+    ],
+    [
+      "adrien",
+      "Adrien",
+      "apprenti brasseur",
+      "A débuté dans le craft au Canada."
+    ],
+    [
+      "porter",
+      "Porter",
+      "chien de garde",
+      "Il garde. Surtout la gamelle."
+    ]
   ],
   "pages": [
-    { "slug": "accueil", "title": "Accueil", "role": "front", "content": "Des bières artisanales de qualité, innovantes et créatives. Une gamme permanente, et des éphémères qui ne restent jamais longtemps." },
-    { "slug": "nos-bieres", "title": "Nos bières", "content": "Une gamme permanente de classiques revisités, et une gamme éphémère brassée selon nos envies." },
-    { "slug": "la-brasserie", "title": "La brasserie", "content": "Une nouvelle microbrasserie craft, à deux pas de la rocade rennaise pour livrer facilement." },
-    { "slug": "location-tireuses-a-bieres", "title": "Location de tireuses à bières", "content": "Tireuse, fûts, éco-cups : le devis se calcule en direct, en 2 minutes." },
-    { "slug": "le-blog", "title": "Le blog", "role": "posts", "content": "" },
-    { "slug": "contact", "title": "Contact", "content": "On se parle ?" },
-    { "slug": "telechargements", "title": "Téléchargements", "content": "Logos, fiches produits et guides des tireuses." },
-    { "slug": "mentions-legales", "title": "Mentions légales", "content": "Contenu repris du site actuel à l'étape 7." },
-    { "slug": "politique-de-confidentialite", "title": "Politique de confidentialité", "content": "Contenu repris du site actuel à l'étape 7." },
-    { "slug": "sitemap", "title": "Plan du site", "content": "" }
+    {
+      "slug": "accueil",
+      "title": "Accueil",
+      "role": "front",
+      "content": "Des bières artisanales de qualité, innovantes et créatives. Une gamme permanente, et des éphémères qui ne restent jamais longtemps."
+    },
+    {
+      "slug": "nos-bieres",
+      "title": "Nos bières",
+      "content": "Une gamme permanente de classiques revisités, et une gamme éphémère brassée selon nos envies."
+    },
+    {
+      "slug": "la-brasserie",
+      "title": "La brasserie",
+      "content": "Une nouvelle microbrasserie craft, à deux pas de la rocade rennaise pour livrer facilement."
+    },
+    {
+      "slug": "location-tireuses-a-bieres",
+      "title": "Location de tireuses à bières",
+      "content": "Tireuse, fûts, éco-cups : le devis se calcule en direct, en 2 minutes."
+    },
+    {
+      "slug": "le-blog",
+      "title": "Le blog",
+      "role": "posts",
+      "content": ""
+    },
+    {
+      "slug": "contact",
+      "title": "Contact",
+      "content": "On se parle ?"
+    },
+    {
+      "slug": "telechargements",
+      "title": "Téléchargements",
+      "content": "Logos, fiches produits et guides des tireuses."
+    },
+    {
+      "slug": "mentions-legales",
+      "title": "Mentions légales",
+      "content": "Contenu repris du site actuel à l'étape 7."
+    },
+    {
+      "slug": "politique-de-confidentialite",
+      "title": "Politique de confidentialité",
+      "content": "Contenu repris du site actuel à l'étape 7."
+    },
+    {
+      "slug": "sitemap",
+      "title": "Plan du site",
+      "content": ""
+    }
   ],
   "menus": {
-    "primary": ["nos-bieres", "la-brasserie", "le-blog", "contact", "telechargements", "location-tireuses-a-bieres"],
-    "footer": ["nos-bieres", "la-brasserie", "location-tireuses-a-bieres", "le-blog", "contact", "telechargements"],
-    "legal": ["mentions-legales", "politique-de-confidentialite", "sitemap"]
+    "primary": [
+      "nos-bieres",
+      "la-brasserie",
+      "le-blog",
+      "contact",
+      "telechargements"
+    ],
+    "footer": [
+      "nos-bieres",
+      "la-brasserie",
+      "location-tireuses-a-bieres",
+      "le-blog",
+      "contact",
+      "telechargements"
+    ],
+    "legal": [
+      "mentions-legales",
+      "politique-de-confidentialite",
+      "sitemap"
+    ]
   },
-  "media": { "hero": "hero.jpg", "brasserie": "can-affluence.jpg" }
+  "cta": {
+    "title": "devis tireuse",
+    "page": "location-tireuses-a-bieres"
+  },
+  "front": {
+    "hero_kick": "microbrasserie craft · rennes",
+    "hero_title": "fabrique\nde bières.",
+    "hero_text": "Des bières artisanales de qualité, innovantes et créatives. Une gamme permanente, et des éphémères qui ne restent jamais longtemps.",
+    "hero_btn_label": "nos bières",
+    "hero_btn_link": "page:nos-bieres",
+    "hero_image": "img:hero.jpg",
+    "perm_kick": "gamme permanente",
+    "perm_title": "toujours\nà la pompe.",
+    "perm_btn_label": "toutes nos bières",
+    "perm_btn_link": "page:nos-bieres",
+    "series_kick": "bières éphémères",
+    "series_btn_label": "lire l'article",
+    "wall_kick": "les éphémères",
+    "wall_title": "toutes nos\nétiquettes.",
+    "wall_text": "Chaque éphémère a sa propre étiquette. Elles sont toutes là, depuis le premier brassin.",
+    "brew_kick": "la brasserie",
+    "brew_text": "La créativité d'une brasserie craft, la régularité d'une plus grosse production. Et des bières jamais filtrées.",
+    "brew_btn_label": "découvrir la brasserie",
+    "brew_btn_link": "page:la-brasserie",
+    "brew_image": "img:can-affluence.jpg",
+    "loc_kick": "location de tireuses",
+    "loc_title": "la pression\nchez toi.",
+    "loc_text": "Tireuse, fûts, éco-cups : le devis se calcule en direct, en 2 minutes.",
+    "loc_btn_label": "préparer ma location",
+    "loc_btn_link": "page:location-tireuses-a-bieres",
+    "loc_image": "img:hero.jpg",
+    "insta_kick": "@brasserie_smash",
+    "insta_title": "la suite\nsur insta.",
+    "insta_btn_label": "nous suivre",
+    "insta_image_1": "img:can-affluence.jpg",
+    "insta_image_2": "img:label-affluence.jpg",
+    "insta_image_3": "img:hero.jpg"
+  }
 }

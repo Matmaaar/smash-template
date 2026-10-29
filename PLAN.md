@@ -19,7 +19,7 @@ Contenu de démo provisoire : celui de la maquette (tableaux JS `PERM`, `EPH`, `
 |---|---|---|---|
 | 0 | Plan, analyse du site, maquette dans `maquette/` | ✅ fait | relevé du 29/10/2026 |
 | 1 | **Socle + pipeline Playground** : `style.css`, `functions.php`, `inc/` de base (setup, assets, fields-map, data, options), CSS et polices, `index.php`, petit WXR de démo tiré de la maquette, `blueprint.json`, `.wp-env.json`. Objectif : le thème s'active sur Playground, toutes les URL du sitemap répondent | ✅ fait | Testé en local (Playground CLI, WP 6.5) : les 20 URL testées répondent (200, 404 sur une page inconnue), 1 seul H1, aucune notice du thème. **Reste à vérifier : le lien Playground en ligne**, en particulier l'import des étiquettes depuis raw.githubusercontent.com (playground.wordpress.net est bloqué depuis le conteneur, et le WordPress local n'a pas de réseau : les images n'y sont pas importées, les fichiers sont pourtant bien en ligne, code 200). Choix : groupes ACF démo générés en PHP depuis `fields-map.php` (pas d'`acf-json/`, une seule source) ; CPT/taxos déclarés seulement s'ils manquent ; polices Switzer + JetBrains Mono hébergées (Inter Tight abandonnée, simple police de secours). Provisoire : `hero.jpg` et `can-affluence.jpg` sont encore référencés dans le CSS → à passer en champs à l'étape 2. Header/footer = version de base (méga-menu et CTA « devis tireuse » à l'étape 2). |
-| 2 | Header (méga-menu), footer, porte d'âge, accueil | ⬜ à faire | |
+| 2 | Header (méga-menu), footer, porte d'âge, accueil | ✅ fait | `front-page.php` (7 sections de la maquette), groupe ACF « Accueil » (`smash_front_fields()` dans `inc/options.php`, lu par `smash_front()`), `inc/menus.php` (classe `cta` = bouton du header, page `nos-bieres` ou classe `mega` = méga-menu), `inc/age-gate.php` (cookie `smash_age`, classes `no-js` / `age-ok` posées dans le `<head>`, compatible avec le cache de page), `assets/js/core.js` (porte d'âge, méga-menu, `smash.bindTilt()`), `assets/js/pages/home.js`. Les étiquettes sont des `<img>` (srcset, lazy) via `smash_label_img()` / `smash_label_card()`. Testé en local : 200 partout, un seul H1, porte d'âge + cookie + méga-menu OK, y compris en `reducedMotion`. Les micro-libellés d'interface (« la gamme », « la fiche »…) sont des `__()`. À voir aux itérations : liens `#permanentes` / `#ephemeres` / `#anciennes` du méga-menu à brancher à l'étape 3 ; colonne newsletter visible seulement si Gravity Forms (form 2). |
 | 3 | Bières : « nos bières », taxonomie, fiche, Product | ⬜ à faire | |
 | 4 | Location (mode démo et Gravity Forms), FAQPage | ⬜ à faire | |
 | 5 | Blog et article, brasserie, contact, téléchargements, pages légales, plan du site, 404, recherche | ⬜ à faire | découper en 5a / 5b si besoin |
@@ -28,6 +28,8 @@ Contenu de démo provisoire : celui de la maquette (tableaux JS `PERM`, `EPH`, `
 | 8 | Vérification complète (§8) + README + lien Playground final | ⬜ à faire | |
 
 **Journal des sessions** (le plus récent en haut) :
+- 29/10/2026 : étape 2 faite (header + méga-menu, footer, porte d'âge, accueil).
+- 29/10/2026 : Playground testé par l'utilisateur, il marche dans Edge. Il plante dans son Firefox, y compris sans le thème : c'est un réglage du navigateur.
 - 29/10/2026 : étape 1 faite (socle du thème, contenu de démo tiré de la maquette, blueprint Playground, wp-env).
 - 29/10/2026 : nouvel ordre des étapes (base Playground d'abord, scraping à la fin).
 - 29/10/2026 : analyse du site public, plan, maquette ajoutée au repo.

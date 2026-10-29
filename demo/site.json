@@ -13,7 +13,11 @@
     "facebook": "https://www.facebook.com/profile.php?id=61550190754099",
     "linkedin": "https://www.linkedin.com/company/brasserie-smash/",
     "untappd": "https://untappd.com/brasserie_smash",
-    "warning": "L'abus d'alcool est dangereux pour la santé, à consommer avec modération."
+    "warning": "L'abus d'alcool est dangereux pour la santé, à consommer avec modération.",
+    "age_title": "t'as 18 ans ?",
+    "age_yes": "oui, on y va",
+    "age_no": "non",
+    "age_refused": "reviens dans quelques années, on t'en gardera une."
   },
   "menus": {
     "primary": [
@@ -21,8 +25,7 @@
       "la-brasserie",
       "le-blog",
       "contact",
-      "telechargements",
-      "location-tireuses-a-bieres"
+      "telechargements"
     ],
     "footer": [
       "nos-bieres",
@@ -40,8 +43,42 @@
   },
   "front_page": "accueil",
   "posts_page": "le-blog",
-  "page_media": {
-    "hero": 2000,
-    "brasserie": 2001
+  "cta": {
+    "title": "devis tireuse",
+    "page": "location-tireuses-a-bieres"
+  },
+  "front": {
+    "hero_kick": "microbrasserie craft · rennes",
+    "hero_title": "fabrique\nde bières.",
+    "hero_text": "Des bières artisanales de qualité, innovantes et créatives. Une gamme permanente, et des éphémères qui ne restent jamais longtemps.",
+    "hero_btn_label": "nos bières",
+    "hero_btn_link": "page:nos-bieres",
+    "hero_image": 2001,
+    "perm_kick": "gamme permanente",
+    "perm_title": "toujours\nà la pompe.",
+    "perm_btn_label": "toutes nos bières",
+    "perm_btn_link": "page:nos-bieres",
+    "series_kick": "bières éphémères",
+    "series_btn_label": "lire l'article",
+    "wall_kick": "les éphémères",
+    "wall_title": "toutes nos\nétiquettes.",
+    "wall_text": "Chaque éphémère a sa propre étiquette. Elles sont toutes là, depuis le premier brassin.",
+    "brew_kick": "la brasserie",
+    "brew_text": "La créativité d'une brasserie craft, la régularité d'une plus grosse production. Et des bières jamais filtrées.",
+    "brew_btn_label": "découvrir la brasserie",
+    "brew_btn_link": "page:la-brasserie",
+    "brew_image": 2000,
+    "loc_kick": "location de tireuses",
+    "loc_title": "la pression\nchez toi.",
+    "loc_text": "Tireuse, fûts, éco-cups : le devis se calcule en direct, en 2 minutes.",
+    "loc_btn_label": "préparer ma location",
+    "loc_btn_link": "page:location-tireuses-a-bieres",
+    "loc_image": 2001,
+    "insta_kick": "@brasserie_smash",
+    "insta_title": "la suite\nsur insta.",
+    "insta_btn_label": "nous suivre",
+    "insta_image_1": 2000,
+    "insta_image_2": 2003,
+    "insta_image_3": 2001
   }
 }

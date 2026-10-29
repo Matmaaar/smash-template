@@ -33,6 +33,17 @@ foreach ( $smash_site['options'] as $smash_key => $smash_value ) {
 	update_option( 'options_' . $smash_key, $smash_value );
 }
 
+// Textes et images de l'accueil (champs du groupe « Accueil », stockés comme ACF : une méta par champ).
+if ( $smash_front ) {
+	foreach ( $smash_site['front'] as $smash_key => $smash_value ) {
+		if ( is_string( $smash_value ) && 0 === strpos( $smash_value, 'page:' ) ) {
+			$smash_page  = get_page_by_path( substr( $smash_value, 5 ) );
+			$smash_value = $smash_page ? $smash_page->ID : '';
+		}
+		update_post_meta( $smash_front->ID, $smash_key, $smash_value );
+	}
+}
+
 // Contenus par défaut de WordPress : inutiles ici.
 foreach ( array( 'hello-world' => 'post', 'sample-page' => 'page' ) as $smash_slug => $smash_type ) {
 	$smash_post = get_page_by_path( $smash_slug, OBJECT, $smash_type );
@@ -63,6 +74,20 @@ foreach ( $smash_site['menus'] as $smash_location => $smash_slugs ) {
 			'menu-item-position'  => $smash_position + 1,
 			'menu-item-title'     => mb_strtolower( $smash_page->post_title ),
 		) );
+	}
+	// Bouton « devis tireuse » à droite du header : élément avec la classe CSS `cta`.
+	if ( 'primary' === $smash_location && ! empty( $smash_site['cta'] ) ) {
+		$smash_page = get_page_by_path( $smash_site['cta']['page'] );
+		if ( $smash_page ) {
+			wp_update_nav_menu_item( $smash_menu_id, 0, array(
+				'menu-item-object-id' => $smash_page->ID,
+				'menu-item-object'    => 'page',
+				'menu-item-type'      => 'post_type',
+				'menu-item-status'    => 'publish',
+				'menu-item-title'     => $smash_site['cta']['title'],
+				'menu-item-classes'   => 'cta',
+			) );
+		}
 	}
 	$smash_locations[ $smash_location ] = $smash_menu_id;
 }

@@ -37,6 +37,12 @@ $smash_social = array_filter( array(
 				?>
 			</div>
 		<?php endif; ?>
+		<?php
+		$smash_nl = (int) ( smash_map( 'gf' )['newsletter'] ?? 0 );
+		if ( $smash_nl && function_exists( 'gravity_form' ) && class_exists( 'GFAPI' ) && GFAPI::form_id_exists( $smash_nl ) ) :
+			?>
+			<div class="foot__nl"><div class="mono"><?php esc_html_e( 'newsletter', 'smash' ); ?></div><?php gravity_form( $smash_nl, false, false, false, null, true ); ?></div>
+		<?php endif; ?>
 	</div>
 	<div class="legal mono">
 		<span><?php echo esc_html( smash_option( 'warning' ) ); ?></span>

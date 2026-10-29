@@ -128,9 +128,12 @@ def main():
                           extra=f'\n<wp:attachment_url>{cdata(url)}</wp:attachment_url>'))
         return pid
 
-    # Photos de la maquette.
+    # Photos de la maquette (photos des bières + images citées par l'accueil, « img:fichier »).
     photos = {}
-    for name in {DATA['media']['hero'], DATA['media']['brasserie']} | {b['photo'] for b in DATA['beers'] if b.get('photo')}:
+    wanted = {b['photo'] for b in DATA['beers'] if b.get('photo')}
+    wanted |= {v[4:] for v in DATA['front'].values() if v.startswith('img:')}
+    wanted -= {b['label'] for b in DATA['beers'] if b.get('label')}  # déjà importées comme étiquettes
+    for name in sorted(wanted):
         shutil.copy(SOURCE_IMG / name, MEDIA / name)
         photos[name] = attachment(name, Path(name).stem, '')
 
@@ -147,6 +150,7 @@ def main():
             rel = f"labels/{b['slug']}.jpg"
             fake_label(b, MEDIA / rel)
         label_id = attachment(rel, f"Étiquette {b['name']}", f"Étiquette de la bière {b['name']}")
+        photos.setdefault(Path(rel).name, label_id)
         values = {**b, 'label': label_id, 'photo': photos.get(b.get('photo'), '')}
         metas = [meta(key, values[k]) for k, key in fmap.items() if values.get(k) not in (None, '')]
         metas.append(meta('_thumbnail_id', label_id))
@@ -219,7 +223,9 @@ def main():
         'menus': DATA['menus'],
         'front_page': roles.get('front'),
         'posts_page': roles.get('posts'),
-        'page_media': {'hero': photos[DATA['media']['hero']], 'brasserie': photos[DATA['media']['brasserie']]},
+        'cta': DATA['cta'],
+        # Champs de l'accueil : « img:fichier » devient l'ID de la pièce jointe ; « page:slug » est résolu par setup.php.
+        'front': {k: (photos[v[4:]] if v.startswith('img:') else v) for k, v in DATA['front'].items()},
     }
     (ROOT / 'demo/site.json').write_text(json.dumps(site, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(f'{len(items)} contenus, médias dans {MEDIA.relative_to(ROOT)}')

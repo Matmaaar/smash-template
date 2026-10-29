@@ -147,7 +147,34 @@ function smash_post_beers( $post = null ) {
 /**
  * Une info globale de la page d'options « Infos smash ».
  */
-function smash_option( $name ) {
+function smash_option( $name, $default = '' ) {
 	$value = smash_raw( 'option', $name );
-	return is_scalar( $value ) ? (string) $value : '';
+	return is_scalar( $value ) && '' !== (string) $value ? (string) $value : $default;
+}
+
+/**
+ * Un champ de la page d'accueil (voir smash_front_fields() dans inc/options.php).
+ */
+function smash_front( $name ) {
+	$front = (int) get_option( 'page_on_front' );
+	$value = $front ? smash_raw( $front, $name ) : '';
+	return is_scalar( $value ) ? trim( (string) $value ) : '';
+}
+
+/**
+ * URL d'un champ lien : ID de page => permalien, sinon l'URL telle quelle.
+ */
+function smash_link_url( $value ) {
+	if ( is_numeric( $value ) && (int) $value ) {
+		return get_permalink( (int) $value ) ?: '';
+	}
+	return is_string( $value ) ? $value : '';
+}
+
+/**
+ * Le dernier article publié (bloc « dernière série » de l'accueil).
+ */
+function smash_latest_post() {
+	$posts = get_posts( array( 'numberposts' => 1, 'post_type' => 'post' ) );
+	return $posts ? $posts[0] : null;
 }

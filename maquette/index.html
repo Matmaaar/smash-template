@@ -1,0 +1,1120 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>smash · fabrique de bières (proposition de skin)</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700,800,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* DA tirée du logo : noir & blanc · blocs décalés · la goutte · coins arrondis à l'extérieur.
+   La couleur vient uniquement des étiquettes et des photos. */
+:root{
+  --black:#0d0d0d; --white:#f7f6f2; --grey:#8b8a86; --line:rgba(247,246,242,.16); --line-d:rgba(13,13,13,.14);
+  --font:"Switzer","Inter Tight","Helvetica Neue",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --step:28px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--black)}
+body{color:var(--white);font-family:var(--font);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:hidden}
+.mono{font-family:var(--mono);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase}
+.big{font-weight:800;letter-spacing:-.055em;line-height:.86;text-transform:lowercase}
+.line-mask{padding-top:.1em;margin-top:-.1em}
+.drop{display:inline-block;flex:none;width:1.1em;height:.6em;background:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 20'%3E%3Cpath d='M10 0A10 10 0 1 0 10 20C17 20 22 13 34 12V8C22 7 17 0 10 0Z'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 20'%3E%3Cpath d='M10 0A10 10 0 1 0 10 20C17 20 22 13 34 12V8C22 7 17 0 10 0Z'/%3E%3C/svg%3E") center/contain no-repeat}
+.blk{display:inline-flex;align-items:center;gap:.8rem;padding:1rem 1.4rem;font-weight:700;text-transform:lowercase;font-size:1.05rem;background:var(--white);color:var(--black);border-radius:22px 0 22px 0;transition:border-radius .4s;white-space:nowrap}
+.blk:hover{border-radius:0 22px 0 22px}
+.blk .drop{width:1.4em;height:.8em;transition:transform .4s}
+.blk:hover .drop{transform:translateX(6px)}
+.blk.ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 2px currentColor}
+.blk.dark{background:var(--black);color:var(--white)}
+.stepped{clip-path:polygon(0 var(--step),50% var(--step),50% 0,100% 0,100% 100%,0 100%)}
+.stepped.flip{clip-path:polygon(0 0,50% 0,50% var(--step),100% var(--step),100% 100%,0 100%)}
+.light{background:var(--white);color:var(--black)}
+.sec{padding:16vh 3vw 12vh;position:relative}
+.head{display:grid;grid-template-columns:1fr auto;align-items:end;gap:2rem;margin-bottom:7vh}
+.head h2,.head h1{font-size:clamp(3rem,8.4vw,8.6rem)}
+.head p{max-width:36ch;line-height:1.45}
+.kick{display:flex;gap:.6rem;align-items:center;margin-bottom:2vh}
+.kick .drop{width:24px;height:14px}
+@media (max-width:800px){.head{grid-template-columns:1fr}}
+
+/* Contrôle d'âge */
+.gate{position:fixed;inset:0;z-index:300;background:var(--black);display:grid;place-items:center}
+.gate__in{display:grid;justify-items:center;gap:2.4rem;text-align:center;padding:0 6vw}
+.S{position:relative;aspect-ratio:1}
+.S i{position:absolute;inset:0;background:url(img/s-white.png) center/100% 100% no-repeat}
+.S i:nth-child(1){clip-path:inset(0 0 66.5% 0)}
+.S i:nth-child(2){clip-path:inset(33.3% 0 33.3% 0)}
+.S i:nth-child(3){clip-path:inset(66.5% 0 0 0)}
+.gate .S{width:min(200px,42vw)}
+.gate h1{font-size:clamp(2.6rem,7vw,5.6rem)}
+.gate__btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.gate small{color:var(--grey)}
+.gate__no{display:none;font-size:1.2rem}
+
+/* Header */
+/* ===== NAV : barre fixe, tout visible, mini mega menu bières ===== */
+.top{position:fixed;inset:0 0 auto 0;z-index:100;height:64px;display:flex;align-items:center;gap:2.2rem;padding:0 0 0 3vw;background:var(--black);color:var(--white);border-bottom:1px solid var(--line)}
+.top__logo{display:flex;align-items:center;gap:.6rem;font-weight:800;letter-spacing:-.05em;font-size:1.35rem;flex:none}
+.top__logo img{height:30px;width:auto;display:block}
+.top nav{display:flex;align-items:stretch;height:100%;gap:0;font-weight:600;text-transform:lowercase;flex:1;min-width:0}
+.top nav > a,.top nav .dd > a{display:flex;align-items:center;gap:.35rem;padding:0 1rem;height:100%;position:relative;white-space:nowrap;color:rgba(247,246,242,.72);transition:color .25s}
+.top nav > a:hover,.top nav .dd > a:hover,.top nav a.on,.dd.open > a{color:var(--white)}
+.top nav > a::after,.top nav .dd > a::after{content:"";position:absolute;left:1rem;right:calc(100% - 1rem);bottom:-1px;height:3px;background:var(--white);transition:right .4s cubic-bezier(.7,0,.2,1)}
+.top nav > a:hover::after,.top nav a.on::after,.dd.open > a::after{right:1rem}
+.dd{position:static;height:100%}
+.dd > a svg{width:9px;height:9px;transition:transform .3s}
+.dd.open > a svg{transform:rotate(180deg)}
+.top__cta{height:100%;flex:none;display:flex;align-items:center;gap:.7rem;padding:0 2rem;background:var(--white);color:var(--black);font-weight:800;text-transform:lowercase;border-radius:0 0 0 22px;transition:padding .4s cubic-bezier(.7,0,.2,1)}
+.top__cta .drop{width:1.3em;height:.75em;transition:transform .4s}
+.top__cta:hover{padding:0 2.4rem}
+.top__cta:hover .drop{transform:translateX(5px)}
+.top__cta.on{box-shadow:inset 0 -4px 0 var(--black)}
+/* le panneau */
+.mega{position:absolute;left:0;right:0;top:64px;background:var(--white);color:var(--black);border-bottom:2px solid var(--black);display:grid;grid-template-columns:330px 1fr;gap:3vw;padding:2rem 3vw 2.4rem;clip-path:inset(0 0 100% 0);visibility:hidden;transition:clip-path .45s cubic-bezier(.7,0,.2,1),visibility 0s .45s}
+.dd.open .mega{clip-path:inset(0 0 0 0);visibility:visible;transition:clip-path .45s cubic-bezier(.7,0,.2,1)}
+.mega__links{display:grid;align-content:start;gap:.2rem;border-right:1px solid var(--line-d);padding-right:2rem}
+.mega__links .mono{color:var(--grey);margin-bottom:.6rem}
+.mega__links a{white-space:nowrap;gap:1rem;font-size:1.5rem;font-weight:800;letter-spacing:-.04em;text-transform:lowercase;padding:.25rem 0;display:flex;justify-content:space-between;align-items:center}
+.mega__links a small{font-size:.8rem;font-weight:600;letter-spacing:0;color:var(--grey)}
+.mega__links a:hover{transform:translateX(6px)}
+.mega__links a{transition:transform .3s}
+.mega__labs{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem;align-content:start}
+.mega__labs a{display:grid;gap:.45rem}
+.mega__labs i{aspect-ratio:2;border-radius:6px;background-size:cover;background-position:center;transition:transform .35s cubic-bezier(.34,1.56,.64,1)}
+.mega__labs a:hover i{transform:translateY(-4px) rotate(-2deg)}
+.mega__labs b{font-weight:800;letter-spacing:-.03em;text-transform:lowercase}
+.mega__labs small{display:block;font-size:.75rem;color:var(--grey);font-weight:500}
+.top__mob{display:none}
+@media (max-width:1100px){.mega__labs{grid-template-columns:repeat(3,1fr)}}
+/* mobile : pas de burger, les liens restent en haut sur une 2e ligne qui défile */
+@media (max-width:860px){
+  .top{height:auto;flex-wrap:wrap;gap:0;padding:0}
+  .top__logo{height:56px;padding-left:4vw;flex:1}
+  .top__cta{height:56px;padding:0 1.2rem;order:2}
+  .top nav{order:3;flex:0 0 100%;height:44px;overflow-x:auto;scrollbar-width:none;border-top:1px solid var(--line);padding:0 .3rem}
+  .top nav::-webkit-scrollbar{display:none}
+  .top nav > a,.top nav .dd > a{padding:0 .8rem;font-size:.95rem}
+  .top nav > a::after,.top nav .dd > a::after{left:.8rem;right:calc(100% - .8rem)}
+  .top nav > a:hover::after,.top nav a.on::after{right:.8rem}
+  .dd > a svg,.mega{display:none}
+}
+.pipe{position:fixed;right:1.2vw;top:18vh;bottom:18vh;width:2px;background:var(--line);z-index:90;mix-blend-mode:difference}
+.pipe .drop{position:absolute;left:50%;top:0;width:30px;height:18px;color:#fff;transform:translate(-50%,-50%) rotate(-90deg)}
+@media (max-width:700px){.pipe{display:none}}
+
+/* Pages + transition (deux blocs décalés, comme le logo) */
+.page{display:none}
+.page.on{display:block}
+.wipe{position:fixed;inset:0;z-index:250;pointer-events:none;display:none}
+.wipe i{position:absolute;left:0;width:100%;height:50.5%;background:var(--white)}
+.wipe i:first-child{top:0}.wipe i:last-child{bottom:0}
+.wipe .S{position:absolute;left:50%;top:50%;width:110px;transform:translate(-50%,-50%)}
+.wipe .S i{position:absolute;background:url(img/s-black.png) center/100% 100% no-repeat;height:auto;inset:0}
+
+/* Hero */
+.hero{position:relative;height:100svh;min-height:620px;overflow:hidden}
+.hero__img{position:absolute;inset:-8% 0;background:url(img/hero.jpg) center/cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,13,13,.35),rgba(13,13,13,.1) 40%,rgba(13,13,13,.92))}
+.hero__in{position:absolute;inset:auto 3vw 6vh 3vw;z-index:2;display:grid;grid-template-columns:1fr auto;align-items:end;gap:4vw}
+.hero h1{font-size:clamp(4rem,13vw,13.5rem)}
+.hero__sub{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-top:3vh;align-items:flex-end}
+.hero__sub p{font-size:clamp(1.05rem,1.5vw,1.35rem);line-height:1.4;max-width:34ch}
+.hero .S{width:min(220px,20vw)}
+@media (max-width:800px){.hero__in{grid-template-columns:1fr}.hero .S{display:none}}
+
+/* Étiquettes (le seul visuel nécessaire) */
+.labels{display:grid;grid-template-columns:repeat(3,1fr);gap:3vw 2vw}
+.lab{display:block;perspective:900px;cursor:pointer}
+.lab__card{position:relative;aspect-ratio:2;border-radius:8px;background-size:cover;background-position:center;transform-style:preserve-3d;box-shadow:0 24px 40px -26px rgba(0,0,0,.55);will-change:transform}
+.lab__card::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.35),rgba(255,255,255,0) 45%);opacity:0;transition:opacity .3s;pointer-events:none}
+.lab:hover .lab__card::after{opacity:1}
+.lab__row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-top:1.1rem}
+.lab h3{font-size:clamp(1.5rem,2.4vw,2.3rem);font-weight:800;letter-spacing:-.045em;text-transform:lowercase}
+.lab .mono{color:#6c6b67}
+.lab__go{display:flex;gap:.5rem;align-items:center;font-weight:700;text-transform:lowercase;opacity:0;transform:translateX(-8px);transition:opacity .3s,transform .3s}
+.lab:hover .lab__go{opacity:1;transform:none}
+.ph{position:absolute;top:.6rem;left:.6rem;background:rgba(13,13,13,.75);color:#fff;padding:.25rem .45rem;border-radius:4px}
+.dark-sec .lab .mono{color:var(--grey)}
+@media (max-width:1000px){.labels{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.labels{grid-template-columns:1fr}}
+
+/* Dernier drop */
+.drop-sec{display:grid;grid-template-columns:1fr 1.1fr;gap:5vw;align-items:center}
+.drop-sec h2{font-size:clamp(4rem,12vw,12rem)}
+.drop-sec p{line-height:1.5;max-width:40ch;margin:2.4rem 0;color:rgba(247,246,242,.8)}
+.stack{position:relative;aspect-ratio:1.3}
+.flat{position:absolute;width:62%;aspect-ratio:2;border-radius:6px;background-size:cover;background-position:center;box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+.auto{display:inline-flex;gap:.5rem;align-items:center;border:1px dashed currentColor;opacity:.6;border-radius:6px;padding:.5rem .7rem}
+@media (max-width:900px){.drop-sec{grid-template-columns:1fr}}
+
+/* Mur */
+.wall{overflow:hidden;padding:2vh 0 12vh;display:grid;gap:1.4vw}
+.wall__row{display:flex;gap:1.4vw;width:max-content;will-change:transform}
+.tile{width:clamp(220px,26vw,420px);aspect-ratio:2;border-radius:6px;background-size:cover;background-position:center;position:relative;flex:none;cursor:pointer;transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
+.tile:hover{transform:scale(1.06) rotate(-1.5deg);z-index:2}
+.tile span{position:absolute;left:.7rem;bottom:.6rem;background:var(--black);color:var(--white);padding:.25rem .5rem;border-radius:4px;opacity:0;transition:opacity .3s}
+.tile:hover span{opacity:1}
+
+/* Teasers */
+.teaser{display:grid;grid-template-columns:1fr 1fr;gap:4vw;align-items:center}
+.teaser__img{border-radius:24px 0 24px 0;overflow:hidden;aspect-ratio:4/3;position:relative}
+.teaser__img div{position:absolute;inset:-10% 0;background-size:cover;background-position:center}
+.teaser p{font-size:clamp(1.4rem,2.6vw,2.4rem);font-weight:700;letter-spacing:-.035em;line-height:1.08;margin:2rem 0 2.6rem;text-transform:lowercase}
+@media (max-width:900px){.teaser{grid-template-columns:1fr}}
+
+/* Insta */
+.insta{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.post{aspect-ratio:1;border-radius:6px;overflow:hidden;position:relative}
+.post div{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .8s cubic-bezier(.16,1,.3,1)}
+.post:hover div{transform:scale(1.08)}
+.post.logo{background:var(--black);display:grid;place-items:center}
+.post.logo img{width:46%}
+@media (max-width:900px){.insta{grid-template-columns:repeat(2,1fr)}}
+
+/* Page intérieure : en-tête */
+.ph-head{padding:22vh 3vw 8vh}
+.ph-head h1{font-size:clamp(3.6rem,11vw,11rem)}
+.ph-head p{max-width:46ch;line-height:1.5;margin-top:3vh;font-size:1.1rem}
+.tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:5vh}
+.tab{padding:.6rem 1.1rem;border-radius:16px 0 16px 0;box-shadow:inset 0 0 0 2px currentColor;font-weight:700;text-transform:lowercase}
+.tab[aria-selected="true"]{background:var(--black);color:var(--white);box-shadow:none}
+.more-btn{margin-top:6vh;text-align:center}
+
+/* Fiche bière */
+.fiche{display:grid;grid-template-columns:1.15fr .85fr;gap:5vw;align-items:start}
+.fiche__label{position:sticky;top:14vh}
+.fiche__label .lab__card{box-shadow:0 40px 70px -30px rgba(0,0,0,.6)}
+.fiche dl{border-top:2px solid var(--black)}
+.fiche dl > div{display:grid;grid-template-columns:9rem 1fr;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line-d)}
+.fiche dt{color:#6c6b67}
+.fiche dd{line-height:1.5}
+.fiche .intro{font-size:clamp(1.4rem,2.2vw,2rem);font-weight:700;letter-spacing:-.03em;line-height:1.15;margin:2rem 0 3rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap}
+.chip{border:1.5px solid currentColor;border-radius:12px 0 12px 0;padding:.3rem .65rem;font-size:.9rem}
+.miss{color:#a9a7a1;font-style:italic}
+@media (max-width:900px){.fiche{grid-template-columns:1fr}.fiche__label{position:relative;top:0}}
+
+/* Brasserie */
+.brew{display:grid;grid-template-columns:.9fr 1.1fr;gap:5vw;align-items:start}
+.brew__photo{position:sticky;top:12vh;border-radius:24px 0 24px 0;overflow:hidden;aspect-ratio:775/997}
+.brew__photo div{position:absolute;inset:-10% 0;background:url(img/can-affluence.jpg) center/cover}
+.brew__big{font-size:clamp(2rem,4vw,3.8rem);font-weight:800;letter-spacing:-.045em;line-height:.98;text-transform:lowercase}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--black);margin-top:6vh}
+.stats div{padding:1.4rem 1rem 1.4rem 0}
+.stats b{display:block;font-size:clamp(2.6rem,5vw,4.6rem);font-weight:800;letter-spacing:-.05em;line-height:1}
+.values{list-style:none;margin-top:6vh;border-top:2px solid var(--black)}
+.values li{display:grid;grid-template-columns:auto 1fr;gap:1.4rem;padding:1.6rem 0;border-bottom:1px solid var(--line-d)}
+.values .drop{width:34px;height:20px;margin-top:.4rem}
+.values h3{font-size:1.6rem;font-weight:800;letter-spacing:-.03em;text-transform:lowercase}
+.values p{line-height:1.5;margin-top:.4rem;max-width:52ch}
+.team{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
+.mate{border:2px solid currentColor;border-radius:18px 0 18px 0;padding:1.2rem;min-height:190px;display:flex;flex-direction:column;justify-content:space-between;transition:background .3s,color .3s}
+.mate:hover{background:var(--white);color:var(--black)}
+.mate b{font-size:1.7rem;font-weight:800;letter-spacing:-.04em;text-transform:lowercase}
+.mate p{font-size:.9rem;line-height:1.35;opacity:.75;margin-top:.5rem}
+.mate.dog{background:var(--white);color:var(--black)}
+.equip{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.equip div{border-top:2px solid currentColor;padding-top:1rem}
+.equip b{display:block;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:800;letter-spacing:-.04em;line-height:1}
+.equip p{margin-top:.6rem;line-height:1.4;opacity:.8}
+@media (max-width:1000px){.brew{grid-template-columns:1fr}.brew__photo{position:relative;top:0}.team{grid-template-columns:repeat(2,1fr)}.equip{grid-template-columns:1fr 1fr}}
+
+/* ================= LOCATION : UN SEUL MODULE ================= */
+.rent{display:grid;grid-template-columns:1fr 380px;gap:2vw;align-items:start}
+.board{border:2px solid var(--black);border-radius:30px 0 30px 0;overflow:hidden;background:#fbfaf7}
+.brow{display:grid;grid-template-columns:170px 1fr;gap:2rem;padding:1.6rem 1.8rem;border-bottom:1px solid var(--line-d);align-items:start}
+.brow:last-child{border-bottom:0}
+.brow__k{display:grid;gap:.25rem;padding-top:.55rem;color:var(--black)}
+.brow__k b{font-weight:500;color:#9a9893}
+.brow__k small{color:#8a8984;text-transform:none;letter-spacing:0;font-family:var(--font);font-size:.82rem}
+/* segmenté avec pastille qui glisse */
+.seg{position:relative;display:inline-grid;grid-auto-flow:column;grid-auto-columns:1fr;background:#ebe9e3;border-radius:18px 0 18px 0;padding:4px;isolation:isolate}
+.seg button{position:relative;z-index:1;padding:.85rem 1.4rem;font-weight:700;text-transform:lowercase;font-size:1.05rem;transition:color .3s;white-space:nowrap}
+.seg button.on{color:var(--white)}
+.seg__pill{position:absolute;z-index:0;top:4px;bottom:4px;left:4px;background:var(--black);border-radius:15px 0 15px 0}
+.seg.small button{padding:.6rem 1rem;font-size:.95rem}
+.when{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;max-width:520px}
+.fld{display:grid;gap:.35rem}
+.fld .mono{color:#6c6b67}
+.fld em{font-style:normal;color:#a9a7a1}
+.fld input[type=date]{border:0;border-bottom:2px solid var(--black);background:transparent;padding:.4rem 0;font-size:1.05rem;font-weight:600;outline:none;border-radius:0}
+.fld small{font-size:.8rem;color:#6c6b67;min-height:1em}
+.fld small.bad{color:#c02b0a;font-weight:700}
+.fld small.ok{color:#1c7c3a}
+.fld input[type=range]{width:100%;accent-color:var(--black);margin:.55rem 0 .2rem}
+.fill{margin-left:.4rem;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+/* tuiles fûts = étiquettes */
+.kegs{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem}
+.keg{position:relative;text-align:left;border-radius:10px;padding:0;display:flex;flex-direction:column}
+.keg .stepper{margin-top:auto}
+.keg__meta{margin-bottom:.6rem}
+.keg__lab{aspect-ratio:2;border-radius:8px;background-size:cover;background-position:center;transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .3s;box-shadow:0 0 0 0 var(--black)}
+
+.keg.has .keg__lab{box-shadow:0 0 0 3px var(--black)}
+.keg__meta{display:flex;justify-content:space-between;align-items:baseline;gap:.4rem;margin-top:.5rem}
+.keg__meta b{font-weight:800;letter-spacing:-.03em;text-transform:lowercase;font-size:1.05rem}
+.keg__meta span{font-size:.85rem;font-weight:600;white-space:nowrap}
+.keg__meta small{display:block;color:#8a8984;font-size:.75rem}
+.stepper{display:grid;grid-template-columns:40px 1fr 40px;align-items:center;border:2px solid var(--black);border-radius:14px 0 14px 0;overflow:hidden;margin-top:.6rem;background:#fff}
+.stepper button{height:40px;font-size:1.35rem;font-weight:800;transition:background .2s,color .2s}
+.stepper button:hover{background:var(--black);color:var(--white)}
+.stepper input{width:100%;min-width:0;text-align:center;border:0;background:transparent;font-size:1.15rem;font-weight:800;outline:none;-moz-appearance:textfield;font-variant-numeric:tabular-nums}
+.stepper input::-webkit-outer-spin-button,.stepper input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.keg.has .stepper{background:var(--black);color:var(--white)}
+.keg.has .stepper button:hover{background:var(--white);color:var(--black)}
+.stepper.big{width:200px;margin-top:0}
+.cupsq{display:none;align-items:center;gap:1rem}
+.cupsq.on{display:flex}
+.keg__n{position:absolute;top:-.55rem;right:-.55rem;min-width:30px;height:30px;padding:0 .4rem;border-radius:15px 0 15px 0;background:var(--black);color:var(--white);display:grid;place-items:center;font-weight:800;transform:scale(0)}
+.keg__minus{position:absolute;top:-.55rem;left:-.55rem;width:28px;height:28px;border-radius:50%;background:var(--white);border:2px solid var(--black);font-weight:800;line-height:1;display:none}
+.keg.has .keg__minus{display:block}
+.keg.eph .keg__lab{background:#ebe9e3;display:grid;place-items:center;font-weight:800;text-transform:lowercase;letter-spacing:-.03em;font-size:1.2rem;border:2px dashed #b8b6b0}
+/* tireuses */
+.taps{grid-template-columns:1fr 1fr;gap:.8rem}
+.tapt{display:grid;grid-template-columns:1fr auto;gap:.15rem 1rem;text-align:left;border:2px solid var(--black);border-radius:18px 0 18px 0;padding:1rem 1.2rem;transition:background .25s,color .25s}
+.tapt b{font-size:1.5rem;font-weight:800;letter-spacing:-.04em}
+.tapt span{grid-column:1;font-size:.88rem;opacity:.7}
+.tapt em{grid-column:2;grid-row:1/3;align-self:center;font-style:normal;font-weight:800;font-size:1.2rem}
+.tapt .stepper{grid-column:1/-1;margin-top:.7rem;background:transparent}
+.tapt.has{background:var(--black);color:var(--white)}
+.tapt.has .stepper{border-color:var(--white)}
+.tapt.has .stepper button:hover{background:var(--white);color:var(--black)}
+.tapt em s{opacity:.5;margin-right:.35rem;font-weight:500}
+.chipset{display:flex;flex-wrap:wrap;gap:.5rem}
+.chipset button{border:2px solid var(--black);border-radius:14px 0 14px 0;padding:.6rem 1rem;font-weight:700;text-transform:lowercase;transition:background .25s,color .25s}
+.chipset button.on{background:var(--black);color:var(--white)}
+.cups{display:grid;gap:.6rem;justify-items:start}
+.cups .mono{color:#8a8984}
+/* ticket */
+.ticket{position:sticky;top:12vh;background:var(--black);color:var(--white);border-radius:30px 0 30px 0;padding:1.6rem;overflow:hidden}
+.ticket__top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1rem}
+.ticket h3{font-size:1.7rem;font-weight:800;letter-spacing:-.04em}
+.ticket__top .mono{color:var(--grey)}
+.ticket ul{list-style:none;display:grid;gap:.45rem;min-height:72px}
+.ticket li{display:flex;justify-content:space-between;gap:1rem;font-size:.95rem}
+.ticket li span:last-child{font-variant-numeric:tabular-nums;white-space:nowrap}
+.ticket li.empty{color:var(--grey)}
+.ticket li.free span:last-child{background:var(--white);color:var(--black);padding:0 .35rem;border-radius:4px;font-weight:700}
+.ticket__total{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--line);margin-top:1rem;padding-top:.9rem}
+.ticket__total b{font-size:3.2rem;font-weight:800;letter-spacing:-.05em;line-height:1;font-variant-numeric:tabular-nums}
+.nudge{margin-top:1rem;background:var(--white);color:var(--black);border-radius:14px 0 14px 0;padding:.7rem .9rem;font-size:.9rem;line-height:1.35;display:flex;gap:.6rem;align-items:flex-start}
+.nudge .drop{width:22px;height:13px;margin-top:.25rem}
+.ticket__form{display:grid;gap:.6rem;margin-top:1.2rem;border-top:1px solid var(--line);padding-top:1.2rem}
+.ticket__form input{background:transparent;border:0;border-bottom:1.5px solid rgba(247,246,242,.35);color:var(--white);padding:.55rem 0;outline:none;font-size:1rem;width:100%}
+.ticket__form input:focus{border-color:var(--white)}
+.ticket__form .two{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.ticket__form .blk{margin-top:.6rem;justify-content:center}
+.ticket__foot{color:var(--grey);margin-top:.9rem;text-transform:none;letter-spacing:0;font-family:var(--font);font-size:.8rem}
+.ticket__done{display:none;padding:1rem 0}
+.ticket__done b{font-size:2.6rem;font-weight:800;letter-spacing:-.05em}
+.ticket__done p{color:var(--grey);margin-top:.4rem}
+.fly{position:fixed;z-index:200;border-radius:6px;background-size:cover;background-position:center;pointer-events:none}
+@media (max-width:1100px){.rent{grid-template-columns:1fr}.ticket{position:relative;top:0}}
+@media (max-width:760px){.brow{grid-template-columns:1fr;gap:.8rem;padding:1.3rem 1.1rem}.when{grid-template-columns:1fr 1fr}.ppl{grid-column:1/-1}.kegs{grid-template-columns:repeat(2,1fr)}.taps{grid-template-columns:1fr}.seg button{padding:.75rem .9rem;font-size:.95rem}}
+
+.faq{border-top:2px solid var(--black)}
+.faq details{border-bottom:1px solid var(--line-d)}
+.faq summary{list-style:none;cursor:pointer;padding:1rem 0;font-weight:700;font-size:1.1rem;display:flex;justify-content:space-between}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono)}
+.faq details[open] summary::after{content:"–"}
+.faq p{padding:0 0 1.1rem;line-height:1.5;color:#4d4c48;max-width:62ch}
+/* Blog */
+.posts{border-top:2px solid var(--black)}
+.post-row{display:grid;grid-template-columns:9rem 1fr auto;gap:2rem;align-items:center;padding:1.6rem 0;border-bottom:1px solid var(--line-d);cursor:pointer;transition:padding .3s}
+.post-row:hover{padding-left:1rem}
+.post-row h3{font-size:clamp(1.6rem,3.2vw,3rem);font-weight:800;letter-spacing:-.045em;line-height:1;text-transform:lowercase}
+.post-row .mini{display:flex}
+.post-row .mini i{width:70px;aspect-ratio:2;border-radius:3px;background-size:cover;margin-left:-22px;box-shadow:0 6px 14px -6px rgba(0,0,0,.4);transition:margin .4s}
+.post-row:hover .mini i{margin-left:4px}
+@media (max-width:800px){.post-row{grid-template-columns:1fr}.post-row .mini{display:none}}
+.article{max-width:860px;margin:0 auto}
+.article p{font-size:1.15rem;line-height:1.65;margin-bottom:1.4rem}
+.article .labels{grid-template-columns:repeat(2,1fr);margin:4vh 0}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4vw}
+.cbox{border:2px solid var(--black);border-radius:26px 0 26px 0;padding:2rem}
+.cbox b{font-size:clamp(2rem,3.6vw,3.4rem);font-weight:800;letter-spacing:-.05em;line-height:.95;display:block;margin-bottom:1.2rem;text-transform:lowercase}
+.cbox p{line-height:1.6}
+@media (max-width:900px){.contact-grid{grid-template-columns:1fr}}
+
+/* Téléchargements */
+.dl{border-top:2px solid var(--black)}
+.dl a{display:grid;grid-template-columns:1fr auto auto;gap:2rem;align-items:center;padding:1.3rem 0;border-bottom:1px solid var(--line-d)}
+.dl b{font-size:clamp(1.4rem,2.6vw,2.4rem);font-weight:800;letter-spacing:-.04em;text-transform:lowercase}
+.dl a:hover b{text-decoration:underline;text-underline-offset:6px}
+
+/* Footer */
+.foot{padding:14vh 3vw 3vh;background:var(--black);color:var(--white)}
+.foot__word{display:grid;line-height:.82;letter-spacing:-.06em}
+.foot__word b{font-size:clamp(6rem,27vw,30rem);font-weight:700}
+.foot__word span{font-size:clamp(2rem,8.2vw,9rem);font-weight:500;letter-spacing:-.04em;padding-left:.05em}
+.foot__cols{display:grid;grid-template-columns:repeat(5,1fr);gap:2rem;margin-top:8vh;line-height:1.7;border-top:1px solid var(--line);padding-top:1.4rem}
+.foot__cols .mono{color:var(--grey);margin-bottom:.6rem}
+.foot__cols a:hover{text-decoration:underline}
+.nl{display:flex;border-bottom:2px solid var(--white);margin-top:.4rem}
+.nl input{flex:1;min-width:0;background:none;border:0;outline:none;color:var(--white);padding:.5rem 0}
+.legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-top:8vh;color:var(--grey)}
+@media (max-width:900px){.foot__cols{grid-template-columns:1fr 1fr}}
+.note{position:fixed;right:3.4vw;bottom:2.4vh;z-index:95;background:var(--white);color:var(--black);border-radius:14px 0 14px 0;padding:.7rem .9rem;max-width:300px;line-height:1.35;font-size:.82rem;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.note b{display:block;font-family:var(--mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.25rem}
+.note button{position:absolute;top:.3rem;right:.5rem}
+@media (max-width:700px){.note{display:none}}
+</style>
+</head>
+<body>
+
+<div class="gate" id="gate">
+  <div class="gate__in">
+    <div class="S" id="gateS"><i></i><i></i><i></i></div>
+    <h1 class="big">t'as 18 ans ?</h1>
+    <div class="gate__btns">
+      <button class="blk" id="yes">oui, on y va <span class="drop"></span></button>
+      <button class="blk ghost" id="no">non</button>
+    </div>
+    <p class="gate__no" id="nomsg">reviens dans quelques années, on t'en gardera une.</p>
+    <small class="mono">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</small>
+  </div>
+</div>
+<div class="wipe" id="wipe"><i></i><i></i><div class="S"><i></i></div></div>
+
+<header class="top" id="top">
+  <a href="#/" class="top__logo"><img src="img/s-white.png" alt="">smash</a>
+  <nav id="nav">
+    <div class="dd" id="dd-b">
+      <a href="#/bieres" data-r="bieres">nos bières <svg viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
+      <div class="mega">
+        <div class="mega__links">
+          <span class="mono">la gamme</span>
+          <a href="#/bieres/perm">permanentes <small>6</small></a>
+          <a href="#/bieres/eph">éphémères <small>en ce moment</small></a>
+          <a href="#/bieres/old">anciennes éphémères <small>archives</small></a>
+        </div>
+        <div class="mega__labs" id="mm-labs"></div>
+      </div>
+    </div>
+    <a href="#/brasserie" data-r="brasserie">la brasserie</a>
+    <a href="#/blog" data-r="blog">le blog</a>
+    <a href="#/contact" data-r="contact">contact</a>
+    <a href="#/telechargements" data-r="telechargements">téléchargements</a>
+  </nav>
+  <a href="#/location" class="top__cta" data-r="location">devis tireuse <span class="drop"></span></a>
+</header>
+<div class="pipe" aria-hidden="true"><span class="drop" id="pipedrop"></span></div>
+
+<!-- ======================= ACCUEIL ======================= -->
+<main class="page" data-page="home">
+  <section class="hero">
+    <div class="hero__img" data-par></div>
+    <div class="hero__in">
+      <div>
+        <div class="kick mono"><span class="drop"></span>microbrasserie craft · rennes</div>
+        <h1 class="big" data-lines>fabrique<br>de bières.</h1>
+        <div class="hero__sub">
+          <p>Des bières artisanales de qualité, innovantes et créatives. Une gamme permanente, et des éphémères qui ne restent jamais longtemps.</p>
+          <a href="#/bieres" class="blk">nos bières <span class="drop"></span></a>
+        </div>
+      </div>
+      <div class="S" id="heroS"><i></i><i></i><i></i></div>
+    </div>
+  </section>
+
+  <section class="sec light stepped">
+    <div class="head">
+      <div><div class="kick mono"><span class="drop"></span>gamme permanente</div><h2 class="big" data-up>toujours<br>à la pompe.</h2></div>
+      <a href="#/bieres" class="blk dark">toutes nos bières <span class="drop"></span></a>
+    </div>
+    <div class="labels" data-labels="perm"></div>
+  </section>
+
+  <section class="sec stepped flip">
+    <div class="drop-sec">
+      <div>
+        <div class="kick mono"><span class="drop"></span>bières éphémères · 28 avril 2026</div>
+        <h2 class="big" data-up>série<br>#21</h2>
+        <p>Nouvelle fournée d'éphémères, brassées en petite quantité et disponibles jusqu'à épuisement. Quand c'est fini, c'est fini.</p>
+        <a href="#/blog/serie-21" class="blk">lire l'article <span class="drop"></span></a>
+        <div style="margin-top:2rem"><span class="auto mono">⚙ se met à jour seul avec le dernier article du blog</span></div>
+      </div>
+      <div class="stack" data-stack></div>
+    </div>
+  </section>
+
+  <section class="light stepped">
+    <div class="sec head" style="padding-bottom:6vh;margin-bottom:0">
+      <div><div class="kick mono"><span class="drop"></span>les éphémères</div><h2 class="big" data-up>toutes nos<br>étiquettes.</h2></div>
+      <p>Chaque éphémère a sa propre étiquette. Elles sont toutes là, depuis le premier brassin.</p>
+    </div>
+    <div class="wall" data-wall></div>
+  </section>
+
+  <section class="sec stepped flip">
+    <div class="teaser">
+      <div class="teaser__img"><div data-par style="background-image:url(img/can-affluence.jpg)"></div></div>
+      <div>
+        <div class="kick mono"><span class="drop"></span>la brasserie</div>
+        <p>La créativité d'une brasserie craft, la régularité d'une plus grosse production. Et des bières jamais filtrées.</p>
+        <a href="#/brasserie" class="blk">découvrir la brasserie <span class="drop"></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec light stepped">
+    <div class="teaser">
+      <div>
+        <div class="kick mono"><span class="drop"></span>location de tireuses</div>
+        <h2 class="big" data-up style="font-size:clamp(3rem,7vw,7rem)">la pression<br>chez toi.</h2>
+        <p>Tireuse, fûts, éco-cups : le devis se calcule en direct, en 2 minutes.</p>
+        <a href="#/location" class="blk dark">préparer ma location <span class="drop"></span></a>
+      </div>
+      <div class="teaser__img"><div data-par style="background-image:url(img/hero.jpg)"></div></div>
+    </div>
+  </section>
+
+  <section class="sec stepped flip">
+    <div class="head">
+      <div><div class="kick mono"><span class="drop"></span>@brasserie_smash</div><h2 class="big" data-up>la suite<br>sur insta.</h2></div>
+      <a href="#" class="blk">nous suivre <span class="drop"></span></a>
+    </div>
+    <div class="insta">
+      <a href="#" class="post"><div style="background-image:url(img/can-affluence.jpg)"></div></a>
+      <a href="#" class="post"><div style="background-image:url(img/label-affluence.jpg);background-position:20% center"></div></a>
+      <a href="#" class="post"><div style="background-image:url(img/hero.jpg)"></div></a>
+      <a href="#" class="post logo"><img src="img/logo-white.png" alt=""></a>
+    </div>
+  </section>
+</main>
+
+<!-- ======================= NOS BIÈRES ======================= -->
+<main class="page light" data-page="bieres">
+  <div class="ph-head">
+    <div class="kick mono"><span class="drop"></span>nos bières</div>
+    <h1 class="big" data-lines>la qualité<br>avant tout.</h1>
+    <p>Une gamme permanente de classiques revisités, et une gamme éphémère brassée selon nos envies. Clique sur une étiquette pour ouvrir sa fiche.</p>
+  </div>
+  <section class="sec" style="padding-top:2vh">
+    <div class="tabs" id="btabs">
+      <button class="tab" data-t="perm" aria-selected="true">permanentes · 6</button>
+      <button class="tab" data-t="eph" aria-selected="false">éphémères en ce moment</button>
+      <button class="tab" data-t="old" aria-selected="false">anciennes éphémères</button>
+    </div>
+    <div class="labels" id="blist"></div>
+    <div class="more-btn" id="bmore"><button class="blk dark">voir plus <span class="drop"></span></button></div>
+  </section>
+</main>
+
+<!-- ======================= FICHE BIÈRE ======================= -->
+<main class="page light" data-page="fiche">
+  <section class="sec" style="padding-top:20vh">
+    <a href="#/bieres" class="mono" style="display:inline-flex;gap:.5rem;align-items:center;margin-bottom:4vh">← toutes nos bières</a>
+    <div class="fiche" id="fiche"></div>
+  </section>
+</main>
+
+<!-- ======================= LA BRASSERIE ======================= -->
+<main class="page" data-page="brasserie">
+  <div class="ph-head">
+    <div class="kick mono"><span class="drop"></span>la brasserie</div>
+    <h1 class="big" data-lines>craft,<br>mais carré.</h1>
+    <p>Une nouvelle microbrasserie craft, à deux pas de la rocade rennaise pour livrer facilement.</p>
+  </div>
+  <section class="sec light stepped">
+    <div class="brew">
+      <div class="brew__photo"><div data-par></div></div>
+      <div>
+        <p class="brew__big" data-words>Une brasserie hybride : la créativité d'une brasserie craft, la régularité d'une plus grosse production.</p>
+        <div class="stats">
+          <div><b data-n="10">0</b><span class="mono">hL · salle de brassage</span></div>
+          <div><b data-n="40">0</b><span class="mono">hL · plus gros fermenteur</span></div>
+          <div><b data-n="0">0</b><span class="mono">filtration</span></div>
+        </div>
+        <ul class="values">
+          <li><span class="drop"></span><div><h3>créativité</h3><p>Sortir des conventions du brassage pour proposer des bières variées et ambitieuses. L'équipe de production cherche sans cesse de nouvelles idées.</p></div></li>
+          <li><span class="drop"></span><div><h3>qualité</h3><p>Des matières premières sélectionnées avec soin et un matériel fiable : la qualité, c'est notre ligne directrice.</p></div></li>
+          <li><span class="drop"></span><div><h3>deux gammes complémentaires</h3><p>Une gamme permanente de styles classiques, et une gamme éphémère qui tourne au gré des envies de l'équipe.</p></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="sec stepped flip">
+    <div class="head"><div><div class="kick mono"><span class="drop"></span>le matériel</div><h2 class="big" data-up>les machines.</h2></div><p>La majorité du matériel vient d'EasyBrau, en Italie.</p></div>
+    <div class="equip">
+      <div><b>10 hL</b><p>Salle de brassage, avec une cuve tampon pour les doubles brassins.</p></div>
+      <div><b>10 → 40 hL</b><p>Fermenteurs isobares.</p></div>
+      <div><b>centrifugeuse</b><p>Alfa Laval : elle retire résidus de houblon, particules et levures.</p></div>
+      <div><b>non filtrée</b><p>Pour garder tous les arômes de la bière.</p></div>
+    </div>
+  </section>
+  <section class="sec">
+    <div class="head"><div><div class="kick mono"><span class="drop"></span>la team smash</div><h2 class="big" data-up>ceux qui<br>brassent.</h2></div><p>Les photos de l'équipe existent déjà sur le site actuel, elles se placent ici.</p></div>
+    <div class="team" id="team"></div>
+  </section>
+</main>
+
+<!-- ======================= LOCATION : UN SEUL MODULE ======================= -->
+<main class="page light" data-page="location">
+  <div class="ph-head" style="padding-bottom:5vh">
+    <div class="kick mono"><span class="drop"></span>location de tireuses & fûts</div>
+    <h1 class="big" data-lines>ton devis<br>en 1 minute.</h1>
+    <p>Tout est sur un seul écran : clique, le prix se met à jour pendant que tu choisis.</p>
+  </div>
+  <section class="sec" style="padding-top:0">
+    <div class="rent" id="rent">
+      <div class="board">
+        <!-- tu es -->
+        <div class="brow">
+          <div class="brow__k mono"><b>01</b>tu es</div>
+          <div class="seg" id="seg-prof"><button data-v="part" class="on">un particulier</button><button data-v="pro">un pro / une asso</button><i class="seg__pill"></i></div>
+        </div>
+        <!-- quand + combien -->
+        <div class="brow">
+          <div class="brow__k mono"><b>02</b>quand</div>
+          <div class="brow__v when">
+            <label class="fld"><span class="mono">retrait <em>mer – ven</em></span><input type="date" id="r-pick"><small id="h-pick"></small></label>
+            <label class="fld"><span class="mono">retour <em>lun – mar</em></span><input type="date" id="r-back"><small id="h-back"></small></label>
+          </div>
+        </div>
+        <!-- fûts -->
+        <div class="brow">
+          <div class="brow__k mono"><b>03</b>les fûts<small>indique le nombre de fûts par bière</small></div>
+          <div class="kegs" id="kegs"></div>
+        </div>
+        <!-- tireuse (particulier) / matériel (pro) -->
+        <div class="brow">
+          <div class="brow__k mono"><b>04</b><span class="part-only" style="display:inline">les tireuses</span><span class="pro-only" style="display:none">le matériel</span><small class="part-only" style="display:block">autant qu'il t'en faut · une 1 bec offerte dès 3 fûts</small></div>
+          <div>
+            <div class="taps part-only" id="taps" style="display:grid">
+              <div class="tapt" data-t="t1"><b>1 bec</b><span>une bière à la fois</span><em data-p="50">50 €</em>
+                <div class="stepper"><button data-d="-1" aria-label="retirer une tireuse 1 bec">−</button><input type="number" min="0" value="0" inputmode="numeric" aria-label="tireuses 1 bec"><button data-d="1" aria-label="ajouter une tireuse 1 bec">+</button></div></div>
+              <div class="tapt" data-t="t2"><b>2 becs</b><span>deux bières en même temps</span><em data-p="80">80 €</em>
+                <div class="stepper"><button data-d="-1" aria-label="retirer une tireuse 2 becs">−</button><input type="number" min="0" value="0" inputmode="numeric" aria-label="tireuses 2 becs"><button data-d="1" aria-label="ajouter une tireuse 2 becs">+</button></div></div>
+            </div>
+            <div class="chipset pro-only" id="gear" style="display:none">
+              <button data-g="t2">tireuse 2 becs sur bloc de glace</button><button data-g="barnum">barnums</button><button data-g="comptoir">comptoirs de bar</button><button data-g="tables">tables & bancs</button><button data-g="softs">softs, vin, cidre</button>
+            </div>
+          </div>
+        </div>
+        <!-- gobelets -->
+        <div class="brow">
+          <div class="brow__k mono"><b>05</b>gobelets</div>
+          <div class="cups">
+            <div class="seg small" id="seg-cups"><button data-v="0" class="on">j'ai les miens</button><button data-v="20">éco-cups 20 cl</button><button data-v="50">éco-cups 50 cl</button><i class="seg__pill"></i></div>
+            <div class="cupsq" id="cupsq"><span class="mono">combien ?</span><div class="stepper big"><button data-d="-50" aria-label="moins 50">−</button><input type="number" id="cups-n" min="0" step="10" value="100" inputmode="numeric"><button data-d="50" aria-label="plus 50">+</button></div></div>
+            <small class="mono" id="cups-info">0,30 € pièce, lavage inclus · 1 € si perdu</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- le ticket : récap + envoi, toujours visible -->
+      <aside class="ticket" id="ticket">
+        <div class="ticket__top"><h3>ton devis</h3><span class="mono" id="t-mode">particulier</span></div>
+        <ul id="t-list"><li class="empty">ajoute des fûts pour commencer</li></ul>
+        <div class="ticket__total"><span class="mono">total ttc</span><b id="t-total">0 €</b></div>
+        <div class="nudge" id="t-nudge"><span class="drop"></span><span>Encore 3 fûts et une tireuse 1 bec est offerte.</span></div>
+        <div class="ticket__form" id="t-form">
+          <input placeholder="prénom et nom" id="t-name">
+          <div class="two"><input placeholder="email" type="email" id="t-mail"><input placeholder="téléphone" type="tel" id="t-tel"></div>
+          <button class="blk" id="t-send">envoyer ma demande <span class="drop"></span></button>
+        </div>
+        <p class="ticket__foot mono">+ caution 200 € au retrait · on te recontacte pour confirmer</p>
+        <div class="ticket__done" id="t-done"><b>c'est envoyé.</b><p>On revient vers toi très vite. (démo)</p></div>
+      </aside>
+    </div>
+
+    <div class="faq" style="margin-top:12vh;max-width:900px">
+      <details><summary>Comment fonctionne la tireuse ?</summary><p>Un guide est fourni pour les tireuses CO2 et à froid sec. La bière est prête en moins de 10 minutes.</p></details>
+      <details><summary>Je peux avoir une éphémère en fût ?</summary><p>Oui, sur demande et selon le stock : clique sur la tuile « une éphémère », on te propose ce qui est dispo.</p></details>
+      <details><summary>Les pros, ça marche comment ?</summary><p>Tarifs sur devis. Livraison et reprise offertes dès 12 fûts dans un rayon de 15 km, l'installation reste à votre charge. Gobelets 20 cl, 50 cl et verres à vin, quantités à définir ensemble.</p></details>
+      <details><summary>Le matériel se rend comment ?</summary><p>Propre et en bon état, le lundi ou le mardi de 9 h à 17 h. Caution de 200 € au retrait.</p></details>
+    </div>
+  </section>
+</main>
+
+<!-- ======================= BLOG ======================= -->
+<main class="page light" data-page="blog">
+  <div class="ph-head">
+    <div class="kick mono"><span class="drop"></span>le blog</div>
+    <h1 class="big" data-lines>les sorties<br>du moment.</h1>
+    <p>Chaque nouvelle série d'éphémères, annoncée ici. Les étiquettes s'affichent automatiquement à partir des bières liées à l'article.</p>
+  </div>
+  <section class="sec" style="padding-top:0"><div class="posts" id="posts"></div></section>
+</main>
+
+<main class="page light" data-page="article">
+  <section class="sec" style="padding-top:20vh">
+    <div class="article">
+      <a href="#/blog" class="mono">← le blog</a>
+      <div class="kick mono" style="margin-top:4vh"><span class="drop"></span><span id="a-date"></span></div>
+      <h1 class="big" id="a-title" style="font-size:clamp(3rem,8vw,7rem)"></h1>
+      <div class="labels" id="a-labels"></div>
+      <p>Texte de l'article repris tel quel du blog actuel : présentation de la série, des bières, des collabs et des formats (fût et/ou canette).</p>
+      <p>Comme aujourd'hui, l'équipe écrit l'article dans WordPress et lie les bières concernées. Le site s'occupe de la mise en page et des étiquettes.</p>
+    </div>
+  </section>
+</main>
+
+<!-- ======================= CONTACT ======================= -->
+<main class="page light" data-page="contact">
+  <div class="ph-head">
+    <div class="kick mono"><span class="drop"></span>contact</div>
+    <h1 class="big" data-lines>on se<br>parle ?</h1>
+  </div>
+  <section class="sec" style="padding-top:0">
+    <div class="contact-grid">
+      <div class="cbox"><b>la brasserie</b><p>4 bis K, rue du Lieutenant Colonel Dubois<br>35000 Rennes</p><p class="mono" style="margin-top:1rem">du lundi au vendredi · 9 h – 18 h</p><p class="mono" style="margin-top:.4rem;color:#6c6b67">email et téléphone : ceux du site actuel</p><a href="#" class="blk dark" style="margin-top:2rem">itinéraire <span class="drop"></span></a></div>
+      <div class="cbox"><b>écris-nous</b>
+        <div class="field"><label>nom</label><input></div>
+        <div class="field"><label>email</label><input type="email"></div>
+        <div class="field"><label>message</label><textarea rows="4"></textarea></div>
+        <button class="blk dark">envoyer <span class="drop"></span></button>
+        <p class="mono" style="margin-top:1rem;color:#6c6b67">→ leur formulaire Gravity Forms actuel, restylé</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ======================= TÉLÉCHARGEMENTS ======================= -->
+<main class="page light" data-page="telechargements">
+  <div class="ph-head"><div class="kick mono"><span class="drop"></span>téléchargements</div><h1 class="big" data-lines>à télé-<br>charger.</h1><p>Les fichiers de la page actuelle, présentés proprement.</p></div>
+  <section class="sec" style="padding-top:0"><div class="dl">
+    <a href="#"><b>logos smash</b><span class="mono">zip</span><span class="drop" style="transform:rotate(90deg)"></span></a>
+    <a href="#"><b>fiches produits</b><span class="mono">pdf</span><span class="drop" style="transform:rotate(90deg)"></span></a>
+    <a href="#"><b>guide tireuse CO2</b><span class="mono">pdf</span><span class="drop" style="transform:rotate(90deg)"></span></a>
+    <a href="#"><b>guide tireuse froid sec</b><span class="mono">pdf</span><span class="drop" style="transform:rotate(90deg)"></span></a>
+  </div><p class="mono" style="margin-top:2rem;color:#6c6b67">liste à reprendre de la page actuelle</p></section>
+</main>
+
+<footer class="foot">
+  <div class="foot__word"><b>smash</b><span>fabrique de bières</span></div>
+  <div class="foot__cols">
+    <div><div class="mono">adresse</div>4 bis K, rue du Lt Colonel Dubois<br>35000 Rennes</div>
+    <div><div class="mono">horaires</div>du lundi au vendredi<br>9 h – 18 h</div>
+    <div><div class="mono">pages</div><a href="#/bieres">nos bières</a><br><a href="#/brasserie">la brasserie</a><br><a href="#/location">loc. tireuses</a><br><a href="#/blog">le blog</a><br><a href="#/contact">contact</a><br><a href="#/telechargements">téléchargements</a></div>
+    <div><div class="mono">suivre</div>instagram · facebook<br>linkedin · untappd</div>
+    <div><div class="mono">newsletter</div><form class="nl" onsubmit="return false"><input type="email" placeholder="ton email"><button class="drop" style="width:30px;height:18px" aria-label="s'inscrire"></button></form></div>
+  </div>
+  <div class="legal mono"><span>L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</span><span>mentions légales · confidentialité · plan du site</span></div>
+</footer>
+
+<div class="note" id="note"><button id="noteX" aria-label="fermer">×</button><b>Maquette</b>Seule l'étiquette Affluence est réelle. Toutes les pages du site actuel sont là, avec leurs contenus.</div>
+
+<script src="js/gsap.min.js"></script>
+<script src="js/ScrollTrigger.min.js"></script>
+<script src="js/SplitText.min.js"></script>
+<script src="js/lenis.min.js"></script>
+
+<script>
+gsap.registerPlugin(ScrollTrigger, SplitText);
+const $ = (s, c = document) => c.querySelector(s);
+const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+const hoverable = matchMedia('(hover:hover)').matches;
+const lenis = new Lenis({ lerp: .09 });
+lenis.on('scroll', ScrollTrigger.update);
+gsap.ticker.add(t => lenis.raf(t * 1000));
+gsap.ticker.lagSmoothing(0);
+const hideNote = () => gsap.to('#note', { y: 30, autoAlpha: 0, duration: .4 });
+$('#noteX').addEventListener('click', hideNote); setTimeout(hideNote, 12000);
+
+/* =========================================================
+   DONNÉES = ce qu'ils remplissent déjà dans WordPress
+   ========================================================= */
+const LABEL_AFFLUENCE = 'img/label-affluence.jpg';
+const PERM = [
+  { id: 'aquatrip', n: 'aquatrip', s: 'Bohemian Pilsner', abv: '4,5', c: ['#e9d9a6', '#c8a24a'],
+    intro: 'Délicate, désaltérante, et qui se boit toute seule.',
+    malts: 'Orge, blé', hops: 'Patho, Saaz', yeast: 'W34-70', look: 'Or pâle, légèrement trouble, belle mousse',
+    taste: 'Légèrement maltée, une pointe d\'amertume, des notes herbacées, une bouche vive et pétillante.',
+    when: ['bar', 'match', 'maison', 'apéro', 'déjeuner', 'dîner'], food: ['charcuterie', 'anchois', 'plats épicés', 'fish & chips'] },
+  { id: 'affluence', n: 'affluence', s: 'NEIPA', abv: '6', label: LABEL_AFFLUENCE,
+    intro: 'L\'affluence, c\'est cette sensation que tu as lors des soirées où il fait bon : la fête est dans l\'air.' },
+  { id: 'pasadena', n: 'pasadena', s: 'West Coast IPA', abv: '6', c: ['#ff9f6b', '#d9483b'] },
+  { id: 'weizh', n: 'weizh', s: 'Wheat', abv: '5', c: ['#f5efe0', '#e3c56f'] },
+  { id: 'sp95', n: 'sp 95', s: 'Golden Ale', abv: '6', c: ['#ffd84d', '#f08a24'] },
+  { id: 'ryebomb', n: 'rye bomb', s: 'Triple belge', abv: '8', c: ['#7b4a2e', '#2d1a10'], keg: '20 L' },
+];
+const EPH = [
+  { id: 'tropicool', n: 'tropicool', s: 'Catharina sour', abv: '7,2', c: ['#ff8fc7', '#ffd23f'] },
+  { id: 'deluge', n: 'déluge', s: 'Double NEIPA · collab', abv: '8', c: ['#3a5bff', '#9ad1ff'] },
+  { id: 'fungarr', n: 'fungarr', s: 'Breizh bock', abv: '6,2', c: ['#6b3b1f', '#e2b35a'] },
+  { id: 'crypto', n: 'crypto', s: 'Gose', abv: '3,8', c: ['#2ec4a6', '#e8f6c9'] },
+];
+const OLD = [
+  { id: 'avalou', n: 'avalou', s: 'Collab cidre', abv: '—', c: ['#c7e36b', '#e2574c'] },
+  { id: 'zero', n: '0,0 %', s: 'Sans alcool', abv: '0', c: ['#f2f2f2', '#9aa0a6'] },
+  { id: 's20a', n: 'série #20', s: 'Éphémère', abv: '—', c: ['#ff5a36', '#ffd1b8'] },
+  { id: 's19a', n: 'série #19', s: 'Éphémère', abv: '—', c: ['#8a5cff', '#ffd1f0'] },
+  { id: 's18a', n: 'série #18', s: 'Éphémère', abv: '—', c: ['#1f8a70', '#bff2c9'] },
+  { id: 's17a', n: 'série #17', s: 'Éphémère', abv: '—', c: ['#ffb627', '#ff5a36'] },
+];
+const ALL = [...PERM, ...EPH, ...OLD];
+const POSTS = [
+  ['serie-21', 'bières éphémères : série #21', '28 avril 2026', ['tropicool', 'deluge', 'fungarr', 'crypto']],
+  ['serie-20', 'bières éphémères : série #20', '23 mars 2026', ['s20a', 'avalou']],
+  ['serie-19', 'bières éphémères : série #19', '5 mars 2026', ['s19a', 'crypto']],
+  ['serie-18', 'bières éphémères : série #18', '1 février 2026', ['s18a', 'deluge']],
+  ['serie-17', 'bières éphémères : série #17', '15 janvier 2026', ['s17a', 'fungarr']],
+  ['zero', 'bières éphémères : 0,0 %', '31 décembre 2025', ['zero']],
+  ['serie-16', 'bières éphémères : série #16', '29 décembre 2025', ['s20a', 'tropicool']],
+  ['novembre', 'bières éphémères : novembre', '19 novembre 2025', ['s19a', 's17a']],
+  ['avalou', 'bière éphémère : avalou', '5 novembre 2025', ['avalou']],
+];
+const KEGS = [['aquatrip', 90, '30 L'], ['affluence', 146, '30 L'], ['pasadena', 146, '30 L'], ['weizh', 146, '30 L'], ['sp95', 151, '30 L'], ['ryebomb', 102, '20 L']];
+const TEAM = [['antonin', 'resp. production', 'Passé par Gallia et Prizm Brewing. Créatif et exigeant sur la qualité.'], ['jean', 'commercial & marketing', 'Et remplissage des fûts.'], ['arthur', 'logistique', 'Préparation, stock, livraisons.'],
+  ['ronan', 'opérateur', 'Réparations, enfûtage, brassage, fermentation.'], ['tristan', 'brasseur', 'Passé par une grande brasserie.'], ['iwan', 'communication', 'Réseaux, site, photos.'],
+  ['eline', 'commerciale', 'Biérologue / zythologue, formée au CFA 3B de Vitré.'], ['mériadec', 'apprenti logistique & prod', 'Passé par le café et le vin.'], ['adrien', 'apprenti brasseur', 'A débuté dans le craft au Canada.'], ['porter', 'chien de garde', 'Il garde. Surtout la gamelle.']];
+
+/* Étiquette de remplacement au format des vraies (2:1) → remplacée par le fichier étiquette */
+const S_IMG = 'img/s-black.png';
+function fakeLabel(b) {
+  const [a, z] = b.c, dark = ['#7b4a2e', '#6b3b1f', '#3a5bff', '#8a5cff', '#1f8a70'].includes(a), ink = dark ? '#f7f6f2' : '#0d0d0d';
+  const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='600' viewBox='0 0 1200 600'><defs><linearGradient id='g' x1='0' x2='1'><stop offset='0' stop-color='${a}'/><stop offset='1' stop-color='${z}'/></linearGradient></defs><rect width='1200' height='600' fill='url(#g)'/><g opacity='.18' fill='${ink}'>${Array.from({ length: 7 }, (_, i) => `<circle cx='${380 + i * 70}' cy='${300 + Math.sin(i + b.n.length) * 120}' r='${30 + (i % 3) * 22}'/>`).join('')}</g><text x='140' y='560' transform='rotate(-90 140 560)' font-family='Switzer, Inter Tight, Arial' font-weight='800' font-size='120' letter-spacing='-6' fill='${ink}'>${b.n}</text><text x='175' y='560' transform='rotate(-90 175 560)' font-family='Arial' font-weight='700' font-size='28' fill='${ink}'>${b.s.toUpperCase()}</text><image href='${S_IMG}' x='1030' y='40' width='130' height='130' ${dark ? "style='filter:invert(1)'" : ''}/><text x='1095' y='212' text-anchor='middle' font-family='Switzer, Inter Tight, Arial' font-weight='700' font-size='40' fill='${ink}'>smash</text></svg>`;
+  return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+}
+const LBL = {}; const labelOf = b => LBL[b.id] || (LBL[b.id] = b.label || fakeLabel(b));
+const byId = id => ALL.find(b => b.id === id);
+
+/* Carte étiquette : penche en 3D vers la souris, reflet qui suit */
+function labelCard(b, opts = {}) {
+  return `<a class="lab" href="#/biere/${b.id}">
+    <div class="lab__card" style="background-image:url(&quot;${labelOf(b)}&quot;)">${b.label ? '' : '<span class="ph mono">étiquette à venir</span>'}</div>
+    <div class="lab__row"><h3>${b.n}</h3><span class="lab__go">la fiche <span class="drop"></span></span></div>
+    <div class="mono">${b.s}${b.abv && b.abv !== '—' ? ' · ' + b.abv + ' %' : ''}</div></a>`;
+}
+function bindTilt(root) {
+  if (!hoverable) return;
+  $$('.lab', root).forEach(l => {
+    const card = $('.lab__card', l);
+    const rx = gsap.quickTo(card, 'rotationX', { duration: .5, ease: 'power3' }), ry = gsap.quickTo(card, 'rotationY', { duration: .5, ease: 'power3' });
+    l.addEventListener('pointermove', e => {
+      const r = card.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+      ry((x - .5) * 18); rx((.5 - y) * 14);
+      card.style.setProperty('--gx', x * 100 + '%'); card.style.setProperty('--gy', y * 100 + '%');
+    });
+    l.addEventListener('pointerenter', () => gsap.to(card, { y: -10, scale: 1.03, duration: .5, ease: 'back.out(2)' }));
+    l.addEventListener('pointerleave', () => { rx(0); ry(0); gsap.to(card, { y: 0, scale: 1, duration: .6, ease: 'expo.out' }); });
+  });
+}
+
+/* =========================================================
+   ROUTEUR : une "page" par URL, comme leur site actuel
+   ========================================================= */
+let ctx = null, current = null, busy = false;
+const pageOf = h => { const p = h.replace(/^#\/?/, '').split('/'); return { name: p[0] || 'home', arg: p[1] }; };
+function render(route) {
+  const map = { '': 'home', home: 'home', bieres: 'bieres', biere: 'fiche', brasserie: 'brasserie', location: 'location', blog: route.arg ? 'article' : 'blog', contact: 'contact', telechargements: 'telechargements' };
+  const name = map[route.name] || 'home';
+  $$('.page').forEach(p => p.classList.toggle('on', p.dataset.page === name));
+  $$('#top [data-r]').forEach(a => a.classList.toggle('on', a.dataset.r === (route.name === 'biere' ? 'bieres' : route.name)));
+  if (ctx) ctx.revert();
+  ScrollTrigger.getAll().forEach(t => t.kill());
+  lenis.scrollTo(0, { immediate: true, force: true });
+  const page = $(`.page[data-page="${name}"]`);
+  ctx = gsap.context(() => { (BUILD[name] || (() => {}))(page, route.arg); common(page); }, page);
+  current = name;
+  requestAnimationFrame(() => ScrollTrigger.refresh());
+}
+function go(hash) {
+  if (busy) return;
+  const route = pageOf(hash);
+  if (!current) { render(route); return; }
+  busy = true;
+  const w = $('#wipe'); w.style.display = 'block';
+  const [a, b] = $$('#wipe > i');
+  // les deux moitiés arrivent décalées, comme les blocs du S
+  gsap.timeline()
+    .fromTo(a, { xPercent: -100 }, { xPercent: 0, duration: .5, ease: 'expo.in' })
+    .fromTo(b, { xPercent: 100 }, { xPercent: 0, duration: .5, ease: 'expo.in' }, .06)
+    .fromTo('#wipe .S', { opacity: 0, scale: .6 }, { opacity: 1, scale: 1, duration: .3 }, .4)
+    .add(() => {
+      render(route);
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        gsap.timeline({ onComplete: () => { w.style.display = 'none'; busy = false; } })
+          .to('#wipe .S', { opacity: 0, duration: .2 })
+          .to(a, { xPercent: 100, duration: .6, ease: 'expo.out' }, .1)
+          .to(b, { xPercent: -100, duration: .6, ease: 'expo.out' }, .16);
+      }));
+    });
+}
+addEventListener('hashchange', () => go(location.hash));
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href^="#/"]'); if (!a) return;
+  e.preventDefault(); closeMega(true);
+  const h = a.getAttribute('href');
+  if (h === location.hash) return;
+  try { history.pushState(null, '', h); } catch (err) {}
+  go(h);
+});
+addEventListener('popstate', () => go(location.hash));
+// mini mega menu : ouverture au survol (et au clavier), fermeture douce
+const dd = $('#dd-b'); let ddT;
+const closeMega = hard => { clearTimeout(ddT); dd.classList.remove('open'); if (hard) dd.dataset.lock = 1; };
+dd.addEventListener('mouseenter', () => { if (dd.dataset.lock || innerWidth <= 860) return; clearTimeout(ddT); if (!dd.classList.contains('open')) { dd.classList.add('open'); gsap.from('#mm-labs a', { y: 20, opacity: 0, duration: .5, ease: 'expo.out', stagger: .04, delay: .1 }); } });
+dd.addEventListener('mouseleave', () => { delete dd.dataset.lock; ddT = setTimeout(() => closeMega(), 160); });
+dd.addEventListener('focusin', () => innerWidth > 860 && dd.classList.add('open'));
+dd.addEventListener('focusout', e => { if (!dd.contains(e.relatedTarget)) closeMega(); });
+addEventListener('keydown', e => e.key === 'Escape' && closeMega());
+$('#mm-labs').innerHTML = PERM.map(b => `<a href="#/biere/${b.id}"><i style="background-image:url(&quot;${labelOf(b)}&quot;)"></i><span><b>${b.n}</b><small>${b.s}</small></span></a>`).join('');
+
+/* Animations communes à toutes les pages */
+function common(page) {
+  $$('[data-lines]', page).forEach(el => { const s = new SplitText(el, { type: 'lines', mask: 'lines' }); gsap.from(s.lines, { yPercent: 110, duration: 1.15, ease: 'expo.out', stagger: .09, delay: .25 }); });
+  $$('[data-up]', page).forEach(el => { const s = new SplitText(el, { type: 'lines', mask: 'lines' }); gsap.from(s.lines, { yPercent: 110, duration: 1.1, ease: 'expo.out', stagger: .08, scrollTrigger: { trigger: el, start: 'top 88%' } }); });
+  $$('[data-words]', page).forEach(el => { const s = new SplitText(el, { type: 'words' }); gsap.fromTo(s.words, { opacity: .14 }, { opacity: 1, stagger: .1, ease: 'none', scrollTrigger: { trigger: el, start: 'top 80%', end: 'bottom 50%', scrub: true } }); });
+  $$('[data-par]', page).forEach(el => gsap.fromTo(el, { yPercent: -6 }, { yPercent: 6, ease: 'none', scrollTrigger: { trigger: el.parentElement, start: 'top bottom', end: 'bottom top', scrub: true } }));
+  $$('.stepped', page).forEach(sec => gsap.fromTo(sec, { '--step': '90px' }, { '--step': '28px', ease: 'none', scrollTrigger: { trigger: sec, start: 'top bottom', end: 'top 50%', scrub: true } }));
+  $$('.ph-head .kick, .ph-head p', page).forEach(el => gsap.from(el, { y: 20, opacity: 0, duration: .9, ease: 'expo.out', delay: .4 }));
+  ScrollTrigger.batch($$('.lab, .mate, .equip > div, .post, .post-row, .dl a, .cbox', page), { start: 'top 92%', once: true, onEnter: b => gsap.from(b, { y: 70, opacity: 0, duration: 1, ease: 'expo.out', stagger: .06 }) });
+  gsap.to($('#pipedrop'), { top: '100%', ease: 'none', scrollTrigger: { start: 0, end: 'max', scrub: .4 } });
+}
+
+/* =========================================================
+   CONSTRUCTION DE CHAQUE PAGE
+   ========================================================= */
+const BUILD = {
+  home(page) {
+    const lab = $('[data-labels="perm"]', page);
+    lab.innerHTML = PERM.map(b => labelCard(b)).join(''); bindTilt(lab);
+    // pile de la dernière série
+    const st = $('[data-stack]', page); st.innerHTML = '';
+    POSTS[0][3].map(byId).forEach((b, i) => {
+      const el = document.createElement('a'); el.className = 'flat'; el.href = '#/biere/' + b.id; el.style.backgroundImage = `url("${labelOf(b)}")`; st.appendChild(el);
+      const rot = [-8, 4, -3, 7][i];
+      gsap.set(el, { left: `${4 + i * 9}%`, top: `${6 + i * 15}%`, rotation: rot, zIndex: i });
+      if (hoverable) { el.addEventListener('mouseenter', () => gsap.to(el, { y: -30, rotation: 0, scale: 1.05, zIndex: 10, duration: .5, ease: 'back.out(2)' }));
+        el.addEventListener('mouseleave', () => gsap.to(el, { y: 0, rotation: rot, scale: 1, zIndex: i, duration: .6, ease: 'expo.out' })); }
+    });
+    gsap.from($$('.flat', st), { x: 300, y: 120, rotation: 30, opacity: 0, duration: 1.2, ease: 'expo.out', stagger: .12, scrollTrigger: { trigger: st, start: 'top 75%' } });
+    // mur
+    const wall = $('[data-wall]', page); wall.innerHTML = '';
+    const pool = [...EPH, ...OLD, PERM[1]];
+    const rows = [0, 1, 2].map(k => { const r = document.createElement('div'); r.className = 'wall__row'; const l = pool.map((_, i) => pool[(i * 3 + k) % pool.length]);
+      r.innerHTML = [...l, ...l].map(b => `<a href="#/biere/${b.id}" class="tile" style="background-image:url(&quot;${labelOf(b)}&quot;)"><span class="mono">${b.n} · ${b.s}</span></a>`).join(''); wall.appendChild(r); return r; });
+    const pos = [0, -400, -200];
+    const tick = () => { const v = lenis.velocity || 0; rows.forEach((r, i) => { pos[i] += (i % 2 ? 1 : -1) * (.6 + Math.abs(v) * .5); const half = r.scrollWidth / 2; if (pos[i] <= -half) pos[i] += half; if (pos[i] > 0) pos[i] -= half; r.style.transform = `translateX(${pos[i]}px)`; }); };
+    gsap.ticker.add(tick); ctxCleanup.push(() => gsap.ticker.remove(tick));
+    // hero : le S s'assemble une fois, puis reste tranquille (léger flottement)
+    gsap.from($$('#heroS i'), { x: i => [-80, 80, -80][i], opacity: 0, duration: 1.1, ease: 'expo.out', stagger: .1, delay: .3 });
+    gsap.fromTo('#heroS', { y: 0 }, { y: -40, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+    gsap.from('.hero .kick, .hero__sub > *', { y: 24, opacity: 0, duration: .9, ease: 'expo.out', stagger: .08, delay: .5 });
+  },
+  bieres(page, arg) {
+    const list = $('#blist'), more = $('#bmore');
+    let tab = ['perm', 'eph', 'old'].includes(arg) ? arg : 'perm', shown = tab === 'old' ? 3 : 99;
+    $$('#btabs .tab').forEach(x => x.setAttribute('aria-selected', x.dataset.t === tab));
+    const data = { perm: PERM, eph: EPH, old: OLD };
+    const draw = () => {
+      const items = data[tab].slice(0, shown);
+      list.innerHTML = items.map(b => labelCard(b)).join(''); bindTilt(list);
+      more.style.display = tab === 'old' && shown < 99 ? '' : 'none';
+      gsap.from($$('.lab', list), { y: 50, opacity: 0, duration: .8, ease: 'expo.out', stagger: .05 });
+    };
+    $$('#btabs .tab').forEach(t => t.onclick = () => { $$('#btabs .tab').forEach(x => x.setAttribute('aria-selected', x === t)); tab = t.dataset.t; shown = tab === 'old' ? 3 : 99; draw(); });
+    more.onclick = () => { shown = 99; draw(); };
+    draw();
+  },
+  fiche(page, id) {
+    const b = byId(id) || PERM[0];
+    const isPerm = PERM.includes(b);
+    const keg = KEGS.find(k => k[0] === b.id);
+    const row = (k, v) => `<div><dt class="mono">${k}</dt><dd>${v || '<span class="miss">repris de la fiche actuelle</span>'}</dd></div>`;
+    $('#fiche').innerHTML = `
+      <div class="fiche__label"><div class="lab" style="cursor:default"><div class="lab__card" style="background-image:url(&quot;${labelOf(b)}&quot;)">${b.label ? '' : '<span class="ph mono">étiquette à venir</span>'}</div></div></div>
+      <div>
+        <div class="kick mono"><span class="drop"></span>${isPerm ? 'gamme permanente' : 'gamme éphémère'}</div>
+        <h1 class="big" style="font-size:clamp(3.4rem,8vw,7.6rem)">${b.n}</h1>
+        <p class="intro">${b.intro || '<span class="miss">L\'accroche de la fiche actuelle.</span>'}</p>
+        <dl>
+          ${row('style', b.s)}${row('degré', b.abv && b.abv !== '—' ? b.abv + ' %' : '')}
+          ${row('formats', isPerm ? `fût ${b.keg || '30 L'} · canette 44 cl` : '')}
+          ${row('malts', b.malts)}${row('houblons', b.hops)}${row('levure', b.yeast)}${row('aspect', b.look)}
+          ${row('dégustation', b.taste)}
+          ${row('à boire', b.when && `<div class="chips">${b.when.map(x => `<span class="chip">${x}</span>`).join('')}</div>`)}
+          ${row('accords', b.food && `<div class="chips">${b.food.map(x => `<span class="chip">${x}</span>`).join('')}</div>`)}
+        </dl>
+        ${keg ? `<a href="#/location" class="blk dark" style="margin-top:4vh">en fût pour ta soirée · ${keg[1]} € <span class="drop"></span></a>` : ''}
+      </div>`;
+    bindTilt($('#fiche'));
+    gsap.from('.fiche__label .lab__card', { rotationY: -50, x: -80, opacity: 0, duration: 1.2, ease: 'expo.out', delay: .2 });
+    gsap.from('#fiche dl > div', { x: 30, opacity: 0, duration: .7, ease: 'expo.out', stagger: .04, delay: .4 });
+  },
+  brasserie(page) {
+    $('#team').innerHTML = TEAM.map(([n, r, d]) => `<div class="mate${n === 'porter' ? ' dog' : ''}"><span class="mono">${r}</span><div><b>${n}${n === 'porter' ? ' 🐾' : ''}</b><p>${d}</p></div></div>`).join('');
+    $$('.stats b', page).forEach(b => { const o = { v: 0 }; gsap.to(o, { v: +b.dataset.n, duration: 1.6, ease: 'power2.out', scrollTrigger: { trigger: b, start: 'top 85%' }, onUpdate: () => b.textContent = Math.round(o.v) }); });
+    gsap.from($$('.values li', page), { x: -40, opacity: 0, duration: .9, ease: 'expo.out', stagger: .1, scrollTrigger: { trigger: '.values', start: 'top 85%' } });
+  },
+  location() { initLoc(); },
+  blog() {
+    $('#posts').innerHTML = POSTS.map(([id, t, d, beers]) => `<a class="post-row" href="#/blog/${id}"><span class="mono">${d}</span><h3>${t}</h3><span class="mini">${beers.map(byId).map(b => `<i style="background-image:url(&quot;${labelOf(b)}&quot;)"></i>`).join('')}</span></a>`).join('');
+  },
+  article(page, id) {
+    const p = POSTS.find(x => x[0] === id) || POSTS[0];
+    $('#a-title').textContent = p[1]; $('#a-date').textContent = p[2];
+    $('#a-labels').innerHTML = p[3].map(byId).map(b => labelCard(b)).join(''); bindTilt($('#a-labels'));
+    gsap.from('#a-title', { y: 60, opacity: 0, duration: 1, ease: 'expo.out', delay: .2 });
+  },
+};
+const ctxCleanup = [];
+const _render = render;
+
+/* =========================================================
+   LOCATION : un seul module, tout visible, prix en direct
+   ========================================================= */
+let RS = null;
+function initLoc() {
+  if (!RS) RS = { prof: 'part', qty: {}, eph: 0, taps: { t1: 0, t2: 0 }, gear: {}, cups: 0, cupsN: 100 };
+  const S = RS;
+  // segmentés : la pastille glisse sous le bouton actif
+  const seg = (root, val, onPick) => {
+    const pill = $('.seg__pill', root), btns = $$('button', root);
+    const place = (b, anim) => gsap[anim ? 'to' : 'set'](pill, { x: b.offsetLeft - 4, width: b.offsetWidth, duration: .45, ease: 'expo.out' });
+    btns.forEach(b => { b.classList.toggle('on', b.dataset.v === String(val)); b.onclick = () => { btns.forEach(x => x.classList.toggle('on', x === b)); place(b, true); onPick(b.dataset.v); }; });
+    requestAnimationFrame(() => place(btns.find(b => b.dataset.v === String(val)) || btns[0], false));
+  };
+  seg($('#seg-prof'), S.prof, v => { S.prof = v; applyProf(); price(); });
+  seg($('#seg-cups'), S.cups, v => { S.cups = +v; $('#cupsq').classList.toggle('on', S.cups > 0); price(); });
+  $('#cupsq').classList.toggle('on', S.cups > 0);
+  const cn = $('#cups-n'); cn.value = S.cupsN;
+  cn.oninput = () => { S.cupsN = Math.max(0, Math.round(+cn.value || 0)); price(); };
+  cn.onfocus = () => cn.select();
+  $$('#cupsq button').forEach(b => b.onclick = () => { S.cupsN = Math.max(0, S.cupsN + +b.dataset.d); cn.value = S.cupsN; price(); });
+  const applyProf = () => {
+    const pro = S.prof === 'pro';
+    $$('.rent .part-only, #rent .part-only, .brow .part-only').forEach(e => e.style.display = pro ? 'none' : (e.tagName === 'SMALL' ? 'block' : e.id === 'taps' ? 'grid' : 'inline'));
+    $$('.brow .pro-only').forEach(e => e.style.display = pro ? (e.id === 'gear' ? 'flex' : 'inline') : 'none');
+    $('#t-mode').textContent = pro ? 'pro / asso' : 'particulier';
+    $$('.keg__meta span[data-p]').forEach(s => s.textContent = pro ? 'devis' : s.dataset.p + ' €');
+    gsap.fromTo('#kegs .keg, #taps, #gear', { y: 8, opacity: .4 }, { y: 0, opacity: 1, duration: .4, stagger: .02 });
+  };
+
+  // les fûts : tuiles étiquettes, clic = +1
+  $('#kegs').innerHTML = KEGS.map(([id, p, v]) => { const b = byId(id); return `
+    <div class="keg" data-k="${id}">
+      <div class="keg__lab" style="background-image:url(&quot;${labelOf(b)}&quot;)"></div>
+      <div class="keg__meta"><div><b>${b.n}</b><small>${b.s} · ${v}</small></div><span data-p="${p}">${p} €</span></div>
+      <div class="stepper"><button data-d="-1" aria-label="retirer un fût">−</button><input type="number" min="0" value="0" inputmode="numeric" aria-label="nombre de fûts ${b.n}"><button data-d="1" aria-label="ajouter un fût">+</button></div>
+    </div>`; }).join('') + `
+    <div class="keg eph" data-k="eph"><div class="keg__lab">une éphémère</div>
+      <div class="keg__meta"><div><b>éphémère</b><small>selon dispo</small></div><span>sur demande</span></div>
+      <div class="stepper"><button data-d="-1" aria-label="retirer">−</button><input type="number" min="0" value="0" inputmode="numeric"><button data-d="1" aria-label="ajouter">+</button></div></div>`;
+  const setKeg = (el, id, n, flyIt) => {
+    n = Math.max(0, Math.min(999, Math.round(+n || 0)));
+    if (id === 'eph') S.eph = n; else S.qty[id] = n;
+    el.classList.toggle('has', n > 0);
+    const inp = $('input', el); inp.value = n;
+    gsap.fromTo(inp, { scale: 1.35 }, { scale: 1, duration: .35, ease: 'back.out(3)' });
+    if (flyIt) fly($('.keg__lab', el));
+    price();
+  };
+  $$('#kegs .keg').forEach(el => {
+    const id = el.dataset.k, inp = $('input', el);
+    const cur = () => id === 'eph' ? S.eph : (S.qty[id] || 0);
+    if (cur()) { el.classList.add('has'); inp.value = cur(); }
+    $$('button', el).forEach(b => b.onclick = () => { const d = +b.dataset.d; setKeg(el, id, cur() + d, d > 0); });
+    inp.oninput = () => setKeg(el, id, inp.value, false);   // on peut taper 20 directement
+    inp.onfocus = () => inp.select();
+    $('.keg__lab', el).onclick = () => setKeg(el, id, cur() + 1, true);
+  });
+  // le petit morceau d'étiquette qui file dans le ticket
+  const fly = src => {
+    const r = src.getBoundingClientRect(), t = $('#t-list').getBoundingClientRect();
+    const f = document.createElement('div'); f.className = 'fly';
+    f.style.cssText += `left:${r.left}px;top:${r.top}px;width:${r.width}px;height:${r.height}px;background-image:${getComputedStyle(src).backgroundImage};background-color:#ebe9e3`;
+    document.body.appendChild(f);
+    gsap.to(f, { left: t.left + 20, top: t.top + 10, width: 60, height: 30, rotation: gsap.utils.random(-15, 15), opacity: .2, duration: .65, ease: 'power3.in', onComplete: () => f.remove() });
+  };
+
+  // tireuse (particulier) : 1 ou 2 becs, re-clic = retirer
+  // tireuses : autant qu'on veut, comme les fûts (leur formulaire n'impose aucune limite)
+  $$('#taps .tapt').forEach(el => {
+    const t = el.dataset.t, inp = $('input', el);
+    const set = n => { n = Math.max(0, Math.min(99, Math.round(+n || 0))); S.taps[t] = n; inp.value = n; el.classList.toggle('has', n > 0);
+      gsap.fromTo(inp, { scale: 1.35 }, { scale: 1, duration: .35, ease: 'back.out(3)' }); price(); };
+    inp.value = S.taps[t]; el.classList.toggle('has', S.taps[t] > 0);
+    $$('button', el).forEach(b => b.onclick = () => set(S.taps[t] + +b.dataset.d));
+    inp.oninput = () => set(inp.value); inp.onfocus = () => inp.select();
+  });
+  // matériel (pro) : chips multi-choix
+  $$('#gear button').forEach(b => { b.classList.toggle('on', !!S.gear[b.dataset.g]);
+    b.onclick = () => { S.gear[b.dataset.g] = !S.gear[b.dataset.g]; b.classList.toggle('on'); price(); }; });
+
+  // dates : vérification des jours en direct
+  const day = v => v ? new Date(v + 'T12:00').getDay() : null;
+  const check = () => {
+    const p = day($('#r-pick').value), r = day($('#r-back').value), hp = $('#h-pick'), hb = $('#h-back');
+    const pOk = [3, 4, 5].includes(p), rOk = [1, 2].includes(r);
+    hp.className = p === null ? '' : pOk ? 'ok' : 'bad'; hp.textContent = p === null ? '' : pOk ? '✓ ok' : 'retrait du mercredi au vendredi';
+    hb.className = r === null ? '' : rOk ? 'ok' : 'bad'; hb.textContent = r === null ? '' : rOk ? '✓ ok' : 'retour le lundi ou le mardi';
+  };
+  if (!$('#r-pick').value) { const d = new Date(); d.setDate(d.getDate() + ((5 - d.getDay() + 7) % 7 || 7)); const r = new Date(d); r.setDate(r.getDate() + 3);
+    $('#r-pick').value = d.toISOString().slice(0, 10); $('#r-back').value = r.toISOString().slice(0, 10); }
+  $('#r-pick').onchange = check; $('#r-back').onchange = check; check();
+
+  // envoi depuis le ticket
+  $('#t-send').onclick = () => {
+    gsap.timeline().to('#t-form, #t-nudge, .ticket__foot', { opacity: 0, height: 0, marginTop: 0, paddingTop: 0, duration: .4 })
+      .add(() => { $('#t-done').style.display = 'block'; })
+      .from('#t-done', { y: 20, opacity: 0, duration: .5 });
+  };
+  applyProf(); price();
+}
+
+function price() {
+  const S = RS, pro = S.prof === 'pro', items = [];
+  let total = 0, kegs = 0;
+  KEGS.forEach(([id, p, v]) => { const q = S.qty[id] || 0; if (!q) return; kegs += q; items.push([`${q} × ${byId(id).n}`, pro ? 'devis' : q * p]); if (!pro) total += q * p; });
+  if (S.eph) { kegs += S.eph; items.push([`${S.eph} × éphémère`, 'sur demande']); }
+  const free = !pro && kegs >= 3;   // leur règle : une tireuse 1 bec offerte dès 3 fûts
+  if (!pro) {
+    const t1 = S.taps.t1, t2 = S.taps.t2;
+    if (t1) { if (free) { items.push(['1 tireuse 1 bec', 'offerte', true]); if (t1 > 1) { items.push([`${t1 - 1} × tireuse 1 bec`, (t1 - 1) * 50]); total += (t1 - 1) * 50; } }
+              else { items.push([`${t1} × tireuse 1 bec`, t1 * 50]); total += t1 * 50; } }
+    if (t2) { items.push([`${t2} × tireuse 2 becs`, t2 * 80]); total += t2 * 80; }
+  }
+  if (pro) Object.entries(S.gear).forEach(([g, on]) => on && items.push([{ t2: 'tireuse 2 becs', barnum: 'barnums', comptoir: 'comptoirs', tables: 'tables & bancs', softs: 'softs, vin, cidre' }[g], 'devis']));
+  if (S.cups && S.cupsN) { const q = S.cupsN, v = q * .3; items.push([`${q} éco-cups ${S.cups} cl`, pro ? 'devis' : v]); if (!pro) total += v; }
+  // prix barré sur la tireuse quand elle devient offerte
+  const e1 = $('#taps [data-t="t1"] em'); e1.innerHTML = free ? `<s>50 €</s>1 offerte` : '50 €';
+  const fmt = v => typeof v === 'number' ? (v % 1 ? v.toFixed(2).replace('.', ',') : v) + ' €' : v;
+  $('#t-list').innerHTML = items.length ? items.map(([a, b, f]) => `<li class="${f ? 'free' : ''}"><span>${a}</span><span>${fmt(b)}</span></li>`).join('') : '<li class="empty">ajoute des fûts pour commencer</li>';
+  const t = $('#t-total'), o = { v: +(t.dataset.v || 0) };
+  gsap.to(o, { v: total, duration: .5, ease: 'power2.out', onUpdate: () => t.textContent = pro ? 'devis' : Math.round(o.v) + ' €' }); t.dataset.v = total;
+  let msg;
+  if (pro) msg = kegs >= 12 ? 'Livraison et reprise offertes (12 fûts ou plus, dans un rayon de 15 km).' : `Encore ${12 - kegs} fût${12 - kegs > 1 ? 's' : ''} et la livraison est offerte.`;
+  else if (kegs < 3) msg = `Encore ${3 - kegs} fût${3 - kegs > 1 ? 's' : ''} et une tireuse 1 bec est offerte.`;
+  else msg = S.taps.t1 ? 'Une tireuse 1 bec offerte : bien joué.' : 'Une tireuse 1 bec t\'est offerte : ajoute-la.';
+  const n = $('#t-nudge'); if (n.dataset.m !== msg) { n.dataset.m = msg; n.lastElementChild.textContent = msg; gsap.fromTo(n, { scale: .95 }, { scale: 1, duration: .45, ease: 'back.out(3)' }); }
+}
+
+/* =========================================================
+   CONTRÔLE D'ÂGE + DÉMARRAGE
+   ========================================================= */
+lenis.stop();
+const gateS = $$('#gateS i');
+gsap.from(gateS, { x: i => [-120, 120, -120][i], opacity: 0, duration: 1, ease: 'expo.out', stagger: .12, delay: .2 });
+gsap.from('.gate h1, .gate__btns, .gate small', { y: 30, opacity: 0, duration: .8, ease: 'expo.out', stagger: .08, delay: .7 });
+$('#yes').onclick = () => gsap.timeline({ onComplete: () => { $('#gate').remove(); lenis.start(); } })
+  .to('.gate__in', { opacity: 0, y: -30, duration: .4 })
+  .to('#gate', { yPercent: -100, duration: .8, ease: 'expo.inOut' });
+$('#no').onclick = () => { $('#nomsg').style.display = 'block'; gsap.fromTo(gateS, { x: 0 }, { x: i => [8, -8, 8][i], duration: .08, repeat: 5, yoyo: true }); };
+render(pageOf(location.hash));
+// nettoyage des boucles propres à une page quand on la quitte
+const origRevert = () => { while (ctxCleanup.length) ctxCleanup.pop()(); };
+const _r = render;
+render = function (route) { origRevert(); _r(route); };
+document.fonts && document.fonts.ready.then(() => ScrollTrigger.refresh());
+</script>
+</body>
+</html>

@@ -5,6 +5,28 @@
 
 ---
 
+## 0. Avancement (à mettre à jour à la fin de chaque session)
+
+Une session = **une étape**. On coche, on note ce qui reste, on commit, on s'arrête.
+
+| # | Étape | Statut | Notes |
+|---|---|---|---|
+| 0 | Plan, analyse du site, maquette dans `maquette/` | ✅ fait | relevé du 29/10/2026 |
+| 1 | Contenu : script de scraping → `demo/` | ⬜ à faire | |
+| 2a | Socle : `style.css`, `functions.php`, `inc/` de base, CSS et polices | ⬜ à faire | |
+| 2b | Header (méga-menu), footer, porte d'âge | ⬜ à faire | |
+| 2c | Accueil + `.wp-env.json` + `blueprint.json` | ⬜ à faire | |
+| 3 | Bières : mapping, « nos bières », taxonomie, fiche, Product | ⬜ à faire | |
+| 4 | Location + Gravity Forms / mode démo, FAQPage | ⬜ à faire | |
+| 5a | Blog + article (BlogPosting) | ⬜ à faire | |
+| 5b | Brasserie, contact, téléchargements, pages légales, plan du site, 404, recherche, README | ⬜ à faire | |
+| 6 | Vérification complète + lien Playground testé | ⬜ à faire | |
+
+**Journal des sessions** (le plus récent en haut) :
+- 29/10/2026 : analyse du site public, plan, maquette ajoutée au repo.
+
+---
+
 ## 1. Réponse courte : est-ce que ce sera plug and play ?
 
 **Oui, presque.** Le thème est construit pour que tout ce qui dépend du site réel tienne dans **un seul fichier de mapping** (`inc/fields-map.php`).

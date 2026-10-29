@@ -1,0 +1,1405 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Contenu de démo du thème smash, généré par tools/demo/build.py le 2026-10-29. Ne pas modifier à la main. -->
+<rss version="2.0"
+	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:wp="http://wordpress.org/export/1.2/">
+<channel>
+<title>smash</title>
+<link>https://smash.bzh</link>
+<description>fabrique de bières</description>
+<language>fr-FR</language>
+<wp:wxr_version>1.2</wp:wxr_version>
+<wp:base_site_url>https://smash.bzh</wp:base_site_url>
+<wp:base_blog_url>https://smash.bzh</wp:base_blog_url>
+<wp:author><wp:author_id>1</wp:author_id><wp:author_login><![CDATA[smash]]></wp:author_login><wp:author_email><![CDATA[contact@smash.bzh]]></wp:author_email><wp:author_display_name><![CDATA[smash]]></wp:author_display_name></wp:author>
+<wp:term><wp:term_taxonomy>type-de-bieres</wp:term_taxonomy><wp:term_slug><![CDATA[bieres-permanentes]]></wp:term_slug><wp:term_name><![CDATA[Bières permanentes]]></wp:term_name></wp:term><wp:term><wp:term_taxonomy>type-de-bieres</wp:term_taxonomy><wp:term_slug><![CDATA[bieres-ephemeres]]></wp:term_slug><wp:term_name><![CDATA[Bières éphémères]]></wp:term_name></wp:term><wp:term><wp:term_taxonomy>type-de-bieres</wp:term_taxonomy><wp:term_slug><![CDATA[bieres-archivees]]></wp:term_slug><wp:term_name><![CDATA[Bières archivées]]></wp:term_name></wp:term><wp:term><wp:term_taxonomy>type-de-location</wp:term_taxonomy><wp:term_slug><![CDATA[particuliers]]></wp:term_slug><wp:term_name><![CDATA[Particuliers]]></wp:term_name></wp:term><wp:term><wp:term_taxonomy>type-de-location</wp:term_taxonomy><wp:term_slug><![CDATA[evenementiel]]></wp:term_slug><wp:term_name><![CDATA[Événementiel]]></wp:term_name></wp:term>
+
+<item>
+<title><![CDATA[hero]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>2000</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[hero]]></wp:post_name>
+<wp:status><![CDATA[inherit]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[attachment]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/media/hero.jpg]]></wp:attachment_url>
+
+<wp:postmeta><wp:meta_key><![CDATA[_wp_attachment_image_alt]]></wp:meta_key><wp:meta_value><![CDATA[]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[can-affluence]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>2001</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[can-affluence]]></wp:post_name>
+<wp:status><![CDATA[inherit]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[attachment]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/media/can-affluence.jpg]]></wp:attachment_url>
+
+<wp:postmeta><wp:meta_key><![CDATA[_wp_attachment_image_alt]]></wp:meta_key><wp:meta_value><![CDATA[]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Étiquette Aquatrip]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>2002</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[aquatrip]]></wp:post_name>
+<wp:status><![CDATA[inherit]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[attachment]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/media/labels/aquatrip.jpg]]></wp:attachment_url>
+
+<wp:postmeta><wp:meta_key><![CDATA[_wp_attachment_image_alt]]></wp:meta_key><wp:meta_value><![CDATA[Étiquette de la bière Aquatrip]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Aquatrip]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1000</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[aquatrip]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[bieres]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="type-de-bieres" nicename="bieres-permanentes"><![CDATA[Bières permanentes]]></category><category domain="type-de-location" nicename="particuliers"><![CDATA[Particuliers]]></category><category domain="type-de-location" nicename="evenementiel"><![CDATA[Événementiel]]></category>
+<wp:postmeta><wp:meta_key><![CDATA[banderole]]></wp:meta_key><wp:meta_value><![CDATA[2002]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[style]]></wp:meta_key><wp:meta_value><![CDATA[Bohemian Pilsner]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[degre]]></wp:meta_key><wp:meta_value><![CDATA[4,5]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[formats]]></wp:meta_key><wp:meta_value><![CDATA[fût 30 L · canette 44 cl]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[accroche]]></wp:meta_key><wp:meta_value><![CDATA[Délicate, désaltérante, et qui se boit toute seule.]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[description]]></wp:meta_key><wp:meta_value><![CDATA[Légèrement maltée, une pointe d'amertume, des notes herbacées, une bouche vive et pétillante.]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[malt]]></wp:meta_key><wp:meta_value><![CDATA[Orge, blé]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[houblons]]></wp:meta_key><wp:meta_value><![CDATA[Patho, Saaz]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[levure]]></wp:meta_key><wp:meta_value><![CDATA[W34-70]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[aspect]]></wp:meta_key><wp:meta_value><![CDATA[Or pâle, légèrement trouble, belle mousse]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[degustation]]></wp:meta_key><wp:meta_value><![CDATA[Au bar, devant le match, à la maison, à l'apéro, au déjeuner ou au dîner.]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[accords]]></wp:meta_key><wp:meta_value><![CDATA[Charcuterie, anchois, plats épicés, fish & chips.]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[2002]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Étiquette Affluence]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>2003</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[label-affluence]]></wp:post_name>
+<wp:status><![CDATA[inherit]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[attachment]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/media/labels/label-affluence.jpg]]></wp:attachment_url>
+
+<wp:postmeta><wp:meta_key><![CDATA[_wp_attachment_image_alt]]></wp:meta_key><wp:meta_value><![CDATA[Étiquette de la bière Affluence]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Affluence]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1001</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[affluence]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>1</wp:menu_order>
+<wp:post_type><![CDATA[bieres]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="type-de-bieres" nicename="bieres-permanentes"><![CDATA[Bières permanentes]]></category><category domain="type-de-location" nicename="particuliers"><![CDATA[Particuliers]]></category><category domain="type-de-location" nicename="evenementiel"><![CDATA[Événementiel]]></category>
+<wp:postmeta><wp:meta_key><![CDATA[banderole]]></wp:meta_key><wp:meta_value><![CDATA[2003]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[photo]]></wp:meta_key><wp:meta_value><![CDATA[2001]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[style]]></wp:meta_key><wp:meta_value><![CDATA[NEIPA]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[degre]]></wp:meta_key><wp:meta_value><![CDATA[6]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[formats]]></wp:meta_key><wp:meta_value><![CDATA[fût 30 L · canette 44 cl]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[accroche]]></wp:meta_key><wp:meta_value><![CDATA[L'affluence, c'est cette sensation que tu as lors des soirées où il fait bon : la fête est dans l'air.]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[2003]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Étiquette Pasadena]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>2004</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[pasadena]]></wp:post_name>
+<wp:status><![CDATA[inherit]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[attachment]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/media/labels/pasadena.jpg]]></wp:attachment_url>
+
+<wp:postmeta><wp:meta_key><![CDATA[_wp_attachment_image_alt]]></wp:meta_key><wp:meta_value><![CDATA[Étiquette de la bière Pasadena]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Pasadena]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1002</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[pasadena]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>2</wp:menu_order>
+<wp:post_type><![CDATA[bieres]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="type-de-bieres" nicename="bieres-permanentes"><![CDATA[Bières permanentes]]></category><category domain="type-de-location" nicename="particuliers"><![CDATA[Particuliers]]></category><category domain="type-de-location" nicename="evenementiel"><![CDATA[Événementiel]]></category>
+<wp:postmeta><wp:meta_key><![CDATA[banderole]]></wp:meta_key><wp:meta_value><![CDATA[2004]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[style]]></wp:meta_key><wp:meta_value><![CDATA[West Coast IPA]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[degre]]></wp:meta_key><wp:meta_value><![CDATA[6]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[formats]]></wp:meta_key><wp:meta_value><![CDATA[fût 30 L · canette 44 cl]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[2004]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Étiquette Weizh]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>2005</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[weizh]]></wp:post_name>
+<wp:status><![CDATA[inherit]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[attachment]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/media/labels/weizh.jpg]]></wp:attachment_url>
+
+<wp:postmeta><wp:meta_key><![CDATA[_wp_attachment_image_alt]]></wp:meta_key><wp:meta_value><![CDATA[Étiquette de la bière Weizh]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Weizh]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1003</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[weizh]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>3</wp:menu_order>
+<wp:post_type><![CDATA[bieres]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="type-de-bieres" nicename="bieres-permanentes"><![CDATA[Bières permanentes]]></category><category domain="type-de-location" nicename="particuliers"><![CDATA[Particuliers]]></category><category domain="type-de-location" nicename="evenementiel"><![CDATA[Événementiel]]></category>
+<wp:postmeta><wp:meta_key><![CDATA[banderole]]></wp:meta_key><wp:meta_value><![CDATA[2005]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[style]]></wp:meta_key><wp:meta_value><![CDATA[Wheat]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[degre]]></wp:meta_key><wp:meta_value><![CDATA[5]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[formats]]></wp:meta_key><wp:meta_value><![CDATA[fût 30 L · canette 44 cl]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[2005]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Étiquette SP 95]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>2006</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[sp-95]]></wp:post_name>
+<wp:status><![CDATA[inherit]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[attachment]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/media/labels/sp-95.jpg]]></wp:attachment_url>
+
+<wp:postmeta><wp:meta_key><![CDATA[_wp_attachment_image_alt]]></wp:meta_key><wp:meta_value><![CDATA[Étiquette de la bière SP 95]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[SP 95]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1004</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[sp-95]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>4</wp:menu_order>
+<wp:post_type><![CDATA[bieres]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="type-de-bieres" nicename="bieres-permanentes"><![CDATA[Bières permanentes]]></category><category domain="type-de-location" nicename="particuliers"><![CDATA[Particuliers]]></category><category domain="type-de-location" nicename="evenementiel"><![CDATA[Événementiel]]></category>
+<wp:postmeta><wp:meta_key><![CDATA[banderole]]></wp:meta_key><wp:meta_value><![CDATA[2006]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[style]]></wp:meta_key><wp:meta_value><![CDATA[Golden Ale]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[degre]]></wp:meta_key><wp:meta_value><![CDATA[6]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[formats]]></wp:meta_key><wp:meta_value><![CDATA[fût 30 L · canette 44 cl]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[2006]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Étiquette Rye Bomb]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>2007</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[rye-bomb]]></wp:post_name>
+<wp:status><![CDATA[inherit]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[attachment]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/media/labels/rye-bomb.jpg]]></wp:attachment_url>
+
+<wp:postmeta><wp:meta_key><![CDATA[_wp_attachment_image_alt]]></wp:meta_key><wp:meta_value><![CDATA[Étiquette de la bière Rye Bomb]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Rye Bomb]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1005</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[rye-bomb]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>5</wp:menu_order>
+<wp:post_type><![CDATA[bieres]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="type-de-bieres" nicename="bieres-permanentes"><![CDATA[Bières permanentes]]></category><category domain="type-de-location" nicename="particuliers"><![CDATA[Particuliers]]></category><category domain="type-de-location" nicename="evenementiel"><![CDATA[Événementiel]]></category>
+<wp:postmeta><wp:meta_key><![CDATA[banderole]]></wp:meta_key><wp:meta_value><![CDATA[2007]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[style]]></wp:meta_key><wp:meta_value><![CDATA[Triple belge]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[degre]]></wp:meta_key><wp:meta_value><![CDATA[8]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[formats]]></wp:meta_key><wp:meta_value><![CDATA[fût 20 L · canette 33 cl]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[2007]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Étiquette Tropicool]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>2008</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[tropicool]]></wp:post_name>
+<wp:status><![CDATA[inherit]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[attachment]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/media/labels/tropicool.jpg]]></wp:attachment_url>
+
+<wp:postmeta><wp:meta_key><![CDATA[_wp_attachment_image_alt]]></wp:meta_key><wp:meta_value><![CDATA[Étiquette de la bière Tropicool]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Tropicool]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1006</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[tropicool]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>6</wp:menu_order>
+<wp:post_type><![CDATA[bieres]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="type-de-bieres" nicename="bieres-ephemeres"><![CDATA[Bières éphémères]]></category>
+<wp:postmeta><wp:meta_key><![CDATA[banderole]]></wp:meta_key><wp:meta_value><![CDATA[2008]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[style]]></wp:meta_key><wp:meta_value><![CDATA[Catharina sour]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[degre]]></wp:meta_key><wp:meta_value><![CDATA[7,2]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[2008]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Étiquette Déluge]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>2009</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[deluge]]></wp:post_name>
+<wp:status><![CDATA[inherit]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[attachment]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/media/labels/deluge.jpg]]></wp:attachment_url>
+
+<wp:postmeta><wp:meta_key><![CDATA[_wp_attachment_image_alt]]></wp:meta_key><wp:meta_value><![CDATA[Étiquette de la bière Déluge]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Déluge]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1007</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[deluge]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>7</wp:menu_order>
+<wp:post_type><![CDATA[bieres]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="type-de-bieres" nicename="bieres-ephemeres"><![CDATA[Bières éphémères]]></category>
+<wp:postmeta><wp:meta_key><![CDATA[banderole]]></wp:meta_key><wp:meta_value><![CDATA[2009]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[style]]></wp:meta_key><wp:meta_value><![CDATA[Double NEIPA · collab]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[degre]]></wp:meta_key><wp:meta_value><![CDATA[8]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[2009]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Étiquette Fungarr]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>2010</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[fungarr]]></wp:post_name>
+<wp:status><![CDATA[inherit]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[attachment]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/media/labels/fungarr.jpg]]></wp:attachment_url>
+
+<wp:postmeta><wp:meta_key><![CDATA[_wp_attachment_image_alt]]></wp:meta_key><wp:meta_value><![CDATA[Étiquette de la bière Fungarr]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Fungarr]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1008</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[fungarr]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>8</wp:menu_order>
+<wp:post_type><![CDATA[bieres]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="type-de-bieres" nicename="bieres-ephemeres"><![CDATA[Bières éphémères]]></category>
+<wp:postmeta><wp:meta_key><![CDATA[banderole]]></wp:meta_key><wp:meta_value><![CDATA[2010]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[style]]></wp:meta_key><wp:meta_value><![CDATA[Breizh bock]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[degre]]></wp:meta_key><wp:meta_value><![CDATA[6,2]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[2010]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Étiquette Crypto]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>2011</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[crypto]]></wp:post_name>
+<wp:status><![CDATA[inherit]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[attachment]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/media/labels/crypto.jpg]]></wp:attachment_url>
+
+<wp:postmeta><wp:meta_key><![CDATA[_wp_attachment_image_alt]]></wp:meta_key><wp:meta_value><![CDATA[Étiquette de la bière Crypto]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Crypto]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1009</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[crypto]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>9</wp:menu_order>
+<wp:post_type><![CDATA[bieres]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="type-de-bieres" nicename="bieres-ephemeres"><![CDATA[Bières éphémères]]></category>
+<wp:postmeta><wp:meta_key><![CDATA[banderole]]></wp:meta_key><wp:meta_value><![CDATA[2011]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[style]]></wp:meta_key><wp:meta_value><![CDATA[Gose]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[degre]]></wp:meta_key><wp:meta_value><![CDATA[3,8]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[2011]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Étiquette Avalou]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>2012</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[avalou]]></wp:post_name>
+<wp:status><![CDATA[inherit]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[attachment]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/media/labels/avalou.jpg]]></wp:attachment_url>
+
+<wp:postmeta><wp:meta_key><![CDATA[_wp_attachment_image_alt]]></wp:meta_key><wp:meta_value><![CDATA[Étiquette de la bière Avalou]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Avalou]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1010</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[avalou]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>10</wp:menu_order>
+<wp:post_type><![CDATA[bieres]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="type-de-bieres" nicename="bieres-archivees"><![CDATA[Bières archivées]]></category>
+<wp:postmeta><wp:meta_key><![CDATA[banderole]]></wp:meta_key><wp:meta_value><![CDATA[2012]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[style]]></wp:meta_key><wp:meta_value><![CDATA[Collab cidre]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[2012]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Étiquette 0,0 %]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>2013</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[zero]]></wp:post_name>
+<wp:status><![CDATA[inherit]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[attachment]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/media/labels/zero.jpg]]></wp:attachment_url>
+
+<wp:postmeta><wp:meta_key><![CDATA[_wp_attachment_image_alt]]></wp:meta_key><wp:meta_value><![CDATA[Étiquette de la bière 0,0 %]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[0,0 %]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1011</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[zero]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>11</wp:menu_order>
+<wp:post_type><![CDATA[bieres]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="type-de-bieres" nicename="bieres-archivees"><![CDATA[Bières archivées]]></category>
+<wp:postmeta><wp:meta_key><![CDATA[banderole]]></wp:meta_key><wp:meta_value><![CDATA[2013]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[style]]></wp:meta_key><wp:meta_value><![CDATA[Sans alcool]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[degre]]></wp:meta_key><wp:meta_value><![CDATA[0]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[2013]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Étiquette Série #20]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>2014</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[serie-20]]></wp:post_name>
+<wp:status><![CDATA[inherit]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[attachment]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/media/labels/serie-20.jpg]]></wp:attachment_url>
+
+<wp:postmeta><wp:meta_key><![CDATA[_wp_attachment_image_alt]]></wp:meta_key><wp:meta_value><![CDATA[Étiquette de la bière Série #20]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Série #20]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1012</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[serie-20]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>12</wp:menu_order>
+<wp:post_type><![CDATA[bieres]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="type-de-bieres" nicename="bieres-archivees"><![CDATA[Bières archivées]]></category>
+<wp:postmeta><wp:meta_key><![CDATA[banderole]]></wp:meta_key><wp:meta_value><![CDATA[2014]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[style]]></wp:meta_key><wp:meta_value><![CDATA[Éphémère]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[2014]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Étiquette Série #19]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>2015</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[serie-19]]></wp:post_name>
+<wp:status><![CDATA[inherit]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[attachment]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/media/labels/serie-19.jpg]]></wp:attachment_url>
+
+<wp:postmeta><wp:meta_key><![CDATA[_wp_attachment_image_alt]]></wp:meta_key><wp:meta_value><![CDATA[Étiquette de la bière Série #19]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Série #19]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1013</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[serie-19]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>13</wp:menu_order>
+<wp:post_type><![CDATA[bieres]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="type-de-bieres" nicename="bieres-archivees"><![CDATA[Bières archivées]]></category>
+<wp:postmeta><wp:meta_key><![CDATA[banderole]]></wp:meta_key><wp:meta_value><![CDATA[2015]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[style]]></wp:meta_key><wp:meta_value><![CDATA[Éphémère]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[2015]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Étiquette Série #18]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>2016</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[serie-18]]></wp:post_name>
+<wp:status><![CDATA[inherit]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[attachment]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/media/labels/serie-18.jpg]]></wp:attachment_url>
+
+<wp:postmeta><wp:meta_key><![CDATA[_wp_attachment_image_alt]]></wp:meta_key><wp:meta_value><![CDATA[Étiquette de la bière Série #18]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Série #18]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1014</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[serie-18]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>14</wp:menu_order>
+<wp:post_type><![CDATA[bieres]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="type-de-bieres" nicename="bieres-archivees"><![CDATA[Bières archivées]]></category>
+<wp:postmeta><wp:meta_key><![CDATA[banderole]]></wp:meta_key><wp:meta_value><![CDATA[2016]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[style]]></wp:meta_key><wp:meta_value><![CDATA[Éphémère]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[2016]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Étiquette Série #17]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>2017</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[serie-17]]></wp:post_name>
+<wp:status><![CDATA[inherit]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[attachment]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/media/labels/serie-17.jpg]]></wp:attachment_url>
+
+<wp:postmeta><wp:meta_key><![CDATA[_wp_attachment_image_alt]]></wp:meta_key><wp:meta_value><![CDATA[Étiquette de la bière Série #17]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Série #17]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1015</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[serie-17]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>15</wp:menu_order>
+<wp:post_type><![CDATA[bieres]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="type-de-bieres" nicename="bieres-archivees"><![CDATA[Bières archivées]]></category>
+<wp:postmeta><wp:meta_key><![CDATA[banderole]]></wp:meta_key><wp:meta_value><![CDATA[2017]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[style]]></wp:meta_key><wp:meta_value><![CDATA[Éphémère]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[2017]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[bières éphémères : série #21]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Nouvelle fournée d'éphémères, brassées en petite quantité et disponibles jusqu'à épuisement. Quand c'est fini, c'est fini.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="/bieres/tropicool/">Tropicool</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="/bieres/deluge/">Déluge</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="/bieres/fungarr/">Fungarr</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="/bieres/crypto/">Crypto</a></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1100</wp:post_id>
+<wp:post_date><![CDATA[2026-04-28 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-04-28 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[bieres-ephemeres-serie-21]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[post]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+</item>
+<item>
+<title><![CDATA[bières éphémères : série #20]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Nouvelle série de bières éphémères, disponibles jusqu'à épuisement.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="/bieres/serie-20/">Série #20</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="/bieres/avalou/">Avalou</a></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1101</wp:post_id>
+<wp:post_date><![CDATA[2026-03-23 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-03-23 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[bieres-ephemeres-serie-20]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[post]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+</item>
+<item>
+<title><![CDATA[bières éphémères : série #19]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Nouvelle série de bières éphémères, disponibles jusqu'à épuisement.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="/bieres/serie-19/">Série #19</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="/bieres/crypto/">Crypto</a></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1102</wp:post_id>
+<wp:post_date><![CDATA[2026-03-05 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-03-05 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[bieres-ephemeres-serie-19]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[post]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+</item>
+<item>
+<title><![CDATA[bières éphémères : série #18]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Nouvelle série de bières éphémères, disponibles jusqu'à épuisement.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="/bieres/serie-18/">Série #18</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="/bieres/deluge/">Déluge</a></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1103</wp:post_id>
+<wp:post_date><![CDATA[2026-02-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-02-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[bieres-ephemeres-serie-18]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[post]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+</item>
+<item>
+<title><![CDATA[bières éphémères : série #17]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Nouvelle série de bières éphémères, disponibles jusqu'à épuisement.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="/bieres/serie-17/">Série #17</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="/bieres/fungarr/">Fungarr</a></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1104</wp:post_id>
+<wp:post_date><![CDATA[2026-01-15 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-15 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[bieres-ephemeres-serie-17]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[post]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+</item>
+<item>
+<title><![CDATA[bières éphémères : 0,0 %]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Nouvelle série de bières éphémères, disponibles jusqu'à épuisement.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="/bieres/zero/">0,0 %</a></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1105</wp:post_id>
+<wp:post_date><![CDATA[2025-12-31 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2025-12-31 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[bieres-ephemeres-0-0]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[post]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+</item>
+<item>
+<title><![CDATA[bières éphémères : série #16]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Nouvelle série de bières éphémères, disponibles jusqu'à épuisement.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="/bieres/serie-20/">Série #20</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="/bieres/tropicool/">Tropicool</a></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1106</wp:post_id>
+<wp:post_date><![CDATA[2025-12-29 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2025-12-29 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[bieres-ephemeres-serie-16]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[post]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+</item>
+<item>
+<title><![CDATA[bières éphémères : novembre]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Nouvelle série de bières éphémères, disponibles jusqu'à épuisement.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="/bieres/serie-19/">Série #19</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="/bieres/serie-17/">Série #17</a></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1107</wp:post_id>
+<wp:post_date><![CDATA[2025-11-19 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2025-11-19 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[bieres-ephemeres-novembre]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[post]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+</item>
+<item>
+<title><![CDATA[bière éphémère : avalou]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Nouvelle série de bières éphémères, disponibles jusqu'à épuisement.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="/bieres/avalou/">Avalou</a></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1108</wp:post_id>
+<wp:post_date><![CDATA[2025-11-05 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2025-11-05 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[biere-ephemere-avalou]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[post]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+</item>
+<item>
+<title><![CDATA[Antonin]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1200</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[antonin]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[membre]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+
+<wp:postmeta><wp:meta_key><![CDATA[poste]]></wp:meta_key><wp:meta_value><![CDATA[resp. production]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[bio]]></wp:meta_key><wp:meta_value><![CDATA[Passé par Gallia et Prizm Brewing. Créatif et exigeant sur la qualité.]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Jean]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1201</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[jean]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>1</wp:menu_order>
+<wp:post_type><![CDATA[membre]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+
+<wp:postmeta><wp:meta_key><![CDATA[poste]]></wp:meta_key><wp:meta_value><![CDATA[commercial & marketing]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[bio]]></wp:meta_key><wp:meta_value><![CDATA[Et remplissage des fûts.]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Arthur]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1202</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[arthur]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>2</wp:menu_order>
+<wp:post_type><![CDATA[membre]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+
+<wp:postmeta><wp:meta_key><![CDATA[poste]]></wp:meta_key><wp:meta_value><![CDATA[logistique]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[bio]]></wp:meta_key><wp:meta_value><![CDATA[Préparation, stock, livraisons.]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Ronan]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1203</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[ronan]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>3</wp:menu_order>
+<wp:post_type><![CDATA[membre]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+
+<wp:postmeta><wp:meta_key><![CDATA[poste]]></wp:meta_key><wp:meta_value><![CDATA[opérateur]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[bio]]></wp:meta_key><wp:meta_value><![CDATA[Réparations, enfûtage, brassage, fermentation.]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Tristan]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1204</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[tristan]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>4</wp:menu_order>
+<wp:post_type><![CDATA[membre]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+
+<wp:postmeta><wp:meta_key><![CDATA[poste]]></wp:meta_key><wp:meta_value><![CDATA[brasseur]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[bio]]></wp:meta_key><wp:meta_value><![CDATA[Passé par une grande brasserie.]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Iwan]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1205</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[iwan]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>5</wp:menu_order>
+<wp:post_type><![CDATA[membre]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+
+<wp:postmeta><wp:meta_key><![CDATA[poste]]></wp:meta_key><wp:meta_value><![CDATA[communication]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[bio]]></wp:meta_key><wp:meta_value><![CDATA[Réseaux, site, photos.]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Eline]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1206</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[eline]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>6</wp:menu_order>
+<wp:post_type><![CDATA[membre]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+
+<wp:postmeta><wp:meta_key><![CDATA[poste]]></wp:meta_key><wp:meta_value><![CDATA[commerciale]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[bio]]></wp:meta_key><wp:meta_value><![CDATA[Biérologue / zythologue, formée au CFA 3B de Vitré.]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Mériadec]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1207</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[meriadec]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>7</wp:menu_order>
+<wp:post_type><![CDATA[membre]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+
+<wp:postmeta><wp:meta_key><![CDATA[poste]]></wp:meta_key><wp:meta_value><![CDATA[apprenti logistique & prod]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[bio]]></wp:meta_key><wp:meta_value><![CDATA[Passé par le café et le vin.]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Adrien]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1208</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[adrien]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>8</wp:menu_order>
+<wp:post_type><![CDATA[membre]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+
+<wp:postmeta><wp:meta_key><![CDATA[poste]]></wp:meta_key><wp:meta_value><![CDATA[apprenti brasseur]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[bio]]></wp:meta_key><wp:meta_value><![CDATA[A débuté dans le craft au Canada.]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Porter]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1209</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[porter]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>9</wp:menu_order>
+<wp:post_type><![CDATA[membre]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+
+<wp:postmeta><wp:meta_key><![CDATA[poste]]></wp:meta_key><wp:meta_value><![CDATA[chien de garde]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[bio]]></wp:meta_key><wp:meta_value><![CDATA[Il garde. Surtout la gamelle.]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[Accueil]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Des bières artisanales de qualité, innovantes et créatives. Une gamme permanente, et des éphémères qui ne restent jamais longtemps.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1300</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[accueil]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[page]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+
+
+</item>
+<item>
+<title><![CDATA[Nos bières]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Une gamme permanente de classiques revisités, et une gamme éphémère brassée selon nos envies.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1301</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[nos-bieres]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>1</wp:menu_order>
+<wp:post_type><![CDATA[page]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+
+
+</item>
+<item>
+<title><![CDATA[La brasserie]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Une nouvelle microbrasserie craft, à deux pas de la rocade rennaise pour livrer facilement.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1302</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[la-brasserie]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>2</wp:menu_order>
+<wp:post_type><![CDATA[page]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+
+
+</item>
+<item>
+<title><![CDATA[Location de tireuses à bières]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Tireuse, fûts, éco-cups : le devis se calcule en direct, en 2 minutes.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1303</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[location-tireuses-a-bieres]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>3</wp:menu_order>
+<wp:post_type><![CDATA[page]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+
+
+</item>
+<item>
+<title><![CDATA[Le blog]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1304</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[le-blog]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>4</wp:menu_order>
+<wp:post_type><![CDATA[page]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+
+
+</item>
+<item>
+<title><![CDATA[Contact]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>On se parle ?</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1305</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[contact]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>5</wp:menu_order>
+<wp:post_type><![CDATA[page]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+
+
+</item>
+<item>
+<title><![CDATA[Téléchargements]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Logos, fiches produits et guides des tireuses.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1306</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[telechargements]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>6</wp:menu_order>
+<wp:post_type><![CDATA[page]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+
+
+</item>
+<item>
+<title><![CDATA[Mentions légales]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Contenu repris du site actuel à l'étape 7.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1307</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[mentions-legales]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>7</wp:menu_order>
+<wp:post_type><![CDATA[page]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+
+
+</item>
+<item>
+<title><![CDATA[Politique de confidentialité]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Contenu repris du site actuel à l'étape 7.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1308</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[politique-de-confidentialite]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>8</wp:menu_order>
+<wp:post_type><![CDATA[page]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+
+
+</item>
+<item>
+<title><![CDATA[Plan du site]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>1309</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[sitemap]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>9</wp:menu_order>
+<wp:post_type><![CDATA[page]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+
+
+</item>
+</channel>
+</rss>

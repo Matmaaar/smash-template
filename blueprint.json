@@ -1,0 +1,38 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"meta": {
+		"title": "smash : démo du thème",
+		"description": "Installe le thème smash depuis GitHub, Secure Custom Fields et le contenu de démo.",
+		"author": "smash"
+	},
+	"landingPage": "/",
+	"preferredVersions": { "php": "8.3", "wp": "latest" },
+	"features": { "networking": true },
+	"login": true,
+	"steps": [
+		{ "step": "setSiteLanguage", "language": "fr_FR" },
+		{
+			"step": "installPlugin",
+			"pluginData": { "resource": "wordpress.org/plugins", "slug": "secure-custom-fields" },
+			"options": { "activate": true }
+		},
+		{
+			"step": "installTheme",
+			"themeData": {
+				"resource": "git:directory",
+				"url": "https://github.com/matmaaar/smash-template",
+				"ref": "claude/bold-ramanujan-he85fr",
+				"refType": "branch"
+			},
+			"options": { "activate": true, "targetFolderName": "smash" }
+		},
+		{
+			"step": "importWxr",
+			"file": { "resource": "url", "url": "https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/demo-content.xml" }
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php require '/wordpress/wp-load.php'; require '/wordpress/wp-content/themes/smash/demo/setup.php';"
+		}
+	]
+}

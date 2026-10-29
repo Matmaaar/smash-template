@@ -18,7 +18,7 @@ Contenu de démo provisoire : celui de la maquette (tableaux JS `PERM`, `EPH`, `
 | # | Étape | Statut | Notes |
 |---|---|---|---|
 | 0 | Plan, analyse du site, maquette dans `maquette/` | ✅ fait | relevé du 29/10/2026 |
-| 1 | **Socle + pipeline Playground** : `style.css`, `functions.php`, `inc/` de base (setup, assets, fields-map, data, options), CSS et polices, `index.php`, petit WXR de démo tiré de la maquette, `blueprint.json`, `.wp-env.json`. Objectif : le thème s'active sur Playground, toutes les URL du sitemap répondent | ⬜ à faire | le repo doit être public pour Playground |
+| 1 | **Socle + pipeline Playground** : `style.css`, `functions.php`, `inc/` de base (setup, assets, fields-map, data, options), CSS et polices, `index.php`, petit WXR de démo tiré de la maquette, `blueprint.json`, `.wp-env.json`. Objectif : le thème s'active sur Playground, toutes les URL du sitemap répondent | ✅ fait | Testé en local (Playground CLI, WP 6.5) : les 20 URL testées répondent (200, 404 sur une page inconnue), 1 seul H1, aucune notice du thème. **Reste à vérifier : le lien Playground en ligne** (playground.wordpress.net bloqué depuis le conteneur). Choix : groupes ACF démo générés en PHP depuis `fields-map.php` (pas d'`acf-json/`, une seule source) ; CPT/taxos déclarés seulement s'ils manquent ; polices Switzer + JetBrains Mono hébergées (Inter Tight abandonnée, simple police de secours). Provisoire : `hero.jpg` et `can-affluence.jpg` sont encore référencés dans le CSS → à passer en champs à l'étape 2. Header/footer = version de base (méga-menu et CTA « devis tireuse » à l'étape 2). |
 | 2 | Header (méga-menu), footer, porte d'âge, accueil | ⬜ à faire | |
 | 3 | Bières : « nos bières », taxonomie, fiche, Product | ⬜ à faire | |
 | 4 | Location (mode démo et Gravity Forms), FAQPage | ⬜ à faire | |
@@ -28,6 +28,7 @@ Contenu de démo provisoire : celui de la maquette (tableaux JS `PERM`, `EPH`, `
 | 8 | Vérification complète (§8) + README + lien Playground final | ⬜ à faire | |
 
 **Journal des sessions** (le plus récent en haut) :
+- 29/10/2026 : étape 1 faite (socle du thème, contenu de démo tiré de la maquette, blueprint Playground, wp-env).
 - 29/10/2026 : nouvel ordre des étapes (base Playground d'abord, scraping à la fin).
 - 29/10/2026 : analyse du site public, plan, maquette ajoutée au repo.
 

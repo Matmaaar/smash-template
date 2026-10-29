@@ -1,0 +1,47 @@
+{
+  "site": {
+    "name": "smash",
+    "description": "fabrique de bières"
+  },
+  "options": {
+    "address": "4 bis K, rue du Lieutenant Colonel Dubois<br>35000 Rennes",
+    "hours": "du lundi au vendredi<br>9 h – 18 h",
+    "phone": "02 90 22 87 00",
+    "email": "contact@smash.bzh",
+    "map_url": "https://www.google.com/maps/search/?api=1&query=4+bis+K+rue+du+Lieutenant+Colonel+Dubois+35000+Rennes",
+    "instagram": "https://www.instagram.com/brasserie_smash/",
+    "facebook": "https://www.facebook.com/profile.php?id=61550190754099",
+    "linkedin": "https://www.linkedin.com/company/brasserie-smash/",
+    "untappd": "https://untappd.com/brasserie_smash",
+    "warning": "L'abus d'alcool est dangereux pour la santé, à consommer avec modération."
+  },
+  "menus": {
+    "primary": [
+      "nos-bieres",
+      "la-brasserie",
+      "le-blog",
+      "contact",
+      "telechargements",
+      "location-tireuses-a-bieres"
+    ],
+    "footer": [
+      "nos-bieres",
+      "la-brasserie",
+      "location-tireuses-a-bieres",
+      "le-blog",
+      "contact",
+      "telechargements"
+    ],
+    "legal": [
+      "mentions-legales",
+      "politique-de-confidentialite",
+      "sitemap"
+    ]
+  },
+  "front_page": "accueil",
+  "posts_page": "le-blog",
+  "page_media": {
+    "hero": 2000,
+    "brasserie": 2001
+  }
+}

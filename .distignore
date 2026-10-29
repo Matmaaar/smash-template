@@ -1,0 +1,12 @@
+# Exclu du zip du thème livré au client.
+.git
+.gitignore
+.distignore
+.wp-env.json
+blueprint.json
+maquette
+tools
+demo
+node_modules
+PLAN.md
+CLAUDE.md

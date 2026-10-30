@@ -1,5 +1,7 @@
 /* smash : JS commun à toutes les pages (repris de la maquette : common(), bindTilt, méga-menu, porte d'âge). */
 (() => {
+	// Inertie du scroll fluide (Lenis) : 0,1 = très doux, 0,2 = presque natif. La maquette était à 0,09.
+	const SCROLL_LERP = .16;
 	const $ = (s, c = document) => c.querySelector(s);
 	const $$ = (s, c = document) => [...c.querySelectorAll(s)];
 	const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -9,7 +11,7 @@
 
 	if (animate) {
 		gsap.registerPlugin(ScrollTrigger, SplitText);
-		smash.lenis = new Lenis({ lerp: .09 });
+		smash.lenis = new Lenis({ lerp: SCROLL_LERP });
 		smash.lenis.on('scroll', ScrollTrigger.update);
 		gsap.ticker.add(t => smash.lenis.raf(t * 1000));
 		gsap.ticker.lagSmoothing(0);

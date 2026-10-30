@@ -19,7 +19,7 @@ if ( ! defined( 'SMASH_DEMO_FIELDS' ) ) {
 	define( 'SMASH_DEMO_FIELDS', true );
 }
 
-foreach ( array( 'setup', 'content-types', 'data', 'options', 'assets', 'template-tags', 'menus', 'age-gate', 'schema' ) as $smash_file ) {
+foreach ( array( 'setup', 'content-types', 'data', 'options', 'assets', 'template-tags', 'menus', 'age-gate', 'schema', 'location' ) as $smash_file ) {
 	require SMASH_DIR . '/inc/' . $smash_file . '.php';
 }
 unset( $smash_file );

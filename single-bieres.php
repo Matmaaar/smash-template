@@ -69,7 +69,10 @@ $smash_rentable = $smash_location && has_term( '', 'type-de-location', $smash_b[
 					<?php endforeach; ?>
 				</dl>
 				<?php if ( $smash_rentable ) : ?>
-					<?php smash_btn( __( 'en fût pour ta soirée', 'smash' ), get_permalink( $smash_location ), 'dark' ); ?>
+					<?php
+					$smash_keg = smash_keg_price( $smash_b['id'] );
+					smash_btn( __( 'en fût pour ta soirée', 'smash' ) . ( null !== $smash_keg ? ' · ' . smash_money( $smash_keg ) : '' ), get_permalink( $smash_location ), 'dark' );
+					?>
 				<?php endif; ?>
 			</div>
 		</div>

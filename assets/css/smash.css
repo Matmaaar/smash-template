@@ -385,3 +385,14 @@ html.lenis,html.lenis body{height:auto}
 .js .tabpanel + .tabpanel{margin-top:0}
 .tabpanel:focus{outline:none}
 .lab-wrap[hidden]{display:none}
+/* Location : ajouts du thème (champs du ticket, honeypot, erreurs, FAQ en blocs « Détails ») */
+.ticket h2.h3{font-size:1.7rem;font-weight:800;letter-spacing:-.04em}
+.ticket__form textarea{background:transparent;border:0;border-bottom:1.5px solid rgba(247,246,242,.3);padding:.55rem 0;color:var(--white);font:inherit;resize:vertical}
+.ticket__form textarea:focus{border-color:var(--white);outline:none}
+.ticket__form input[aria-invalid=true]{border-color:#ff7a5c}
+.t-error{color:#ff9b85;font-size:.9rem}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.keg__lab{display:block;width:100%;position:relative;overflow:hidden;cursor:pointer;padding:0;border:0}
+.keg__lab img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.faq details > :not(summary){padding:0 0 1.1rem;line-height:1.5;color:#4d4c48;max-width:62ch}
+[hidden]{display:none!important}

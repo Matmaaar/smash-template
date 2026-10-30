@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!-- Contenu de démo du thème smash, généré par tools/demo/build.py le 2026-10-29. Ne pas modifier à la main. -->
+<!-- Contenu de démo du thème smash, généré par tools/demo/build.py le 2026-10-30. Ne pas modifier à la main. -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -98,7 +98,7 @@
 <wp:post_password><![CDATA[]]></wp:post_password>
 <wp:is_sticky>0</wp:is_sticky>
 <category domain="type-de-bieres" nicename="bieres-permanentes"><![CDATA[Bières permanentes]]></category><category domain="type-de-location" nicename="particuliers"><![CDATA[Particuliers]]></category><category domain="type-de-location" nicename="evenementiel"><![CDATA[Événementiel]]></category>
-<wp:postmeta><wp:meta_key><![CDATA[banderole]]></wp:meta_key><wp:meta_value><![CDATA[2002]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[style]]></wp:meta_key><wp:meta_value><![CDATA[Bohemian Pilsner]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[degre]]></wp:meta_key><wp:meta_value><![CDATA[4,5]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[formats]]></wp:meta_key><wp:meta_value><![CDATA[fût 30 L · canette 44 cl]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[accroche]]></wp:meta_key><wp:meta_value><![CDATA[Délicate, désaltérante, et qui se boit toute seule.]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[description]]></wp:meta_key><wp:meta_value><![CDATA[Légèrement maltée, une pointe d'amertume, des notes herbacées, une bouche vive et pétillante.]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[malt]]></wp:meta_key><wp:meta_value><![CDATA[Orge, blé]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[houblons]]></wp:meta_key><wp:meta_value><![CDATA[Patho, Saaz]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[levure]]></wp:meta_key><wp:meta_value><![CDATA[W34-70]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[aspect]]></wp:meta_key><wp:meta_value><![CDATA[Or pâle, légèrement trouble, belle mousse]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[degustation]]></wp:meta_key><wp:meta_value><![CDATA[Au bar, devant le match, à la maison, à l'apéro, au déjeuner ou au dîner.]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[accords]]></wp:meta_key><wp:meta_value><![CDATA[Charcuterie, anchois, plats épicés, fish & chips.]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[2002]]></wp:meta_value></wp:postmeta>
+<wp:postmeta><wp:meta_key><![CDATA[banderole]]></wp:meta_key><wp:meta_value><![CDATA[2002]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[style]]></wp:meta_key><wp:meta_value><![CDATA[Bohemian Pilsner]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[degre]]></wp:meta_key><wp:meta_value><![CDATA[4,5]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[formats]]></wp:meta_key><wp:meta_value><![CDATA[fût 30 L · canette 44 cl]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[accroche]]></wp:meta_key><wp:meta_value><![CDATA[Délicate, désaltérante, et qui se boit toute seule.]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[description]]></wp:meta_key><wp:meta_value><![CDATA[Légèrement maltée, une pointe d'amertume, des notes herbacées, une bouche vive et pétillante.]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[malt]]></wp:meta_key><wp:meta_value><![CDATA[Orge, blé]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[houblons]]></wp:meta_key><wp:meta_value><![CDATA[Patho, Saaz]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[levure]]></wp:meta_key><wp:meta_value><![CDATA[W34-70]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[aspect]]></wp:meta_key><wp:meta_value><![CDATA[Or pâle, légèrement trouble, belle mousse]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[degustation]]></wp:meta_key><wp:meta_value><![CDATA[Au bar, devant le match, à la maison, à l'apéro, au déjeuner ou au dîner.]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[accords]]></wp:meta_key><wp:meta_value><![CDATA[Charcuterie, anchois, plats épicés, fish & chips.]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[prix_fut]]></wp:meta_key><wp:meta_value><![CDATA[90]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[volume_fut]]></wp:meta_key><wp:meta_value><![CDATA[30 L]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[2002]]></wp:meta_value></wp:postmeta>
 </item>
 <item>
 <title><![CDATA[Étiquette Affluence]]></title>
@@ -139,7 +139,7 @@
 <wp:post_password><![CDATA[]]></wp:post_password>
 <wp:is_sticky>0</wp:is_sticky>
 <category domain="type-de-bieres" nicename="bieres-permanentes"><![CDATA[Bières permanentes]]></category><category domain="type-de-location" nicename="particuliers"><![CDATA[Particuliers]]></category><category domain="type-de-location" nicename="evenementiel"><![CDATA[Événementiel]]></category>
-<wp:postmeta><wp:meta_key><![CDATA[banderole]]></wp:meta_key><wp:meta_value><![CDATA[2003]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[photo]]></wp:meta_key><wp:meta_value><![CDATA[2000]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[style]]></wp:meta_key><wp:meta_value><![CDATA[NEIPA]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[degre]]></wp:meta_key><wp:meta_value><![CDATA[6]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[formats]]></wp:meta_key><wp:meta_value><![CDATA[fût 30 L · canette 44 cl]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[accroche]]></wp:meta_key><wp:meta_value><![CDATA[L'affluence, c'est cette sensation que tu as lors des soirées où il fait bon : la fête est dans l'air.]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[2003]]></wp:meta_value></wp:postmeta>
+<wp:postmeta><wp:meta_key><![CDATA[banderole]]></wp:meta_key><wp:meta_value><![CDATA[2003]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[photo]]></wp:meta_key><wp:meta_value><![CDATA[2000]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[style]]></wp:meta_key><wp:meta_value><![CDATA[NEIPA]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[degre]]></wp:meta_key><wp:meta_value><![CDATA[6]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[formats]]></wp:meta_key><wp:meta_value><![CDATA[fût 30 L · canette 44 cl]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[accroche]]></wp:meta_key><wp:meta_value><![CDATA[L'affluence, c'est cette sensation que tu as lors des soirées où il fait bon : la fête est dans l'air.]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[prix_fut]]></wp:meta_key><wp:meta_value><![CDATA[146]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[volume_fut]]></wp:meta_key><wp:meta_value><![CDATA[30 L]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[2003]]></wp:meta_value></wp:postmeta>
 </item>
 <item>
 <title><![CDATA[Étiquette Pasadena]]></title>
@@ -180,7 +180,7 @@
 <wp:post_password><![CDATA[]]></wp:post_password>
 <wp:is_sticky>0</wp:is_sticky>
 <category domain="type-de-bieres" nicename="bieres-permanentes"><![CDATA[Bières permanentes]]></category><category domain="type-de-location" nicename="particuliers"><![CDATA[Particuliers]]></category><category domain="type-de-location" nicename="evenementiel"><![CDATA[Événementiel]]></category>
-<wp:postmeta><wp:meta_key><![CDATA[banderole]]></wp:meta_key><wp:meta_value><![CDATA[2004]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[style]]></wp:meta_key><wp:meta_value><![CDATA[West Coast IPA]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[degre]]></wp:meta_key><wp:meta_value><![CDATA[6]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[formats]]></wp:meta_key><wp:meta_value><![CDATA[fût 30 L · canette 44 cl]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[2004]]></wp:meta_value></wp:postmeta>
+<wp:postmeta><wp:meta_key><![CDATA[banderole]]></wp:meta_key><wp:meta_value><![CDATA[2004]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[style]]></wp:meta_key><wp:meta_value><![CDATA[West Coast IPA]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[degre]]></wp:meta_key><wp:meta_value><![CDATA[6]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[formats]]></wp:meta_key><wp:meta_value><![CDATA[fût 30 L · canette 44 cl]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[prix_fut]]></wp:meta_key><wp:meta_value><![CDATA[146]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[volume_fut]]></wp:meta_key><wp:meta_value><![CDATA[30 L]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[2004]]></wp:meta_value></wp:postmeta>
 </item>
 <item>
 <title><![CDATA[Étiquette Weizh]]></title>
@@ -221,7 +221,7 @@
 <wp:post_password><![CDATA[]]></wp:post_password>
 <wp:is_sticky>0</wp:is_sticky>
 <category domain="type-de-bieres" nicename="bieres-permanentes"><![CDATA[Bières permanentes]]></category><category domain="type-de-location" nicename="particuliers"><![CDATA[Particuliers]]></category><category domain="type-de-location" nicename="evenementiel"><![CDATA[Événementiel]]></category>
-<wp:postmeta><wp:meta_key><![CDATA[banderole]]></wp:meta_key><wp:meta_value><![CDATA[2005]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[style]]></wp:meta_key><wp:meta_value><![CDATA[Wheat]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[degre]]></wp:meta_key><wp:meta_value><![CDATA[5]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[formats]]></wp:meta_key><wp:meta_value><![CDATA[fût 30 L · canette 44 cl]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[2005]]></wp:meta_value></wp:postmeta>
+<wp:postmeta><wp:meta_key><![CDATA[banderole]]></wp:meta_key><wp:meta_value><![CDATA[2005]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[style]]></wp:meta_key><wp:meta_value><![CDATA[Wheat]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[degre]]></wp:meta_key><wp:meta_value><![CDATA[5]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[formats]]></wp:meta_key><wp:meta_value><![CDATA[fût 30 L · canette 44 cl]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[prix_fut]]></wp:meta_key><wp:meta_value><![CDATA[146]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[volume_fut]]></wp:meta_key><wp:meta_value><![CDATA[30 L]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[2005]]></wp:meta_value></wp:postmeta>
 </item>
 <item>
 <title><![CDATA[Étiquette SP 95]]></title>
@@ -262,7 +262,7 @@
 <wp:post_password><![CDATA[]]></wp:post_password>
 <wp:is_sticky>0</wp:is_sticky>
 <category domain="type-de-bieres" nicename="bieres-permanentes"><![CDATA[Bières permanentes]]></category><category domain="type-de-location" nicename="particuliers"><![CDATA[Particuliers]]></category><category domain="type-de-location" nicename="evenementiel"><![CDATA[Événementiel]]></category>
-<wp:postmeta><wp:meta_key><![CDATA[banderole]]></wp:meta_key><wp:meta_value><![CDATA[2006]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[style]]></wp:meta_key><wp:meta_value><![CDATA[Golden Ale]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[degre]]></wp:meta_key><wp:meta_value><![CDATA[6]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[formats]]></wp:meta_key><wp:meta_value><![CDATA[fût 30 L · canette 44 cl]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[2006]]></wp:meta_value></wp:postmeta>
+<wp:postmeta><wp:meta_key><![CDATA[banderole]]></wp:meta_key><wp:meta_value><![CDATA[2006]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[style]]></wp:meta_key><wp:meta_value><![CDATA[Golden Ale]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[degre]]></wp:meta_key><wp:meta_value><![CDATA[6]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[formats]]></wp:meta_key><wp:meta_value><![CDATA[fût 30 L · canette 44 cl]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[prix_fut]]></wp:meta_key><wp:meta_value><![CDATA[151]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[volume_fut]]></wp:meta_key><wp:meta_value><![CDATA[30 L]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[2006]]></wp:meta_value></wp:postmeta>
 </item>
 <item>
 <title><![CDATA[Étiquette Rye Bomb]]></title>
@@ -303,7 +303,7 @@
 <wp:post_password><![CDATA[]]></wp:post_password>
 <wp:is_sticky>0</wp:is_sticky>
 <category domain="type-de-bieres" nicename="bieres-permanentes"><![CDATA[Bières permanentes]]></category><category domain="type-de-location" nicename="particuliers"><![CDATA[Particuliers]]></category><category domain="type-de-location" nicename="evenementiel"><![CDATA[Événementiel]]></category>
-<wp:postmeta><wp:meta_key><![CDATA[banderole]]></wp:meta_key><wp:meta_value><![CDATA[2007]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[style]]></wp:meta_key><wp:meta_value><![CDATA[Triple belge]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[degre]]></wp:meta_key><wp:meta_value><![CDATA[8]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[formats]]></wp:meta_key><wp:meta_value><![CDATA[fût 20 L · canette 33 cl]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[2007]]></wp:meta_value></wp:postmeta>
+<wp:postmeta><wp:meta_key><![CDATA[banderole]]></wp:meta_key><wp:meta_value><![CDATA[2007]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[style]]></wp:meta_key><wp:meta_value><![CDATA[Triple belge]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[degre]]></wp:meta_key><wp:meta_value><![CDATA[8]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[formats]]></wp:meta_key><wp:meta_value><![CDATA[fût 20 L · canette 33 cl]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[prix_fut]]></wp:meta_key><wp:meta_value><![CDATA[102]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[volume_fut]]></wp:meta_key><wp:meta_value><![CDATA[20 L]]></wp:meta_value></wp:postmeta><wp:postmeta><wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key><wp:meta_value><![CDATA[2007]]></wp:meta_value></wp:postmeta>
 </item>
 <item>
 <title><![CDATA[Étiquette Tropicool]]></title>
@@ -1254,9 +1254,31 @@
 <item>
 <title><![CDATA[Location de tireuses à bières]]></title>
 <dc:creator><![CDATA[smash]]></dc:creator>
-<content:encoded><![CDATA[<!-- wp:paragraph -->
-<p>Tireuse, fûts, éco-cups : le devis se calcule en direct, en 2 minutes.</p>
-<!-- /wp:paragraph -->]]></content:encoded>
+<content:encoded><![CDATA[<!-- wp:details -->
+<details class="wp-block-details"><summary>Comment fonctionne la tireuse ?</summary><!-- wp:paragraph -->
+<p>Un guide est fourni pour les tireuses CO2 et à froid sec. La bière est prête en moins de 10 minutes.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details -->
+<details class="wp-block-details"><summary>Je peux avoir une éphémère en fût ?</summary><!-- wp:paragraph -->
+<p>Oui, sur demande et selon le stock : clique sur la tuile « une éphémère », on te propose ce qui est dispo.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details -->
+<details class="wp-block-details"><summary>Les pros, ça marche comment ?</summary><!-- wp:paragraph -->
+<p>Tarifs sur devis. Livraison et reprise offertes dès 12 fûts dans un rayon de 15 km, l'installation reste à votre charge. Gobelets 20 cl, 50 cl et verres à vin, quantités à définir ensemble.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details -->
+<details class="wp-block-details"><summary>Le matériel se rend comment ?</summary><!-- wp:paragraph -->
+<p>Propre et en bon état, le lundi ou le mardi de 9 h à 17 h. Caution de 200 € au retrait.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+]]></content:encoded>
 <excerpt:encoded><![CDATA[]]></excerpt:encoded>
 <wp:post_id>1303</wp:post_id>
 <wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>

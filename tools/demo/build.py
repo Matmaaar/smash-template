@@ -140,7 +140,8 @@ def main():
     # Bières.
     fmap = {'label': 'banderole', 'photo': 'photo', 'style': 'style', 'abv': 'degre', 'formats': 'formats',
             'intro': 'accroche', 'desc': 'description', 'malts': 'malt', 'hops': 'houblons', 'yeast': 'levure',
-            'other': 'other', 'look': 'aspect', 'when': 'degustation', 'food': 'accords'}
+            'other': 'other', 'look': 'aspect', 'when': 'degustation', 'food': 'accords',
+            'keg_price': 'prix_fut', 'keg_volume': 'volume_fut'}
     beer_ids, pid = {}, 1000
     for order, b in enumerate(DATA['beers']):
         if b.get('label'):
@@ -183,6 +184,10 @@ def main():
     pid, roles = 1300, {}
     for order, page in enumerate(DATA['pages']):
         content = p(page['content']) if page['content'] else ''
+        # FAQ en blocs « Détails » (page location) : question = résumé, réponse = paragraphe.
+        for q, a in page.get('faq', []):
+            content += (f'<!-- wp:details -->\n<details class="wp-block-details"><summary>{escape(q)}</summary>'
+                        f'<!-- wp:paragraph -->\n<p>{escape(a)}</p>\n<!-- /wp:paragraph --></details>\n<!-- /wp:details -->\n\n')
         items.append(item(pid, page['title'], page['slug'], 'page', today, content, order=order))
         if page.get('role'):
             roles[page['role']] = page['slug']

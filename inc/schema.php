@@ -3,7 +3,7 @@
  * Données structurées (JSON-LD).
  *
  * Avec Rank Math (site actuel), on ajoute nos entités à son graphe ; sans lui, on les imprime nous-mêmes.
- * Étape 3 : Product sur les fiches bières. Brewery, FAQPage et BlogPosting arrivent aux étapes 4 et 5.
+ * Product sur les fiches bières, FAQPage sur la location. Brewery et BlogPosting arrivent à l'étape 5.
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -37,6 +37,35 @@ function smash_schema_entities() {
 			);
 		}
 		$out['smashProduct'] = array_filter( $product );
+	}
+
+	// FAQ de la page location : les blocs « Détails » du contenu (question = résumé, réponse = le reste).
+	if ( is_page( 'location-tireuses-a-bieres' ) ) {
+		$questions = array();
+		foreach ( parse_blocks( get_post_field( 'post_content', get_queried_object_id() ) ) as $block ) {
+			if ( 'core/details' !== $block['blockName'] ) {
+				continue;
+			}
+			$html = render_block( $block );
+			if ( ! preg_match( '#<summary[^>]*>(.*?)</summary>#s', $html, $m ) ) {
+				continue;
+			}
+			$answer = trim( wp_strip_all_tags( str_replace( $m[0], '', $html ) ) );
+			if ( $answer ) {
+				$questions[] = array(
+					'@type'          => 'Question',
+					'name'           => trim( wp_strip_all_tags( $m[1] ) ),
+					'acceptedAnswer' => array( '@type' => 'Answer', 'text' => $answer ),
+				);
+			}
+		}
+		if ( $questions ) {
+			$out['smashFaq'] = array(
+				'@type'      => 'FAQPage',
+				'@id'        => get_permalink() . '#faq',
+				'mainEntity' => $questions,
+			);
+		}
 	}
 
 	return $out;

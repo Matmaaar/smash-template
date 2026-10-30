@@ -17,7 +17,19 @@
     "age_title": "t'as 18 ans ?",
     "age_yes": "oui, on y va",
     "age_no": "non",
-    "age_refused": "reviens dans quelques années, on t'en gardera une."
+    "age_refused": "reviens dans quelques années, on t'en gardera une.",
+    "free_tap_from": "3",
+    "pro_free_delivery_from": "12",
+    "delivery_radius": "15",
+    "deposit": "200",
+    "cup_lost_price": "1",
+    "pickup_days": "3,4,5",
+    "return_days": "1,2",
+    "pro_gear": "tireuse 2 becs sur bloc de glace\nbarnums\ncomptoirs de bar\ntables & bancs\nsofts, vin, cidre",
+    "success_message": "On revient vers toi très vite pour confirmer.",
+    "tap1_price": "50",
+    "tap2_price": "80",
+    "cup_price": "0.3"
   },
   "menus": {
     "primary": [
@@ -52,6 +64,11 @@
       "intro_kick": "nos bières",
       "intro_title": "la qualité\navant tout.",
       "intro_text": "Une gamme permanente de classiques revisités, et une gamme éphémère brassée selon nos envies. Clique sur une étiquette pour ouvrir sa fiche."
+    },
+    "location-tireuses-a-bieres": {
+      "intro_kick": "location de tireuses & fûts",
+      "intro_title": "ton devis\nen 1 minute.",
+      "intro_text": "Tout est sur un seul écran : clique, le prix se met à jour pendant que tu choisis."
     }
   },
   "front": {

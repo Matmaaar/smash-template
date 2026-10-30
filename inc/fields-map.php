@@ -28,6 +28,9 @@ return array(
 		'look'    => array( 'key' => 'aspect',      'type' => 'text',   'label' => 'Aspect' ),
 		'when'    => array( 'key' => 'degustation', 'type' => 'html',   'label' => 'Conditions de dégustation' ),
 		'food'    => array( 'key' => 'accords',     'type' => 'html',   'label' => 'Accords mets' ),
+		// Démo seulement : en production, les prix des fûts viennent des produits Gravity Forms (gf_location).
+		'keg_price'  => array( 'key' => 'prix_fut',   'type' => 'number', 'label' => 'Location : prix du fût (€, démo)' ),
+		'keg_volume' => array( 'key' => 'volume_fut', 'type' => 'text',   'label' => 'Location : volume du fût (démo)' ),
 	),
 
 	// Équipe (CPT `membre`).
@@ -49,5 +52,32 @@ return array(
 		'location'   => 7,
 		'contact'    => 3,
 		'newsletter' => 2,
+	),
+
+	// Formulaire de location (n° 7) : ID des champs. À REVÉRIFIER LE JOUR J (export du formulaire).
+	'gf_location' => array(
+		'who'        => 52, // boutons radio : 1er choix = particulier, 2e choix = pro
+		'name'       => 25,
+		'email'      => 26,
+		'phone'      => 27,
+		'event'      => 54,
+		'pickup'     => 28,
+		'return'     => 70,
+		'notes'      => 41,
+		'taps'       => array( 't1' => 62, 't2' => 63 ),
+		// Fûts : slug de la bière => [ champ produit particulier, champ produit pro ].
+		'kegs'       => array(
+			'aquatrip'  => array( 5, 55 ),
+			'affluence' => array( 7, 56 ),
+			'pasadena'  => array( 71, 60 ),
+			'weizh'     => array( 10, 57 ),
+			'sp-95'     => array( 9, 58 ),
+			'rye-bomb'  => array( 8, 59 ),
+		),
+		// Écocups : contenance => [ particulier, pro ].
+		'cups'       => array(
+			'20' => array( 73, 76 ),
+			'50' => array( 74, 77 ),
+		),
 	),
 );

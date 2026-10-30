@@ -18,7 +18,19 @@
     "age_title": "t'as 18 ans ?",
     "age_yes": "oui, on y va",
     "age_no": "non",
-    "age_refused": "reviens dans quelques années, on t'en gardera une."
+    "age_refused": "reviens dans quelques années, on t'en gardera une.",
+    "free_tap_from": "3",
+    "pro_free_delivery_from": "12",
+    "delivery_radius": "15",
+    "deposit": "200",
+    "cup_lost_price": "1",
+    "pickup_days": "3,4,5",
+    "return_days": "1,2",
+    "pro_gear": "tireuse 2 becs sur bloc de glace\nbarnums\ncomptoirs de bar\ntables & bancs\nsofts, vin, cidre",
+    "success_message": "On revient vers toi très vite pour confirmer.",
+    "tap1_price": "50",
+    "tap2_price": "80",
+    "cup_price": "0.3"
   },
   "beers": [
     {
@@ -40,7 +52,9 @@
       "look": "Or pâle, légèrement trouble, belle mousse",
       "desc": "Légèrement maltée, une pointe d'amertume, des notes herbacées, une bouche vive et pétillante.",
       "when": "Au bar, devant le match, à la maison, à l'apéro, au déjeuner ou au dîner.",
-      "food": "Charcuterie, anchois, plats épicés, fish & chips."
+      "food": "Charcuterie, anchois, plats épicés, fish & chips.",
+      "keg_price": 90,
+      "keg_volume": "30 L"
     },
     {
       "slug": "affluence",
@@ -52,7 +66,9 @@
       "label": "label-affluence.jpg",
       "photo": "can-affluence.jpg",
       "intro": "L'affluence, c'est cette sensation que tu as lors des soirées où il fait bon : la fête est dans l'air.",
-      "formats": "fût 30 L · canette 44 cl"
+      "formats": "fût 30 L · canette 44 cl",
+      "keg_price": 146,
+      "keg_volume": "30 L"
     },
     {
       "slug": "pasadena",
@@ -65,7 +81,9 @@
         "#ff9f6b",
         "#d9483b"
       ],
-      "formats": "fût 30 L · canette 44 cl"
+      "formats": "fût 30 L · canette 44 cl",
+      "keg_price": 146,
+      "keg_volume": "30 L"
     },
     {
       "slug": "weizh",
@@ -78,7 +96,9 @@
         "#f5efe0",
         "#e3c56f"
       ],
-      "formats": "fût 30 L · canette 44 cl"
+      "formats": "fût 30 L · canette 44 cl",
+      "keg_price": 146,
+      "keg_volume": "30 L"
     },
     {
       "slug": "sp-95",
@@ -91,7 +111,9 @@
         "#ffd84d",
         "#f08a24"
       ],
-      "formats": "fût 30 L · canette 44 cl"
+      "formats": "fût 30 L · canette 44 cl",
+      "keg_price": 151,
+      "keg_volume": "30 L"
     },
     {
       "slug": "rye-bomb",
@@ -105,7 +127,9 @@
         "#2d1a10"
       ],
       "dark": true,
-      "formats": "fût 20 L · canette 33 cl"
+      "formats": "fût 20 L · canette 33 cl",
+      "keg_price": 102,
+      "keg_volume": "20 L"
     },
     {
       "slug": "tropicool",
@@ -383,7 +407,25 @@
     {
       "slug": "location-tireuses-a-bieres",
       "title": "Location de tireuses à bières",
-      "content": "Tireuse, fûts, éco-cups : le devis se calcule en direct, en 2 minutes."
+      "content": "",
+      "faq": [
+        [
+          "Comment fonctionne la tireuse ?",
+          "Un guide est fourni pour les tireuses CO2 et à froid sec. La bière est prête en moins de 10 minutes."
+        ],
+        [
+          "Je peux avoir une éphémère en fût ?",
+          "Oui, sur demande et selon le stock : clique sur la tuile « une éphémère », on te propose ce qui est dispo."
+        ],
+        [
+          "Les pros, ça marche comment ?",
+          "Tarifs sur devis. Livraison et reprise offertes dès 12 fûts dans un rayon de 15 km, l'installation reste à votre charge. Gobelets 20 cl, 50 cl et verres à vin, quantités à définir ensemble."
+        ],
+        [
+          "Le matériel se rend comment ?",
+          "Propre et en bon état, le lundi ou le mardi de 9 h à 17 h. Caution de 200 € au retrait."
+        ]
+      ]
     },
     {
       "slug": "le-blog",
@@ -482,6 +524,11 @@
       "intro_kick": "nos bières",
       "intro_title": "la qualité\navant tout.",
       "intro_text": "Une gamme permanente de classiques revisités, et une gamme éphémère brassée selon nos envies. Clique sur une étiquette pour ouvrir sa fiche."
+    },
+    "location-tireuses-a-bieres": {
+      "intro_kick": "location de tireuses & fûts",
+      "intro_title": "ton devis\nen 1 minute.",
+      "intro_text": "Tout est sur un seul écran : clique, le prix se met à jour pendant que tu choisis."
     }
   },
   "range_descriptions": {

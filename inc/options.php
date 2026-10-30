@@ -19,6 +19,13 @@ add_action( 'acf/init', function () {
 			'position'   => 30,
 			'redirect'   => false,
 		) );
+		acf_add_options_sub_page( array(
+			'page_title'  => __( 'Location de tireuses', 'smash' ),
+			'menu_title'  => __( 'Location', 'smash' ),
+			'menu_slug'   => 'smash-location',
+			'parent_slug' => 'smash-infos',
+			'capability'  => 'edit_pages',
+		) );
 	}
 
 	if ( ! function_exists( 'acf_add_local_field_group' ) ) {
@@ -58,6 +65,32 @@ add_action( 'acf/init', function () {
 		'title'    => __( 'Infos smash', 'smash' ),
 		'fields'   => $fields,
 		'location' => array( array( array( 'param' => 'options_page', 'operator' => '==', 'value' => 'smash-infos' ) ) ),
+	) );
+
+	// Règles de location (inc/location.php). Les prix viennent du formulaire Gravity Forms quand il existe.
+	$rules = array(
+		'free_tap_from'          => array( 'number', __( 'Tireuse 1 bec offerte à partir de (fûts)', 'smash' ), 3 ),
+		'pro_free_delivery_from' => array( 'number', __( 'Pros : livraison offerte à partir de (fûts)', 'smash' ), 12 ),
+		'delivery_radius'        => array( 'number', __( 'Pros : rayon de livraison (km)', 'smash' ), 15 ),
+		'deposit'                => array( 'number', __( 'Caution au retrait (€)', 'smash' ), 200 ),
+		'cup_lost_price'         => array( 'text', __( 'Éco-cup perdu (€)', 'smash' ), '1' ),
+		'pickup_days'            => array( 'text', __( 'Jours de retrait (1 = lundi … 7 = dimanche, séparés par des virgules)', 'smash' ), '3,4,5' ),
+		'return_days'            => array( 'text', __( 'Jours de retour (même format)', 'smash' ), '1,2' ),
+		'pro_gear'               => array( 'textarea', __( 'Pros : matériel proposé (un par ligne)', 'smash' ), '' ),
+		'success_message'        => array( 'textarea', __( 'Message après envoi', 'smash' ), '' ),
+		'tap1_price'             => array( 'text', __( 'Prix tireuse 1 bec (€) — utilisé seulement sans Gravity Forms', 'smash' ), '50' ),
+		'tap2_price'             => array( 'text', __( 'Prix tireuse 2 becs (€) — utilisé seulement sans Gravity Forms', 'smash' ), '80' ),
+		'cup_price'              => array( 'text', __( 'Prix éco-cup (€) — utilisé seulement sans Gravity Forms', 'smash' ), '0.3' ),
+	);
+	$fields = array();
+	foreach ( $rules as $name => list( $type, $label, $default ) ) {
+		$fields[] = array( 'key' => 'field_smash_loc_' . $name, 'name' => $name, 'label' => $label, 'type' => $type, 'default_value' => $default, 'rows' => 4, 'new_lines' => '' );
+	}
+	acf_add_local_field_group( array(
+		'key'      => 'group_smash_location',
+		'title'    => __( 'Location de tireuses', 'smash' ),
+		'fields'   => $fields,
+		'location' => array( array( array( 'param' => 'options_page', 'operator' => '==', 'value' => 'smash-location' ) ) ),
 	) );
 
 	// Textes de la page d'accueil (front-page.php).

@@ -49,7 +49,7 @@ $smash_first    = 6;  // anciennes visibles au départ ; « voir plus » en ajou
 					?>
 				</div>
 				<?php if ( 'old' === $smash_range && count( $smash_lists['old'] ) > $smash_first ) : ?>
-					<div class="more-btn"><button type="button" class="blk dark" data-more><?php esc_html_e( 'voir plus', 'smash' ); ?> <span class="drop"></span></button></div>
+					<div class="more-btn"><button type="button" class="blk dark" data-more><?php esc_html_e( 'voir plus', 'smash' ); ?> <span class="arw arw--down" aria-hidden="true"></span></button></div>
 				<?php endif; ?>
 			<?php else : ?>
 				<p><?php esc_html_e( 'Aucune bière dans cette gamme pour le moment.', 'smash' ); ?></p>

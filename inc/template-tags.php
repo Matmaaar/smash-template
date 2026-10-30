@@ -38,7 +38,7 @@ class Smash_Flat_Menu_Walker extends Walker_Nav_Menu {
  */
 function smash_kick( $text ) {
 	if ( '' !== (string) $text ) {
-		printf( '<div class="kick mono"><span class="drop"></span>%s</div>', esc_html( $text ) );
+		printf( '<div class="kick mono"><span class="mark" aria-hidden="true"></span>%s</div>', esc_html( $text ) );
 	}
 }
 
@@ -57,7 +57,7 @@ function smash_btn( $label, $url, $class = '' ) {
 		return;
 	}
 	printf(
-		'<a href="%s" class="%s">%s <span class="drop"></span></a>',
+		'<a href="%s" class="%s">%s <span class="arw" aria-hidden="true"></span></a>',
 		esc_url( $url ),
 		esc_attr( trim( 'blk ' . $class ) ),
 		esc_html( $label )

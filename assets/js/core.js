@@ -87,6 +87,7 @@
 	$$('.ph-head .kick, .ph-head p').forEach(el => gsap.from(el, { y: 20, opacity: 0, duration: .9, ease: 'expo.out', delay: .4 }));
 	ScrollTrigger.batch($$('.lab, .mate, .equip > div, .post, .post-row, .dl a, .cbox'), { start: 'top 92%', once: true, onEnter: b => gsap.from(b, { y: 70, opacity: 0, duration: 1, ease: 'expo.out', stagger: .06 }) });
 	const drop = $('#pipedrop');
+	// Indicateur de scroll : le mini S (logo) descend le rail.
 	if (drop) gsap.to(drop, { top: '100%', ease: 'none', scrollTrigger: { start: 0, end: 'max', scrub: .4 } });
 
 	document.fonts && document.fonts.ready.then(() => ScrollTrigger.refresh());

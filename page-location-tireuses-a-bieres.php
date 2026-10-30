@@ -172,7 +172,7 @@ $smash_conf  = array(
 				<div class="ticket__top"><h2 class="h3" id="ticket-title"><?php esc_html_e( 'ton devis', 'smash' ); ?></h2><span class="mono" id="t-mode"><?php esc_html_e( 'particulier', 'smash' ); ?></span></div>
 				<ul id="t-list" aria-live="polite"><li class="empty"><?php esc_html_e( 'ajoute des fûts pour commencer', 'smash' ); ?></li></ul>
 				<div class="ticket__total"><span class="mono"><?php esc_html_e( 'total ttc', 'smash' ); ?></span><b id="t-total">0 €</b></div>
-				<div class="nudge" id="t-nudge"><span class="drop"></span><span><?php echo esc_html( sprintf( __( 'Encore %d fûts et une tireuse 1 bec est offerte.', 'smash' ), $smash_rules['free_tap_from'] ) ); ?></span></div>
+				<div class="nudge" id="t-nudge"><span><?php echo esc_html( sprintf( __( 'Encore %d fûts et une tireuse 1 bec est offerte.', 'smash' ), $smash_rules['free_tap_from'] ) ); ?></span></div>
 				<form class="ticket__form" id="t-form" novalidate>
 					<label class="screen-reader-text" for="t-name"><?php esc_html_e( 'prénom et nom', 'smash' ); ?></label>
 					<input id="t-name" name="name" autocomplete="name" required placeholder="<?php esc_attr_e( 'prénom et nom', 'smash' ); ?>">
@@ -188,7 +188,7 @@ $smash_conf  = array(
 					<textarea id="t-notes" name="notes" rows="2" placeholder="<?php esc_attr_e( 'précisions (facultatif)', 'smash' ); ?>"></textarea>
 					<div class="hp" aria-hidden="true"><label for="t-website">Website</label><input id="t-website" name="website" tabindex="-1" autocomplete="off"></div>
 					<p class="t-error" id="t-error" role="alert" hidden></p>
-					<button type="submit" class="blk" id="t-send"><?php esc_html_e( 'envoyer ma demande', 'smash' ); ?> <span class="drop"></span></button>
+					<button type="submit" class="blk" id="t-send"><?php esc_html_e( 'envoyer ma demande', 'smash' ); ?> <span class="arw" aria-hidden="true"></span></button>
 				</form>
 				<p class="ticket__foot mono"><?php echo esc_html( sprintf( __( '+ caution %s au retrait · on te recontacte pour confirmer', 'smash' ), smash_money( $smash_rules['deposit'] ) ) ); ?></p>
 				<div class="ticket__done" id="t-done" role="status" tabindex="-1">

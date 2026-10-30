@@ -40,7 +40,7 @@ $smash_cta   = array_values( wp_list_filter( $smash_items, array( 'cta' => true 
 		</nav>
 	<?php endif; ?>
 	<?php if ( $smash_cta ) : ?>
-		<?php smash_menu_link( $smash_cta[0], 'top__cta', ' <span class="drop"></span>' ); ?>
+		<?php smash_menu_link( $smash_cta[0], 'top__cta', ' <span class="arw" aria-hidden="true"></span>' ); ?>
 	<?php endif; ?>
 </header>
-<div class="pipe" aria-hidden="true"><span class="drop" id="pipedrop"></span></div>
+<div class="pipe" aria-hidden="true"><span class="S" id="pipedrop"><i></i><i></i><i></i></span></div>

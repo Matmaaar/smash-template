@@ -19,7 +19,7 @@ $smash_tag  = in_array( $args['heading'] ?? 'h3', array( 'h2', 'h3', 'h4' ), tru
 	</div>
 	<div class="lab__row">
 		<<?php echo $smash_tag; ?>><?php echo esc_html( $smash_beer['name'] ); ?></<?php echo $smash_tag; ?>>
-		<span class="lab__go" aria-hidden="true"><?php esc_html_e( 'la fiche', 'smash' ); ?> <span class="drop"></span></span>
+		<span class="lab__go" aria-hidden="true"><?php esc_html_e( 'la fiche', 'smash' ); ?> <span class="arw" aria-hidden="true"></span></span>
 	</div>
 	<div class="mono"><?php echo esc_html( smash_beer_meta( $smash_beer ) ); ?></div>
 </a>

@@ -76,23 +76,23 @@ html.lenis,html.lenis body{height:auto}
 .top{position:fixed;top:16px;left:3vw;right:3vw;z-index:100;height:52px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1.5rem;color:var(--white);pointer-events:none}
 .top > *{pointer-events:auto}
 /* Logo seul, sans fond : blanc en mode « différence » → noir sur les pages claires, blanc sur photo / fond noir */
-.top__logo{position:fixed;top:16px;left:3vw;height:52px;z-index:101;display:flex;align-items:center;gap:.55rem;font-weight:800;letter-spacing:-.05em;font-size:1.3rem;color:var(--white);mix-blend-mode:difference;transition:transform .45s cubic-bezier(.7,0,.2,1)}
+.top__logo{position:fixed;top:18px;left:3vw;height:48px;padding:0 1rem 0 .8rem;z-index:101;display:flex;align-items:center;gap:.5rem;font-weight:800;letter-spacing:-.05em;font-size:1.25rem;color:#fff;background:rgba(13,13,13,.84);-webkit-backdrop-filter:blur(16px) saturate(1.3);backdrop-filter:blur(16px) saturate(1.3);border:1px solid rgba(247,246,242,.1);border-radius:16px 0 16px 0;transition:transform .45s cubic-bezier(.7,0,.2,1)}
 .top nav{grid-column:2}
 .top__end{grid-column:3}
-.top__logo img{height:28px;width:auto;display:block}
+.top__logo img{height:24px;width:auto;display:block}
 /* Pilule centrale en verre dépoli, coins asymétriques comme le logo */
 .top nav{justify-self:center;display:flex;align-items:center;gap:.15rem;height:48px;padding:0 .35rem;font-weight:600;font-size:.95rem;text-transform:lowercase;background:rgba(13,13,13,.84);-webkit-backdrop-filter:blur(16px) saturate(1.3);backdrop-filter:blur(16px) saturate(1.3);border:1px solid rgba(247,246,242,.1);border-radius:16px 0 16px 0}
-.top nav > a,.top nav .dd > a{display:flex;align-items:center;gap:.35rem;height:36px;padding:0 .9rem;white-space:nowrap;color:rgba(247,246,242,.72);border-radius:10px 0 10px 0;transition:color .25s,background .25s}
-.top nav > a:hover,.top nav .dd > a:hover,.dd.open > a{color:var(--white);background:rgba(247,246,242,.08)}
-.top nav a.on{color:var(--white);background:rgba(247,246,242,.16)}
+.top nav > a,.top nav .dd > a{display:flex;align-items:center;gap:.35rem;height:36px;padding:0 .9rem;white-space:nowrap;color:#fff;border-radius:10px 0 10px 0;transition:color .25s,background .25s}
+.top nav > a:hover,.top nav .dd > a:hover,.dd.open > a{color:#fff;background:rgba(255,255,255,.1)}
+.top nav a.on{color:#fff;background:rgba(255,255,255,.18)}
 .dd{position:static}
 .dd > a svg{width:9px;height:9px;transition:transform .3s}
 .dd.open > a svg{transform:rotate(180deg)}
-.top__end{justify-self:end;display:flex;align-items:center;gap:.35rem;height:48px;padding:0 6px;background:rgba(13,13,13,.84);-webkit-backdrop-filter:blur(16px) saturate(1.3);backdrop-filter:blur(16px) saturate(1.3);border:1px solid rgba(247,246,242,.1);border-radius:16px 0 16px 0}
-.top__cta{flex:none;display:flex;align-items:center;padding:.62rem 1.15rem;background:var(--white);color:var(--black);font-weight:800;font-size:.98rem;letter-spacing:-.01em;text-transform:lowercase;border-radius:11px 0 11px 0;transition:border-radius .4s,background .25s,color .25s}
+.top__end{justify-self:end;display:flex;align-items:center;gap:.5rem}
+.top__cta{flex:none;display:flex;align-items:center;height:48px;padding:0 1.3rem;box-shadow:0 8px 24px -10px rgba(0,0,0,.45);background:var(--white);color:var(--black);font-weight:800;font-size:.98rem;letter-spacing:-.01em;text-transform:lowercase;border-radius:11px 0 11px 0;transition:border-radius .4s,background .25s,color .25s}
 .top__cta:hover{border-radius:0 11px 0 11px}
-.top__cta.on{background:transparent;color:var(--white);box-shadow:inset 0 0 0 1.5px var(--white)}
-.top__menu{display:none;height:36px;padding:0 .9rem;font-weight:700;font-size:.92rem;text-transform:lowercase;color:var(--white);border-radius:10px 0 10px 0}
+.top__cta.on{background:#fff;color:var(--black);box-shadow:inset 0 0 0 2px var(--black),0 8px 24px -10px rgba(0,0,0,.45)}
+.top__menu{display:none;height:44px;padding:0 1rem;font-weight:700;font-size:.92rem;text-transform:lowercase;color:#fff;background:rgba(13,13,13,.84);-webkit-backdrop-filter:blur(16px) saturate(1.3);backdrop-filter:blur(16px) saturate(1.3);border:1px solid rgba(247,246,242,.1);border-radius:12px 0 12px 0}
 /* Méga-menu : panneau arrondi qui s'ouvre sous la pilule */
 .mega{position:absolute;left:50%;width:min(1100px,94vw);margin-left:calc(min(1100px,94vw) / -2);top:calc(100% + 12px);background:var(--white);color:var(--black);border-radius:20px 0 20px 0;box-shadow:0 30px 60px -20px rgba(0,0,0,.35);display:grid;grid-template-columns:300px 1fr;gap:3vw;padding:2rem 2.2rem 2.2rem;clip-path:inset(0 0 100% 0 round 20px 0 20px 0);visibility:hidden;transition:clip-path .35s cubic-bezier(.7,0,.2,1),visibility 0s .35s}
 .mega::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
@@ -113,17 +113,16 @@ html.lenis,html.lenis body{height:auto}
 .mnav{position:fixed;inset:0;z-index:99;background:var(--black);color:var(--white);display:flex;align-items:flex-end;padding:0 6vw 8vh;overflow-y:auto}
 .mnav[hidden]{display:none!important}
 .mnav nav{display:grid;gap:.2rem;width:100%}
-.mnav__link{font-size:clamp(2.4rem,11vw,4.2rem);font-weight:var(--fw-display);letter-spacing:-.055em;line-height:1.02;text-transform:lowercase;color:rgba(247,246,242,.55)}
+.mnav__link{font-size:clamp(2.4rem,11vw,4.2rem);font-weight:var(--fw-display);letter-spacing:-.055em;line-height:1.02;text-transform:lowercase;color:rgba(255,255,255,.7)}
 .mnav__link.on,.mnav__link:hover{color:var(--white)}
 .mnav__cta{margin-top:2rem;justify-self:start}
 .menu-open{overflow:hidden}
 @media (max-width:860px){
   .top{display:flex;justify-content:flex-end;top:12px;left:4vw;right:4vw;height:46px}
-  .top__logo{top:12px;left:4vw;height:46px;font-size:1.15rem}
+  .top__logo{top:12px;left:4vw;height:44px;font-size:1.1rem;padding:0 .85rem 0 .7rem}
   .top nav{display:none}
   .top__menu{display:block}
-  .top__end{height:44px;padding:0 4px}
-  .top__cta{padding:.5rem .85rem;font-size:.88rem}
+  .top__cta{height:44px;padding:0 .95rem;font-size:.88rem}
   .menu-open .top__cta{display:none}
 }
 
@@ -396,7 +395,7 @@ html.lenis,html.lenis body{height:auto}
 .prose a{text-decoration:underline}
 .prose h2,.prose h3{font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-top:1.6em}
 /* Barre d'admin WordPress (connecté) : le header fixe passe dessous. */
-.admin-bar .top,.admin-bar .top__logo{top:48px}
+.admin-bar .top{top:48px}.admin-bar .top__logo{top:50px}
 @media (max-width:782px){.admin-bar .top,.admin-bar .top__logo{top:58px}}
 /* Porte d'âge : masquée si déjà validée (cookie) ou sans JS */
 .no-js .gate,.age-ok .gate{display:none}

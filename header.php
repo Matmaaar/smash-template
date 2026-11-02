@@ -19,9 +19,9 @@ $smash_cta   = array_values( wp_list_filter( $smash_items, array( 'cta' => true 
 <?php wp_body_open(); ?>
 <a class="screen-reader-text" href="#contenu"><?php esc_html_e( 'Aller au contenu', 'smash' ); ?></a>
 
-<?php // Logo hors du header : il flotte seul et s'inverse selon le fond (mix-blend-mode, impossible à l'intérieur du header). ?>
+<?php // Logo hors du header : il flotte seul, sur sa propre pilule. ?>
 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="top__logo" id="logo">
-	<img src="<?php echo esc_url( SMASH_URI . '/assets/img/s-white.png' ); ?>" alt="" width="28" height="28"><?php bloginfo( 'name' ); ?>
+	<img src="<?php echo esc_url( SMASH_URI . '/assets/img/s-white.png' ); ?>" alt="" width="24" height="24"><?php bloginfo( 'name' ); ?>
 </a>
 <header class="top" id="top">
 	<?php if ( $smash_items ) : ?>

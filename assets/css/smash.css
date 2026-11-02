@@ -116,9 +116,6 @@ html.lenis,html.lenis body{height:auto}
   .top nav > a:hover::after,.top nav a.on::after{right:.8rem}
   .dd > a svg,.mega{display:none}
 }
-.pipe{position:fixed;right:1.2vw;top:18vh;bottom:18vh;width:2px;background:var(--line);z-index:90;mix-blend-mode:difference}
-.pipe .S{position:absolute;left:50%;top:0;width:22px;transform:translate(-50%,-50%)}
-@media (max-width:700px){.pipe{display:none}}
 
 
 /* Hero */

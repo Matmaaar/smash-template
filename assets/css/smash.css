@@ -15,7 +15,6 @@
   --black:#0d0d0d; --white:#f7f6f2; --grey:#8b8a86; --line:rgba(247,246,242,.16); --line-d:rgba(13,13,13,.14);
   --font:"Switzer","Inter Tight","Helvetica Neue",Arial,sans-serif;
   --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
-  --step:28px;
   /* Échelle typographique : à régler ici pour tout le site */
   --fs-hero:clamp(3rem,8.5vw,8.5rem);
   --fs-h1:clamp(2.8rem,7vw,7rem);
@@ -48,8 +47,6 @@ html.lenis,html.lenis body{height:auto}
 .blk:hover .arw--down{transform:rotate(90deg) translateX(4px)}
 .blk.ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 2px currentColor}
 .blk.dark{background:var(--black);color:var(--white)}
-.stepped{clip-path:polygon(0 var(--step),50% var(--step),50% 0,100% 0,100% 100%,0 100%)}
-.stepped.flip{clip-path:polygon(0 0,50% 0,50% var(--step),100% var(--step),100% 100%,0 100%)}
 .light{background:var(--white);color:var(--black)}
 .sec{padding:12vh 3vw 10vh;position:relative}
 .head{display:grid;grid-template-columns:1fr auto;align-items:end;gap:2rem;margin-bottom:5vh}
@@ -407,7 +404,7 @@ html.lenis,html.lenis body{height:auto}
 [hidden]{display:none!important}
 /* Rien ne doit élargir la page (cartes animées hors champ au départ) ; « clip » n'empêche pas le sticky */
 main.page{overflow-x:clip}
-/* Accueil : les permanentes sur une ligne (6 sur grand écran, 3 + 3 sur tablette) */
-.labels--row{grid-template-columns:repeat(6,1fr);gap:1.6vw}
-@media (max-width:1200px){.labels--row{grid-template-columns:repeat(3,1fr)}}
+/* Accueil : les permanentes en 4 colonnes (3 sur tablette, 2 sur mobile) */
+.labels--row{grid-template-columns:repeat(4,1fr);gap:2.4vw 1.6vw}
+@media (max-width:1000px){.labels--row{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:700px){.labels--row{grid-template-columns:repeat(2,1fr)}}

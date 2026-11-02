@@ -75,6 +75,27 @@
 		addEventListener('keydown', e => { if (e.key === 'Escape' && dd.classList.contains('open')) { close(); $('a', dd).focus(); } });
 	}
 
+	/* Logo : blanc sur fond sombre / photo, noir sur fond clair. On regarde ce qu'il y a derrière lui. */
+	const logo = $('#logo');
+	if (logo) {
+		const bgUnder = () => {
+			const r = logo.getBoundingClientRect();
+			const stack = document.elementsFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+			for (const el of stack) {
+				if (el.closest('#logo, #top, #wpadminbar')) continue;
+				if (el.tagName === 'IMG' || el.closest('.hero__img')) return 0; // photo : logo blanc
+				const m = getComputedStyle(el).backgroundColor.match(/[\d.]+/g);
+				if (m && (m[3] === undefined || +m[3] > .5)) return (.2126 * m[0] + .7152 * m[1] + .0722 * m[2]) / 255;
+			}
+			return 0;
+		};
+		let ticking = false;
+		const update = () => { ticking = false; logo.classList.toggle('is-dark', !document.documentElement.classList.contains('menu-open') && bgUnder() > .6); };
+		const ask = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+		addEventListener('scroll', ask, { passive: true }); addEventListener('resize', ask); update();
+		smash.updateLogo = ask;
+	}
+
 	/* Menu plein écran (mobile) */
 	const menuBtn = $('#menu-btn'), mnav = $('#mnav');
 	if (menuBtn && mnav) {
@@ -83,6 +104,7 @@
 			menuBtn.setAttribute('aria-expanded', String(open));
 			menuBtn.textContent = open ? menuBtn.dataset.close : menuBtn.dataset.open;
 			document.documentElement.classList.toggle('menu-open', open);
+			smash.updateLogo && smash.updateLogo();
 			smash.lenis && (open ? smash.lenis.stop() : smash.lenis.start());
 			if (open) {
 				$('a', mnav).focus({ preventScroll: true });

@@ -75,6 +75,30 @@
 		addEventListener('keydown', e => { if (e.key === 'Escape' && dd.classList.contains('open')) { close(); $('a', dd).focus(); } });
 	}
 
+	/* Nav : se cache quand on descend, revient quand on remonte ; le bouton devis flottant fait l'inverse.
+	   Jamais cachée en haut de page, ni quand le méga-menu est ouvert ou que le focus est dans la nav. */
+	const top = $('#top'), fab = $('#fab-cta'), body = document.body;
+	if (top) {
+		const SHOW_UNDER = 100, SENSITIVITY = 6; // px
+		let last = scrollY, hidden = false;
+		const set = h => {
+			if (h === hidden) return;
+			hidden = h;
+			body.classList.toggle('nav-hidden', h);
+			if (h && dd) dd.classList.remove('open');
+			if (fab) { fab.tabIndex = h ? 0 : -1; fab.setAttribute('aria-hidden', String(!h)); }
+		};
+		const onScroll = () => {
+			const y = scrollY, d = y - last;
+			if (y < SHOW_UNDER) set(false);
+			else if (d > SENSITIVITY && !(dd && dd.classList.contains('open')) && !top.contains(document.activeElement)) set(true);
+			else if (d < -SENSITIVITY) set(false);
+			if (Math.abs(d) > SENSITIVITY || y < SHOW_UNDER) last = y;
+		};
+		addEventListener('scroll', onScroll, { passive: true });
+		top.addEventListener('focusin', () => set(false));
+	}
+
 	smash.bindTilt();
 	if (!animate) return;
 

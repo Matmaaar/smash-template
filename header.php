@@ -43,4 +43,8 @@ $smash_cta   = array_values( wp_list_filter( $smash_items, array( 'cta' => true 
 		<?php smash_menu_link( $smash_cta[0], 'top__cta' ); ?>
 	<?php endif; ?>
 </header>
+<?php if ( $smash_cta && ! $smash_cta[0]['current'] ) : ?>
+	<?php // Bouton flottant : visible quand la nav est cachée (on descend), masqué quand elle revient (core.js). ?>
+	<a href="<?php echo esc_url( $smash_cta[0]['url'] ); ?>" class="fab-cta" id="fab-cta" tabindex="-1" aria-hidden="true"><?php echo esc_html( $smash_cta[0]['title'] ); ?></a>
+<?php endif; ?>
 <div class="pipe" aria-hidden="true"><span class="S" id="pipedrop"><i></i><i></i><i></i></span></div>

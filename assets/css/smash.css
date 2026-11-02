@@ -408,3 +408,13 @@ main.page{overflow-x:clip}
 .labels--row{grid-template-columns:repeat(4,1fr);gap:2.4vw 1.6vw}
 @media (max-width:1000px){.labels--row{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:700px){.labels--row{grid-template-columns:repeat(2,1fr)}}
+/* Nav qui se cache en descendant / revient en remontant ; le CTA devient un bouton flottant (core.js) */
+.top{transition:transform .45s cubic-bezier(.7,0,.2,1)}
+body.nav-hidden .top{transform:translateY(-100%)}
+body.admin-bar.nav-hidden .top{transform:translateY(calc(-100% - 32px))}
+@media (max-width:782px){body.admin-bar.nav-hidden .top{transform:translateY(calc(-100% - 46px))}}
+.fab-cta{position:fixed;right:3vw;bottom:3vh;z-index:95;display:flex;align-items:center;padding:.75rem 1.2rem;background:var(--black);color:var(--white);font-weight:700;font-size:.95rem;text-transform:lowercase;border-radius:14px 0 14px 0;box-shadow:0 0 0 1.5px var(--white),0 14px 30px -12px rgba(0,0,0,.5);transform:translateY(160%);opacity:0;visibility:hidden;transition:transform .45s cubic-bezier(.7,0,.2,1),opacity .3s,visibility 0s .45s,border-radius .4s}
+.fab-cta:hover{border-radius:0 14px 0 14px}
+body.nav-hidden .fab-cta{transform:none;opacity:1;visibility:visible;transition:transform .45s cubic-bezier(.7,0,.2,1),opacity .3s,visibility 0s,border-radius .4s}
+@media (max-width:700px){.fab-cta{right:4vw;bottom:4vw;padding:.95rem 1.4rem;font-size:1rem}}
+@media (prefers-reduced-motion:reduce){.top,.fab-cta,body.nav-hidden .fab-cta{transition:none}}

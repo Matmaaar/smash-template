@@ -75,6 +75,25 @@
 		addEventListener('keydown', e => { if (e.key === 'Escape' && dd.classList.contains('open')) { close(); $('a', dd).focus(); } });
 	}
 
+	/* Menu plein écran (mobile) */
+	const menuBtn = $('#menu-btn'), mnav = $('#mnav');
+	if (menuBtn && mnav) {
+		const toggle = open => {
+			mnav.hidden = !open;
+			menuBtn.setAttribute('aria-expanded', String(open));
+			menuBtn.textContent = open ? menuBtn.dataset.close : menuBtn.dataset.open;
+			document.documentElement.classList.toggle('menu-open', open);
+			smash.lenis && (open ? smash.lenis.stop() : smash.lenis.start());
+			if (open) {
+				$('a', mnav).focus({ preventScroll: true });
+				animate && gsap.from($$('a', mnav), { y: 40, opacity: 0, duration: .6, ease: 'expo.out', stagger: .05 });
+			} else menuBtn.focus({ preventScroll: true });
+		};
+		menuBtn.addEventListener('click', () => toggle(mnav.hidden));
+		addEventListener('keydown', e => { if (e.key === 'Escape' && !mnav.hidden) toggle(false); });
+		addEventListener('resize', () => { if (innerWidth > 860 && !mnav.hidden) toggle(false); });
+	}
+
 	/* Nav : se cache quand on descend, revient quand on remonte ; le bouton devis flottant fait l'inverse.
 	   Jamais cachée en haut de page, ni quand le méga-menu est ouvert ou que le focus est dans la nav. */
 	const top = $('#top'), fab = $('#fab-cta'), body = document.body;

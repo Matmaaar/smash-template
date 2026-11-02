@@ -15,65 +15,77 @@ $smash_kicks   = array(
 	'eph'  => __( 'gamme éphémère', 'smash' ),
 	'old'  => __( 'ancienne éphémère', 'smash' ),
 );
-// Lignes de la fiche, dans l'ordre de la maquette ; seules celles qui sont remplies s'affichent.
-$smash_rows = array(
-	'style'   => __( 'style', 'smash' ),
+// Fiche hiérarchisée : 3 infos clés en gros, puis ingrédients (courts) et textes (longs) en grille.
+// Seules les infos remplies s'affichent.
+$smash_key   = array(
 	'abv'     => __( 'degré', 'smash' ),
+	'style'   => __( 'style', 'smash' ),
 	'formats' => __( 'formats', 'smash' ),
-	'malts'   => __( 'malts', 'smash' ),
-	'hops'    => __( 'houblons', 'smash' ),
-	'yeast'   => __( 'levure', 'smash' ),
-	'other'   => __( 'autres', 'smash' ),
-	'look'    => __( 'aspect', 'smash' ),
-	'desc'    => __( 'dégustation', 'smash' ),
-	'when'    => __( 'à boire', 'smash' ),
-	'food'    => __( 'accords', 'smash' ),
+);
+$smash_cells = array(
+	'malts' => array( __( 'malts', 'smash' ), 'ingr' ),
+	'hops'  => array( __( 'houblons', 'smash' ), 'ingr' ),
+	'yeast' => array( __( 'levure', 'smash' ), 'ingr' ),
+	'other' => array( __( 'autres', 'smash' ), 'ingr' ),
+	'look'  => array( __( 'aspect', 'smash' ), 'text' ),
+	'desc'  => array( __( 'dégustation', 'smash' ), 'text' ),
+	'when'  => array( __( 'à boire', 'smash' ), 'text' ),
+	'food'  => array( __( 'accords', 'smash' ), 'text' ),
 );
 $smash_location = get_page_by_path( 'location-tireuses-a-bieres' );
 $smash_rentable = $smash_location && has_term( '', 'type-de-location', $smash_b['id'] );
 ?>
 <main class="page light" id="contenu">
-	<section class="sec" style="padding-top:20vh">
+	<section class="sec fiche-sec">
 		<?php if ( $smash_catalog ) : ?>
-			<a href="<?php echo esc_url( get_permalink( $smash_catalog ) ); ?>" class="mono" style="display:inline-flex;gap:.5rem;align-items:center;margin-bottom:4vh">← <?php echo esc_html( mb_strtolower( sprintf( __( 'toutes %s', 'smash' ), get_the_title( $smash_catalog ) ) ) ); ?></a>
+			<a href="<?php echo esc_url( get_permalink( $smash_catalog ) ); ?>" class="mono fiche__back">← <?php echo esc_html( mb_strtolower( sprintf( __( 'toutes %s', 'smash' ), get_the_title( $smash_catalog ) ) ) ); ?></a>
 		<?php endif; ?>
+		<?php
+		$smash_cta = '';
+		if ( $smash_rentable ) {
+			$smash_keg = smash_keg_price( $smash_b['id'] );
+			ob_start();
+			smash_btn( __( 'en fût pour ta soirée', 'smash' ) . ( null !== $smash_keg ? ' · ' . smash_money( $smash_keg ) : '' ), get_permalink( $smash_location ), 'dark' );
+			$smash_cta = ob_get_clean();
+		}
+		?>
 		<div class="fiche" id="fiche">
 			<div class="fiche__label">
 				<div class="lab" style="cursor:default">
 					<div class="lab__card">
-						<?php echo smash_label_img( $smash_b, 'smash-label', false, array( 'loading' => false, 'fetchpriority' => 'high', 'sizes' => '(max-width: 900px) 100vw, 55vw' ) ); ?>
+						<?php echo smash_label_img( $smash_b, 'smash-label', false, array( 'loading' => false, 'fetchpriority' => 'high', 'sizes' => '(max-width: 900px) 100vw, 40vw' ) ); ?>
 						<?php if ( ! $smash_b['label'] ) : ?>
 							<span class="ph mono"><?php esc_html_e( 'étiquette à venir', 'smash' ); ?></span>
 						<?php endif; ?>
 					</div>
 				</div>
+				<?php if ( $smash_cta ) : ?>
+					<div class="fiche__cta fiche__cta--desk"><?php echo $smash_cta; // phpcs:ignore WordPress.Security.EscapeOutput -- échappé dans smash_btn(). ?></div>
+				<?php endif; ?>
 			</div>
-			<div>
+			<div class="fiche__info">
 				<?php smash_kick( $smash_kicks[ $smash_b['range'] ] ?? '' ); ?>
 				<h1 class="big big--sm"><?php echo esc_html( $smash_b['name'] ); ?></h1>
 				<?php if ( $smash_b['intro'] ) : ?>
 					<p class="intro"><?php echo esc_html( $smash_b['intro'] ); ?></p>
 				<?php endif; ?>
-				<dl>
-					<?php foreach ( $smash_rows as $smash_key => $smash_label ) : ?>
-						<?php
-						$smash_value = $smash_b[ $smash_key ];
-						if ( '' === $smash_value ) {
-							continue;
-						}
-						if ( 'abv' === $smash_key ) {
-							$smash_value .= ' %';
-						}
-						?>
-						<div><dt class="mono"><?php echo esc_html( $smash_label ); ?></dt><dd><?php echo wp_kses_post( $smash_value ); ?></dd></div>
+				<?php if ( $smash_cta ) : ?>
+					<div class="fiche__cta fiche__cta--mob"><?php echo $smash_cta; // phpcs:ignore WordPress.Security.EscapeOutput ?></div>
+				<?php endif; ?>
+
+				<dl class="fiche__key">
+					<?php foreach ( $smash_key as $smash_k => $smash_label ) : ?>
+						<?php if ( '' === $smash_b[ $smash_k ] ) { continue; } ?>
+						<div class="is-<?php echo esc_attr( $smash_k ); ?>"><dt class="mono"><?php echo esc_html( $smash_label ); ?></dt><dd><?php echo esc_html( $smash_b[ $smash_k ] . ( 'abv' === $smash_k ? ' %' : '' ) ); ?></dd></div>
 					<?php endforeach; ?>
 				</dl>
-				<?php if ( $smash_rentable ) : ?>
-					<?php
-					$smash_keg = smash_keg_price( $smash_b['id'] );
-					smash_btn( __( 'en fût pour ta soirée', 'smash' ) . ( null !== $smash_keg ? ' · ' . smash_money( $smash_keg ) : '' ), get_permalink( $smash_location ), 'dark' );
-					?>
-				<?php endif; ?>
+
+				<dl class="fiche__grid">
+					<?php foreach ( $smash_cells as $smash_k => list( $smash_label, $smash_kind ) ) : ?>
+						<?php if ( '' === $smash_b[ $smash_k ] ) { continue; } ?>
+						<div class="is-<?php echo esc_attr( $smash_kind ); ?>"><dt class="mono"><?php echo esc_html( $smash_label ); ?></dt><dd><?php echo wp_kses_post( $smash_b[ $smash_k ] ); ?></dd></div>
+					<?php endforeach; ?>
+				</dl>
 			</div>
 		</div>
 	</section>

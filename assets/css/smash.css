@@ -189,18 +189,30 @@ html.lenis,html.lenis body{height:auto}
 .more-btn{margin-top:6vh;text-align:center}
 
 /* Fiche bière */
-.fiche{display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:start}
-.fiche__label{position:sticky;top:14vh;max-width:560px}
+/* Fiche bière : tout visible à l'arrivée, info hiérarchisée (nom > accroche > chiffres clés > ingrédients > textes) */
+.fiche-sec{padding-top:calc(64px + 6vh)}
+.fiche__back{display:inline-flex;gap:.5rem;align-items:center;margin-bottom:3vh}
+.fiche{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:4vw;align-items:start}
+.fiche__label{position:sticky;top:calc(64px + 4vh);max-width:520px}
 .fiche__label .lab__card{box-shadow:0 40px 70px -30px rgba(0,0,0,.6)}
-.fiche dl{border-top:2px solid var(--black)}
-.fiche dl > div{display:grid;grid-template-columns:9rem 1fr;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line-d)}
-.fiche dt{color:#6c6b67}
-.fiche dd{line-height:1.5}
-.fiche .intro{font-size:var(--fs-lead);font-weight:700;letter-spacing:-.03em;line-height:1.15;margin:2rem 0 3rem}
+.fiche__cta{margin-top:1.8rem}
+.fiche__cta--mob{display:none}
+.fiche .intro{font-size:var(--fs-lead);font-weight:600;letter-spacing:-.03em;line-height:1.2;margin:1rem 0 1.8rem;max-width:34ch}
+.fiche dl{margin:0}
+.fiche dt{color:#6c6b67;font-size:.66rem;margin-bottom:.35rem}
+.fiche dd{margin:0}
+.fiche__key{display:flex;flex-wrap:wrap;gap:1rem 2.6rem;border-top:2px solid var(--black);border-bottom:1px solid var(--line-d);padding:1rem 0 1.1rem}
+.fiche__key dd{font-size:var(--fs-card);font-weight:var(--fw-display);letter-spacing:-.03em;line-height:1.1}
+.fiche__key .is-abv dd{font-size:clamp(1.8rem,2.6vw,2.4rem);letter-spacing:-.04em;line-height:1}
+.fiche__grid{display:grid;grid-template-columns:1fr 1fr;column-gap:2.2rem}
+.fiche__grid > div{padding:.85rem 0;border-bottom:1px solid var(--line-d)}
+.fiche__grid > div:last-child:nth-child(odd){grid-column:1/-1}
+.fiche__grid .is-ingr dd{font-size:1rem;font-weight:500;line-height:1.35}
+.fiche__grid .is-text dd{font-size:.92rem;line-height:1.5;color:#3d3c39}
 .chips{display:flex;gap:.4rem;flex-wrap:wrap}
 .chip{border:1.5px solid currentColor;border-radius:12px 0 12px 0;padding:.3rem .65rem;font-size:.9rem}
 .miss{color:#a9a7a1;font-style:italic}
-@media (max-width:900px){.fiche{grid-template-columns:1fr}.fiche__label{position:relative;top:0}}
+@media (max-width:900px){.fiche{grid-template-columns:1fr}.fiche__label{position:relative;top:0}.fiche__cta--desk{display:none}.fiche__cta--mob{display:block;margin:0 0 1.8rem}.fiche__grid{grid-template-columns:1fr}}
 
 /* Brasserie */
 .brew{display:grid;grid-template-columns:.9fr 1.1fr;gap:5vw;align-items:start}

@@ -51,7 +51,7 @@ $smash_img = function ( $name, $attr = array(), $size = 'large' ) {
 				</div>
 				<?php smash_btn( $smash_f( 'perm_btn_label' ), smash_link_url( $smash_f( 'perm_btn_link' ) ), 'dark' ); ?>
 			</div>
-			<div class="labels">
+			<div class="labels labels--row">
 				<?php foreach ( $smash_perm as $smash_beer ) { smash_label_card( $smash_beer ); } ?>
 			</div>
 		</section>
@@ -140,7 +140,7 @@ $smash_img = function ( $name, $attr = array(), $size = 'large' ) {
 		<div class="teaser">
 			<div>
 				<?php smash_kick( $smash_f( 'loc_kick' ) ); ?>
-				<h2 class="big" data-up style="font-size:clamp(3rem,7vw,7rem)"><?php echo smash_multiline( $smash_f( 'loc_title' ) ); ?></h2>
+				<h2 class="big big--sm" data-up><?php echo smash_multiline( $smash_f( 'loc_title' ) ); ?></h2>
 				<?php if ( $smash_f( 'loc_text' ) ) : ?>
 					<p><?php echo esc_html( $smash_f( 'loc_text' ) ); ?></p>
 				<?php endif; ?>

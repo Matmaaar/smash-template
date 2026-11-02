@@ -50,7 +50,7 @@ $smash_rentable = $smash_location && has_term( '', 'type-de-location', $smash_b[
 			</div>
 			<div>
 				<?php smash_kick( $smash_kicks[ $smash_b['range'] ] ?? '' ); ?>
-				<h1 class="big" style="font-size:clamp(3.4rem,8vw,7.6rem)"><?php echo esc_html( $smash_b['name'] ); ?></h1>
+				<h1 class="big big--sm"><?php echo esc_html( $smash_b['name'] ); ?></h1>
 				<?php if ( $smash_b['intro'] ) : ?>
 					<p class="intro"><?php echo esc_html( $smash_b['intro'] ); ?></p>
 				<?php endif; ?>

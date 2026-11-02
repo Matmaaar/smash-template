@@ -188,7 +188,7 @@ $smash_conf  = array(
 					<textarea id="t-notes" name="notes" rows="2" placeholder="<?php esc_attr_e( 'précisions (facultatif)', 'smash' ); ?>"></textarea>
 					<div class="hp" aria-hidden="true"><label for="t-website">Website</label><input id="t-website" name="website" tabindex="-1" autocomplete="off"></div>
 					<p class="t-error" id="t-error" role="alert" hidden></p>
-					<button type="submit" class="blk" id="t-send"><?php esc_html_e( 'envoyer ma demande', 'smash' ); ?> <span class="arw" aria-hidden="true"></span></button>
+					<button type="submit" class="blk" id="t-send"><?php esc_html_e( 'envoyer ma demande', 'smash' ); ?></button>
 				</form>
 				<p class="ticket__foot mono"><?php echo esc_html( sprintf( __( '+ caution %s au retrait · on te recontacte pour confirmer', 'smash' ), smash_money( $smash_rules['deposit'] ) ) ); ?></p>
 				<div class="ticket__done" id="t-done" role="status" tabindex="-1">

@@ -57,7 +57,7 @@ function smash_btn( $label, $url, $class = '' ) {
 		return;
 	}
 	printf(
-		'<a href="%s" class="%s">%s <span class="arw" aria-hidden="true"></span></a>',
+		'<a href="%s" class="%s">%s</a>',
 		esc_url( $url ),
 		esc_attr( trim( 'blk ' . $class ) ),
 		esc_html( $label )

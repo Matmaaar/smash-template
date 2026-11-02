@@ -79,8 +79,15 @@
 	if (!animate) return;
 
 	/* Animations communes (common() de la maquette) */
-	$$('[data-lines]').forEach(el => { const s = new SplitText(el, { type: 'lines', mask: 'lines' }); gsap.from(s.lines, { yPercent: 110, duration: 1.15, ease: 'expo.out', stagger: .09, delay: .25 }); });
-	$$('[data-up]').forEach(el => { const s = new SplitText(el, { type: 'lines', mask: 'lines' }); gsap.from(s.lines, { yPercent: 110, duration: 1.1, ease: 'expo.out', stagger: .08, scrollTrigger: { trigger: el, start: 'top 88%' } }); });
+	// Découpe en lignes masquées pour l'effet « la ligne monte ». L'interligne des gros titres est très serré :
+	// on agrandit la fenêtre de chaque ligne vers le bas pour ne pas couper les jambages (p, q, j, g).
+	const split = el => {
+		const s = new SplitText(el, { type: 'lines', mask: 'lines' });
+		(s.masks || []).forEach(m => { m.style.paddingBottom = '.18em'; m.style.marginBottom = '-.18em'; });
+		return s;
+	};
+	$$('[data-lines]').forEach(el => { const s = split(el); gsap.from(s.lines, { yPercent: 110, duration: 1.15, ease: 'expo.out', stagger: .09, delay: .25, onComplete: () => s.revert() }); });
+	$$('[data-up]').forEach(el => { const s = split(el); gsap.from(s.lines, { yPercent: 110, duration: 1.1, ease: 'expo.out', stagger: .08, onComplete: () => s.revert(), scrollTrigger: { trigger: el, start: 'top 88%' } }); });
 	$$('[data-words]').forEach(el => { const s = new SplitText(el, { type: 'words' }); gsap.fromTo(s.words, { opacity: .14 }, { opacity: 1, stagger: .1, ease: 'none', scrollTrigger: { trigger: el, start: 'top 80%', end: 'bottom 50%', scrub: true } }); });
 	$$('[data-par]').forEach(el => gsap.fromTo(el, { yPercent: -6 }, { yPercent: 6, ease: 'none', scrollTrigger: { trigger: el.parentElement, start: 'top bottom', end: 'bottom top', scrub: true } }));
 	$$('.stepped').forEach(sec => gsap.fromTo(sec, { '--step': '90px' }, { '--step': '28px', ease: 'none', scrollTrigger: { trigger: sec, start: 'top bottom', end: 'top 50%', scrub: true } }));

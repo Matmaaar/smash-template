@@ -86,7 +86,10 @@
 			hidden = h;
 			body.classList.toggle('nav-hidden', h);
 			if (h && dd) dd.classList.remove('open');
-			if (fab) { fab.tabIndex = h ? 0 : -1; fab.setAttribute('aria-hidden', String(!h)); }
+			if (fab) {
+				fab.tabIndex = h ? 0 : -1; fab.setAttribute('aria-hidden', String(!h));
+				if (h) fab.classList.add('pop'); // n'agit qu'une fois : la classe reste, l'animation ne rejoue pas
+			}
 		};
 		const onScroll = () => {
 			const y = scrollY, d = y - last;

@@ -84,9 +84,9 @@ html.lenis,html.lenis body{height:auto}
 .dd{position:static;height:100%}
 .dd > a svg{width:9px;height:9px;transition:transform .3s}
 .dd.open > a svg{transform:rotate(180deg)}
-.top__cta{flex:none;display:flex;align-items:center;margin-right:3vw;padding:.5rem .95rem;background:var(--white);color:var(--black);font-weight:700;font-size:.9rem;text-transform:lowercase;border-radius:12px 0 12px 0;transition:border-radius .4s,background .25s,color .25s}
-.top__cta:hover{border-radius:0 12px 0 12px}
-.top__cta.on{background:transparent;color:var(--white);box-shadow:inset 0 0 0 1.5px var(--white)}
+.top__cta{flex:none;display:flex;align-items:center;margin-right:calc(3vw + 3px);padding:.7rem 1.25rem;background:var(--white);color:var(--black);font-weight:800;font-size:.98rem;letter-spacing:-.01em;text-transform:lowercase;border-radius:12px 0 12px 0;outline:1.5px solid var(--white);outline-offset:3px;transition:border-radius .4s,outline-offset .3s,background .25s,color .25s}
+.top__cta:hover{border-radius:0 12px 0 12px;outline-offset:5px}
+.top__cta.on{background:transparent;color:var(--white)}
 /* le panneau */
 .mega{position:absolute;left:0;right:0;top:64px;background:var(--white);color:var(--black);border-bottom:2px solid var(--black);display:grid;grid-template-columns:330px 1fr;gap:3vw;padding:2rem 3vw 2.4rem;clip-path:inset(0 0 100% 0);visibility:hidden;transition:clip-path .45s cubic-bezier(.7,0,.2,1),visibility 0s .45s}
 .dd.open .mega{clip-path:inset(0 0 0 0);visibility:visible;transition:clip-path .45s cubic-bezier(.7,0,.2,1)}
@@ -410,8 +410,12 @@ main.page{overflow-x:clip}
 body.nav-hidden .top{transform:translateY(-100%)}
 body.admin-bar.nav-hidden .top{transform:translateY(calc(-100% - 32px))}
 @media (max-width:782px){body.admin-bar.nav-hidden .top{transform:translateY(calc(-100% - 46px))}}
-.fab-cta{position:fixed;right:3vw;bottom:3vh;z-index:95;display:flex;align-items:center;padding:.75rem 1.2rem;background:var(--black);color:var(--white);font-weight:700;font-size:.95rem;text-transform:lowercase;border-radius:14px 0 14px 0;box-shadow:0 0 0 1.5px var(--white),0 14px 30px -12px rgba(0,0,0,.5);transform:translateY(160%);opacity:0;visibility:hidden;transition:transform .45s cubic-bezier(.7,0,.2,1),opacity .3s,visibility 0s .45s,border-radius .4s}
-.fab-cta:hover{border-radius:0 14px 0 14px}
+/* Blanc en mode « différence » : il s'inverse selon le fond (noir sur clair, blanc sur noir) → toujours en contraste max */
+.fab-cta{position:fixed;right:3vw;bottom:3vh;z-index:95;display:flex;align-items:center;padding:1rem 1.6rem;background:var(--white);color:var(--black);mix-blend-mode:difference;font-weight:800;font-size:1.05rem;letter-spacing:-.01em;text-transform:lowercase;border-radius:16px 0 16px 0;transform:translateY(160%);opacity:0;visibility:hidden;transition:transform .45s cubic-bezier(.7,0,.2,1),opacity .3s,visibility 0s .45s,border-radius .4s}
+.fab-cta:hover{border-radius:0 16px 0 16px}
+/* Petit « pop » à la première apparition (propriété scale, indépendante du transform qui gère l'entrée) */
+.fab-cta.pop{animation:fab-pop .55s .35s cubic-bezier(.34,1.56,.64,1) both}
+@keyframes fab-pop{0%,100%{scale:1}45%{scale:1.1}}
 body.nav-hidden .fab-cta{transform:none;opacity:1;visibility:visible;transition:transform .45s cubic-bezier(.7,0,.2,1),opacity .3s,visibility 0s,border-radius .4s}
-@media (max-width:700px){.fab-cta{right:4vw;bottom:4vw;padding:.95rem 1.4rem;font-size:1rem}}
-@media (prefers-reduced-motion:reduce){.top,.fab-cta,body.nav-hidden .fab-cta{transition:none}}
+@media (max-width:700px){.fab-cta{right:4vw;bottom:4vw;padding:1.05rem 1.6rem;font-size:1.05rem}}
+@media (prefers-reduced-motion:reduce){.top,.fab-cta,body.nav-hidden .fab-cta{transition:none}.fab-cta.pop{animation:none}}

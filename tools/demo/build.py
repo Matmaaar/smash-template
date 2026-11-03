@@ -156,9 +156,11 @@ def main():
     wanted |= {v[4:] for v in DATA['front'].values() if v.startswith('img:')}
     wanted |= {v[4:] for f in DATA.get('page_fields', {}).values() for v in f.values() if v.startswith('img:')}
     wanted -= {b['label'] for b in DATA['beers'] if b.get('label')}  # déjà importées comme étiquettes
-    wanted = {w for w in wanted if (SOURCE_IMG / w).exists()}
+    # « img:scraped/… » : image récupérée sur smash.bzh, servie telle quelle depuis demo/scraped/.
+    wanted = {w for w in wanted if (ROOT / 'demo' / w).exists() if w.startswith('scraped/')} | {w for w in wanted if (SOURCE_IMG / w).exists()}
     for name in sorted(wanted):
-        shutil.copy(SOURCE_IMG / name, MEDIA / name)
+        if not name.startswith('scraped/'):
+            shutil.copy(SOURCE_IMG / name, MEDIA / name)
         photos[name] = attachment(name, Path(name).stem, '')
 
     # Bières.

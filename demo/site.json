@@ -74,7 +74,7 @@
       "intro_kick": "La brasserie",
       "intro_title": "Craft,\nmais carré.",
       "intro_text": "Smash, c’est la nouvelle microbrasserie craft sur la place rennaise !",
-      "brew_photo": 2000,
+      "brew_photo": 2004,
       "brew_text": "Nous brassons des bières avec passion et en totale indépendance, sans limite dans notre créativité et avec une recherche constante de la qualité optimale de nos produits.",
       "stat_1_value": "10",
       "stat_1_label": "HL · salle de brassage",
@@ -105,7 +105,8 @@
       "story_1_title": "Une brasserie signée EasyBrau",
       "story_1_text": "Nous avons fait confiance à la marque italienne Easybrau pour la majorité de notre équipement.\n\nNous sommes dotés d’une salle de brassage en 10hL, d’une cuve tampon afin de réaliser des doubles brassins, et d’un parc de fermenteurs en Isobar allant de 10 à 40hL.",
       "story_2_title": "La précision de la centrifugeuse",
-      "story_2_text": "Nous avons fait le choix de travailler avec une centrifugeuse Alfalaval. Grâce à celle-ci, nos produits peuvent être conditionnés dans les meilleures conditions, dans les meilleurs délais, avec une stabilité continue.\n\nConcrètement, cela va nous permettre de réduire les potentiels résidus de houblons, les particules flottantes ou les levures grâce à la force centrifuge. La bière est soumise à une rotation rapide qui va permettre de séparer ces particules solides du liquide.\n\nLe réglage fin de la machine nous permet d’avoir une bière exactement comme nous le souhaitons, de manière régulière, sans amputer aucunement son aromatique puisqu’il n’y a pas de filtration."
+      "story_2_text": "Nous avons fait le choix de travailler avec une centrifugeuse Alfalaval. Grâce à celle-ci, nos produits peuvent être conditionnés dans les meilleures conditions, dans les meilleurs délais, avec une stabilité continue.\n\nConcrètement, cela va nous permettre de réduire les potentiels résidus de houblons, les particules flottantes ou les levures grâce à la force centrifuge. La bière est soumise à une rotation rapide qui va permettre de séparer ces particules solides du liquide.\n\nLe réglage fin de la machine nous permet d’avoir une bière exactement comme nous le souhaitons, de manière régulière, sans amputer aucunement son aromatique puisqu’il n’y a pas de filtration.",
+      "intro_image": 2003
     },
     "le-blog": {
       "intro_kick": "Le blog",

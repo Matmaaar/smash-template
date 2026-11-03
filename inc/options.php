@@ -130,6 +130,7 @@ add_action( 'acf/init', function () {
 			array( 'key' => 'field_smash_intro_kick', 'name' => 'intro_kick', 'label' => __( 'Sur-titre', 'smash' ), 'type' => 'text' ),
 			array( 'key' => 'field_smash_intro_title', 'name' => 'intro_title', 'label' => __( 'Titre affiché (H1)', 'smash' ), 'type' => 'textarea', 'rows' => 2, 'new_lines' => '', 'instructions' => __( 'Retour à la ligne = saut de ligne dans le titre. Vide : titre de la page.', 'smash' ) ),
 			array( 'key' => 'field_smash_intro_text', 'name' => 'intro_text', 'label' => __( 'Texte d\'introduction', 'smash' ), 'type' => 'textarea', 'rows' => 3, 'new_lines' => '' ),
+			array( 'key' => 'field_smash_intro_image', 'name' => 'intro_image', 'label' => __( 'Image de fond (facultative)', 'smash' ), 'type' => 'image', 'return_format' => 'id', 'preview_size' => 'medium', 'instructions' => __( 'Photo en grand derrière le titre. Vide : en-tête sans photo.', 'smash' ) ),
 		),
 		'location' => array( array(
 			array( 'param' => 'post_type', 'operator' => '==', 'value' => 'page' ),

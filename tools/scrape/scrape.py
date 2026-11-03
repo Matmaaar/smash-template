@@ -140,6 +140,16 @@ def catalog_labels():
     return out
 
 
+def bb_background(page):
+    """Image de fond du hero d'une page Beaver Builder : elle est dans le CSS de mise en page, pas dans le HTML."""
+    for css in re.findall(r'https://smash\.bzh/wp-content/[^"\' ]*bb-plugin/cache/[^"\' ]+\.css[^"\' ]*', page or ''):
+        body, _ = fetch(css)
+        m = re.search(r'url\((https://smash\.bzh/wp-content/uploads/[^)]+\.(?:jpg|jpeg|png|webp))\)', body or '')
+        if m:
+            return m.group(1)
+    return None
+
+
 def parse_beer(lines, name):
     """Champs d'une fiche bière à partir de ses lignes de texte."""
     b = {}
@@ -292,6 +302,12 @@ def main():
                 body.append(x)
             values.append((intro[k + 1], ' '.join(body)))
     brew = data['page_fields'].setdefault('la-brasserie', {})
+    hero = bb_background(page)
+    if hero and save_webp(hero, 'pages/la-brasserie-hero.webp', 1600):
+        brew['intro_image'] = 'img:scraped/pages/la-brasserie-hero.webp'
+    machine = next((u for u in photo_urls(lines) if 'machine' in u.lower()), None)
+    if machine and save_webp(machine, 'pages/la-brasserie-machine.webp', 1200):
+        brew['brew_photo'] = 'img:scraped/pages/la-brasserie-machine.webp'
     plain = [l for l in intro if not l.startswith('[IMG')]
     if len(plain) >= 3:
         brew['intro_text'] = plain[1]

@@ -583,3 +583,9 @@ body.nav-hidden .fab-cta{transform:none;opacity:1;visibility:visible;transition:
 .mega__files a:hover{padding-left:.4rem}
 .mega__files b{font-weight:700;letter-spacing:-.02em}
 .mega__files .mono{color:var(--grey)}
+
+/* En-tête de page avec photo de fond (champ « Image de fond ») : texte blanc en bas, voile sombre pour la lisibilité */
+.ph-head--img{position:relative;isolation:isolate;min-height:min(86vh,820px);display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:8vh;color:var(--white);overflow:hidden}
+.ph-head__img{position:absolute;inset:0;z-index:-1;background:var(--black)}
+.ph-head__img img{width:100%;height:100%;object-fit:cover;display:block}
+.ph-head__img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,13,13,.55) 0%,rgba(13,13,13,.15) 35%,rgba(13,13,13,.25) 60%,rgba(13,13,13,.85) 100%)}

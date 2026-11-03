@@ -120,6 +120,26 @@ def save_webp(url, rel, width):
     return 'scraped/' + rel
 
 
+def catalog_labels():
+    """Étiquettes « à plat » de la page /nos-bieres/ (slug -> URL de l'image en taille originale).
+    Ce sont elles qu'on affiche partout comme étiquette ; les fiches, elles, montrent souvent une canette.
+    Pagination de Search & Filter : /nos-bieres/paged-2/N/ (éphémères), /paged-3/N/ (anciennes)."""
+    out, pages = {}, [f'{SITE}/nos-bieres/']
+    first, _ = fetch(pages[0])
+    for q in ('2', '3'):
+        last = max([int(n) for n in re.findall(rf'/nos-bieres/paged-{q}/(\d+)/', first or '')] or [1])
+        pages += [f'{SITE}/nos-bieres/paged-{q}/{n}/' for n in range(2, last + 1)]
+    for url in pages:
+        html, _ = (first, None) if url == pages[0] else fetch(url)
+        time.sleep(.5)
+        for blk in re.split(r'<div class="fl-post-grid-post', html or '')[1:]:
+            a = re.search(r'href="https://smash\.bzh/bieres/([^/"]+)/?"', blk)
+            i = re.search(r'<img[^>]+?(?:data-lazy-src|src)="(https://smash\.bzh/wp-content/uploads/[^"]+\.(?:jpg|png|jpeg|webp))"', blk)
+            if a and i:
+                out.setdefault(a.group(1), re.sub(r'-\d+x\d+(\.\w+)$', r'\1', i.group(1)))
+    return out
+
+
 def parse_beer(lines, name):
     """Champs d'une fiche bière à partir de ses lignes de texte."""
     b = {}
@@ -210,6 +230,8 @@ def main():
     old_kegs = {b['slug']: (b.get('keg_price'), b.get('keg_volume')) for b in data['beers'] if b.get('keg_price')}
 
     terms = {t['id']: t['slug'] for t in rest('type-de-bieres?_fields=id,slug')}
+    cat_labels = catalog_labels()
+    print(f'{len(cat_labels)} étiquettes dans le catalogue')
     raw_beers = rest('bieres?_fields=id,slug,title,type-de-bieres,type-de-location,date')
     print(f'{len(raw_beers)} bières')
 
@@ -227,10 +249,10 @@ def main():
         beer = {'slug': slug, 'name': name, 'range': rng, 'rent': bool(rb.get('type-de-location'))}
         beer.update(parse_beer(lines, name))
         imgs = photo_urls(lines)
-        label = next((u for u in imgs if 'banderole' in u.lower()), imgs[0] if imgs else None)
+        label = cat_labels.get(slug) or next((u for u in imgs if 'banderole' in u.lower()), None)
         if label:
             beer['label'] = save_webp(label, f'labels/{slug}.webp', 1200)
-        photo = next((u for u in imgs if u != label), None)
+        photo = next((u for u in imgs if u != label and 'banderole' not in u.lower()), None)
         if photo and rng != 'old':  # archivées : étiquette seulement (poids de la démo)
             beer['photo'] = save_webp(photo, f'photos/{slug}.webp', 900)
         if slug in old_kegs:

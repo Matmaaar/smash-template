@@ -185,7 +185,8 @@
       "desc": "Une session IPA à la robe pâle, trouble, légère et qui se boit sans soif !\n\nLes houblons apportent un vent de fraîcheur, avec des saveurs de fruit de la passion, avec de légères notes d’aneth et de coco.",
       "malts": "Orge, Avoine, Blé",
       "hops": "Citra, sabro",
-      "yeast": "London Fog Ale Yeast"
+      "yeast": "London Fog Ale Yeast",
+      "label": "scraped/labels/anunnaki.webp"
     },
     {
       "slug": "artefact",
@@ -198,7 +199,8 @@
       "malts": "Orge, Blé",
       "hops": "Nugget",
       "yeast": "London Ale Yeast",
-      "other": "Lactose, Tonka"
+      "other": "Lactose, Tonka",
+      "label": "scraped/labels/artefact.webp"
     },
     {
       "slug": "social-club",
@@ -211,7 +213,8 @@
       "look": "Blond clair, peu trouble.",
       "malts": "Orge, Blé",
       "hops": "Hallertau Blanc",
-      "yeast": "California Ale Yeast"
+      "yeast": "California Ale Yeast",
+      "label": "scraped/labels/social-club.webp"
     },
     {
       "slug": "agua-bendita",
@@ -426,7 +429,8 @@
       "desc": "Très fiers de vous présenter notre Pale Ale 100% locale !\n\nDe belles notes de céréales bretonnes grâce au Sarrazin de Yec’hed Malt à Saint Avé (56), et légèrement fruitée grâce au houblon Breton de Hysope basé à Domanié (35).\n\nYec’hed Mat !",
       "malts": "Orge, Sarrazin",
       "hops": "Chinook, Brewer’s Gold",
-      "yeast": "B-97"
+      "yeast": "B-97",
+      "label": "scraped/labels/feu-follet-%f0%9f%94%a5.webp"
     },
     {
       "slug": "ligne-b-collab-bloom-pop",
@@ -435,7 +439,8 @@
       "rent": false,
       "style": "Black Berliner Weisse Cassis/Mûre",
       "abv": "4",
-      "desc": "Enfin une bonne nouvelle quand on parle de la ligne B !\n\nBrassée chez nos copains de Bloom Pop, c’est une bière acide au cassis et à la mûre, avec une robe rouge clair qui donne soif – le tout à 4%, c’est presque une grenadine !"
+      "desc": "Enfin une bonne nouvelle quand on parle de la ligne B !\n\nBrassée chez nos copains de Bloom Pop, c’est une bière acide au cassis et à la mûre, avec une robe rouge clair qui donne soif – le tout à 4%, c’est presque une grenadine !",
+      "label": "scraped/labels/ligne-b-collab-bloom-pop.webp"
     },
     {
       "slug": "insouciance",
@@ -476,7 +481,8 @@
       "look": "Robe blonde à dorée et trouble",
       "malts": "Orge, Avoine",
       "hops": "Idaho 7, Mosaic, Simcoe",
-      "yeast": "Verdant, Nottingham"
+      "yeast": "Verdant, Nottingham",
+      "label": "scraped/labels/7-years-old-collab-coin-mousse.webp"
     },
     {
       "slug": "lhazy-cocotte-collab-basse-cour-%f0%9f%90%93",
@@ -490,7 +496,8 @@
       "look": "Blonde et trouble",
       "malts": "Orge, Avoine",
       "hops": "Chinook, Mosaic",
-      "yeast": "AY4"
+      "yeast": "AY4",
+      "label": "scraped/labels/lhazy-cocotte-collab-basse-cour-%f0%9f%90%93.webp"
     },
     {
       "slug": "kontrol",
@@ -503,7 +510,8 @@
       "look": "Ambrée",
       "malts": "Orge, Seigle",
       "hops": "Mandarina Bavaria",
-      "yeast": "K-97"
+      "yeast": "K-97",
+      "label": "scraped/labels/kontrol.webp"
     },
     {
       "slug": "texture-%f0%9f%aa%a9",
@@ -589,7 +597,8 @@
       "look": "Blonde trouble",
       "malts": "Orge, Avoine, Blé",
       "hops": "Amarillo, Huell Melon",
-      "yeast": "New-E"
+      "yeast": "New-E",
+      "label": "scraped/labels/melanine-%e2%98%af.webp"
     },
     {
       "slug": "imagine-%f0%9f%94%ac",
@@ -601,7 +610,8 @@
       "desc": "Une bière rafraîchissante, extra légère. Réalisé en single hop avec du Sorachi Ace, aux notes de coco et d’aneth.\n\nIdéale pour une belle après-midi au soleil entre copains !",
       "look": "Blonde pâle et trouble",
       "malts": "Orge, Avoine, Blé",
-      "hops": "Sorachi Ace"
+      "hops": "Sorachi Ace",
+      "label": "scraped/labels/imagine-%f0%9f%94%ac.webp"
     },
     {
       "slug": "jack-%f0%9f%91%85%f0%9f%8e%b5",
@@ -795,7 +805,8 @@
       "look": "Dorée et trouble",
       "malts": "Orge, Seigle, Blé",
       "hops": "Comet",
-      "yeast": "BRY-97, Windsor"
+      "yeast": "BRY-97, Windsor",
+      "label": "scraped/labels/tinoda.webp"
     },
     {
       "slug": "chimera",
@@ -1198,7 +1209,8 @@
       "formats": "canette 44cL · Disponible en canettes.",
       "desc": "La collab’ retour avec la brasserie Odyssée !\n\nUne bière aux malts fumés avec un ajout de fruit de la passion qui remplace sans soucis une partie de grillade en plein air !\n\nDes notes fumées intenses, accompagnées de la douceur et de la légère acidité du fruit de la passion. Parfaite pour invoquer la force du barbecue et faire apparaitre le beau temps !",
       "malts": "Orge, Blé, Avoine",
-      "other": "Purée de fruit de la passion"
+      "other": "Purée de fruit de la passion",
+      "label": "scraped/labels/passion-bbq-odyssee-x-smash-%f0%9f%a5%93.webp"
     },
     {
       "slug": "macintosh-collab-saint-germain",
@@ -1302,7 +1314,8 @@
       "desc": "Une liqueur gourmande, faite en collaboration avec la Distillerie de la Seine !\n\nÉlaborée sur une base de bière fruitée brassée chez nous, et retravaillée en étant distillée au Havre, c’est un apéritif idéal.\n\nSmasher arbore des notes herbacées de gentiane et d‘orange amère pour une belle fraicheur.\n\nSon amertume marquée et sa riche palette aromatique en font un ameritif qui s’adapte à toute situations.\n\nÀ déguster sec, avec de la bière façon amer-bière (mention spéciale à l’accord Weiss & Smasher) ou encore en base de cocktail.\n\nA essayer absolument avec du Ginger beer, le résultat est bluffant !\n\nTrès efficace également pour les Negronis, Espressos Martinis, Mules…",
       "look": "Liquoreux et rouge sombre.",
       "other": "Bière, infusion de gentiane, extraits de plantes et d’orange.",
-      "label": "scraped/labels/smasher.webp"
+      "label": "scraped/labels/smasher.webp",
+      "photo": "scraped/photos/smasher.webp"
     },
     {
       "slug": "aparte",
@@ -1488,7 +1501,8 @@
       "style": "NEIPA",
       "abv": "6,2",
       "formats": "canette 44cL",
-      "desc": "« C’est la même en mieux équilibré » !\n\nVoilà d’où est parti la collab’ retour avec Fusion, brassé à Bourgbarré !\n\nLe but faire une NEIPA idéale, avec de l’aromatique en puissance et un équilibre digne des plus grands !\n\nDes notes tropicales avec de la mangue, de l’ananas puis des notes d’agrumes et de fruits à noyaux !"
+      "desc": "« C’est la même en mieux équilibré » !\n\nVoilà d’où est parti la collab’ retour avec Fusion, brassé à Bourgbarré !\n\nLe but faire une NEIPA idéale, avec de l’aromatique en puissance et un équilibre digne des plus grands !\n\nDes notes tropicales avec de la mangue, de l’ananas puis des notes d’agrumes et de fruits à noyaux !",
+      "label": "scraped/labels/calimero-fusion-x-smash.webp"
     },
     {
       "slug": "nabu-2-0-collab-lartisanais",
@@ -1560,7 +1574,8 @@
       "desc": "Une Session NEIPA faites pour se réveiller tranquillement de la sieste ou après un marathon de 48h de danse disco !\n\nDisco Nap c’est le mélange de 3 houblons : Citra, Bru-1 et Talus, dans un breuvage tout en légèreté avec des notes intenses d’agrumes et de fruits tropicaux vous êtes paré.e pour vous déhancher sur la piste.",
       "malts": "Orge, Avoine, Blé",
       "hops": "Citra, Bru-1, Talus",
-      "yeast": "Nottingham, Verdant"
+      "yeast": "Nottingham, Verdant",
+      "label": "scraped/labels/disco-nap.webp"
     },
     {
       "slug": "illusion",
@@ -1574,7 +1589,8 @@
       "look": "Jaune et trouble",
       "malts": "Orge, Avoine, Blé",
       "hops": "Citra, HBC 1019, Idaho 7",
-      "yeast": "Verdant, Nottingham"
+      "yeast": "Verdant, Nottingham",
+      "label": "scraped/labels/illusion.webp"
     },
     {
       "slug": "juno",
@@ -1589,7 +1605,8 @@
       "malts": "Orge, Blé",
       "hops": "Nugget",
       "yeast": "Philly Sour",
-      "other": "Purée de Groseille, Purée de Grenade, Purée de Cramberry"
+      "other": "Purée de Groseille, Purée de Grenade, Purée de Cramberry",
+      "label": "scraped/labels/juno.webp"
     },
     {
       "slug": "ringo",
@@ -1690,7 +1707,8 @@
       "malts": "Orge, Blé",
       "hops": "Mandarina Bavaria",
       "yeast": "W-68",
-      "label": "scraped/labels/nena.webp"
+      "label": "scraped/labels/nena.webp",
+      "photo": "scraped/photos/nena.webp"
     },
     {
       "slug": "fugue",
@@ -1706,7 +1724,8 @@
       "hops": "Celeia",
       "yeast": "AY4",
       "other": "Shiso (teinture), Mélisse citronnée, Sel, Coriandre",
-      "label": "scraped/labels/fugue.webp"
+      "label": "scraped/labels/fugue.webp",
+      "photo": "scraped/photos/fugue.webp"
     },
     {
       "slug": "trauma",
@@ -1733,7 +1752,8 @@
       "look": "Robe ambrée",
       "malts": "Orge, Seigle",
       "hops": "Magnum",
-      "yeast": "Abbaye"
+      "yeast": "Abbaye",
+      "label": "scraped/labels/single-trouble.webp"
     },
     {
       "slug": "moonspell",
@@ -1746,7 +1766,8 @@
       "look": "Blonde à jaune et légèrement trouble",
       "malts": "Orge, Avoine, Blé, Flocons Riz",
       "hops": "Chinook, Hallertau Blanc, Nugget",
-      "yeast": "Verdant, Nottingham"
+      "yeast": "Verdant, Nottingham",
+      "label": "scraped/labels/moonspell.webp"
     },
     {
       "slug": "avalou",
@@ -1796,7 +1817,8 @@
       "look": "Robe noire avec une mousse crème.",
       "malts": "Orge, Avoine, Blé",
       "hops": "East Kent Golding",
-      "yeast": "Abbaye"
+      "yeast": "Abbaye",
+      "label": "scraped/labels/leopold-%e2%98%95%ef%b8%8f.webp"
     },
     {
       "slug": "tango",
@@ -1806,7 +1828,8 @@
       "style": "Northern IPA",
       "abv": "5,7",
       "formats": "canette 44cL · Disponible en canettes.",
-      "desc": "Une IPA houblonnée, fraîche et collective, née autour d’une même table, de beaucoup d’idées et de 5 brasseries !\n\nBrassée avec un toute nouvelle levure, cette IPA est le chemin croisé entre une West Coast et une East Coast !\n\nOn retrouve donc une texture bien juteuse, avec des notes aromatiques sur l’agrume et le résineux, avec une fin de bouche sèche !"
+      "desc": "Une IPA houblonnée, fraîche et collective, née autour d’une même table, de beaucoup d’idées et de 5 brasseries !\n\nBrassée avec un toute nouvelle levure, cette IPA est le chemin croisé entre une West Coast et une East Coast !\n\nOn retrouve donc une texture bien juteuse, avec des notes aromatiques sur l’agrume et le résineux, avec une fin de bouche sèche !",
+      "label": "scraped/labels/tango.webp"
     },
     {
       "slug": "gayeulles-collab-la-renneizh",
@@ -1835,7 +1858,8 @@
       "hops": "East Kent Golding",
       "yeast": "Novalager",
       "other": "Écorce de fêve de cacao, Arôme naturel de pistache, Sucre",
-      "label": "scraped/labels/dubai.webp"
+      "label": "scraped/labels/dubai.webp",
+      "photo": "scraped/photos/dubai.webp"
     },
     {
       "slug": "wheat6",
@@ -1849,7 +1873,8 @@
       "malts": "Orge, Blé",
       "hops": "Cashmere, Sabro",
       "yeast": "Verdant, Nottingham",
-      "label": "scraped/labels/wheat6.webp"
+      "label": "scraped/labels/wheat6.webp",
+      "photo": "scraped/photos/wheat6.webp"
     },
     {
       "slug": "coupable",
@@ -1865,7 +1890,8 @@
       "hops": "Celeia",
       "yeast": "AY4",
       "other": "Sucre, Fleur d’hibiscus, Arôme naturel de cerise",
-      "label": "scraped/labels/coupable.webp"
+      "label": "scraped/labels/coupable.webp",
+      "photo": "scraped/photos/coupable.webp"
     },
     {
       "slug": "marc-o",
@@ -1881,7 +1907,8 @@
       "hops": "East Kent Golding",
       "yeast": "Windsor",
       "other": "Arôme naturel de châtaigne, Arôme naturel de vanille, Lactose",
-      "label": "scraped/labels/marc-o.webp"
+      "label": "scraped/labels/marc-o.webp",
+      "photo": "scraped/photos/marc-o.webp"
     },
     {
       "slug": "ace",
@@ -1908,7 +1935,8 @@
       "desc": "Une NEIPA comme on aime : trouble et à fond sur l’aromatique.\n\nGrâce aux houblons, on retrouve des notes intenses de fruits tropicaux et d’agrumes !\n\nL’unique différence ? Elle est à 0,0%.\n\nMalgré tout, elle garde une belle texture juteuse, un bel équilibre et une légère amertume !",
       "malts": "Orge, Avoine",
       "hops": "Simcoe, Mosaic",
-      "label": "scraped/labels/zerozero.webp"
+      "label": "scraped/labels/zerozero.webp",
+      "photo": "scraped/photos/zerozero.webp"
     },
     {
       "slug": "regal",
@@ -1921,7 +1949,8 @@
       "desc": "Une bière tout en légèreté, faite pour désaltérer !\n\nBrassée avec du maïs, Régal est une bière ultra limpide, douce et crispy avec un finale légèrement sèche.\n\nLa seule différence de cette bière, c’est qu’elle est à 0,0%.",
       "malts": "Orge, Maïs",
       "hops": "& Yops",
-      "label": "scraped/labels/regal.webp"
+      "label": "scraped/labels/regal.webp",
+      "photo": "scraped/photos/regal.webp"
     },
     {
       "slug": "cosy",
@@ -1992,7 +2021,8 @@
       "look": "Blonde et trouble",
       "malts": "Orge, Avoine, Blé",
       "hops": "Krush, Idaho 7",
-      "yeast": "Verdant IPA"
+      "yeast": "Verdant IPA",
+      "label": "scraped/labels/banshee.webp"
     },
     {
       "slug": "menhir",
@@ -2034,7 +2064,8 @@
       "hops": "Celeia",
       "yeast": "Pomona",
       "other": "Arôme naturel de violette, Bâton de réglisse",
-      "label": "scraped/labels/junon.webp"
+      "label": "scraped/labels/junon.webp",
+      "photo": "scraped/photos/junon.webp"
     },
     {
       "slug": "sharknado",
@@ -2050,7 +2081,8 @@
       "hops": "East Kent Golding",
       "yeast": "AY4",
       "other": "Jus d’huitres, Coquilles d’huitres",
-      "label": "scraped/labels/sharknado.webp"
+      "label": "scraped/labels/sharknado.webp",
+      "photo": "scraped/photos/sharknado.webp"
     },
     {
       "slug": "drunkensailor",
@@ -2066,7 +2098,8 @@
       "hops": "Nugget",
       "yeast": "Windsor",
       "other": "Azote",
-      "label": "scraped/labels/drunkensailor.webp"
+      "label": "scraped/labels/drunkensailor.webp",
+      "photo": "scraped/photos/drunkensailor.webp"
     },
     {
       "slug": "ryu",
@@ -2082,7 +2115,8 @@
       "hops": "Hallertau Blanc",
       "yeast": "Philly Sour",
       "other": "Fleur de Jasmin, Poudre de Yuzu, Lactose",
-      "label": "scraped/labels/ryu.webp"
+      "label": "scraped/labels/ryu.webp",
+      "photo": "scraped/photos/ryu.webp"
     },
     {
       "slug": "contrebande",
@@ -2096,7 +2130,8 @@
       "malts": "Orge, Orge Tourbé, Blé",
       "hops": "Hallertau Blanc",
       "yeast": "US-05",
-      "label": "scraped/labels/contrebande.webp"
+      "label": "scraped/labels/contrebande.webp",
+      "photo": "scraped/photos/contrebande.webp"
     },
     {
       "slug": "panorama",
@@ -2126,7 +2161,8 @@
       "hops": "Chinook",
       "yeast": "W-34/70",
       "other": "Jus de citron vert pressé",
-      "label": "scraped/labels/postshift.webp"
+      "label": "scraped/labels/postshift.webp",
+      "photo": "scraped/photos/postshift.webp"
     },
     {
       "slug": "pull",
@@ -2151,7 +2187,8 @@
       "desc": "Une Session NEIPA en collaboration avec Kapsyl, brassée chez les copains tourangeaux !\n\nUne bière souple et lumineuse, portée par un seul houblon : le Mosaic, pour des notes de fruits tropicaux.\n\nAvec Push, l’idée est simple : aller un peu plus loin sans en faire trop, trouver le bon rythme, celui qui donne envie d’y revenir.\n\nUn joli p’tit jus bien frais pour accompagner les beaux jours !",
       "malts": "Orge, Avoine",
       "hops": "Mosaic Prysma, Mosaic",
-      "yeast": "Pomona, Nottingham"
+      "yeast": "Pomona, Nottingham",
+      "label": "scraped/labels/push.webp"
     },
     {
       "slug": "darkseas",
@@ -2179,7 +2216,8 @@
       "malts": "Orge, Blé, Avoine",
       "hops": "Krush, Talus",
       "yeast": "Verdant",
-      "label": "scraped/labels/deluge.webp"
+      "label": "scraped/labels/deluge.webp",
+      "photo": "scraped/photos/deluge.webp"
     },
     {
       "slug": "tropicool",
@@ -2194,7 +2232,8 @@
       "hops": "Celeia",
       "yeast": "AY4",
       "other": "Jus de goyave, Jus d’ananas, Jus de mangue, Jus de fruit de la passion",
-      "label": "scraped/labels/tropicool.webp"
+      "label": "scraped/labels/tropicool.webp",
+      "photo": "scraped/photos/tropicool.webp"
     },
     {
       "slug": "fungarr",
@@ -2208,7 +2247,8 @@
       "malts": "Orge",
       "hops": "Chinook",
       "yeast": "SH-45",
-      "label": "scraped/labels/fungarr.webp"
+      "label": "scraped/labels/fungarr.webp",
+      "photo": "scraped/photos/fungarr.webp"
     },
     {
       "slug": "crypto",
@@ -2223,7 +2263,8 @@
       "hops": "Celeia",
       "yeast": "AY4",
       "other": "Sel, Coriandre",
-      "label": "scraped/labels/crypto.webp"
+      "label": "scraped/labels/crypto.webp",
+      "photo": "scraped/photos/crypto.webp"
     },
     {
       "slug": "inachev",
@@ -2237,7 +2278,8 @@
       "malts": "Orge, Avoine, Blé",
       "hops": "Simcoe, Idaho 7",
       "yeast": "Verdant, Nottingham",
-      "label": "scraped/labels/inachev.webp"
+      "label": "scraped/labels/inachev.webp",
+      "photo": "scraped/photos/inachev.webp"
     },
     {
       "slug": "vilaine",
@@ -2293,7 +2335,8 @@
       "hops": "Celeia",
       "yeast": "New-E",
       "other": "Purée de framboise, Extrait de vanille des Comores, Flocons de piment d’Alep, Sucre",
-      "label": "scraped/labels/epicuros.webp"
+      "label": "scraped/labels/epicuros.webp",
+      "photo": "scraped/photos/epicuros.webp"
     },
     {
       "slug": "bliz",
@@ -2307,7 +2350,8 @@
       "malts": "Orge, Avoine, Blé",
       "hops": "Motueka",
       "yeast": "AY4",
-      "label": "scraped/labels/bliz.webp"
+      "label": "scraped/labels/bliz.webp",
+      "photo": "scraped/photos/bliz.webp"
     },
     {
       "slug": "easypeachy",
@@ -2323,7 +2367,8 @@
       "hops": "Celeia",
       "yeast": "Windsor",
       "other": "Purée de pêche blanche, Purée de pêche jaune, Purée de pêche de vigne, Purée de rhubarbe, Sel, Coriandre",
-      "label": "scraped/labels/easypeachy.webp"
+      "label": "scraped/labels/easypeachy.webp",
+      "photo": "scraped/photos/easypeachy.webp"
     },
     {
       "slug": "nabu-v3",
@@ -2338,7 +2383,8 @@
       "malts": "Orge, Blé, Avoine",
       "hops": "Citra, Mosaic Cryo",
       "yeast": "Verdant, Nottingham",
-      "label": "scraped/labels/nabu-v3.webp"
+      "label": "scraped/labels/nabu-v3.webp",
+      "photo": "scraped/photos/nabu-v3.webp"
     },
     {
       "slug": "roseau",
@@ -2353,7 +2399,8 @@
       "hops": "Krush, Idaho GEM",
       "yeast": "New-E",
       "other": "Purée de mangue",
-      "label": "scraped/labels/roseau.webp"
+      "label": "scraped/labels/roseau.webp",
+      "photo": "scraped/photos/roseau.webp"
     },
     {
       "slug": "blacksad",
@@ -2369,7 +2416,8 @@
       "hops": "Chinook",
       "yeast": "New-E",
       "other": "Azote",
-      "label": "scraped/labels/blacksad.webp"
+      "label": "scraped/labels/blacksad.webp",
+      "photo": "scraped/photos/blacksad.webp"
     },
     {
       "slug": "java",
@@ -2383,7 +2431,8 @@
       "look": "Blonde et trouble",
       "malts": "Orge, Blé",
       "hops": "Krush, Talus",
-      "yeast": "New-E"
+      "yeast": "New-E",
+      "label": "scraped/labels/java.webp"
     },
     {
       "slug": "coup-critique",
@@ -2397,7 +2446,8 @@
       "malts": "Best Pale Ale, Munich Malt",
       "hops": "Nelson Sauvin",
       "yeast": "Verdant",
-      "label": "scraped/labels/coup-critique.webp"
+      "label": "scraped/labels/coup-critique.webp",
+      "photo": "scraped/photos/coup-critique.webp"
     },
     {
       "slug": "we-are-uncommon",
@@ -2413,7 +2463,8 @@
       "hops": "Hallertau Blanc",
       "yeast": "BW-20",
       "other": "Purée de mirabelle",
-      "label": "scraped/labels/we-are-uncommon.webp"
+      "label": "scraped/labels/we-are-uncommon.webp",
+      "photo": "scraped/photos/we-are-uncommon.webp"
     },
     {
       "slug": "ritchie",
@@ -2428,7 +2479,8 @@
       "hops": "Celeia",
       "yeast": "AY4",
       "other": "Purée d’ananas, Romarin",
-      "label": "scraped/labels/ritchie.webp"
+      "label": "scraped/labels/ritchie.webp",
+      "photo": "scraped/photos/ritchie.webp"
     },
     {
       "slug": "pavillon-noir",
@@ -2444,7 +2496,8 @@
       "hops": "Chinook",
       "yeast": "AY4",
       "other": "Rhum, Sucre",
-      "label": "scraped/labels/pavillon-noir.webp"
+      "label": "scraped/labels/pavillon-noir.webp",
+      "photo": "scraped/photos/pavillon-noir.webp"
     },
     {
       "slug": "nsp-2026",
@@ -2455,7 +2508,8 @@
       "abv": "5,5",
       "formats": "fût 20L · Disponible en fût.",
       "desc": "La bière officielle de l’édition 2026 de Nantes Sous Pression\n\n!\n\nUne collaboration entre Smash\n\n, Jukebox\n\net Globe\n\npour une Hazy IPA hyper aromatique !\n\nHoublonné au Nelson Sauvin et au Vic Secret, ce petit jus à des notes puissantes d’ananas, de raisin blanc et de pin, accompagné d’une légère amertume.",
-      "label": "scraped/labels/nsp-2026.webp"
+      "label": "scraped/labels/nsp-2026.webp",
+      "photo": "scraped/photos/nsp-2026.webp"
     },
     {
       "slug": "ete-indien",
@@ -2470,7 +2524,8 @@
       "malts": "Orge, Blé",
       "hops": "Riwaka, Simcoe Cryo",
       "yeast": "Verdant, Nottingham",
-      "label": "scraped/labels/ete-indien.webp"
+      "label": "scraped/labels/ete-indien.webp",
+      "photo": "scraped/photos/ete-indien.webp"
     },
     {
       "slug": "chamboule-tout",
@@ -2484,7 +2539,8 @@
       "look": "Jaune et trouble",
       "malts": "Orge, Avoine, Blé",
       "hops": "Barbe Rouge, Citra, Simcoe",
-      "yeast": "Aurora"
+      "yeast": "Aurora",
+      "label": "scraped/labels/chamboule-tout.webp"
     },
     {
       "slug": "north-peak",
@@ -2497,7 +2553,8 @@
       "desc": "Une collaboration avec Outer Range\n\n, la brasserie nichée dans les Alpes !\n\nNorth Peak c’est une NEIPA bien hazy et houblonnée au Nelson Sauvin et Hallertau Blanc, pour des notes de fruits tropicaux, de raisins et de fruits jaunes !",
       "malts": "Orge, Avoine, Blé",
       "hops": "Nelson Sauvin, Hallertau Blanc",
-      "yeast": "Juicy IPA"
+      "yeast": "Juicy IPA",
+      "label": "scraped/labels/north-peak.webp"
     },
     {
       "slug": "upside",
@@ -2513,7 +2570,8 @@
       "hops": "Patho",
       "yeast": "Crisp Sour",
       "other": "Purée de mangue, Lactose, Extrait naturel de vanille, Copeaux de noix de coco torréfiées, Sésame grillé",
-      "label": "scraped/labels/upside.webp"
+      "label": "scraped/labels/upside.webp",
+      "photo": "scraped/photos/upside.webp"
     },
     {
       "slug": "down",
@@ -2529,7 +2587,8 @@
       "hops": "Patho",
       "yeast": "Lutra",
       "other": "Caramel, Sucre, Poudre d’arachide, Fleur de sel",
-      "label": "scraped/labels/down.webp"
+      "label": "scraped/labels/down.webp",
+      "photo": "scraped/photos/down.webp"
     }
   ],
   "posts": [

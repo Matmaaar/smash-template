@@ -12,8 +12,8 @@ $smash_f      = 'smash_front';
 $smash_perm   = smash_beers( 'perm' );
 $smash_latest = smash_latest_post();
 $smash_series = $smash_latest ? smash_post_beers( $smash_latest ) : array();
-// Le mur : éphémères du moment puis les plus récentes des anciennes.
-$smash_wall   = array_merge( smash_beers( 'eph' ), smash_beers( 'old', 24 ) );
+// Le mur : éphémères du moment puis les plus récentes des anciennes (seulement celles qui ont une étiquette).
+$smash_wall   = array_slice( array_values( array_filter( array_merge( smash_beers( 'eph' ), smash_beers( 'old', 40 ) ), fn( $b ) => $b['label'] ) ), 0, 36 );
 
 /** Image de fond / de section (décorative : le texte à côté porte le sens). */
 $smash_img = function ( $name, $attr = array(), $size = 'large' ) {

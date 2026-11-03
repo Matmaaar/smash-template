@@ -14,7 +14,7 @@ $smash_tag  = in_array( $args['heading'] ?? 'h3', array( 'h2', 'h3', 'h4' ), tru
 	<div class="lab__card">
 		<?php echo smash_label_img( $smash_beer, 'smash-label', true ); // Décorative : le nom suit juste en dessous. ?>
 		<?php if ( ! $smash_beer['label'] ) : ?>
-			<span class="ph mono"><?php esc_html_e( 'étiquette à venir', 'smash' ); ?></span>
+			<span class="lab__ph" aria-hidden="true"><?php echo esc_html( $smash_beer['name'] ); ?></span>
 		<?php endif; ?>
 	</div>
 	<div class="lab__row">

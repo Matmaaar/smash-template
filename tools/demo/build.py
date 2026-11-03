@@ -11,6 +11,7 @@ Usage : python3 tools/demo/build.py [--base-url URL_DU_DOSSIER_MEDIA]
 import argparse
 import json
 import math
+import re
 import shutil
 import zipfile
 from datetime import datetime
@@ -137,10 +138,13 @@ def main():
     items, today = [], '2026-01-01'
     next_id = [2000]
 
+    # Images récupérées sur smash.bzh (tools/scrape/scrape.py) : dans demo/scraped/, à côté de demo/media/.
+    root = base[:-len('media/')] if base.endswith('media/') else base
+
     def attachment(rel, title, alt):
         pid = next_id[0]
         next_id[0] += 1
-        url = base + rel
+        url = (root + rel) if rel.startswith('scraped/') else (base + rel)
         items.append(item(pid, title, Path(rel).stem, 'attachment', today,
                           metas=[meta('_wp_attachment_image_alt', alt)],
                           extra=f'\n<wp:attachment_url>{cdata(url)}</wp:attachment_url>'))
@@ -148,10 +152,11 @@ def main():
 
     # Photos de la maquette (photos des bières + images citées par l'accueil, « img:fichier »).
     photos = {}
-    wanted = {b['photo'] for b in DATA['beers'] if b.get('photo')}
+    wanted = {b['photo'] for b in DATA['beers'] if b.get('photo') and not b['photo'].startswith('scraped/')}
     wanted |= {v[4:] for v in DATA['front'].values() if v.startswith('img:')}
     wanted |= {v[4:] for f in DATA.get('page_fields', {}).values() for v in f.values() if v.startswith('img:')}
     wanted -= {b['label'] for b in DATA['beers'] if b.get('label')}  # déjà importées comme étiquettes
+    wanted = {w for w in wanted if (SOURCE_IMG / w).exists()}
     for name in sorted(wanted):
         shutil.copy(SOURCE_IMG / name, MEDIA / name)
         photos[name] = attachment(name, Path(name).stem, '')
@@ -163,17 +168,26 @@ def main():
             'keg_price': 'prix_fut', 'keg_volume': 'volume_fut'}
     beer_ids, pid = {}, 1000
     for order, b in enumerate(DATA['beers']):
-        if b.get('label'):
-            shutil.copy(SOURCE_IMG / b['label'], MEDIA / 'labels' / b['label'])
-            rel = 'labels/' + b['label']
-        else:
+        label = b.get('label', '')
+        if label.startswith('scraped/'):
+            rel = label
+        elif label:
+            shutil.copy(SOURCE_IMG / label, MEDIA / 'labels' / label)
+            rel = 'labels/' + label
+        elif b.get('c'):  # étiquette générée (contenu de la maquette)
             rel = f"labels/{b['slug']}.jpg"
             fake_label(b, MEDIA / rel)
-        label_id = attachment(rel, f"Étiquette {b['name']}", f"Étiquette de la bière {b['name']}")
-        photos.setdefault(Path(rel).name, label_id)
-        values = {**b, 'label': label_id, 'photo': photos.get(b.get('photo'), '')}
+        else:  # pas d'étiquette sur le site : le thème affiche le nom à la place
+            rel = ''
+        label_id = attachment(rel, f"Étiquette {b['name']}", f"Étiquette de la bière {b['name']}") if rel else ''
+        if rel:
+            photos.setdefault(Path(rel).name, label_id)
+        photo = b.get('photo', '')
+        photo_id = attachment(photo, b['name'], '') if photo.startswith('scraped/') else photos.get(photo, '')
+        values = {**b, 'label': label_id, 'photo': photo_id}
         metas = [meta(key, values[k]) for k, key in fmap.items() if values.get(k) not in (None, '')]
-        metas.append(meta('_thumbnail_id', label_id))
+        if label_id:
+            metas.append(meta('_thumbnail_id', label_id))
         slug, lbl = RANGE_TERMS[b['range']]
         terms = [('type-de-bieres', slug, lbl)]
         if b.get('rent'):
@@ -184,25 +198,36 @@ def main():
 
     # Articles : les bières sont citées par des liens /bieres/xxx/, comme sur le vrai site.
     names = {b['slug']: b['name'] for b in DATA['beers']}
-    pid = 1100
+    pid = 1300
     for post in DATA['posts']:
-        body = [p(post.get('intro') or 'Nouvelle série de bières éphémères, disponibles jusqu\'à épuisement.')]
-        for s in post['beers']:
-            body.append(f'<!-- wp:paragraph -->\n<p><a href="/bieres/{s}/">{escape(names[s])}</a></p>\n<!-- /wp:paragraph -->')
-        body += [p(t) for t in post.get('body', [])]
-        items.append(item(pid, post['title'], post['slug'], 'post', post['date'], '\n\n'.join(body),
-                          terms=[('category', 'uncategorized', 'Uncategorized')]))
+        if post.get('html'):  # contenu réel, tel que publié sur smash.bzh ; liens internes rendus relatifs à la démo
+            content = re.sub(r'href="https?://(?:www\.)?smash\.bzh/(?!wp-content/)', 'href="/', post['html'])
+        else:
+            body = [p(post.get('intro') or 'Nouvelle série de bières éphémères, disponibles jusqu\'à épuisement.')]
+            for s in post['beers']:
+                body.append(f'<!-- wp:paragraph -->\n<p><a href="/bieres/{s}/">{escape(names[s])}</a></p>\n<!-- /wp:paragraph -->')
+            body += [p(t) for t in post.get('body', [])]
+            content = '\n\n'.join(body)
+        thumb = attachment(post['thumb'], post['title'], '') if post.get('thumb') else ''
+        items.append(item(pid, post['title'], post['slug'], 'post', post['date'], content,
+                          terms=[('category', 'uncategorized', 'Uncategorized')],
+                          metas=[meta('_thumbnail_id', thumb)] if thumb else []))
         pid += 1
 
     # Équipe.
-    pid = 1200
-    for order, (slug, name, role, bio) in enumerate(DATA['team']):
-        items.append(item(pid, name, slug, 'membre', today, order=order, metas=[meta('poste', role), meta('bio', bio)]))
+    pid = 1400
+    for order, m in enumerate(DATA['team']):
+        if isinstance(m, list):  # ancien format (maquette) : [slug, nom, poste, bio]
+            m = dict(zip(('slug', 'name', 'role', 'bio'), m))
+        metas = [meta('poste', m['role']), meta('bio', m['bio'])]
+        if m.get('photo'):
+            metas.append(meta('photo', attachment(m['photo'], m['name'], m['name'])))
+        items.append(item(pid, m['name'], m['slug'], 'membre', today, order=order, metas=metas))
         pid += 1
 
     # Téléchargements : fichiers d'exemple (le vrai contenu viendra du site actuel).
     (MEDIA / 'downloads').mkdir()
-    pid = 1250
+    pid = 1450
     for order, dl in enumerate(DATA.get('downloads', [])):
         target = MEDIA / 'downloads' / dl['file']
         if dl['file'].endswith('.zip'):
@@ -216,7 +241,7 @@ def main():
         pid += 1
 
     # Pages.
-    pid, roles = 1300, {}
+    pid, roles = 1500, {}
     for order, page in enumerate(DATA['pages']):
         content = p(page['content']) if page['content'] else ''
         # FAQ en blocs « Détails » (page location) : question = résumé, réponse = paragraphe.

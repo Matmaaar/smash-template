@@ -501,3 +501,8 @@ body.nav-hidden .fab-cta{transform:none;opacity:1;visibility:visible;transition:
 .sform{display:flex;gap:1rem;align-items:center;max-width:620px;margin-bottom:5vh}
 .sform input{flex:1;font:inherit;font-size:1.1rem;border:0;border-bottom:2px solid var(--black);background:transparent;padding:.6rem 0}
 .sform input:focus{outline:none}
+
+/* Bière sans étiquette : son nom en grand, sur fond noir */
+.lab__card:has(.lab__ph){background:var(--black)}
+.lab__ph{position:absolute;inset:0;display:grid;place-items:center;padding:1rem;text-align:center;color:var(--white);font-weight:var(--fw-display);letter-spacing:-.05em;line-height:.95;text-transform:lowercase;font-size:clamp(1.4rem,2.6vw,2.6rem)}
+.fiche__label .lab__ph{font-size:clamp(2.2rem,4vw,4rem)}

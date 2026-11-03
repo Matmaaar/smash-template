@@ -22,7 +22,7 @@ npx wp-env run cli wp eval-file wp-content/themes/smash/demo/setup.php
 
 ## Contenu de démo
 
-- Source : `tools/demo/data.json` (provisoire, repris de la maquette).
+- Source : `tools/demo/data.json` : contenu réel de smash.bzh récupéré par `python3 -I tools/scrape/scrape.py` (bières, articles, équipe, images dans `demo/scraped/`), complété par les textes de la maquette pour les blocs absents du site.
 - Génération : `python3 tools/demo/build.py` → `demo/demo-content.xml`, `demo/site.json`, `demo/media/` (étiquettes générées).
 - Les images sont lues depuis `raw.githubusercontent.com` : pousser `demo/media/` avant de tester Playground.
 

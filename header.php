@@ -45,7 +45,7 @@ $smash_cta   = array_values( wp_list_filter( $smash_items, array( 'cta' => true 
 			<?php smash_menu_link( $smash_cta[0], 'top__cta' ); ?>
 		<?php endif; ?>
 		<?php if ( $smash_items ) : ?>
-			<button type="button" class="top__menu" id="menu-btn" aria-expanded="false" aria-controls="mnav" data-open="<?php esc_attr_e( 'menu', 'smash' ); ?>" data-close="<?php esc_attr_e( 'fermer', 'smash' ); ?>"><?php esc_html_e( 'menu', 'smash' ); ?></button>
+			<button type="button" class="top__menu" id="menu-btn" aria-expanded="false" aria-controls="mnav" data-open="<?php esc_attr_e( 'Menu', 'smash' ); ?>" data-close="<?php esc_attr_e( 'Fermer', 'smash' ); ?>"><?php esc_html_e( 'Menu', 'smash' ); ?></button>
 		<?php endif; ?>
 	</div>
 </header>

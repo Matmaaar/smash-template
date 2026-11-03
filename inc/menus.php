@@ -77,16 +77,16 @@ function smash_mega_menu( $item ) {
 	$catalog = untrailingslashit( $item['url'] );
 	$perm    = smash_beers( 'perm' );
 	$ranges  = array(
-		'permanentes' => array( __( 'permanentes', 'smash' ), (string) count( $perm ) ),
-		'ephemeres'   => array( __( 'éphémères', 'smash' ), __( 'en ce moment', 'smash' ) ),
-		'anciennes'   => array( __( 'anciennes éphémères', 'smash' ), __( 'archives', 'smash' ) ),
+		'permanentes' => array( __( 'Permanentes', 'smash' ), (string) count( $perm ) ),
+		'ephemeres'   => array( __( 'Éphémères', 'smash' ), __( 'En ce moment', 'smash' ) ),
+		'anciennes'   => array( __( 'Anciennes éphémères', 'smash' ), __( 'Archives', 'smash' ) ),
 	);
 	?>
 	<div class="dd" id="dd-b">
 		<?php smash_menu_link( $item, '', ' <svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg>' ); ?>
 		<div class="mega">
 			<div class="mega__links">
-				<span class="mono"><?php esc_html_e( 'la gamme', 'smash' ); ?></span>
+				<span class="mono"><?php esc_html_e( 'La gamme', 'smash' ); ?></span>
 				<?php foreach ( $ranges as $anchor => list( $label, $note ) ) : ?>
 					<a href="<?php echo esc_url( $catalog . '/#' . $anchor ); ?>"><?php echo esc_html( $label ); ?> <small><?php echo esc_html( $note ); ?></small></a>
 				<?php endforeach; ?>

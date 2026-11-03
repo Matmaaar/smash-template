@@ -82,7 +82,7 @@ foreach ( $smash_site['menus'] as $smash_location => $smash_slugs ) {
 			'menu-item-type'      => 'post_type',
 			'menu-item-status'    => 'publish',
 			'menu-item-position'  => $smash_position + 1,
-			'menu-item-title'     => mb_strtolower( $smash_page->post_title ),
+			'menu-item-title'     => $smash_page->post_title,
 		) );
 	}
 	// Bouton « devis tireuse » à droite du header : élément avec la classe CSS `cta`.

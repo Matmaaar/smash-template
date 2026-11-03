@@ -80,11 +80,18 @@ $smash_photo = (int) $smash_f( 'brew_photo' );
 			<div class="team">
 				<?php foreach ( $smash_team as $smash_m ) : ?>
 					<article class="mate">
-						<?php if ( $smash_m['photo'] ) : ?>
-							<?php echo wp_get_attachment_image( $smash_m['photo'], 'thumbnail', false, array( 'class' => 'mate__photo', 'alt' => $smash_m['name'], 'loading' => 'lazy' ) ); ?>
+						<div class="mate__photo">
+							<?php if ( $smash_m['photo'] ) : ?>
+								<?php echo wp_get_attachment_image( $smash_m['photo'], 'medium_large', false, array( 'alt' => $smash_m['name'], 'loading' => 'lazy', 'sizes' => '(max-width: 700px) 50vw, 25vw' ) ); ?>
+							<?php else : ?>
+								<span class="mate__nophoto" aria-hidden="true"></span>
+							<?php endif; ?>
+						</div>
+						<h3 class="mate__name"><?php echo esc_html( $smash_m['name'] ); ?></h3>
+						<span class="mono mate__role"><?php echo esc_html( $smash_m['role'] ); ?></span>
+						<?php if ( $smash_m['bio'] ) : ?>
+							<div class="mate__bio"><?php echo wp_kses_post( wpautop( $smash_m['bio'] ) ); ?></div>
 						<?php endif; ?>
-						<span class="mono"><?php echo esc_html( $smash_m['role'] ); ?></span>
-						<div><h3 class="mate__name"><?php echo esc_html( $smash_m['name'] ); ?></h3><?php if ( $smash_m['bio'] ) : ?><div class="mate__bio"><?php echo wp_kses_post( wpautop( $smash_m['bio'] ) ); ?></div><?php endif; ?></div>
 					</article>
 				<?php endforeach; ?>
 			</div>

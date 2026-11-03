@@ -18,9 +18,9 @@ $smash_lists    = array(
 );
 $smash_labels   = array(
 	/* translators: %d : nombre de bières permanentes */
-	'perm' => sprintf( __( 'permanentes · %d', 'smash' ), count( $smash_lists['perm'] ) ),
-	'eph'  => __( 'éphémères en ce moment', 'smash' ),
-	'old'  => __( 'anciennes éphémères', 'smash' ),
+	'perm' => sprintf( __( 'Permanentes · %d', 'smash' ), count( $smash_lists['perm'] ) ),
+	'eph'  => __( 'Éphémères en ce moment', 'smash' ),
+	'old'  => __( 'Anciennes éphémères', 'smash' ),
 );
 $smash_first    = 6;  // anciennes visibles au départ ; « voir plus » en ajoute 12 à chaque clic.
 ?>
@@ -49,7 +49,7 @@ $smash_first    = 6;  // anciennes visibles au départ ; « voir plus » en ajou
 					?>
 				</div>
 				<?php if ( 'old' === $smash_range && count( $smash_lists['old'] ) > $smash_first ) : ?>
-					<div class="more-btn"><button type="button" class="blk dark" data-more><?php esc_html_e( 'voir plus', 'smash' ); ?></button></div>
+					<div class="more-btn"><button type="button" class="blk dark" data-more><?php esc_html_e( 'Voir plus', 'smash' ); ?></button></div>
 				<?php endif; ?>
 			<?php else : ?>
 				<p><?php esc_html_e( 'Aucune bière dans cette gamme pour le moment.', 'smash' ); ?></p>

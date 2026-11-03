@@ -38,13 +38,13 @@ $smash_conf  = array(
 		'cups'           => $smash_r['cups'],
 	),
 	'i18n'    => array(
-		'part'        => __( 'particulier', 'smash' ),
-		'pro'         => __( 'pro / asso', 'smash' ),
-		'quote'       => __( 'devis', 'smash' ),
-		'onRequest'   => __( 'sur demande', 'smash' ),
-		'free'        => __( 'offerte', 'smash' ),
+		'part'        => __( 'Particulier', 'smash' ),
+		'pro'         => __( 'Pro / asso', 'smash' ),
+		'quote'       => __( 'Devis', 'smash' ),
+		'onRequest'   => __( 'Sur demande', 'smash' ),
+		'free'        => __( 'Offerte', 'smash' ),
 		'oneFree'     => __( '1 offerte', 'smash' ),
-		'empty'       => __( 'ajoute des fûts pour commencer', 'smash' ),
+		'empty'       => __( 'Ajoute des fûts pour commencer', 'smash' ),
 		'eph'         => __( 'éphémère', 'smash' ),
 		'tap1'        => __( 'tireuse 1 bec', 'smash' ),
 		'tap2'        => __( 'tireuse 2 becs', 'smash' ),
@@ -59,9 +59,9 @@ $smash_conf  = array(
 		'tapFreeOk'   => __( 'Une tireuse 1 bec offerte : bien joué.', 'smash' ),
 		'tapFreeAdd'  => __( "Une tireuse 1 bec t'est offerte : ajoute-la.", 'smash' ),
 		'ok'          => __( '✓ ok', 'smash' ),
-		'badPickup'   => sprintf( __( 'retrait : %s', 'smash' ), $smash_days( $smash_rules['pickup_days'] ) ),
-		'badReturn'   => sprintf( __( 'retour : %s', 'smash' ), $smash_days( $smash_rules['return_days'] ) ),
-		'sending'     => __( 'envoi…', 'smash' ),
+		'badPickup'   => sprintf( __( 'Retrait : %s', 'smash' ), $smash_days( $smash_rules['pickup_days'] ) ),
+		'badReturn'   => sprintf( __( 'Retour : %s', 'smash' ), $smash_days( $smash_rules['return_days'] ) ),
+		'sending'     => __( 'Envoi…', 'smash' ),
 		'error'       => __( "L'envoi n'a pas marché. Réessaie, ou appelle-nous.", 'smash' ),
 	),
 );
@@ -73,24 +73,24 @@ $smash_conf  = array(
 		<div class="rent" id="rent" data-config="<?php echo esc_attr( wp_json_encode( $smash_conf ) ); ?>">
 			<div class="board">
 				<div class="brow">
-					<div class="brow__k mono" id="k-prof"><b>01</b><?php esc_html_e( 'tu es', 'smash' ); ?></div>
+					<div class="brow__k mono" id="k-prof"><b>01</b><?php esc_html_e( 'Tu es', 'smash' ); ?></div>
 					<div class="seg" id="seg-prof" role="group" aria-labelledby="k-prof">
-						<button type="button" data-v="part" class="on" aria-pressed="true"><?php esc_html_e( 'un particulier', 'smash' ); ?></button>
-						<button type="button" data-v="pro" aria-pressed="false"><?php esc_html_e( 'un pro / une asso', 'smash' ); ?></button>
+						<button type="button" data-v="part" class="on" aria-pressed="true"><?php esc_html_e( 'Un particulier', 'smash' ); ?></button>
+						<button type="button" data-v="pro" aria-pressed="false"><?php esc_html_e( 'Un pro / une asso', 'smash' ); ?></button>
 						<i class="seg__pill" aria-hidden="true"></i>
 					</div>
 				</div>
 
 				<div class="brow">
-					<div class="brow__k mono"><b>02</b><?php esc_html_e( 'quand', 'smash' ); ?></div>
+					<div class="brow__k mono"><b>02</b><?php esc_html_e( 'Quand', 'smash' ); ?></div>
 					<div class="brow__v when">
-						<label class="fld"><span class="mono"><?php esc_html_e( 'retrait', 'smash' ); ?> <em><?php echo esc_html( $smash_days( $smash_rules['pickup_days'] ) ); ?></em></span><input type="date" id="r-pick"><small id="h-pick" aria-live="polite"></small></label>
-						<label class="fld"><span class="mono"><?php esc_html_e( 'retour', 'smash' ); ?> <em><?php echo esc_html( $smash_days( $smash_rules['return_days'] ) ); ?></em></span><input type="date" id="r-back"><small id="h-back" aria-live="polite"></small></label>
+						<label class="fld"><span class="mono"><?php esc_html_e( 'Retrait', 'smash' ); ?> <em><?php echo esc_html( $smash_days( $smash_rules['pickup_days'] ) ); ?></em></span><input type="date" id="r-pick"><small id="h-pick" aria-live="polite"></small></label>
+						<label class="fld"><span class="mono"><?php esc_html_e( 'Retour', 'smash' ); ?> <em><?php echo esc_html( $smash_days( $smash_rules['return_days'] ) ); ?></em></span><input type="date" id="r-back"><small id="h-back" aria-live="polite"></small></label>
 					</div>
 				</div>
 
 				<div class="brow">
-					<div class="brow__k mono"><b>03</b><?php esc_html_e( 'les fûts', 'smash' ); ?><small><?php esc_html_e( 'indique le nombre de fûts par bière', 'smash' ); ?></small></div>
+					<div class="brow__k mono"><b>03</b><?php esc_html_e( 'Les fûts', 'smash' ); ?><small><?php esc_html_e( 'Indique le nombre de fûts par bière', 'smash' ); ?></small></div>
 					<div class="kegs" id="kegs">
 						<?php foreach ( $smash_r['kegs'] as $smash_keg ) : $smash_b = $smash_keg['beer']; ?>
 							<div class="keg" data-k="<?php echo esc_attr( get_post_field( 'post_name', $smash_b['id'] ) ); ?>" data-price="<?php echo esc_attr( $smash_keg['price'] ); ?>" data-name="<?php echo esc_attr( $smash_b['name'] ); ?>">
@@ -100,42 +100,42 @@ $smash_conf  = array(
 									<span data-p="<?php echo esc_attr( smash_money( $smash_keg['price'] ) ); ?>"><?php echo esc_html( smash_money( $smash_keg['price'] ) ); ?></span>
 								</div>
 								<div class="stepper">
-									<button type="button" data-d="-1" aria-label="<?php echo esc_attr( sprintf( __( 'retirer un fût de %s', 'smash' ), $smash_b['name'] ) ); ?>">−</button>
-									<input type="number" min="0" value="0" inputmode="numeric" aria-label="<?php echo esc_attr( sprintf( __( 'nombre de fûts de %s', 'smash' ), $smash_b['name'] ) ); ?>">
-									<button type="button" data-d="1" aria-label="<?php echo esc_attr( sprintf( __( 'ajouter un fût de %s', 'smash' ), $smash_b['name'] ) ); ?>">+</button>
+									<button type="button" data-d="-1" aria-label="<?php echo esc_attr( sprintf( __( 'Retirer un fût de %s', 'smash' ), $smash_b['name'] ) ); ?>">−</button>
+									<input type="number" min="0" value="0" inputmode="numeric" aria-label="<?php echo esc_attr( sprintf( __( 'Nombre de fûts de %s', 'smash' ), $smash_b['name'] ) ); ?>">
+									<button type="button" data-d="1" aria-label="<?php echo esc_attr( sprintf( __( 'Ajouter un fût de %s', 'smash' ), $smash_b['name'] ) ); ?>">+</button>
 								</div>
 							</div>
 						<?php endforeach; ?>
 						<div class="keg eph" data-k="eph">
-							<button type="button" class="keg__lab" tabindex="-1" aria-hidden="true"><?php esc_html_e( 'une éphémère', 'smash' ); ?></button>
-							<div class="keg__meta"><div><b><?php esc_html_e( 'éphémère', 'smash' ); ?></b><small><?php esc_html_e( 'selon dispo', 'smash' ); ?></small></div><span><?php esc_html_e( 'sur demande', 'smash' ); ?></span></div>
+							<button type="button" class="keg__lab" tabindex="-1" aria-hidden="true"><?php esc_html_e( 'Une éphémère', 'smash' ); ?></button>
+							<div class="keg__meta"><div><b><?php esc_html_e( 'éphémère', 'smash' ); ?></b><small><?php esc_html_e( 'Selon dispo', 'smash' ); ?></small></div><span><?php esc_html_e( 'Sur demande', 'smash' ); ?></span></div>
 							<div class="stepper">
-								<button type="button" data-d="-1" aria-label="<?php esc_attr_e( 'retirer un fût d\'éphémère', 'smash' ); ?>">−</button>
-								<input type="number" min="0" value="0" inputmode="numeric" aria-label="<?php esc_attr_e( 'nombre de fûts d\'éphémère', 'smash' ); ?>">
-								<button type="button" data-d="1" aria-label="<?php esc_attr_e( 'ajouter un fût d\'éphémère', 'smash' ); ?>">+</button>
+								<button type="button" data-d="-1" aria-label="<?php esc_attr_e( 'Retirer un fût d\'éphémère', 'smash' ); ?>">−</button>
+								<input type="number" min="0" value="0" inputmode="numeric" aria-label="<?php esc_attr_e( 'Nombre de fûts d\'éphémère', 'smash' ); ?>">
+								<button type="button" data-d="1" aria-label="<?php esc_attr_e( 'Ajouter un fût d\'éphémère', 'smash' ); ?>">+</button>
 							</div>
 						</div>
 					</div>
 				</div>
 
 				<div class="brow">
-					<div class="brow__k mono"><b>04</b><span class="part-only"><?php esc_html_e( 'les tireuses', 'smash' ); ?></span><span class="pro-only" hidden><?php esc_html_e( 'le matériel', 'smash' ); ?></span>
-						<small class="part-only"><?php echo esc_html( sprintf( __( "autant qu'il t'en faut · une 1 bec offerte dès %d fûts", 'smash' ), $smash_rules['free_tap_from'] ) ); ?></small></div>
+					<div class="brow__k mono"><b>04</b><span class="part-only"><?php esc_html_e( 'Les tireuses', 'smash' ); ?></span><span class="pro-only" hidden><?php esc_html_e( 'Le matériel', 'smash' ); ?></span>
+						<small class="part-only"><?php echo esc_html( sprintf( __( "Autant qu'il t'en faut · une 1 bec offerte dès %d fûts", 'smash' ), $smash_rules['free_tap_from'] ) ); ?></small></div>
 					<div>
 						<div class="taps part-only" id="taps" style="display:grid">
 							<?php
 							$smash_taps = array(
-								't1' => array( __( '1 bec', 'smash' ), __( 'une bière à la fois', 'smash' ) ),
-								't2' => array( __( '2 becs', 'smash' ), __( 'deux bières en même temps', 'smash' ) ),
+								't1' => array( __( '1 bec', 'smash' ), __( 'Une bière à la fois', 'smash' ) ),
+								't2' => array( __( '2 becs', 'smash' ), __( 'Deux bières en même temps', 'smash' ) ),
 							);
 							foreach ( $smash_taps as $smash_t => list( $smash_name, $smash_desc ) ) :
 								?>
 								<div class="tapt" data-t="<?php echo esc_attr( $smash_t ); ?>" data-price="<?php echo esc_attr( $smash_r['taps'][ $smash_t ] ); ?>">
 									<b><?php echo esc_html( $smash_name ); ?></b><span><?php echo esc_html( $smash_desc ); ?></span><em><?php echo esc_html( smash_money( $smash_r['taps'][ $smash_t ] ) ); ?></em>
 									<div class="stepper">
-										<button type="button" data-d="-1" aria-label="<?php echo esc_attr( sprintf( __( 'retirer une tireuse %s', 'smash' ), $smash_name ) ); ?>">−</button>
-										<input type="number" min="0" value="0" inputmode="numeric" aria-label="<?php echo esc_attr( sprintf( __( 'tireuses %s', 'smash' ), $smash_name ) ); ?>">
-										<button type="button" data-d="1" aria-label="<?php echo esc_attr( sprintf( __( 'ajouter une tireuse %s', 'smash' ), $smash_name ) ); ?>">+</button>
+										<button type="button" data-d="-1" aria-label="<?php echo esc_attr( sprintf( __( 'Retirer une tireuse %s', 'smash' ), $smash_name ) ); ?>">−</button>
+										<input type="number" min="0" value="0" inputmode="numeric" aria-label="<?php echo esc_attr( sprintf( __( 'Tireuses %s', 'smash' ), $smash_name ) ); ?>">
+										<button type="button" data-d="1" aria-label="<?php echo esc_attr( sprintf( __( 'Ajouter une tireuse %s', 'smash' ), $smash_name ) ); ?>">+</button>
 									</div>
 								</div>
 							<?php endforeach; ?>
@@ -151,17 +151,17 @@ $smash_conf  = array(
 				</div>
 
 				<div class="brow">
-					<div class="brow__k mono" id="k-cups"><b>05</b><?php esc_html_e( 'gobelets', 'smash' ); ?></div>
+					<div class="brow__k mono" id="k-cups"><b>05</b><?php esc_html_e( 'Gobelets', 'smash' ); ?></div>
 					<div class="cups">
 						<div class="seg small" id="seg-cups" role="group" aria-labelledby="k-cups">
-							<button type="button" data-v="0" class="on" aria-pressed="true"><?php esc_html_e( "j'ai les miens", 'smash' ); ?></button>
+							<button type="button" data-v="0" class="on" aria-pressed="true"><?php esc_html_e( "J'ai les miens", 'smash' ); ?></button>
 							<?php foreach ( array_keys( $smash_r['cups'] ) as $smash_size ) : ?>
-								<button type="button" data-v="<?php echo esc_attr( $smash_size ); ?>" aria-pressed="false"><?php echo esc_html( sprintf( __( 'éco-cups %s cl', 'smash' ), $smash_size ) ); ?></button>
+								<button type="button" data-v="<?php echo esc_attr( $smash_size ); ?>" aria-pressed="false"><?php echo esc_html( sprintf( __( 'Éco-cups %s cl', 'smash' ), $smash_size ) ); ?></button>
 							<?php endforeach; ?>
 							<i class="seg__pill" aria-hidden="true"></i>
 						</div>
-						<div class="cupsq" id="cupsq"><label class="mono" for="cups-n"><?php esc_html_e( 'combien ?', 'smash' ); ?></label>
-							<div class="stepper big"><button type="button" data-d="-50" aria-label="<?php esc_attr_e( 'moins 50', 'smash' ); ?>">−</button><input type="number" id="cups-n" min="0" step="10" value="100" inputmode="numeric"><button type="button" data-d="50" aria-label="<?php esc_attr_e( 'plus 50', 'smash' ); ?>">+</button></div>
+						<div class="cupsq" id="cupsq"><label class="mono" for="cups-n"><?php esc_html_e( 'Combien ?', 'smash' ); ?></label>
+							<div class="stepper big"><button type="button" data-d="-50" aria-label="<?php esc_attr_e( 'Moins 50', 'smash' ); ?>">−</button><input type="number" id="cups-n" min="0" step="10" value="100" inputmode="numeric"><button type="button" data-d="50" aria-label="<?php esc_attr_e( 'Plus 50', 'smash' ); ?>">+</button></div>
 						</div>
 						<small class="mono" id="cups-info"><?php echo esc_html( sprintf( __( '%1$s pièce, lavage inclus · %2$s si perdu', 'smash' ), smash_money( $smash_cup ), smash_money( $smash_rules['cup_lost_price'] ) ) ); ?></small>
 					</div>
@@ -169,30 +169,30 @@ $smash_conf  = array(
 			</div>
 
 			<aside class="ticket" id="ticket" aria-labelledby="ticket-title">
-				<div class="ticket__top"><h2 class="h3" id="ticket-title"><?php esc_html_e( 'ton devis', 'smash' ); ?></h2><span class="mono" id="t-mode"><?php esc_html_e( 'particulier', 'smash' ); ?></span></div>
-				<ul id="t-list" aria-live="polite"><li class="empty"><?php esc_html_e( 'ajoute des fûts pour commencer', 'smash' ); ?></li></ul>
-				<div class="ticket__total"><span class="mono"><?php esc_html_e( 'total ttc', 'smash' ); ?></span><b id="t-total">0 €</b></div>
+				<div class="ticket__top"><h2 class="h3" id="ticket-title"><?php esc_html_e( 'Ton devis', 'smash' ); ?></h2><span class="mono" id="t-mode"><?php esc_html_e( 'Particulier', 'smash' ); ?></span></div>
+				<ul id="t-list" aria-live="polite"><li class="empty"><?php esc_html_e( 'Ajoute des fûts pour commencer', 'smash' ); ?></li></ul>
+				<div class="ticket__total"><span class="mono"><?php esc_html_e( 'Total ttc', 'smash' ); ?></span><b id="t-total">0 €</b></div>
 				<div class="nudge" id="t-nudge"><span><?php echo esc_html( sprintf( __( 'Encore %d fûts et une tireuse 1 bec est offerte.', 'smash' ), $smash_rules['free_tap_from'] ) ); ?></span></div>
 				<form class="ticket__form" id="t-form" novalidate>
-					<label class="screen-reader-text" for="t-name"><?php esc_html_e( 'prénom et nom', 'smash' ); ?></label>
-					<input id="t-name" name="name" autocomplete="name" required placeholder="<?php esc_attr_e( 'prénom et nom', 'smash' ); ?>">
+					<label class="screen-reader-text" for="t-name"><?php esc_html_e( 'Prénom et nom', 'smash' ); ?></label>
+					<input id="t-name" name="name" autocomplete="name" required placeholder="<?php esc_attr_e( 'Prénom et nom', 'smash' ); ?>">
 					<div class="two">
-						<label class="screen-reader-text" for="t-mail"><?php esc_html_e( 'email', 'smash' ); ?></label>
-						<input id="t-mail" name="email" type="email" autocomplete="email" required placeholder="<?php esc_attr_e( 'email', 'smash' ); ?>">
-						<label class="screen-reader-text" for="t-tel"><?php esc_html_e( 'téléphone', 'smash' ); ?></label>
-						<input id="t-tel" name="phone" type="tel" autocomplete="tel" required placeholder="<?php esc_attr_e( 'téléphone', 'smash' ); ?>">
+						<label class="screen-reader-text" for="t-mail"><?php esc_html_e( 'Email', 'smash' ); ?></label>
+						<input id="t-mail" name="email" type="email" autocomplete="email" required placeholder="<?php esc_attr_e( 'Email', 'smash' ); ?>">
+						<label class="screen-reader-text" for="t-tel"><?php esc_html_e( 'Téléphone', 'smash' ); ?></label>
+						<input id="t-tel" name="phone" type="tel" autocomplete="tel" required placeholder="<?php esc_attr_e( 'Téléphone', 'smash' ); ?>">
 					</div>
-					<label class="screen-reader-text pro-only" for="t-event" hidden><?php esc_html_e( "nom de l'évènement", 'smash' ); ?></label>
-					<input id="t-event" name="event" class="pro-only" hidden placeholder="<?php esc_attr_e( "nom de l'évènement", 'smash' ); ?>">
-					<label class="screen-reader-text" for="t-notes"><?php esc_html_e( 'précisions', 'smash' ); ?></label>
-					<textarea id="t-notes" name="notes" rows="2" placeholder="<?php esc_attr_e( 'précisions (facultatif)', 'smash' ); ?>"></textarea>
+					<label class="screen-reader-text pro-only" for="t-event" hidden><?php esc_html_e( "Nom de l'évènement", 'smash' ); ?></label>
+					<input id="t-event" name="event" class="pro-only" hidden placeholder="<?php esc_attr_e( "Nom de l'évènement", 'smash' ); ?>">
+					<label class="screen-reader-text" for="t-notes"><?php esc_html_e( 'Précisions', 'smash' ); ?></label>
+					<textarea id="t-notes" name="notes" rows="2" placeholder="<?php esc_attr_e( 'Précisions (facultatif)', 'smash' ); ?>"></textarea>
 					<div class="hp" aria-hidden="true"><label for="t-website">Website</label><input id="t-website" name="website" tabindex="-1" autocomplete="off"></div>
 					<p class="t-error" id="t-error" role="alert" hidden></p>
-					<button type="submit" class="blk" id="t-send"><?php esc_html_e( 'envoyer ma demande', 'smash' ); ?></button>
+					<button type="submit" class="blk" id="t-send"><?php esc_html_e( 'Envoyer ma demande', 'smash' ); ?></button>
 				</form>
 				<p class="ticket__foot mono"><?php echo esc_html( sprintf( __( '+ caution %s au retrait · on te recontacte pour confirmer', 'smash' ), smash_money( $smash_rules['deposit'] ) ) ); ?></p>
 				<div class="ticket__done" id="t-done" role="status" tabindex="-1">
-					<b><?php esc_html_e( "c'est envoyé.", 'smash' ); ?></b>
+					<b><?php esc_html_e( "C'est envoyé.", 'smash' ); ?></b>
 					<p><?php echo esc_html( smash_option( 'success_message', __( 'On revient vers toi très vite.', 'smash' ) ) ); ?></p>
 				</div>
 				<noscript><p class="ticket__foot"><?php echo esc_html( sprintf( __( 'Le devis en ligne a besoin de JavaScript. Écris-nous à %1$s ou appelle le %2$s.', 'smash' ), smash_option( 'email' ), smash_option( 'phone' ) ) ); ?></p></noscript>

@@ -11,26 +11,26 @@ get_header();
 $smash_b       = smash_beer();
 $smash_catalog = smash_catalog_page();
 $smash_kicks   = array(
-	'perm' => __( 'gamme permanente', 'smash' ),
-	'eph'  => __( 'gamme éphémère', 'smash' ),
-	'old'  => __( 'ancienne éphémère', 'smash' ),
+	'perm' => __( 'Gamme permanente', 'smash' ),
+	'eph'  => __( 'Gamme éphémère', 'smash' ),
+	'old'  => __( 'Ancienne éphémère', 'smash' ),
 );
 // Fiche hiérarchisée : 3 infos clés en gros, puis ingrédients (courts) et textes (longs) en grille.
 // Seules les infos remplies s'affichent.
 $smash_key   = array(
-	'abv'     => __( 'degré', 'smash' ),
-	'style'   => __( 'style', 'smash' ),
-	'formats' => __( 'formats', 'smash' ),
+	'abv'     => __( 'Degré', 'smash' ),
+	'style'   => __( 'Style', 'smash' ),
+	'formats' => __( 'Formats', 'smash' ),
 );
 $smash_cells = array(
-	'malts' => array( __( 'malts', 'smash' ), 'ingr' ),
-	'hops'  => array( __( 'houblons', 'smash' ), 'ingr' ),
-	'yeast' => array( __( 'levure', 'smash' ), 'ingr' ),
-	'other' => array( __( 'autres', 'smash' ), 'ingr' ),
-	'look'  => array( __( 'aspect', 'smash' ), 'text' ),
-	'desc'  => array( __( 'dégustation', 'smash' ), 'text' ),
-	'when'  => array( __( 'à boire', 'smash' ), 'text' ),
-	'food'  => array( __( 'accords', 'smash' ), 'text' ),
+	'malts' => array( __( 'Malts', 'smash' ), 'ingr' ),
+	'hops'  => array( __( 'Houblons', 'smash' ), 'ingr' ),
+	'yeast' => array( __( 'Levure', 'smash' ), 'ingr' ),
+	'other' => array( __( 'Autres', 'smash' ), 'ingr' ),
+	'look'  => array( __( 'Aspect', 'smash' ), 'text' ),
+	'desc'  => array( __( 'Dégustation', 'smash' ), 'text' ),
+	'when'  => array( __( 'À boire', 'smash' ), 'text' ),
+	'food'  => array( __( 'Accords', 'smash' ), 'text' ),
 );
 $smash_location = get_page_by_path( 'location-tireuses-a-bieres' );
 $smash_rentable = $smash_location && has_term( '', 'type-de-location', $smash_b['id'] );
@@ -38,14 +38,14 @@ $smash_rentable = $smash_location && has_term( '', 'type-de-location', $smash_b[
 <main class="page light" id="contenu">
 	<section class="sec fiche-sec">
 		<?php if ( $smash_catalog ) : ?>
-			<a href="<?php echo esc_url( get_permalink( $smash_catalog ) ); ?>" class="mono fiche__back">← <?php echo esc_html( mb_strtolower( sprintf( __( 'toutes %s', 'smash' ), get_the_title( $smash_catalog ) ) ) ); ?></a>
+			<a href="<?php echo esc_url( get_permalink( $smash_catalog ) ); ?>" class="mono fiche__back">← <?php echo esc_html( sprintf( __( 'Toutes %s', 'smash' ), mb_strtolower( get_the_title( $smash_catalog ) ) ) ); ?></a>
 		<?php endif; ?>
 		<?php
 		$smash_cta = '';
 		if ( $smash_rentable ) {
 			$smash_keg = smash_keg_price( $smash_b['id'] );
 			ob_start();
-			smash_btn( __( 'en fût pour ta soirée', 'smash' ) . ( null !== $smash_keg ? ' · ' . smash_money( $smash_keg ) : '' ), get_permalink( $smash_location ), 'dark' );
+			smash_btn( __( 'En fût pour ta soirée', 'smash' ) . ( null !== $smash_keg ? ' · ' . smash_money( $smash_keg ) : '' ), get_permalink( $smash_location ), 'dark' );
 			$smash_cta = ob_get_clean();
 		}
 		?>

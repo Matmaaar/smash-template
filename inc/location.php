@@ -242,9 +242,9 @@ function smash_rental_quote( $in ) {
 function smash_quote_summary( $quote ) {
 	$out = array();
 	foreach ( $quote['lines'] as list( $label, $amount ) ) {
-		$out[] = '- ' . $label . ' : ' . ( null === $amount ? __( 'sur devis', 'smash' ) : smash_money( $amount ) );
+		$out[] = '- ' . $label . ' : ' . ( null === $amount ? __( 'Sur devis', 'smash' ) : smash_money( $amount ) );
 	}
-	$out[] = sprintf( __( 'Total TTC : %s', 'smash' ), $quote['pro'] ? __( 'sur devis', 'smash' ) : smash_money( $quote['total'] ) );
+	$out[] = sprintf( __( 'Total TTC : %s', 'smash' ), $quote['pro'] ? __( 'Sur devis', 'smash' ) : smash_money( $quote['total'] ) );
 	return implode( "\n", $out );
 }
 

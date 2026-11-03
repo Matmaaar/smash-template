@@ -8,15 +8,15 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 
 $smash_types = array(
-	'bieres' => __( 'bière', 'smash' ),
-	'post'   => __( 'article', 'smash' ),
-	'page'   => __( 'page', 'smash' ),
+	'bieres' => __( 'Bière', 'smash' ),
+	'post'   => __( 'Article', 'smash' ),
+	'page'   => __( 'Page', 'smash' ),
 );
 ?>
 <main class="page light" id="contenu">
 	<?php
 	get_template_part( 'template-parts/page-head', null, array(
-		'kick'  => __( 'recherche', 'smash' ),
+		'kick'  => __( 'Recherche', 'smash' ),
 		/* translators: %s : termes recherchés */
 		'title' => sprintf( __( '« %s »', 'smash' ), get_search_query() ),
 		/* translators: %d : nombre de résultats */
@@ -39,7 +39,7 @@ $smash_types = array(
 					</a>
 				<?php endwhile; ?>
 			</div>
-			<?php the_posts_pagination( array( 'mid_size' => 1, 'prev_text' => __( 'précédents', 'smash' ), 'next_text' => __( 'suivants', 'smash' ) ) ); ?>
+			<?php the_posts_pagination( array( 'mid_size' => 1, 'prev_text' => __( 'Précédents', 'smash' ), 'next_text' => __( 'Suivants', 'smash' ) ) ); ?>
 		<?php endif; ?>
 	</section>
 </main>

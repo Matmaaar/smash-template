@@ -31,24 +31,24 @@ $smash_gf = smash_gf_contact_id();
 						<a href="<?php echo esc_url( 'tel:' . preg_replace( '/[^\d+]/', '', smash_option( 'phone' ) ) ); ?>"><?php echo esc_html( smash_option( 'phone' ) ); ?></a>
 					<?php endif; ?>
 				</p>
-				<?php smash_btn( __( 'itinéraire', 'smash' ), smash_option( 'map_url' ), 'dark' ); ?>
+				<?php smash_btn( __( 'Itinéraire', 'smash' ), smash_option( 'map_url' ), 'dark' ); ?>
 			</div>
 
 			<div class="cbox">
-				<h2 class="cbox__t"><?php esc_html_e( 'écris-nous', 'smash' ); ?></h2>
+				<h2 class="cbox__t"><?php esc_html_e( 'Écris-nous', 'smash' ); ?></h2>
 				<?php if ( $smash_gf ) : ?>
 					<?php gravity_form( $smash_gf, false, false, false, null, true ); ?>
 				<?php else : ?>
 					<form class="cform" id="cform" novalidate data-rest="<?php echo esc_url( rest_url( 'smash/v1/contact' ) ); ?>" data-nonce="<?php echo esc_attr( wp_create_nonce( 'smash_contact' ) ); ?>" data-wpnonce="<?php echo esc_attr( wp_create_nonce( 'wp_rest' ) ); ?>">
-						<div class="field"><label for="c-name"><?php esc_html_e( 'nom', 'smash' ); ?></label><input id="c-name" name="name" autocomplete="name" required></div>
+						<div class="field"><label for="c-name"><?php esc_html_e( 'Nom', 'smash' ); ?></label><input id="c-name" name="name" autocomplete="name" required></div>
 						<div class="two">
-							<div class="field"><label for="c-mail"><?php esc_html_e( 'email', 'smash' ); ?></label><input id="c-mail" name="email" type="email" autocomplete="email" required></div>
-							<div class="field"><label for="c-tel"><?php esc_html_e( 'téléphone', 'smash' ); ?></label><input id="c-tel" name="phone" type="tel" autocomplete="tel"></div>
+							<div class="field"><label for="c-mail"><?php esc_html_e( 'Email', 'smash' ); ?></label><input id="c-mail" name="email" type="email" autocomplete="email" required></div>
+							<div class="field"><label for="c-tel"><?php esc_html_e( 'Téléphone', 'smash' ); ?></label><input id="c-tel" name="phone" type="tel" autocomplete="tel"></div>
 						</div>
-						<div class="field"><label for="c-msg"><?php esc_html_e( 'message', 'smash' ); ?></label><textarea id="c-msg" name="message" rows="5" required></textarea></div>
+						<div class="field"><label for="c-msg"><?php esc_html_e( 'Message', 'smash' ); ?></label><textarea id="c-msg" name="message" rows="5" required></textarea></div>
 						<div class="hp" aria-hidden="true"><label for="c-website">Website</label><input id="c-website" name="website" tabindex="-1" autocomplete="off"></div>
 						<p class="t-error cform__error" role="alert" hidden data-fallback="<?php esc_attr_e( "L'envoi n'a pas marché. Réessaie, ou écris-nous directement.", 'smash' ); ?>"></p>
-						<button type="submit" class="blk dark"><?php esc_html_e( 'envoyer', 'smash' ); ?></button>
+						<button type="submit" class="blk dark"><?php esc_html_e( 'Envoyer', 'smash' ); ?></button>
 						<p class="cform__done" role="status" hidden><?php esc_html_e( "C'est envoyé, on te répond vite.", 'smash' ); ?></p>
 					</form>
 				<?php endif; ?>

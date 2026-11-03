@@ -274,7 +274,7 @@ def main():
         brew['intro_text'] = plain[1]
         brew['brew_text'] = plain[2]
     for n, (t, x) in enumerate(values[:3], 1):
-        brew[f'value_{n}_title'], brew[f'value_{n}_text'] = t.lower().rstrip(' !'), x
+        brew[f'value_{n}_title'], brew[f'value_{n}_text'] = t.rstrip(' !'), x
 
     data['beers'], data['posts'], data['team'] = beers, posts, team
     data['_note'] = 'Contenu réel de smash.bzh (tools/scrape/scrape.py, ' + time.strftime('%d/%m/%Y') + ') + textes de la maquette pour les blocs absents du site.'

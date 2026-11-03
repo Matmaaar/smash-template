@@ -17,12 +17,12 @@ add_action( 'wp_body_open', function () {
 	<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-title">
 		<div class="gate__in">
 			<div class="S" id="gateS" aria-hidden="true"><i></i><i></i><i></i></div>
-			<h2 class="big" id="gate-title"><?php echo esc_html( smash_option( 'age_title', __( "t'as 18 ans ?", 'smash' ) ) ); ?></h2>
+			<h2 class="big" id="gate-title"><?php echo esc_html( smash_option( 'age_title', __( "T'as 18 ans ?", 'smash' ) ) ); ?></h2>
 			<div class="gate__btns">
-				<button type="button" class="blk" id="yes"><?php echo esc_html( smash_option( 'age_yes', __( 'oui, on y va', 'smash' ) ) ); ?></button>
-				<button type="button" class="blk ghost" id="no"><?php echo esc_html( smash_option( 'age_no', __( 'non', 'smash' ) ) ); ?></button>
+				<button type="button" class="blk" id="yes"><?php echo esc_html( smash_option( 'age_yes', __( 'Oui, on y va', 'smash' ) ) ); ?></button>
+				<button type="button" class="blk ghost" id="no"><?php echo esc_html( smash_option( 'age_no', __( 'Non', 'smash' ) ) ); ?></button>
 			</div>
-			<p class="gate__no" id="nomsg" role="status"><?php echo esc_html( smash_option( 'age_refused', __( "reviens dans quelques années, on t'en gardera une.", 'smash' ) ) ); ?></p>
+			<p class="gate__no" id="nomsg" role="status"><?php echo esc_html( smash_option( 'age_refused', __( "Reviens dans quelques années, on t'en gardera une.", 'smash' ) ) ); ?></p>
 			<small class="mono"><?php echo esc_html( smash_option( 'warning' ) ); ?></small>
 		</div>
 	</div>

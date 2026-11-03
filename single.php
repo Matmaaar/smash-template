@@ -16,7 +16,7 @@ $smash_blog = (int) get_option( 'page_for_posts' );
 		<section class="sec article-sec">
 			<div class="article">
 				<?php if ( $smash_blog ) : ?>
-					<a href="<?php echo esc_url( get_permalink( $smash_blog ) ); ?>" class="mono fiche__back">← <?php echo esc_html( mb_strtolower( get_the_title( $smash_blog ) ) ); ?></a>
+					<a href="<?php echo esc_url( get_permalink( $smash_blog ) ); ?>" class="mono fiche__back">← <?php echo esc_html( get_the_title( $smash_blog ) ); ?></a>
 				<?php endif; ?>
 				<?php smash_kick( get_the_date() ); ?>
 				<h1 class="big big--sm" id="a-title"><?php the_title(); ?></h1>
@@ -38,10 +38,10 @@ $smash_blog = (int) get_option( 'page_for_posts' );
 				?>
 				<nav class="article article__nav" aria-label="<?php esc_attr_e( 'Autres articles', 'smash' ); ?>">
 					<?php if ( $smash_prev ) : ?>
-						<a href="<?php echo esc_url( get_permalink( $smash_prev ) ); ?>"><span class="mono"><?php esc_html_e( 'article précédent', 'smash' ); ?></span><b><?php echo esc_html( get_the_title( $smash_prev ) ); ?></b></a>
+						<a href="<?php echo esc_url( get_permalink( $smash_prev ) ); ?>"><span class="mono"><?php esc_html_e( 'Article précédent', 'smash' ); ?></span><b><?php echo esc_html( get_the_title( $smash_prev ) ); ?></b></a>
 					<?php endif; ?>
 					<?php if ( $smash_next ) : ?>
-						<a href="<?php echo esc_url( get_permalink( $smash_next ) ); ?>" class="next"><span class="mono"><?php esc_html_e( 'article suivant', 'smash' ); ?></span><b><?php echo esc_html( get_the_title( $smash_next ) ); ?></b></a>
+						<a href="<?php echo esc_url( get_permalink( $smash_next ) ); ?>" class="next"><span class="mono"><?php esc_html_e( 'Article suivant', 'smash' ); ?></span><b><?php echo esc_html( get_the_title( $smash_next ) ); ?></b></a>
 					<?php endif; ?>
 				</nav>
 			<?php endif; ?>

@@ -36,8 +36,8 @@ $smash_blog = (int) get_option( 'page_for_posts' );
 			<?php
 			the_posts_pagination( array(
 				'mid_size'  => 1,
-				'prev_text' => __( 'précédents', 'smash' ),
-				'next_text' => __( 'suivants', 'smash' ),
+				'prev_text' => __( 'Précédents', 'smash' ),
+				'next_text' => __( 'Suivants', 'smash' ),
 			) );
 			?>
 		<?php else : ?>

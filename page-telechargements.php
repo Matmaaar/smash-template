@@ -22,7 +22,7 @@ $smash_files = array_filter(
 						<a href="<?php echo esc_url( $smash_file['url'] ); ?>" download>
 							<b><?php echo esc_html( $smash_file['title'] ); ?></b>
 							<span class="mono"><?php echo esc_html( $smash_file['ext'] ); ?></span>
-							<span class="mono dl__go"><?php esc_html_e( 'télécharger', 'smash' ); ?></span>
+							<span class="mono dl__go"><?php esc_html_e( 'Télécharger', 'smash' ); ?></span>
 						</a>
 					</li>
 				<?php endforeach; ?>

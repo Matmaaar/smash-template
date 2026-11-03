@@ -16,18 +16,18 @@ $smash_social = array_filter( array(
 	<div class="foot__word"><b><?php bloginfo( 'name' ); ?></b><span><?php bloginfo( 'description' ); ?></span></div>
 	<div class="foot__cols">
 		<?php if ( smash_option( 'address' ) ) : ?>
-			<div><div class="mono"><?php esc_html_e( 'adresse', 'smash' ); ?></div><?php echo wp_kses( smash_option( 'address' ), array( 'br' => array() ) ); ?></div>
+			<div><div class="mono"><?php esc_html_e( 'Adresse', 'smash' ); ?></div><?php echo wp_kses( smash_option( 'address' ), array( 'br' => array() ) ); ?></div>
 		<?php endif; ?>
 		<?php if ( smash_option( 'hours' ) ) : ?>
-			<div><div class="mono"><?php esc_html_e( 'horaires', 'smash' ); ?></div><?php echo wp_kses( smash_option( 'hours' ), array( 'br' => array() ) ); ?></div>
+			<div><div class="mono"><?php esc_html_e( 'Horaires', 'smash' ); ?></div><?php echo wp_kses( smash_option( 'hours' ), array( 'br' => array() ) ); ?></div>
 		<?php endif; ?>
 		<?php if ( has_nav_menu( 'footer' ) ) : ?>
-			<div><div class="mono"><?php esc_html_e( 'pages', 'smash' ); ?></div>
+			<div><div class="mono"><?php esc_html_e( 'Pages', 'smash' ); ?></div>
 				<?php wp_nav_menu( array( 'theme_location' => 'footer', 'container' => false, 'items_wrap' => '%3$s', 'depth' => 1, 'walker' => new Smash_Flat_Menu_Walker( '<br>' ) ) ); ?>
 			</div>
 		<?php endif; ?>
 		<?php if ( $smash_social ) : ?>
-			<div><div class="mono"><?php esc_html_e( 'suivre', 'smash' ); ?></div>
+			<div><div class="mono"><?php esc_html_e( 'Suivre', 'smash' ); ?></div>
 				<?php
 				$smash_links = array();
 				foreach ( $smash_social as $smash_name => $smash_url ) {
@@ -41,7 +41,7 @@ $smash_social = array_filter( array(
 		$smash_nl = (int) ( smash_map( 'gf' )['newsletter'] ?? 0 );
 		if ( $smash_nl && function_exists( 'gravity_form' ) && class_exists( 'GFAPI' ) && GFAPI::form_id_exists( $smash_nl ) ) :
 			?>
-			<div class="foot__nl"><div class="mono"><?php esc_html_e( 'newsletter', 'smash' ); ?></div><?php gravity_form( $smash_nl, false, false, false, null, true ); ?></div>
+			<div class="foot__nl"><div class="mono"><?php esc_html_e( 'Newsletter', 'smash' ); ?></div><?php gravity_form( $smash_nl, false, false, false, null, true ); ?></div>
 		<?php endif; ?>
 	</div>
 	<div class="legal mono">

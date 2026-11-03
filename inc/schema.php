@@ -3,7 +3,7 @@
  * Données structurées (JSON-LD).
  *
  * Avec Rank Math (site actuel), on ajoute nos entités à son graphe ; sans lui, on les imprime nous-mêmes.
- * Product sur les fiches bières, FAQPage sur la location. Brewery et BlogPosting arrivent à l'étape 5.
+ * Product sur les fiches bières, FAQPage sur la location, BlogPosting sur les articles. Brewery arrive à l'étape 5b.
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -37,6 +37,27 @@ function smash_schema_entities() {
 			);
 		}
 		$out['smashProduct'] = array_filter( $product );
+	}
+
+	// Articles du blog.
+	if ( is_singular( 'post' ) ) {
+		$post  = get_queried_object();
+		$beers = smash_post_beers( $post );
+		$image = has_post_thumbnail( $post ) ? get_the_post_thumbnail_url( $post, 'full' ) : ( $beers && $beers[0]['label'] ? wp_get_attachment_image_url( $beers[0]['label'], 'full' ) : '' );
+		$org   = array( '@type' => 'Organization', 'name' => get_bloginfo( 'name' ), 'url' => home_url( '/' ) );
+		$out['smashPost'] = array_filter( array(
+			'@type'            => 'BlogPosting',
+			'@id'              => get_permalink( $post ) . '#article',
+			'headline'         => wp_strip_all_tags( get_the_title( $post ) ),
+			'url'              => get_permalink( $post ),
+			'datePublished'    => get_the_date( 'c', $post ),
+			'dateModified'     => get_the_modified_date( 'c', $post ),
+			'description'      => wp_strip_all_tags( get_the_excerpt( $post ) ),
+			'image'            => $image,
+			'author'           => $org,
+			'publisher'        => $org,
+			'mainEntityOfPage' => get_permalink( $post ),
+		) );
 	}
 
 	// FAQ de la page location : les blocs « Détails » du contenu (question = résumé, réponse = le reste).

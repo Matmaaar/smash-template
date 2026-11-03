@@ -137,6 +137,29 @@ add_action( 'acf/init', function () {
 		) ),
 	) );
 
+	// Page « La brasserie » (page-la-brasserie.php), rattachée à la page de slug `la-brasserie`.
+	$brew_page = get_page_by_path( 'la-brasserie' );
+	if ( $brew_page ) {
+		$fields = array();
+		foreach ( smash_brew_fields() as $name => list( $type, $label ) ) {
+			$field = array( 'key' => 'field_smash_brew_' . $name, 'name' => $name, 'label' => $label, 'type' => $type );
+			if ( 'textarea' === $type ) {
+				$field += array( 'rows' => 2, 'new_lines' => '' );
+			} elseif ( 'image' === $type ) {
+				$field += array( 'return_format' => 'id', 'preview_size' => 'medium' );
+			} elseif ( 'tab' === $type ) {
+				$field['placement'] = 'top';
+			}
+			$fields[] = $field;
+		}
+		acf_add_local_field_group( array(
+			'key'      => 'group_smash_brew',
+			'title'    => __( 'La brasserie', 'smash' ),
+			'fields'   => $fields,
+			'location' => array( array( array( 'param' => 'page', 'operator' => '==', 'value' => (string) $brew_page->ID ) ) ),
+		) );
+	}
+
 	// Groupes « démo » des bières et de l'équipe, générés depuis le mapping.
 	// Sur le vrai site, leurs propres groupes ACF prennent le relais (SMASH_DEMO_FIELDS = false).
 	if ( ! SMASH_DEMO_FIELDS ) {
@@ -213,4 +236,39 @@ function smash_front_fields() {
 		'insta_image_2'   => array( 'image', __( 'Image 2', 'smash' ) ),
 		'insta_image_3'   => array( 'image', __( 'Image 3', 'smash' ) ),
 	);
+}
+
+/**
+ * Champs de la page « La brasserie » : nom => [type ACF, libellé].
+ * Nombre fixe de blocs (pas de répéteur : compatible ACF gratuit) ; un bloc vide ne s'affiche pas.
+ */
+function smash_brew_fields() {
+	$f = array(
+		'tab_brew'  => array( 'tab', __( 'La brasserie', 'smash' ) ),
+		'brew_photo' => array( 'image', __( 'Photo', 'smash' ) ),
+		'brew_text'  => array( 'textarea', __( 'Grande phrase', 'smash' ) ),
+		'tab_stats' => array( 'tab', __( 'Chiffres', 'smash' ) ),
+	);
+	for ( $i = 1; $i <= 3; $i++ ) {
+		$f[ "stat_{$i}_value" ] = array( 'number', sprintf( __( 'Chiffre %d : valeur', 'smash' ), $i ) );
+		$f[ "stat_{$i}_label" ] = array( 'text', sprintf( __( 'Chiffre %d : légende', 'smash' ), $i ) );
+	}
+	$f['tab_values'] = array( 'tab', __( 'Valeurs', 'smash' ) );
+	for ( $i = 1; $i <= 3; $i++ ) {
+		$f[ "value_{$i}_title" ] = array( 'text', sprintf( __( 'Valeur %d : titre', 'smash' ), $i ) );
+		$f[ "value_{$i}_text" ]  = array( 'textarea', sprintf( __( 'Valeur %d : texte', 'smash' ), $i ) );
+	}
+	$f['tab_equip']   = array( 'tab', __( 'Les machines', 'smash' ) );
+	$f['equip_kick']  = array( 'text', __( 'Sur-titre', 'smash' ) );
+	$f['equip_title'] = array( 'textarea', __( 'Titre', 'smash' ) );
+	$f['equip_text']  = array( 'textarea', __( 'Texte', 'smash' ) );
+	for ( $i = 1; $i <= 4; $i++ ) {
+		$f[ "equip_{$i}_title" ] = array( 'text', sprintf( __( 'Machine %d : titre', 'smash' ), $i ) );
+		$f[ "equip_{$i}_text" ]  = array( 'textarea', sprintf( __( 'Machine %d : texte', 'smash' ), $i ) );
+	}
+	$f['tab_team']   = array( 'tab', __( 'L\'équipe', 'smash' ) );
+	$f['team_kick']  = array( 'text', __( 'Sur-titre', 'smash' ) );
+	$f['team_title'] = array( 'textarea', __( 'Titre', 'smash' ) );
+	$f['team_text']  = array( 'textarea', __( 'Texte (les membres se gèrent dans « Équipe »)', 'smash' ) );
+	return $f;
 }

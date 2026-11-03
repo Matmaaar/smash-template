@@ -132,6 +132,7 @@ def main():
     photos = {}
     wanted = {b['photo'] for b in DATA['beers'] if b.get('photo')}
     wanted |= {v[4:] for v in DATA['front'].values() if v.startswith('img:')}
+    wanted |= {v[4:] for f in DATA.get('page_fields', {}).values() for v in f.values() if v.startswith('img:')}
     wanted -= {b['label'] for b in DATA['beers'] if b.get('label')}  # déjà importées comme étiquettes
     for name in sorted(wanted):
         shutil.copy(SOURCE_IMG / name, MEDIA / name)
@@ -170,6 +171,7 @@ def main():
         body = [p(post.get('intro') or 'Nouvelle série de bières éphémères, disponibles jusqu\'à épuisement.')]
         for s in post['beers']:
             body.append(f'<!-- wp:paragraph -->\n<p><a href="/bieres/{s}/">{escape(names[s])}</a></p>\n<!-- /wp:paragraph -->')
+        body += [p(t) for t in post.get('body', [])]
         items.append(item(pid, post['title'], post['slug'], 'post', post['date'], '\n\n'.join(body),
                           terms=[('category', 'uncategorized', 'Uncategorized')]))
         pid += 1
@@ -231,7 +233,7 @@ def main():
         'front_page': roles.get('front'),
         'posts_page': roles.get('posts'),
         'cta': DATA['cta'],
-        'page_fields': DATA.get('page_fields', {}),
+        'page_fields': {slug: {k: (photos[v[4:]] if v.startswith('img:') else v) for k, v in f.items()} for slug, f in DATA.get('page_fields', {}).items()},
         # Champs de l'accueil : « img:fichier » devient l'ID de la pièce jointe ; « page:slug » est résolu par setup.php.
         'front': {k: (photos[v[4:]] if v.startswith('img:') else v) for k, v in DATA['front'].items()},
     }

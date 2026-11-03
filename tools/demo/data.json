@@ -252,7 +252,11 @@
         "fungarr",
         "crypto"
       ],
-      "intro": "Nouvelle fournée d'éphémères, brassées en petite quantité et disponibles jusqu'à épuisement. Quand c'est fini, c'est fini."
+      "intro": "Nouvelle fournée d'éphémères, brassées en petite quantité et disponibles jusqu'à épuisement. Quand c'est fini, c'est fini.",
+      "body": [
+        "Brassées en petite quantité, elles ne restent jamais longtemps : premier arrivé, premier servi.",
+        "Disponibles en fût et en canette à la brasserie, et chez nos revendeurs habituels tant qu'il y en a."
+      ]
     },
     {
       "slug": "bieres-ephemeres-serie-20",
@@ -261,6 +265,10 @@
       "beers": [
         "serie-20",
         "avalou"
+      ],
+      "body": [
+        "Brassées en petite quantité, elles ne restent jamais longtemps : premier arrivé, premier servi.",
+        "Disponibles en fût et en canette à la brasserie, et chez nos revendeurs habituels tant qu'il y en a."
       ]
     },
     {
@@ -270,6 +278,10 @@
       "beers": [
         "serie-19",
         "crypto"
+      ],
+      "body": [
+        "Brassées en petite quantité, elles ne restent jamais longtemps : premier arrivé, premier servi.",
+        "Disponibles en fût et en canette à la brasserie, et chez nos revendeurs habituels tant qu'il y en a."
       ]
     },
     {
@@ -279,6 +291,10 @@
       "beers": [
         "serie-18",
         "deluge"
+      ],
+      "body": [
+        "Brassées en petite quantité, elles ne restent jamais longtemps : premier arrivé, premier servi.",
+        "Disponibles en fût et en canette à la brasserie, et chez nos revendeurs habituels tant qu'il y en a."
       ]
     },
     {
@@ -288,6 +304,10 @@
       "beers": [
         "serie-17",
         "fungarr"
+      ],
+      "body": [
+        "Brassées en petite quantité, elles ne restent jamais longtemps : premier arrivé, premier servi.",
+        "Disponibles en fût et en canette à la brasserie, et chez nos revendeurs habituels tant qu'il y en a."
       ]
     },
     {
@@ -296,6 +316,10 @@
       "date": "2025-12-31",
       "beers": [
         "zero"
+      ],
+      "body": [
+        "Brassées en petite quantité, elles ne restent jamais longtemps : premier arrivé, premier servi.",
+        "Disponibles en fût et en canette à la brasserie, et chez nos revendeurs habituels tant qu'il y en a."
       ]
     },
     {
@@ -305,6 +329,10 @@
       "beers": [
         "serie-20",
         "tropicool"
+      ],
+      "body": [
+        "Brassées en petite quantité, elles ne restent jamais longtemps : premier arrivé, premier servi.",
+        "Disponibles en fût et en canette à la brasserie, et chez nos revendeurs habituels tant qu'il y en a."
       ]
     },
     {
@@ -314,6 +342,10 @@
       "beers": [
         "serie-19",
         "serie-17"
+      ],
+      "body": [
+        "Brassées en petite quantité, elles ne restent jamais longtemps : premier arrivé, premier servi.",
+        "Disponibles en fût et en canette à la brasserie, et chez nos revendeurs habituels tant qu'il y en a."
       ]
     },
     {
@@ -322,6 +354,10 @@
       "date": "2025-11-05",
       "beers": [
         "avalou"
+      ],
+      "body": [
+        "Brassées en petite quantité, elles ne restent jamais longtemps : premier arrivé, premier servi.",
+        "Disponibles en fût et en canette à la brasserie, et chez nos revendeurs habituels tant qu'il y en a."
       ]
     }
   ],
@@ -527,6 +563,44 @@
       "intro_kick": "location de tireuses & fûts",
       "intro_title": "ton devis\nen 1 minute.",
       "intro_text": "Tout est sur un seul écran : clique, le prix se met à jour pendant que tu choisis."
+    },
+    "la-brasserie": {
+      "intro_kick": "la brasserie",
+      "intro_title": "craft,\nmais carré.",
+      "intro_text": "Une nouvelle microbrasserie craft, à deux pas de la rocade rennaise pour livrer facilement.",
+      "brew_photo": "img:can-affluence.jpg",
+      "brew_text": "Une brasserie hybride : la créativité d'une brasserie craft, la régularité d'une plus grosse production.",
+      "stat_1_value": "10",
+      "stat_1_label": "hL · salle de brassage",
+      "stat_2_value": "40",
+      "stat_2_label": "hL · plus gros fermenteur",
+      "stat_3_value": "0",
+      "stat_3_label": "filtration",
+      "value_1_title": "créativité",
+      "value_1_text": "Sortir des conventions du brassage pour proposer des bières variées et ambitieuses. L'équipe de production cherche sans cesse de nouvelles idées.",
+      "value_2_title": "qualité",
+      "value_2_text": "Des matières premières sélectionnées avec soin et un matériel fiable : la qualité, c'est notre ligne directrice.",
+      "value_3_title": "deux gammes complémentaires",
+      "value_3_text": "Une gamme permanente de styles classiques, et une gamme éphémère qui tourne au gré des envies de l'équipe.",
+      "equip_kick": "le matériel",
+      "equip_title": "les machines.",
+      "equip_text": "La majorité du matériel vient d'EasyBrau, en Italie.",
+      "equip_1_title": "10 hL",
+      "equip_1_text": "Salle de brassage, avec une cuve tampon pour les doubles brassins.",
+      "equip_2_title": "10 → 40 hL",
+      "equip_2_text": "Fermenteurs isobares.",
+      "equip_3_title": "centrifugeuse",
+      "equip_3_text": "Alfa Laval : elle retire résidus de houblon, particules et levures.",
+      "equip_4_title": "non filtrée",
+      "equip_4_text": "Pour garder tous les arômes de la bière.",
+      "team_kick": "la team smash",
+      "team_title": "ceux qui\nbrassent.",
+      "team_text": "Dix personnes (et un chien) entre la salle de brassage, la logistique et les bars."
+    },
+    "le-blog": {
+      "intro_kick": "le blog",
+      "intro_title": "les sorties\ndu moment.",
+      "intro_text": "Chaque nouvelle série d'éphémères, annoncée ici, avec les étiquettes des bières de la série."
     }
   },
   "range_descriptions": {

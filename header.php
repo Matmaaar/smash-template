@@ -31,11 +31,7 @@ $smash_cta   = array_values( wp_list_filter( $smash_items, array( 'cta' => true 
 				if ( $smash_item['cta'] ) {
 					continue;
 				}
-				if ( $smash_item['mega'] ) {
-					smash_mega_menu( $smash_item );
-				} else {
-					smash_menu_link( $smash_item );
-				}
+				smash_nav_item( $smash_item );
 			}
 			?>
 		</nav>

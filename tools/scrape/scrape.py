@@ -192,7 +192,8 @@ def parse_team(lines, start):
         name = lines[i + 1]
         if m and not name.startswith('[IMG') and len(name) <= 30 and len(name.split()) <= 3:
             j, bio = i + 3, []
-            while j < len(lines) and not lines[j].startswith('[IMG'):
+            # Fin de la présentation : photo suivante, ou ligne sans lettre (« 🕊️🕊️ » qui ouvre la section suivante).
+            while j < len(lines) and not lines[j].startswith('[IMG') and re.search(r'\w', lines[j]):
                 bio.append(lines[j])
                 j += 1
             slug = slugify(re.sub(r'[^\w\s-]', '', name)) or f'membre-{len(team) + 1}'

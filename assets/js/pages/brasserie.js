@@ -1,6 +1,25 @@
-/* smash : la brasserie (BUILD.brasserie de la maquette) — compteurs des chiffres, entrée des valeurs. */
+/* smash : la brasserie (BUILD.brasserie de la maquette) — compteurs des chiffres, entrée des valeurs, cartes de l'équipe dépliables. */
 (() => {
 	const { $$, animate } = window.smash || {};
+	if (!$$) return;
+
+	// Équipe : chaque carte s'ouvre et se ferme (bouton aria-expanded ; sans JS, tout est ouvert).
+	$$('.mate__btn').forEach(btn => {
+		const bio = document.getElementById(btn.getAttribute('aria-controls'));
+		const card = btn.closest('.mate');
+		if (!bio) return;
+		const set = open => {
+			btn.setAttribute('aria-expanded', open);
+			card.classList.toggle('is-open', open);
+			bio.firstElementChild.inert = !open;
+		};
+		set(false);
+		btn.addEventListener('click', () => {
+			set(btn.getAttribute('aria-expanded') !== 'true');
+			if (window.ScrollTrigger) setTimeout(() => ScrollTrigger.refresh(), 500);
+		});
+	});
+
 	if (!animate) return;
 	$$('.stats b[data-n]').forEach(b => {
 		const o = { v: 0 }, end = +b.dataset.n;

@@ -144,7 +144,7 @@ add_action( 'acf/init', function () {
 		foreach ( smash_brew_fields() as $name => list( $type, $label ) ) {
 			$field = array( 'key' => 'field_smash_brew_' . $name, 'name' => $name, 'label' => $label, 'type' => $type );
 			if ( 'textarea' === $type ) {
-				$field += array( 'rows' => 2, 'new_lines' => '' );
+				$field += array( 'rows' => 0 === strpos( $name, 'story_' ) ? 8 : 2, 'new_lines' => '' );
 			} elseif ( 'image' === $type ) {
 				$field += array( 'return_format' => 'id', 'preview_size' => 'medium' );
 			} elseif ( 'tab' === $type ) {
@@ -262,6 +262,10 @@ function smash_brew_fields() {
 	$f['equip_kick']  = array( 'text', __( 'Sur-titre', 'smash' ) );
 	$f['equip_title'] = array( 'textarea', __( 'Titre', 'smash' ) );
 	$f['equip_text']  = array( 'textarea', __( 'Texte', 'smash' ) );
+	for ( $i = 1; $i <= 2; $i++ ) {
+		$f[ "story_{$i}_title" ] = array( 'text', sprintf( __( 'Texte long %d : titre', 'smash' ), $i ) );
+		$f[ "story_{$i}_text" ]  = array( 'textarea', sprintf( __( 'Texte long %d : texte (une ligne vide = un paragraphe)', 'smash' ), $i ) );
+	}
 	for ( $i = 1; $i <= 4; $i++ ) {
 		$f[ "equip_{$i}_title" ] = array( 'text', sprintf( __( 'Machine %d : titre', 'smash' ), $i ) );
 		$f[ "equip_{$i}_text" ]  = array( 'textarea', sprintf( __( 'Machine %d : texte', 'smash' ), $i ) );

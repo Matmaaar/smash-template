@@ -12,10 +12,13 @@ get_header();
 $smash_id = get_queried_object_id();
 $smash_f  = fn( $name ) => smash_page_field( $smash_id, $name );
 
-$smash_stats = $smash_values = $smash_equip = array();
+$smash_stats = $smash_values = $smash_equip = $smash_stories = array();
 for ( $smash_i = 1; $smash_i <= 4; $smash_i++ ) {
 	if ( $smash_i <= 3 && '' !== $smash_f( "stat_{$smash_i}_label" ) ) {
 		$smash_stats[] = array( (int) $smash_f( "stat_{$smash_i}_value" ), $smash_f( "stat_{$smash_i}_label" ) );
+	}
+	if ( $smash_i <= 2 && '' !== $smash_f( "story_{$smash_i}_title" ) ) {
+		$smash_stories[] = array( $smash_f( "story_{$smash_i}_title" ), $smash_f( "story_{$smash_i}_text" ) );
 	}
 	if ( $smash_i <= 3 && '' !== $smash_f( "value_{$smash_i}_title" ) ) {
 		$smash_values[] = array( $smash_f( "value_{$smash_i}_title" ), $smash_f( "value_{$smash_i}_text" ) );
@@ -57,17 +60,26 @@ $smash_photo = (int) $smash_f( 'brew_photo' );
 		</section>
 	<?php endif; ?>
 
-	<?php if ( $smash_equip ) : ?>
+	<?php if ( $smash_equip || $smash_stories ) : ?>
 		<section class="sec">
 			<div class="head">
 				<div><?php smash_kick( $smash_f( 'equip_kick' ) ); ?><h2 class="big" data-up><?php echo smash_multiline( $smash_f( 'equip_title' ) ); ?></h2></div>
 				<?php if ( $smash_f( 'equip_text' ) ) : ?><p><?php echo esc_html( $smash_f( 'equip_text' ) ); ?></p><?php endif; ?>
 			</div>
+			<?php if ( $smash_stories ) : ?>
+				<div class="stories">
+					<?php foreach ( $smash_stories as list( $smash_t, $smash_x ) ) : ?>
+						<div class="story"><h3 class="story__t"><?php echo esc_html( $smash_t ); ?></h3><?php echo wp_kses_post( wpautop( $smash_x ) ); ?></div>
+					<?php endforeach; ?>
+				</div>
+			<?php endif; ?>
+			<?php if ( $smash_equip ) : ?>
 			<div class="equip">
 				<?php foreach ( $smash_equip as list( $smash_t, $smash_x ) ) : ?>
 					<div><b><?php echo esc_html( $smash_t ); ?></b><?php if ( $smash_x ) : ?><p><?php echo esc_html( $smash_x ); ?></p><?php endif; ?></div>
 				<?php endforeach; ?>
 			</div>
+			<?php endif; ?>
 		</section>
 	<?php endif; ?>
 
@@ -78,19 +90,30 @@ $smash_photo = (int) $smash_f( 'brew_photo' );
 				<?php if ( $smash_f( 'team_text' ) ) : ?><p><?php echo esc_html( $smash_f( 'team_text' ) ); ?></p><?php endif; ?>
 			</div>
 			<div class="team">
-				<?php foreach ( $smash_team as $smash_m ) : ?>
+				<?php foreach ( $smash_team as $smash_k => $smash_m ) : ?>
+					<?php $smash_bid = 'mate-' . ( $smash_k + 1 ); ?>
 					<article class="mate">
-						<div class="mate__photo">
-							<?php if ( $smash_m['photo'] ) : ?>
-								<?php echo wp_get_attachment_image( $smash_m['photo'], 'medium_large', false, array( 'alt' => $smash_m['name'], 'loading' => 'lazy', 'sizes' => '(max-width: 700px) 50vw, 25vw' ) ); ?>
-							<?php else : ?>
-								<span class="mate__nophoto" aria-hidden="true"></span>
-							<?php endif; ?>
+						<div class="mate__head">
+							<div class="mate__photo">
+								<?php if ( $smash_m['photo'] ) : ?>
+									<?php echo wp_get_attachment_image( $smash_m['photo'], 'medium_large', false, array( 'alt' => '', 'loading' => 'lazy', 'sizes' => '(max-width: 700px) 45vw, 22vw' ) ); ?>
+								<?php else : ?>
+									<span class="mate__nophoto" aria-hidden="true"></span>
+								<?php endif; ?>
+							</div>
+							<h3 class="mate__name">
+								<?php if ( $smash_m['bio'] ) : ?>
+									<button type="button" class="mate__btn" aria-expanded="false" aria-controls="<?php echo esc_attr( $smash_bid ); ?>">
+										<span class="mate__who"><span class="mate__n"><?php echo esc_html( $smash_m['name'] ); ?></span><span class="mono mate__role"><?php echo esc_html( $smash_m['role'] ); ?></span></span>
+										<span class="mate__plus" aria-hidden="true"></span>
+									</button>
+								<?php else : ?>
+									<span class="mate__who"><span class="mate__n"><?php echo esc_html( $smash_m['name'] ); ?></span><span class="mono mate__role"><?php echo esc_html( $smash_m['role'] ); ?></span></span>
+								<?php endif; ?>
+							</h3>
 						</div>
-						<h3 class="mate__name"><?php echo esc_html( $smash_m['name'] ); ?></h3>
-						<span class="mono mate__role"><?php echo esc_html( $smash_m['role'] ); ?></span>
 						<?php if ( $smash_m['bio'] ) : ?>
-							<div class="mate__bio"><?php echo wp_kses_post( wpautop( $smash_m['bio'] ) ); ?></div>
+							<div class="mate__bio" id="<?php echo esc_attr( $smash_bid ); ?>"><div><?php echo wp_kses_post( wpautop( $smash_m['bio'] ) ); ?></div></div>
 						<?php endif; ?>
 					</article>
 				<?php endforeach; ?>

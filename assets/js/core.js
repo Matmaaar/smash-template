@@ -58,21 +58,41 @@
 		});
 	}
 
-	/* Méga-menu « nos bières » : ouverture au survol et au clavier, fermeture douce */
-	const dd = $('#dd-b');
-	if (dd) {
-		let timer;
-		const close = () => { clearTimeout(timer); dd.classList.remove('open'); };
-		const open = () => {
-			if (innerWidth <= 860 || dd.classList.contains('open')) return;
-			clearTimeout(timer); dd.classList.add('open');
-			animate && gsap.from('#mm-labs a', { y: 20, opacity: 0, duration: .5, ease: 'expo.out', stagger: .04, delay: .1 });
+	/* Méga-menus (aperçus de « nos bières », « la brasserie », « le blog »…) : survol après un court délai,
+	   clavier (focus) et Échap. Passer d'un lien à l'autre change le panneau sans le refermer. */
+	const dds = $$('#nav .dd');
+	if (dds.length) {
+		const nav = $('#nav');
+		let current = null, openTimer, closeTimer;
+		const close = () => {
+			clearTimeout(openTimer); clearTimeout(closeTimer);
+			if (current) current.classList.remove('open');
+			current = null;
+			nav.classList.remove('mega-swap');
 		};
-		dd.addEventListener('mouseenter', open);
-		dd.addEventListener('mouseleave', () => { timer = setTimeout(close, 160); });
-		dd.addEventListener('focusin', open);
-		dd.addEventListener('focusout', e => { if (!dd.contains(e.relatedTarget)) close(); });
-		addEventListener('keydown', e => { if (e.key === 'Escape' && dd.classList.contains('open')) { close(); $('a', dd).focus(); } });
+		smash.closeMega = close;
+		const open = dd => {
+			clearTimeout(openTimer); clearTimeout(closeTimer);
+			if (innerWidth <= 860 || current === dd) return;
+			const swap = !!current;
+			if (current) current.classList.remove('open');
+			nav.classList.toggle('mega-swap', swap);
+			dd.classList.add('open');
+			current = dd;
+			animate && gsap.fromTo($$('.mega__in > *', dd), { y: swap ? 10 : 20, opacity: 0 }, { y: 0, opacity: 1, duration: swap ? .35 : .5, ease: 'expo.out', stagger: .04, delay: swap ? 0 : .1, overwrite: true });
+		};
+		dds.forEach(dd => {
+			dd.addEventListener('mouseenter', () => { clearTimeout(closeTimer); clearTimeout(openTimer); openTimer = setTimeout(() => open(dd), current ? 60 : 150); });
+			dd.addEventListener('mouseleave', () => { clearTimeout(openTimer); closeTimer = setTimeout(close, 180); });
+			dd.addEventListener('focusin', () => open(dd));
+			dd.addEventListener('focusout', e => { if (!e.relatedTarget || !e.relatedTarget.closest('#nav .dd')) close(); });
+		});
+		addEventListener('keydown', e => {
+			if (e.key !== 'Escape' || !current) return;
+			const link = $('a', current);
+			close();
+			link.focus();
+		});
 	}
 
 	/* Logo : blanc sur fond sombre / photo, noir sur fond clair. On regarde ce qu'il y a derrière lui. */
@@ -126,7 +146,7 @@
 			if (h === hidden) return;
 			hidden = h;
 			body.classList.toggle('nav-hidden', h);
-			if (h && dd) dd.classList.remove('open');
+			if (h && smash.closeMega) smash.closeMega();
 			if (fab) {
 				fab.tabIndex = h ? 0 : -1; fab.setAttribute('aria-hidden', String(!h));
 				if (h) fab.classList.add('pop'); // n'agit qu'une fois : la classe reste, l'animation ne rejoue pas
@@ -135,7 +155,7 @@
 		const onScroll = () => {
 			const y = scrollY, d = y - last;
 			if (y < SHOW_UNDER) set(false);
-			else if (d > SENSITIVITY && !(dd && dd.classList.contains('open')) && !top.contains(document.activeElement)) set(true);
+			else if (d > SENSITIVITY && !document.querySelector('#nav .dd.open') && !top.contains(document.activeElement)) set(true);
 			else if (d < -SENSITIVITY) set(false);
 			if (Math.abs(d) > SENSITIVITY || y < SHOW_UNDER) last = y;
 		};

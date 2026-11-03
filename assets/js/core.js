@@ -83,7 +83,7 @@
 		};
 		dds.forEach(dd => {
 			dd.addEventListener('mouseenter', () => { clearTimeout(closeTimer); clearTimeout(openTimer); openTimer = setTimeout(() => open(dd), current ? 60 : 150); });
-			dd.addEventListener('mouseleave', () => { clearTimeout(openTimer); closeTimer = setTimeout(close, 180); });
+			dd.addEventListener('mouseleave', () => { clearTimeout(openTimer); closeTimer = setTimeout(close, 60); });
 			dd.addEventListener('focusin', () => open(dd));
 			dd.addEventListener('focusout', e => { if (!e.relatedTarget || !e.relatedTarget.closest('#nav .dd')) close(); });
 		});

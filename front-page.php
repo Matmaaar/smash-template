@@ -60,15 +60,15 @@ $smash_img = function ( $name, $attr = array(), $size = 'large' ) {
 	<?php if ( $smash_latest ) : ?>
 		<?php
 		$smash_title = get_the_title( $smash_latest );
-		// « bières éphémères : série #21 » => « série #21 » (le sur-titre dit déjà « bières éphémères »).
+		// « Bières éphémères : Série #21 » => « Série #21 » (le titre de la section dit déjà « Nos bières éphémères »).
 		$smash_short = false !== strpos( $smash_title, ':' ) ? trim( substr( strrchr( $smash_title, ':' ), 1 ) ) : $smash_title;
 		$smash_rots  = array( -8, 4, -3, 7 );
 		?>
 		<section class="sec stepped flip">
 			<div class="drop-sec">
 				<div>
-					<?php smash_kick( trim( $smash_f( 'series_kick' ) . ' · ' . get_the_date( '', $smash_latest ), ' ·' ) ); ?>
-					<h2 class="big" data-up><?php echo esc_html( $smash_short ); ?></h2>
+					<h2 class="big" data-up><?php echo smash_multiline( $smash_f( 'series_title' ) ?: $smash_short ); ?></h2>
+					<p class="drop-sec__sub"><b><?php echo esc_html( $smash_short ); ?></b><span class="mono"><?php echo esc_html( get_the_date( '', $smash_latest ) ); ?></span></p>
 					<p><?php echo esc_html( get_the_excerpt( $smash_latest ) ); ?></p>
 					<?php smash_btn( $smash_f( 'series_btn_label' ), get_permalink( $smash_latest ) ); ?>
 				</div>
@@ -127,7 +127,9 @@ $smash_img = function ( $name, $attr = array(), $size = 'large' ) {
 		<div class="teaser">
 			<div class="teaser__img"><div data-par><?php echo $smash_img( 'brew_image' ); ?></div></div>
 			<div>
-				<?php smash_kick( $smash_f( 'brew_kick' ) ); ?>
+				<?php if ( $smash_f( 'brew_title' ) ) : ?>
+					<h2 class="big big--sm" data-up><?php echo smash_multiline( $smash_f( 'brew_title' ) ); ?></h2>
+				<?php endif; ?>
 				<?php if ( $smash_f( 'brew_text' ) ) : ?>
 					<p><?php echo esc_html( $smash_f( 'brew_text' ) ); ?></p>
 				<?php endif; ?>
@@ -139,7 +141,6 @@ $smash_img = function ( $name, $attr = array(), $size = 'large' ) {
 	<section class="sec light stepped">
 		<div class="teaser">
 			<div>
-				<?php smash_kick( $smash_f( 'loc_kick' ) ); ?>
 				<h2 class="big big--sm" data-up><?php echo smash_multiline( $smash_f( 'loc_title' ) ); ?></h2>
 				<?php if ( $smash_f( 'loc_text' ) ) : ?>
 					<p><?php echo esc_html( $smash_f( 'loc_text' ) ); ?></p>

@@ -98,7 +98,7 @@ html.lenis,html.lenis body{height:auto}
 .top__cta.on{background:#fff;color:var(--black);box-shadow:inset 0 0 0 2px var(--black),0 8px 24px -10px rgba(0,0,0,.45)}
 .top__menu{display:none;height:44px;padding:0 1rem;font-weight:700;font-size:.92rem;color:#fff;background:rgba(13,13,13,.84);-webkit-backdrop-filter:blur(16px) saturate(1.3);backdrop-filter:blur(16px) saturate(1.3);border:1px solid rgba(247,246,242,.1);border-radius:12px 0 12px 0}
 /* Méga-menu : panneau arrondi qui s'ouvre sous la pilule */
-.mega{position:absolute;left:50%;width:min(1100px,94vw);margin-left:calc(min(1100px,94vw) / -2);top:calc(100% + 12px);background:var(--white);color:var(--black);border-radius:20px 0 20px 0;box-shadow:0 30px 60px -20px rgba(0,0,0,.35);display:grid;grid-template-columns:300px 1fr;gap:3vw;padding:2rem 2.2rem 2.2rem;clip-path:inset(0 0 100% 0 round 20px 0 20px 0);visibility:hidden;transition:clip-path .35s cubic-bezier(.7,0,.2,1),visibility 0s .35s}
+.mega{position:absolute;left:50%;width:min(1100px,94vw);margin-left:calc(min(1100px,94vw) / -2);top:calc(100% + 12px);background:var(--white);color:var(--black);border-radius:20px 0 20px 0;box-shadow:0 30px 60px -20px rgba(0,0,0,.35);display:grid;grid-template-columns:300px 1fr;gap:3vw;padding:2rem 2.2rem 2.2rem;clip-path:inset(0 0 100% 0 round 20px 0 20px 0);visibility:hidden;transition:clip-path .16s cubic-bezier(.5,0,.75,0),visibility 0s .16s}
 .mega::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
 .dd.open .mega{clip-path:inset(0 0 0 0 round 20px 0 20px 0);visibility:visible;transition:clip-path .45s cubic-bezier(.7,0,.2,1)}
 .mega__links{display:grid;align-content:start;gap:.2rem;border-right:1px solid var(--line-d);padding-right:2rem}
@@ -150,11 +150,12 @@ html.lenis,html.lenis body{height:auto}
 .lab__card{position:relative;aspect-ratio:7/4;border-radius:8px;background-size:cover;background-position:center;transform-style:preserve-3d;box-shadow:0 24px 40px -26px rgba(0,0,0,.55);will-change:transform}
 .lab__card::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.35),rgba(255,255,255,0) 45%);opacity:0;transition:opacity .3s;pointer-events:none}
 .lab:hover .lab__card::after{opacity:1}
-.lab__row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-top:1.1rem}
+.lab__row{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:1.1rem}
 .lab h2,.lab h3{font-size:var(--fs-card);font-weight:var(--fw-display);letter-spacing:-.045em}
 .lab .mono{color:#6c6b67}
-.lab__go{display:flex;gap:.45rem;align-items:center;font-weight:700;opacity:0;transform:translateX(-8px);transition:opacity .3s,transform .3s}
-.lab:hover .lab__go{opacity:1;transform:none}
+.lab__go{flex:none;padding:.5rem .9rem;font-size:.85rem;border-radius:14px 0 14px 0;opacity:0;transform:translateX(-8px);transition:opacity .3s,transform .3s,border-radius .4s}
+.lab:hover .lab__go,.lab:focus-visible .lab__go{opacity:1;transform:none;border-radius:0 14px 0 14px}
+@media (hover:none){.lab__go{opacity:1;transform:none}}
 .ph{position:absolute;top:.6rem;left:.6rem;background:rgba(13,13,13,.75);color:#fff;padding:.25rem .45rem;border-radius:4px}
 .dark-sec .lab .mono{color:var(--grey)}
 @media (max-width:1000px){.labels{grid-template-columns:repeat(2,1fr)}}
@@ -589,3 +590,9 @@ body.nav-hidden .fab-cta{transform:none;opacity:1;visibility:visible;transition:
 .ph-head__img{position:absolute;inset:0;z-index:-1;background:var(--black)}
 .ph-head__img img{width:100%;height:100%;object-fit:cover;display:block}
 .ph-head__img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,13,13,.55) 0%,rgba(13,13,13,.15) 35%,rgba(13,13,13,.25) 60%,rgba(13,13,13,.85) 100%)}
+
+/* Accueil, dernière série : titre de la section, puis « Série #21 » et la date en dessous */
+.drop-sec .drop-sec__sub{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem 1rem;margin:1.4rem 0 0;color:var(--white)}
+.drop-sec__sub b{font-size:var(--fs-card);font-weight:var(--fw-display);letter-spacing:-.04em}
+.drop-sec__sub .mono{color:var(--grey)}
+.drop-sec__sub + p{margin-top:1.2rem}

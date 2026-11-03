@@ -107,6 +107,29 @@
       "intro_kick": "le blog",
       "intro_title": "les sorties\ndu moment.",
       "intro_text": "Chaque nouvelle série d'éphémères, annoncée ici, avec les étiquettes des bières de la série."
+    },
+    "contact": {
+      "intro_kick": "contact",
+      "intro_title": "on se\nparle ?",
+      "intro_text": "Une question, un partenariat, une commande pour ton bar : écris-nous ou passe à la brasserie."
+    },
+    "telechargements": {
+      "intro_kick": "téléchargements",
+      "intro_title": "à télé-\ncharger.",
+      "intro_text": "Logos, fiches produits et guides des tireuses."
+    },
+    "sitemap": {
+      "intro_kick": "plan du site",
+      "intro_title": "tout le site,\nen un coup d'œil.",
+      "intro_text": ""
+    },
+    "mentions-legales": {
+      "intro_kick": "informations légales",
+      "intro_title": "mentions\nlégales."
+    },
+    "politique-de-confidentialite": {
+      "intro_kick": "informations légales",
+      "intro_title": "confidentialité."
     }
   },
   "front": {

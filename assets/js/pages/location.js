@@ -157,6 +157,7 @@
 
 	/* Envoi : route REST, qui recalcule tout et transmet au formulaire Gravity Forms */
 	const form = $('#t-form'), err = $('#t-error'), send = $('#t-send');
+	form.addEventListener('input', e => e.target.removeAttribute('aria-invalid'));
 	form.addEventListener('submit', async e => {
 		e.preventDefault();
 		err.hidden = true;

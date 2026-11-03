@@ -482,12 +482,12 @@
     {
       "slug": "mentions-legales",
       "title": "Mentions légales",
-      "content": "Contenu repris du site actuel à l'étape 7."
+      "content": "Texte provisoire : le contenu réel de cette page sera repris du site actuel."
     },
     {
       "slug": "politique-de-confidentialite",
       "title": "Politique de confidentialité",
-      "content": "Contenu repris du site actuel à l'étape 7."
+      "content": "Texte provisoire : le contenu réel de cette page sera repris du site actuel."
     },
     {
       "slug": "sitemap",
@@ -601,11 +601,56 @@
       "intro_kick": "le blog",
       "intro_title": "les sorties\ndu moment.",
       "intro_text": "Chaque nouvelle série d'éphémères, annoncée ici, avec les étiquettes des bières de la série."
+    },
+    "contact": {
+      "intro_kick": "contact",
+      "intro_title": "on se\nparle ?",
+      "intro_text": "Une question, un partenariat, une commande pour ton bar : écris-nous ou passe à la brasserie."
+    },
+    "telechargements": {
+      "intro_kick": "téléchargements",
+      "intro_title": "à télé-\ncharger.",
+      "intro_text": "Logos, fiches produits et guides des tireuses."
+    },
+    "sitemap": {
+      "intro_kick": "plan du site",
+      "intro_title": "tout le site,\nen un coup d'œil.",
+      "intro_text": ""
+    },
+    "mentions-legales": {
+      "intro_kick": "informations légales",
+      "intro_title": "mentions\nlégales."
+    },
+    "politique-de-confidentialite": {
+      "intro_kick": "informations légales",
+      "intro_title": "confidentialité."
     }
   },
   "range_descriptions": {
     "perm": "Nos classiques, toujours à la pompe.",
     "eph": "Brassées en petite quantité, disponibles jusqu'à épuisement.",
     "old": "Toutes les éphémères déjà sorties, depuis le premier brassin."
-  }
+  },
+  "downloads": [
+    {
+      "slug": "logos-smash",
+      "title": "logos smash",
+      "file": "logos-smash.zip"
+    },
+    {
+      "slug": "fiches-produits",
+      "title": "fiches produits",
+      "file": "fiches-produits.pdf"
+    },
+    {
+      "slug": "guide-tireuse-co2",
+      "title": "guide tireuse CO2",
+      "file": "guide-tireuse-co2.pdf"
+    },
+    {
+      "slug": "guide-tireuse-froid-sec",
+      "title": "guide tireuse froid sec",
+      "file": "guide-tireuse-froid-sec.pdf"
+    }
+  ]
 }

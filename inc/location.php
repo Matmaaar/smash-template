@@ -253,11 +253,11 @@ function smash_quote_summary( $quote ) {
  * ========================================================================= */
 
 add_action( 'init', function () {
-	// Demandes reçues quand Gravity Forms est absent (démo Playground).
+	// Devis et messages de contact reçus quand Gravity Forms est absent (démo Playground).
 	register_post_type( 'smash_devis', array(
 		'labels'          => array(
-			'name'          => __( 'Demandes de devis (démo)', 'smash' ),
-			'singular_name' => __( 'Demande de devis', 'smash' ),
+			'name'          => __( 'Demandes (démo)', 'smash' ),
+			'singular_name' => __( 'Demande', 'smash' ),
 		),
 		'public'          => false,
 		'show_ui'         => ! smash_gf_location_form(),

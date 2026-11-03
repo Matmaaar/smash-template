@@ -37,6 +37,7 @@ function smash_raw( $post_id, $key ) {
 function smash_cast( $value, $type ) {
 	switch ( $type ) {
 		case 'image':
+		case 'file':
 			if ( is_array( $value ) ) {
 				$value = $value['ID'] ?? $value['id'] ?? $value['url'] ?? 0;
 			}
@@ -199,4 +200,22 @@ function smash_range_anchors() {
  */
 function smash_catalog_page() {
 	return get_page_by_path( 'nos-bieres' );
+}
+
+/**
+ * Un fichier à télécharger : titre, URL, extension (pour l'affichage « pdf », « zip »…).
+ */
+function smash_download( $post = null ) {
+	$post = get_post( $post );
+	if ( ! $post ) {
+		return null;
+	}
+	$f   = smash_fields( $post->ID, 'download' );
+	$url = $f['file'] ? wp_get_attachment_url( $f['file'] ) : '';
+	return array(
+		'id'    => $post->ID,
+		'title' => get_the_title( $post ),
+		'url'   => $url,
+		'ext'   => $url ? strtolower( pathinfo( wp_parse_url( $url, PHP_URL_PATH ), PATHINFO_EXTENSION ) ) : '',
+	);
 }

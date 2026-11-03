@@ -165,8 +165,8 @@ add_action( 'acf/init', function () {
 	if ( ! SMASH_DEMO_FIELDS ) {
 		return;
 	}
-	$acf_types = array( 'image' => 'image', 'html' => 'wysiwyg', 'number' => 'text', 'text' => 'text' );
-	foreach ( array( 'beer' => 'bieres', 'member' => 'membre' ) as $section => $post_type ) {
+	$acf_types = array( 'image' => 'image', 'file' => 'file', 'html' => 'wysiwyg', 'number' => 'text', 'text' => 'text' );
+	foreach ( array( 'beer' => 'bieres', 'member' => 'membre', 'download' => 'telechargement' ) as $section => $post_type ) {
 		$fields = array();
 		foreach ( smash_map( $section ) as $name => $field ) {
 			$fields[] = array(
@@ -183,7 +183,7 @@ add_action( 'acf/init', function () {
 		}
 		acf_add_local_field_group( array(
 			'key'      => 'group_smash_demo_' . $section,
-			'title'    => 'beer' === $section ? __( 'Fiche bière', 'smash' ) : __( 'Membre', 'smash' ),
+			'title'    => array( 'beer' => __( 'Fiche bière', 'smash' ), 'member' => __( 'Membre', 'smash' ), 'download' => __( 'Fichier', 'smash' ) )[ $section ],
 			'fields'   => $fields,
 			'location' => array( array( array( 'param' => 'post_type', 'operator' => '==', 'value' => $post_type ) ) ),
 		) );

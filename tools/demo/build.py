@@ -12,6 +12,7 @@ import argparse
 import json
 import math
 import shutil
+import zipfile
 from datetime import datetime
 from pathlib import Path
 from xml.sax.saxutils import escape
@@ -67,6 +68,23 @@ def fake_label(beer, path):
     img.alpha_composite(logo, (1030, 40))
     ImageDraw.Draw(img).text((1095, 212), 'smash', font=ImageFont.truetype(FONT_BOLD, 40), fill=ink, anchor='mm')
     img.convert('RGB').save(path, 'JPEG', quality=84, optimize=True)
+
+
+def placeholder_pdf(path, title):
+    """PDF d'une page avec un titre : fichier d'exemple pour la page téléchargements."""
+    text = title.replace('(', '').replace(')', '').encode('latin-1', 'replace').decode('latin-1')
+    stream = f"BT /F1 28 Tf 60 760 Td ({text}) Tj ET BT /F1 12 Tf 60 730 Td (Fichier d'exemple - demo smash) Tj ET"
+    objs = ["<< /Type /Catalog /Pages 2 0 R >>", "<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
+            "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>",
+            f"<< /Length {len(stream)} >>\nstream\n{stream}\nendstream", "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>"]
+    out, offsets = "%PDF-1.4\n", []
+    for i, o in enumerate(objs, 1):
+        offsets.append(len(out.encode('latin-1')))
+        out += f"{i} 0 obj\n{o}\nendobj\n"
+    xref = len(out.encode('latin-1'))
+    out += f"xref\n0 {len(objs) + 1}\n0000000000 65535 f \n" + ''.join(f"{o:010d} 00000 n \n" for o in offsets)
+    out += f"trailer\n<< /Size {len(objs) + 1} /Root 1 0 R >>\nstartxref\n{xref}\n%%EOF\n"
+    Path(path).write_bytes(out.encode('latin-1'))
 
 
 def cdata(s):
@@ -180,6 +198,21 @@ def main():
     pid = 1200
     for order, (slug, name, role, bio) in enumerate(DATA['team']):
         items.append(item(pid, name, slug, 'membre', today, order=order, metas=[meta('poste', role), meta('bio', bio)]))
+        pid += 1
+
+    # Téléchargements : fichiers d'exemple (le vrai contenu viendra du site actuel).
+    (MEDIA / 'downloads').mkdir()
+    pid = 1250
+    for order, dl in enumerate(DATA.get('downloads', [])):
+        target = MEDIA / 'downloads' / dl['file']
+        if dl['file'].endswith('.zip'):
+            with zipfile.ZipFile(target, 'w') as z:
+                for logo in ('logo-white.png', 's-white.png', 's-black.png'):
+                    z.write(SOURCE_IMG / logo, logo)
+        else:
+            placeholder_pdf(target, dl['title'])
+        file_id = attachment('downloads/' + dl['file'], dl['title'], '')
+        items.append(item(pid, dl['title'], dl['slug'], 'telechargement', today, order=order, metas=[meta('fichier', file_id)]))
         pid += 1
 
     # Pages.

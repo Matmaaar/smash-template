@@ -3,7 +3,7 @@
  * Données structurées (JSON-LD).
  *
  * Avec Rank Math (site actuel), on ajoute nos entités à son graphe ; sans lui, on les imprime nous-mêmes.
- * Product sur les fiches bières, FAQPage sur la location, BlogPosting sur les articles. Brewery arrive à l'étape 5b.
+ * Brewery partout, Product sur les fiches bières, FAQPage sur la location, BlogPosting sur les articles.
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -13,6 +13,32 @@ defined( 'ABSPATH' ) || exit;
  */
 function smash_schema_entities() {
 	$out = array();
+
+	// La brasserie elle-même, sur tout le site (infos de la page d'options « Infos smash »).
+	$address = trim( wp_strip_all_tags( str_replace( array( '<br>', '<br/>', '<br />' ), "\n", smash_option( 'address' ) ) ) );
+	$lines   = array_values( array_filter( array_map( 'trim', explode( "\n", $address ) ) ) );
+	$city    = $lines && preg_match( '/^(\d{5})\s+(.+)$/u', end( $lines ), $m ) ? $m : null;
+	$brewery = array(
+		'@type'     => 'Brewery',
+		'@id'       => home_url( '/#brewery' ),
+		'name'      => get_bloginfo( 'name' ),
+		'url'       => home_url( '/' ),
+		'logo'      => SMASH_URI . '/assets/img/logo-white.png',
+		'telephone' => smash_option( 'phone' ),
+		'email'     => smash_option( 'email' ),
+		'sameAs'    => array_values( array_filter( array( smash_option( 'instagram' ), smash_option( 'facebook' ), smash_option( 'linkedin' ), smash_option( 'untappd' ) ) ) ),
+		'hasMap'    => smash_option( 'map_url' ),
+	);
+	if ( $lines ) {
+		$brewery['address'] = array_filter( array(
+			'@type'           => 'PostalAddress',
+			'streetAddress'   => $city ? implode( ', ', array_slice( $lines, 0, -1 ) ) : implode( ', ', $lines ),
+			'postalCode'      => $city[1] ?? '',
+			'addressLocality' => $city[2] ?? '',
+			'addressCountry'  => 'FR',
+		) );
+	}
+	$out['smashBrewery'] = array_filter( $brewery );
 
 	if ( is_singular( 'bieres' ) ) {
 		$beer    = smash_beer();

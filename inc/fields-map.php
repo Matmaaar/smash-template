@@ -6,7 +6,7 @@
  * par le nom réel du champ ACF (export ACF du site), et vérifier son `type`.
  * Les templates ne lisent jamais un champ directement : ils passent par inc/data.php.
  *
- * Types reconnus : text, html, number, image (ID, URL ou tableau ACF acceptés).
+ * Types reconnus : text, html, number, image et file (ID, URL ou tableau ACF acceptés).
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -38,6 +38,11 @@ return array(
 		'role'  => array( 'key' => 'poste', 'type' => 'text',  'label' => 'Poste' ),
 		'bio'   => array( 'key' => 'bio',   'type' => 'html',  'label' => 'Présentation' ),
 		'photo' => array( 'key' => 'photo', 'type' => 'image', 'label' => 'Photo' ),
+	),
+
+	// Téléchargements (CPT `telechargement`).
+	'download' => array(
+		'file' => array( 'key' => 'fichier', 'type' => 'file', 'label' => 'Fichier' ),
 	),
 
 	// Gammes : clé du thème => slug du terme dans la taxonomie `type-de-bieres`.

@@ -470,3 +470,34 @@ body.nav-hidden .fab-cta{transform:none;opacity:1;visibility:visible;transition:
 .pagination{margin-top:5vh;font-family:var(--mono);font-size:.8rem;text-transform:uppercase;letter-spacing:.05em}
 .pagination .nav-links{display:flex;gap:1.2rem;flex-wrap:wrap}
 .pagination .current{text-decoration:underline}
+
+/* Contact, téléchargements, plan du site, pages simples, 404, recherche */
+.cbox__t{font-size:var(--fs-card);font-weight:var(--fw-display);letter-spacing:-.04em;line-height:1;margin-bottom:1.2rem;text-transform:lowercase}
+.cbox__hours{margin-top:1rem;color:#6c6b67}
+.cbox__links{display:grid;gap:.2rem;margin:1rem 0 1.8rem}
+.cbox__links a{text-decoration:underline;text-underline-offset:4px}
+.cform{display:grid;gap:1rem}
+.cform .two{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.field{display:grid;gap:.35rem}
+.field label{font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:#6c6b67}
+.field input,.field textarea{font:inherit;border:0;border-bottom:1.5px solid var(--black);background:transparent;padding:.5rem 0;resize:vertical}
+.field input:focus,.field textarea:focus{outline:none;border-color:#6c6b67}
+.field [aria-invalid=true]{border-color:#c02b0a}
+.cform .t-error{color:#c02b0a}
+.cform button{justify-self:start}
+.cform__done{font-size:var(--fs-card);font-weight:var(--fw-display);letter-spacing:-.04em}
+@media (max-width:600px){.cform .two{grid-template-columns:1fr}}
+.dl{list-style:none}
+.dl li{list-style:none}
+.dl__go{opacity:0;transition:opacity .3s}
+.dl a:hover .dl__go{opacity:1}
+.smap{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:3rem 2rem;border-top:2px solid var(--black);padding-top:2rem}
+.smap__t{color:#6c6b67;margin-bottom:1rem}
+.smap ul{list-style:none;display:grid;gap:.4rem}
+.smap a{font-weight:600;text-transform:lowercase}
+.smap a:hover{text-decoration:underline;text-underline-offset:4px}
+.prose--page{max-width:720px}
+.e404{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:5vh}
+.sform{display:flex;gap:1rem;align-items:center;max-width:620px;margin-bottom:5vh}
+.sform input{flex:1;font:inherit;font-size:1.1rem;border:0;border-bottom:2px solid var(--black);background:transparent;padding:.6rem 0}
+.sform input:focus{outline:none}

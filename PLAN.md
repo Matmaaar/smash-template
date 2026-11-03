@@ -28,7 +28,16 @@ Contenu de démo provisoire : celui de la maquette (tableaux JS `PERM`, `EPH`, `
 | 7 | **Scraping du contenu réel** (§5) : remplace le WXR provisoire, avec le même format et les mêmes slugs | ⬜ à faire | décider repo public ou release (§5) |
 | 8 | Vérification complète (§8) + README + lien Playground final | ⬜ à faire | |
 
+**À faire plus tard (idées validées par l'utilisateur le 03/11, pas encore commencées)** :
+1. **Aperçus dans la nav (méga-menu pour chaque lien)** : même panneau arrondi que « nos bières », un seul panneau qui fait glisser son contenu d'un lien à l'autre, ouverture après ~0,15 s, clavier + Échap, rien ne change sur mobile, pas de panneau pour « devis tireuse ».
+   - la brasserie : photo, grande phrase, 3 chiffres, lien `#la-team` (champs de la page `la-brasserie`) ;
+   - le blog : les 3 derniers articles (date, titre, mini-étiquettes via `smash_post_beers()`) ;
+   - contact : adresse, horaires, tél / mail cliquables, bouton itinéraire (« Infos smash ») ;
+   - téléchargements : liste des fichiers (`smash_download()`), téléchargeables depuis le panneau.
+2. **Smash sessions** (vidéos YouTube « boiler room » à la brasserie) : CPT « Smash sessions » (titre, artiste, lien YouTube collé, miniature récupérée automatiquement) ; section noire sur l'accueil (1 grande vidéo + 2 ou 3 petites, bouton vers la chaîne) ; **lecteur chargé seulement au clic** (miniature + bouton lecture, `youtube-nocookie.com`, pas de cookie avant le clic) ; JSON-LD VideoObject ; plus tard, une page `/sessions/` éventuelle, et un aperçu de la dernière session dans le panneau « la brasserie ». **Il manque le lien de la chaîne ou 3 ou 4 liens de vidéos** (YouTube inaccessible depuis le conteneur) : sinon, vidéos factices dans la démo.
+
 **Journal des sessions** (le plus récent en haut) :
+- 03/11/2026 : idées notées pour plus tard : aperçus dans la nav pour chaque lien, section Smash sessions (vidéos YouTube).
 - 03/11/2026 : étape 5b faite : toutes les pages du sitemap ont maintenant leur gabarit.
 - 03/11/2026 : étape 5 découpée en 5a / 5b ; 5a faite (blog, article, brasserie + équipe).
 - 02/11/2026 : logo sans pilule, blanc ou noir automatiquement selon le fond ; nav agrandie.

@@ -20,6 +20,21 @@
 		});
 	});
 
+	// Équipe : cartes fermées toutes de la même hauteur, celle de la plus grande (poste sur 1 ou 2 lignes…).
+	const team = $$('.team')[0];
+	if (team) {
+		const equalize = () => {
+			team.style.removeProperty('--mate-head');
+			const max = Math.max(...$$('.mate__head', team).map(h => h.getBoundingClientRect().height));
+			if (max > 0) team.style.setProperty('--mate-head', Math.ceil(max) + 'px');
+		};
+		let raf = 0;
+		addEventListener('resize', () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(equalize); });
+		equalize();
+		document.fonts && document.fonts.ready.then(equalize);
+		addEventListener('load', equalize);
+	}
+
 	if (!animate) return;
 	$$('.stats b[data-n]').forEach(b => {
 		const o = { v: 0 }, end = +b.dataset.n;

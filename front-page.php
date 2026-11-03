@@ -46,7 +46,6 @@ $smash_img = function ( $name, $attr = array(), $size = 'large' ) {
 		<section class="sec light stepped">
 			<div class="head">
 				<div>
-					<?php smash_kick( $smash_f( 'perm_kick' ) ); ?>
 					<h2 class="big" data-up><?php echo smash_multiline( $smash_f( 'perm_title' ) ); ?></h2>
 				</div>
 				<?php smash_btn( $smash_f( 'perm_btn_label' ), smash_link_url( $smash_f( 'perm_btn_link' ) ), 'dark' ); ?>
@@ -90,7 +89,6 @@ $smash_img = function ( $name, $attr = array(), $size = 'large' ) {
 		<section class="light stepped">
 			<div class="sec head" style="padding-bottom:6vh;margin-bottom:0">
 				<div>
-					<?php smash_kick( $smash_f( 'wall_kick' ) ); ?>
 					<h2 class="big" data-up><?php echo smash_multiline( $smash_f( 'wall_title' ) ); ?></h2>
 				</div>
 				<?php if ( $smash_f( 'wall_text' ) ) : ?>

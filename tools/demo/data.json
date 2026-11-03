@@ -3160,13 +3160,11 @@
     "hero_title": "Fabrique\nde bières.",
     "hero_text": "Des bières artisanales de qualité, innovantes et créatives. Une gamme permanente, et des éphémères qui ne restent jamais longtemps.",
     "hero_image": "img:hero.jpg",
-    "perm_kick": "Gamme permanente",
     "perm_title": "Nos bières\npermanentes",
     "perm_btn_label": "Toutes nos bières",
     "perm_btn_link": "page:nos-bieres",
     "series_title": "Nos bières\néphémères",
     "series_btn_label": "Lire l'article",
-    "wall_kick": "Les éphémères",
     "wall_title": "Toutes nos\nétiquettes.",
     "wall_text": "Chaque éphémère a sa propre étiquette. Elles sont toutes là, depuis le premier brassin.",
     "brew_title": "La brasserie",
@@ -3241,12 +3239,12 @@
       "intro_text": "Chaque nouvelle série d'éphémères, annoncée ici, avec les étiquettes des bières de la série."
     },
     "contact": {
-      "intro_kick": "Contact",
-      "intro_title": "On se\nparle ?",
+      "intro_kick": "",
+      "intro_title": "Contact",
       "intro_text": "Une question, un partenariat, une commande pour ton bar : écris-nous ou passe à la brasserie."
     },
     "telechargements": {
-      "intro_kick": "Téléchargements",
+      "intro_kick": "",
       "intro_title": "À télé-\ncharger.",
       "intro_text": "Logos, fiches produits et guides des tireuses."
     },
@@ -3256,11 +3254,11 @@
       "intro_text": ""
     },
     "mentions-legales": {
-      "intro_kick": "Informations légales",
+      "intro_kick": "",
       "intro_title": "Mentions\nlégales."
     },
     "politique-de-confidentialite": {
-      "intro_kick": "Informations légales",
+      "intro_kick": "",
       "intro_title": "Confidentialité."
     }
   },

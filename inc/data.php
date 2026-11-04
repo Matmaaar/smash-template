@@ -97,12 +97,35 @@ function smash_beer( $post = null ) {
 }
 
 /**
+ * Charge en une fois les images (étiquettes, photos) d'une liste de bières.
+ * Sans ça, WordPress lit chaque image avec 2 requêtes (contenu + métas) au moment de l'afficher.
+ */
+function smash_prime_images( $beers ) {
+	$ids = array();
+	foreach ( $beers as $beer ) {
+		$ids[] = (int) ( $beer['label'] ?? 0 );
+		$ids[] = (int) ( $beer['photo'] ?? 0 );
+	}
+	$ids = array_filter( array_unique( $ids ) );
+	if ( $ids ) {
+		_prime_post_caches( $ids, false, true );
+	}
+	return $beers;
+}
+
+/**
  * Les bières d'une gamme, dans l'ordre du menu (puis alphabétique).
+ * Mémorisé pour la requête : le méga-menu, l'accueil et le catalogue demandent les mêmes listes.
  */
 function smash_beers( $range, $limit = -1 ) {
+	static $memo = array();
 	$slug = smash_map( 'ranges' )[ $range ] ?? '';
 	if ( ! $slug ) {
 		return array();
+	}
+	$key = $range . '|' . $limit;
+	if ( isset( $memo[ $key ] ) ) {
+		return $memo[ $key ];
 	}
 	$posts = get_posts( array(
 		'post_type'      => 'bieres',
@@ -110,7 +133,7 @@ function smash_beers( $range, $limit = -1 ) {
 		'orderby'        => array( 'menu_order' => 'ASC', 'title' => 'ASC' ),
 		'tax_query'      => array( array( 'taxonomy' => 'type-de-bieres', 'field' => 'slug', 'terms' => $slug ) ),
 	) );
-	return array_map( 'smash_beer', $posts );
+	return $memo[ $key ] = smash_prime_images( array_map( 'smash_beer', $posts ) );
 }
 
 /**
@@ -132,17 +155,48 @@ function smash_member( $post = null ) {
  */
 function smash_post_beers( $post = null ) {
 	$post = get_post( $post );
-	if ( ! $post || ! preg_match_all( '#/bieres/([a-z0-9-]+)/?#i', $post->post_content, $m ) ) {
-		return array();
+	return $post ? ( smash_post_beers_many( array( $post ) )[ $post->ID ] ?? array() ) : array();
+}
+
+/**
+ * Les bières citées dans plusieurs articles, en une seule requête pour toute la liste
+ * (liste du blog, aperçu du méga-menu). Mémorisé par article pour la requête.
+ *
+ * @param array $posts Articles (WP_Post ou ID).
+ * @return array<int, array> ID de l'article => bières citées, dans l'ordre du texte.
+ */
+function smash_post_beers_many( $posts ) {
+	static $memo = array();
+	$slugs = array();
+	$ids   = array();
+	foreach ( $posts as $post ) {
+		$post = get_post( $post );
+		if ( ! $post ) {
+			continue;
+		}
+		$ids[] = $post->ID;
+		if ( isset( $memo[ $post->ID ] ) ) {
+			continue;
+		}
+		$slugs[ $post->ID ] = preg_match_all( '#/bieres/([a-z0-9-]+)/?#i', $post->post_content, $m ) ? array_values( array_unique( array_map( 'sanitize_title', $m[1] ) ) ) : array(); // même normalisation que WordPress (« moonspell- » => « moonspell »)
 	}
-	$beers = array();
-	foreach ( array_unique( $m[1] ) as $slug ) {
-		$beer = get_page_by_path( $slug, OBJECT, 'bieres' );
-		if ( $beer && 'publish' === $beer->post_status ) {
-			$beers[] = smash_beer( $beer );
+	$all = array_values( array_unique( array_merge( array(), ...array_values( $slugs ) ) ) );
+	$by  = array();
+	if ( $all ) {
+		$found = get_posts( array(
+			'post_type'      => 'bieres',
+			'post_status'    => 'publish',
+			'post_name__in'  => $all,
+			'posts_per_page' => count( $all ),
+		) );
+		foreach ( smash_prime_images( array_map( 'smash_beer', $found ) ) as $i => $beer ) {
+			$by[ $found[ $i ]->post_name ] = $beer;
 		}
 	}
-	return $beers;
+	foreach ( $slugs as $id => $list ) {
+		$memo[ $id ] = array_values( array_filter( array_map( fn( $slug ) => $by[ $slug ] ?? null, $list ) ) );
+	}
+	return array_intersect_key( $memo, array_flip( $ids ) );
 }
 
 /**
@@ -199,7 +253,24 @@ function smash_range_anchors() {
  * La page catalogue « nos bières » (slug du site actuel).
  */
 function smash_catalog_page() {
-	return get_page_by_path( 'nos-bieres' );
+	return smash_page( 'catalog' );
+}
+
+/**
+ * Une page clé du site, par son rôle (slugs dans la section `pages` de inc/fields-map.php).
+ *
+ * @param string $role catalog, location, brewery, contact, downloads.
+ */
+function smash_page( $role ) {
+	$slug = smash_map( 'pages' )[ $role ] ?? '';
+	return $slug ? get_page_by_path( $slug ) : null;
+}
+
+/**
+ * Slug d'une page clé (voir smash_page()).
+ */
+function smash_page_slug( $role ) {
+	return (string) ( smash_map( 'pages' )[ $role ] ?? '' );
 }
 
 /**
@@ -219,3 +290,52 @@ function smash_download( $post = null ) {
 		'ext'   => $url ? strtolower( pathinfo( wp_parse_url( $url, PHP_URL_PATH ), PATHINFO_EXTENSION ) ) : '',
 	);
 }
+
+/* =========================================================================
+ * Cache des fragments HTML (méga-menu) : invalidé à chaque modification de contenu.
+ * ========================================================================= */
+
+/**
+ * Version du cache : changer de version rend tous les fragments obsolètes (ils expirent seuls ensuite).
+ */
+function smash_cache_version() {
+	return (int) get_option( 'smash_cache_ver', 1 );
+}
+
+/**
+ * Fragment HTML mis en cache 12 h (transient), calculé par $render() s'il manque.
+ * Pas de cache dans l'aperçu du personnaliseur, ni si SMASH_NO_CACHE est vrai.
+ */
+function smash_cached_html( $key, callable $render ) {
+	if ( is_customize_preview() || ( defined( 'SMASH_NO_CACHE' ) && SMASH_NO_CACHE ) ) {
+		return $render();
+	}
+	$tkey = 'smash_html_' . md5( $key . '|' . smash_cache_version() . '|' . SMASH_VERSION . '|' . get_locale() );
+	$html = get_transient( $tkey );
+	if ( ! is_string( $html ) ) {
+		$html = (string) $render();
+		set_transient( $tkey, $html, 12 * HOUR_IN_SECONDS );
+	}
+	return $html;
+}
+
+/**
+ * Vide le cache des fragments (nouvelle version).
+ */
+function smash_flush_cache() {
+	update_option( 'smash_cache_ver', smash_cache_version() + 1, true );
+}
+
+add_action( 'save_post', function ( $post_id, $post ) {
+	if ( wp_is_post_revision( $post_id ) || in_array( $post->post_type, array( 'smash_devis', 'customize_changeset' ), true ) ) {
+		return;
+	}
+	smash_flush_cache();
+}, 10, 2 );
+foreach ( array( 'deleted_post', 'trashed_post', 'untrashed_post', 'add_attachment', 'attachment_updated', 'delete_attachment', 'created_term', 'edited_term', 'delete_term', 'wp_update_nav_menu', 'acf/save_post', 'switch_theme' ) as $smash_hook ) {
+	add_action( $smash_hook, 'smash_flush_cache', 20, 0 );
+}
+foreach ( array( 'page_for_posts', 'page_on_front', 'date_format', 'blogname' ) as $smash_option ) {
+	add_action( 'update_option_' . $smash_option, 'smash_flush_cache', 10, 0 );
+}
+unset( $smash_hook, $smash_option );

@@ -26,8 +26,8 @@ $smash_days  = function ( $days ) {
 $smash_cup   = reset( $smash_r['cups'] );
 $smash_conf  = array(
 	'rest'    => esc_url_raw( rest_url( 'smash/v1/devis' ) ),
-	'nonce'   => wp_create_nonce( 'smash_devis' ),
-	'wpNonce' => wp_create_nonce( 'wp_rest' ), // garde l'utilisateur connecté pendant l'appel REST (sinon le jeton ci-dessus ne correspond plus)
+	// Le jeton d'envoi est demandé au moment de l'envoi (inc/forms.php) : rien de périssable dans le HTML, la page peut être mise en cache.
+	'token'   => esc_url_raw( add_query_arg( 'form', 'devis', rest_url( 'smash/v1/jeton' ) ) ),
 	'rules'   => array(
 		'freeTapFrom'    => $smash_rules['free_tap_from'],
 		'proFreeFrom'    => $smash_rules['pro_free_delivery_from'],
@@ -69,7 +69,7 @@ $smash_conf  = array(
 <main class="page light" id="contenu">
 	<?php get_template_part( 'template-parts/page-head' ); ?>
 
-	<section class="sec" style="padding-top:0">
+	<section class="sec sec--flush">
 		<div class="rent" id="rent" data-config="<?php echo esc_attr( wp_json_encode( $smash_conf ) ); ?>">
 			<div class="board">
 				<div class="brow">
@@ -122,7 +122,7 @@ $smash_conf  = array(
 					<div class="brow__k mono"><b>04</b><span class="part-only"><?php esc_html_e( 'Les tireuses', 'smash' ); ?></span><span class="pro-only" hidden><?php esc_html_e( 'Le matériel', 'smash' ); ?></span>
 						<small class="part-only"><?php echo esc_html( sprintf( __( "Autant qu'il t'en faut · une 1 bec offerte dès %d fûts", 'smash' ), $smash_rules['free_tap_from'] ) ); ?></small></div>
 					<div>
-						<div class="taps part-only" id="taps" style="display:grid">
+						<div class="taps part-only" id="taps">
 							<?php
 							$smash_taps = array(
 								't1' => array( __( '1 bec', 'smash' ), __( 'Une bière à la fois', 'smash' ) ),
@@ -187,6 +187,7 @@ $smash_conf  = array(
 					<label class="screen-reader-text" for="t-notes"><?php esc_html_e( 'Précisions', 'smash' ); ?></label>
 					<textarea id="t-notes" name="notes" rows="2" placeholder="<?php esc_attr_e( 'Précisions (facultatif)', 'smash' ); ?>"></textarea>
 					<div class="hp" aria-hidden="true"><label for="t-website">Website</label><input id="t-website" name="website" tabindex="-1" autocomplete="off"></div>
+					<?php smash_turnstile_widget(); ?>
 					<p class="t-error" id="t-error" role="alert" hidden></p>
 					<button type="submit" class="blk" id="t-send"><?php esc_html_e( 'Envoyer ma demande', 'smash' ); ?></button>
 				</form>
@@ -201,7 +202,7 @@ $smash_conf  = array(
 
 		<?php while ( have_posts() ) : the_post(); ?>
 			<?php if ( trim( get_the_content() ) ) : ?>
-				<div class="faq" style="margin-top:12vh;max-width:900px"><?php the_content(); ?></div>
+				<div class="faq faq--page"><?php the_content(); ?></div>
 			<?php endif; ?>
 		<?php endwhile; ?>
 	</section>

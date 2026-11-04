@@ -32,7 +32,7 @@ $smash_cells = array(
 	'when'  => array( __( 'À boire', 'smash' ), 'text' ),
 	'food'  => array( __( 'Accords', 'smash' ), 'text' ),
 );
-$smash_location = get_page_by_path( 'location-tireuses-a-bieres' );
+$smash_location = smash_page( 'location' );
 $smash_rentable = $smash_location && has_term( '', 'type-de-location', $smash_b['id'] );
 ?>
 <main class="page light" id="contenu">
@@ -51,7 +51,7 @@ $smash_rentable = $smash_location && has_term( '', 'type-de-location', $smash_b[
 		?>
 		<div class="fiche" id="fiche">
 			<div class="fiche__label">
-				<div class="lab" style="cursor:default">
+				<div class="lab lab--static">
 					<div class="lab__card">
 						<?php echo smash_label_img( $smash_b, 'smash-label', false, array( 'loading' => false, 'fetchpriority' => 'high', 'sizes' => '(max-width: 900px) 100vw, 40vw' ) ); ?>
 						<?php if ( ! $smash_b['label'] ) : ?>

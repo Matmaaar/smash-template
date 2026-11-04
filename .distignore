@@ -10,3 +10,5 @@ demo
 node_modules
 PLAN.md
 CLAUDE.md
+OPTIMISATIONS.md
+phpcs.xml.dist

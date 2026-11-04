@@ -34,6 +34,7 @@ npx wp-env run cli wp eval-file wp-content/themes/smash/demo/setup.php
 | `inc/data.php` | Seule couche qui lit les champs (`smash_beer()`, `smash_beers()`, `smash_member()`, `smash_post_beers()`, `smash_option()`) |
 | `inc/content-types.php` | CPT `bieres`, `membre`, `telechargement` et taxonomies, déclarés seulement s'ils n'existent pas déjà |
 | `inc/options.php` | Page d'options « Infos smash » + groupes de champs démo (constante `SMASH_DEMO_FIELDS`) |
+| `inc/forms.php` | Protection des formulaires : jeton demandé à l'envoi, limite par IP, longueurs max, Turnstile en option (voir `OPTIMISATIONS.md`) |
 | `inc/assets.php` | CSS, polices hébergées (préchargées), GSAP / ScrollTrigger / SplitText / Lenis, `smash_page_script()` |
 | `assets/css/smash.css` | CSS de la maquette |
 | `assets/js/core.js` | Animations communes, désactivées si `prefers-reduced-motion` |

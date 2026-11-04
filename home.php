@@ -18,8 +18,9 @@ $smash_blog = (int) get_option( 'page_for_posts' );
 		'text'  => smash_page_field( $smash_blog, 'intro_text' ),
 	) );
 	?>
-	<section class="sec" style="padding-top:0">
+	<section class="sec sec--flush">
 		<?php if ( have_posts() ) : ?>
+			<?php smash_post_beers_many( $GLOBALS['wp_query']->posts ); // une requête pour les bières de toute la page ?>
 			<div class="posts">
 				<?php while ( have_posts() ) : the_post(); ?>
 					<a class="post-row" href="<?php the_permalink(); ?>">

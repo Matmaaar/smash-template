@@ -30,3 +30,38 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
 // Titres d'archives sans préfixe (« Gamme : », « Catégorie : »…).
 add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
+
+/*
+ * Images : les tailles générées à l'envoi (vignettes, étiquettes…) sont enregistrées en WebP,
+ * 25 à 35 % plus légères que le JPEG à qualité égale. WordPress garde le format d'origine
+ * si le serveur ne sait pas écrire le WebP. Ne touche pas aux images déjà envoyées
+ * (pour elles : « Regenerate Thumbnails » ou `wp media regenerate`).
+ */
+add_filter( 'image_editor_output_format', function ( $formats ) {
+	$formats['image/jpeg'] = 'image/webp';
+	return $formats;
+} );
+
+/*
+ * Templates des pages clés : choisis selon les slugs de la section `pages` de inc/fields-map.php,
+ * pas seulement d'après le nom du fichier (page-{slug}.php).
+ */
+add_filter( 'page_template_hierarchy', function ( $templates ) {
+	$page = get_queried_object();
+	if ( ! $page instanceof WP_Post ) {
+		return $templates;
+	}
+	$files = array(
+		'catalog'   => 'page-nos-bieres.php',
+		'location'  => 'page-location-tireuses-a-bieres.php',
+		'brewery'   => 'page-la-brasserie.php',
+		'contact'   => 'page-contact.php',
+		'downloads' => 'page-telechargements.php',
+	);
+	foreach ( $files as $role => $file ) {
+		if ( smash_page_slug( $role ) === $page->post_name ) {
+			array_unshift( $templates, $file );
+		}
+	}
+	return $templates;
+} );

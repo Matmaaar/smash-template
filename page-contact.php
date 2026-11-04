@@ -13,7 +13,7 @@ $smash_gf = smash_gf_contact_id();
 ?>
 <main class="page light" id="contenu">
 	<?php get_template_part( 'template-parts/page-head' ); ?>
-	<section class="sec" style="padding-top:0">
+	<section class="sec sec--flush">
 		<div class="contact-grid">
 			<div class="cbox">
 				<h2 class="cbox__t"><?php bloginfo( 'name' ); ?></h2>
@@ -39,7 +39,7 @@ $smash_gf = smash_gf_contact_id();
 				<?php if ( $smash_gf ) : ?>
 					<?php gravity_form( $smash_gf, false, false, false, null, true ); ?>
 				<?php else : ?>
-					<form class="cform" id="cform" novalidate data-rest="<?php echo esc_url( rest_url( 'smash/v1/contact' ) ); ?>" data-nonce="<?php echo esc_attr( wp_create_nonce( 'smash_contact' ) ); ?>" data-wpnonce="<?php echo esc_attr( wp_create_nonce( 'wp_rest' ) ); ?>">
+					<form class="cform" id="cform" novalidate data-rest="<?php echo esc_url( rest_url( 'smash/v1/contact' ) ); ?>" data-token="<?php echo esc_url( add_query_arg( 'form', 'contact', rest_url( 'smash/v1/jeton' ) ) ); ?>">
 						<div class="field"><label for="c-name"><?php esc_html_e( 'Nom', 'smash' ); ?></label><input id="c-name" name="name" autocomplete="name" required></div>
 						<div class="two">
 							<div class="field"><label for="c-mail"><?php esc_html_e( 'Email', 'smash' ); ?></label><input id="c-mail" name="email" type="email" autocomplete="email" required></div>
@@ -47,6 +47,7 @@ $smash_gf = smash_gf_contact_id();
 						</div>
 						<div class="field"><label for="c-msg"><?php esc_html_e( 'Message', 'smash' ); ?></label><textarea id="c-msg" name="message" rows="5" required></textarea></div>
 						<div class="hp" aria-hidden="true"><label for="c-website">Website</label><input id="c-website" name="website" tabindex="-1" autocomplete="off"></div>
+						<?php smash_turnstile_widget(); ?>
 						<p class="t-error cform__error" role="alert" hidden data-fallback="<?php esc_attr_e( "L'envoi n'a pas marché. Réessaie, ou écris-nous directement.", 'smash' ); ?>"></p>
 						<button type="submit" class="blk dark"><?php esc_html_e( 'Envoyer', 'smash' ); ?></button>
 						<p class="cform__done" role="status" hidden><?php esc_html_e( "C'est envoyé, on te répond vite.", 'smash' ); ?></p>

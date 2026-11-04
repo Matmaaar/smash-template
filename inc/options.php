@@ -138,8 +138,8 @@ add_action( 'acf/init', function () {
 		) ),
 	) );
 
-	// Page « La brasserie » (page-la-brasserie.php), rattachée à la page de slug `la-brasserie`.
-	$brew_page = get_page_by_path( 'la-brasserie' );
+	// Page « La brasserie » (page-la-brasserie.php), rattachée à la page de rôle `brewery` (fields-map.php).
+	$brew_page = smash_page( 'brewery' );
 	if ( $brew_page ) {
 		$fields = array();
 		foreach ( smash_brew_fields() as $name => list( $type, $label ) ) {

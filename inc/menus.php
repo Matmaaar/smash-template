@@ -4,10 +4,10 @@
  *
  * Dans l'admin (Apparence > Menus, « Classes CSS » activées dans les options de l'écran) :
  * - classe `cta`  : l'élément devient le bouton blanc à droite du header (« devis tireuse ») ;
- * - classe `mega` : l'élément ouvre le méga-menu des bières (automatique pour la page `nos-bieres`).
+ * - classe `mega` : l'élément ouvre le méga-menu des bières (automatique pour la page catalogue de fields-map.php).
  *
  * Les autres liens ouvrent un aperçu de leur page, selon le slug de la page visée :
- * `la-brasserie`, page des articles (blog), `contact`, `telechargements`.
+ * rôles `brewery`, `contact`, `downloads` de la section `pages` de inc/fields-map.php, et la page des articles (blog).
  * Classe `no-apercu` sur un élément : pas d'aperçu.
  */
 
@@ -28,7 +28,7 @@ function smash_menu_items( $location ) {
 		return array();
 	}
 
-	$catalog   = get_page_by_path( 'nos-bieres' );
+	$catalog   = smash_catalog_page();
 	$queried   = get_queried_object_id();
 	$in_beers  = is_singular( 'bieres' ) || is_tax( 'type-de-bieres' );
 	$in_blog   = is_singular( 'post' ) || is_category() || is_tag() || is_home();
@@ -51,7 +51,7 @@ function smash_menu_items( $location ) {
 			$panel = 'beers';
 		} elseif ( 'page' === $item->object && ! in_array( 'no-apercu', $classes, true ) ) {
 			$slug  = get_post_field( 'post_name', $object_id );
-			$panel = $object_id === $blog_page ? 'blog' : ( array( 'la-brasserie' => 'brew', 'contact' => 'contact', 'telechargements' => 'downloads' )[ $slug ] ?? '' );
+			$panel = $object_id === $blog_page ? 'blog' : ( array_filter( array( smash_page_slug( 'brewery' ) => 'brew', smash_page_slug( 'contact' ) => 'contact', smash_page_slug( 'downloads' ) => 'downloads' ) )[ $slug ] ?? '' );
 		}
 
 		$out[] = array(
@@ -97,9 +97,13 @@ function smash_nav_item( $item ) {
 	)[ $item['panel'] ] ?? '';
 	$html = '';
 	if ( $fn ) {
-		ob_start();
-		$fn( $item );
-		$html = trim( ob_get_clean() );
+		// Les aperçus lisent bières, articles, fichiers et images : ~60 requêtes. Ils ne dépendent pas de la page vue,
+		// on les garde en cache (inc/data.php, vidé à chaque modification de contenu).
+		$html = smash_cached_html( 'panel|' . wp_json_encode( array( $item['panel'], $item['page'], $item['url'], $item['title'] ) ), function () use ( $fn, $item ) {
+			ob_start();
+			$fn( $item );
+			return trim( ob_get_clean() );
+		} );
 	}
 	if ( '' === $html ) {
 		smash_menu_link( $item );
@@ -212,6 +216,7 @@ function smash_panel_blog( $item ) {
 	if ( ! $posts ) {
 		return;
 	}
+	smash_post_beers_many( $posts );
 	smash_panel_intro( $item['title'], smash_page_field( $item['page'], 'intro_text' ), array( array( __( 'Tous les articles', 'smash' ), $item['url'] ) ) );
 	?>
 	<div class="mega__posts mega__in">

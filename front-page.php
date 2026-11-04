@@ -15,17 +15,12 @@ $smash_series = $smash_latest ? smash_post_beers( $smash_latest ) : array();
 // Le mur : éphémères du moment puis les plus récentes des anciennes (seulement celles qui ont une étiquette).
 $smash_wall   = array_slice( array_values( array_filter( array_merge( smash_beers( 'eph' ), smash_beers( 'old', 40 ) ), fn( $b ) => $b['label'] ) ), 0, 36 );
 
-/** Image de fond / de section (décorative : le texte à côté porte le sens). */
-$smash_img = function ( $name, $attr = array(), $size = 'large' ) {
-	$id = (int) smash_front( $name );
-	return $id ? wp_get_attachment_image( $id, $size, false, array_merge( array( 'alt' => '', 'loading' => 'lazy' ), $attr ) ) : '';
-};
 ?>
 <main class="page" id="contenu">
 
 	<section class="hero">
 		<div class="hero__img" data-par>
-			<?php echo $smash_img( 'hero_image', array( 'loading' => false, 'fetchpriority' => 'high' ), 'full' ); ?>
+			<?php echo smash_front_img( 'hero_image', array( 'loading' => false, 'fetchpriority' => 'high' ), 'full' ); ?>
 		</div>
 		<div class="hero__in">
 			<div>
@@ -75,7 +70,7 @@ $smash_img = function ( $name, $attr = array(), $size = 'large' ) {
 					<div class="stack" data-stack>
 						<?php foreach ( array_slice( $smash_series, 0, 4 ) as $smash_i => $smash_beer ) : ?>
 							<a class="flat" href="<?php echo esc_url( $smash_beer['url'] ); ?>" data-rot="<?php echo (int) $smash_rots[ $smash_i ]; ?>"
-								style="left:<?php echo 4 + $smash_i * 9; ?>%;top:<?php echo 6 + $smash_i * 15; ?>%;z-index:<?php echo (int) $smash_i; ?>;transform:rotate(<?php echo (int) $smash_rots[ $smash_i ]; ?>deg)">
+								style="left:<?php echo (int) ( 4 + $smash_i * 9 ); ?>%;top:<?php echo (int) ( 6 + $smash_i * 15 ); ?>%;z-index:<?php echo (int) $smash_i; ?>;transform:rotate(<?php echo (int) $smash_rots[ $smash_i ]; ?>deg)">
 								<?php echo smash_label_img( $smash_beer, 'smash-label' ); ?>
 							</a>
 						<?php endforeach; ?>
@@ -87,7 +82,7 @@ $smash_img = function ( $name, $attr = array(), $size = 'large' ) {
 
 	<?php if ( $smash_wall ) : ?>
 		<section class="light stepped">
-			<div class="sec head" style="padding-bottom:6vh;margin-bottom:0">
+			<div class="sec head head--wall">
 				<div>
 					<h2 class="big" data-up><?php echo smash_multiline( $smash_f( 'wall_title' ) ); ?></h2>
 				</div>
@@ -96,23 +91,28 @@ $smash_img = function ( $name, $attr = array(), $size = 'large' ) {
 				<?php endif; ?>
 			</div>
 			<div class="wall" data-wall>
-				<?php for ( $smash_k = 0; $smash_k < 3; $smash_k++ ) : ?>
+				<?php
+				// Trois rangées : chaque bière n'apparaît que dans une rangée (une sur trois), répétée juste assez pour
+				// couvrir un écran 4K ($smash_wall_min tuiles), puis doublée pour boucler le défilement.
+				// Avant : chaque rangée reprenait 36 tuiles ×2, soit 216 liens et images ; maintenant ~84.
+				// La première occurrence de chaque bière est un vrai lien ; les répétitions sont cachées aux lecteurs d'écran.
+				$smash_wall_min = 14;
+				for ( $smash_k = 0; $smash_k < 3; $smash_k++ ) :
+					$smash_row = array_values( array_filter( $smash_wall, fn( $i ) => $i % 3 === $smash_k, ARRAY_FILTER_USE_KEY ) ) ?: $smash_wall;
+					$smash_len = max( $smash_wall_min, count( $smash_row ) );
+					?>
 					<div class="wall__row">
 						<?php
-						$smash_n = count( $smash_wall );
-						// Deux passages : le second sert à boucler le défilement, il est caché aux lecteurs d'écran.
-						for ( $smash_copy = 0; $smash_copy < 2; $smash_copy++ ) {
-							for ( $smash_i = 0; $smash_i < $smash_n; $smash_i++ ) {
-								$smash_beer = $smash_wall[ ( $smash_i * 3 + $smash_k ) % $smash_n ];
-								$smash_hide = $smash_copy || $smash_k ? ' aria-hidden="true" tabindex="-1"' : '';
-								printf(
-									'<a href="%s" class="tile"%s>%s<span class="mono">%s</span></a>',
-									esc_url( $smash_beer['url'] ),
-									$smash_hide, // phpcs:ignore WordPress.Security.EscapeOutput -- attributs fixes.
-									smash_label_img( $smash_beer, 'smash-label-sm', true ), // phpcs:ignore WordPress.Security.EscapeOutput
-									esc_html( $smash_beer['name'] . ' · ' . $smash_beer['style'] )
-								);
-							}
+						for ( $smash_i = 0; $smash_i < 2 * $smash_len; $smash_i++ ) {
+							$smash_beer = $smash_row[ $smash_i % count( $smash_row ) ];
+							$smash_hide = $smash_i >= count( $smash_row ) ? ' aria-hidden="true" tabindex="-1"' : '';
+							printf(
+								'<a href="%s" class="tile"%s>%s<span class="mono">%s</span></a>',
+								esc_url( $smash_beer['url'] ),
+								$smash_hide, // phpcs:ignore WordPress.Security.EscapeOutput -- attributs fixes.
+								smash_label_img( $smash_beer, 'smash-label-sm', true ), // phpcs:ignore WordPress.Security.EscapeOutput
+								esc_html( $smash_beer['name'] . ' · ' . $smash_beer['style'] )
+							);
 						}
 						?>
 					</div>
@@ -123,7 +123,7 @@ $smash_img = function ( $name, $attr = array(), $size = 'large' ) {
 
 	<section class="sec stepped flip">
 		<div class="teaser">
-			<div class="teaser__img"><div data-par><?php echo $smash_img( 'brew_image' ); ?></div></div>
+			<div class="teaser__img"><div data-par><?php echo smash_front_img( 'brew_image' ); ?></div></div>
 			<div>
 				<?php if ( $smash_f( 'brew_title' ) ) : ?>
 					<h2 class="big big--sm" data-up><?php echo smash_multiline( $smash_f( 'brew_title' ) ); ?></h2>
@@ -145,7 +145,7 @@ $smash_img = function ( $name, $attr = array(), $size = 'large' ) {
 				<?php endif; ?>
 				<?php smash_btn( $smash_f( 'loc_btn_label' ), smash_link_url( $smash_f( 'loc_btn_link' ) ), 'dark' ); ?>
 			</div>
-			<div class="teaser__img"><div data-par><?php echo $smash_img( 'loc_image' ); ?></div></div>
+			<div class="teaser__img"><div data-par><?php echo smash_front_img( 'loc_image' ); ?></div></div>
 		</div>
 	</section>
 
@@ -160,9 +160,9 @@ $smash_img = function ( $name, $attr = array(), $size = 'large' ) {
 		</div>
 		<div class="insta">
 			<?php for ( $smash_i = 1; $smash_i <= 3; $smash_i++ ) : ?>
-				<?php $smash_pic = $smash_img( 'insta_image_' . $smash_i ); ?>
+				<?php $smash_pic = smash_front_img( 'insta_image_' . $smash_i ); ?>
 				<?php if ( $smash_pic ) : ?>
-					<a href="<?php echo esc_url( $smash_insta ); ?>" class="post" target="_blank" rel="noopener" aria-label="<?php esc_attr_e( 'Instagram (nouvel onglet)', 'smash' ); ?>"><div><?php echo $smash_pic; ?></div></a>
+					<a href="<?php echo esc_url( $smash_insta ); ?>" class="post" target="_blank" rel="noopener" aria-label="<?php esc_attr_e( 'Instagram (nouvel onglet)', 'smash' ); ?>"><div><?php echo $smash_pic; // phpcs:ignore WordPress.Security.EscapeOutput -- HTML de smash_front_img(). ?></div></a>
 				<?php endif; ?>
 			<?php endfor; ?>
 			<a href="<?php echo esc_url( $smash_insta ); ?>" class="post logo" target="_blank" rel="noopener" aria-label="<?php esc_attr_e( 'Instagram (nouvel onglet)', 'smash' ); ?>">

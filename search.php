@@ -23,7 +23,7 @@ $smash_types = array(
 		'text'  => sprintf( _n( '%d résultat', '%d résultats', (int) $wp_query->found_posts, 'smash' ), (int) $wp_query->found_posts ),
 	) );
 	?>
-	<section class="sec" style="padding-top:0">
+	<section class="sec sec--flush">
 		<?php get_search_form(); ?>
 		<?php if ( have_posts() ) : ?>
 			<div class="posts">

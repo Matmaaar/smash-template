@@ -8,10 +8,17 @@
 
 defined( 'ABSPATH' ) || exit;
 
-add_action( 'wp_enqueue_scripts', function () {
-	$v = SMASH_VERSION;
+/**
+ * Version d'un fichier du thème pour son URL (?ver=) : sa date de modification.
+ * Chaque mise à jour du fichier change l'URL, les navigateurs et CDN ne servent plus l'ancienne copie.
+ */
+function smash_asset_ver( $path ) {
+	$time = @filemtime( SMASH_DIR . $path ); // phpcs:ignore WordPress.PHP.NoSilencedErrors
+	return $time ? SMASH_VERSION . '.' . $time : SMASH_VERSION;
+}
 
-	wp_enqueue_style( 'smash', SMASH_URI . '/assets/css/smash.css', array(), $v );
+add_action( 'wp_enqueue_scripts', function () {
+	wp_enqueue_style( 'smash', SMASH_URI . '/assets/css/smash.css', array(), smash_asset_ver( '/assets/css/smash.css' ) );
 
 	$vendor = array(
 		'gsap'               => array( 'gsap.min.js', array() ),
@@ -20,10 +27,10 @@ add_action( 'wp_enqueue_scripts', function () {
 		'lenis'              => array( 'lenis.min.js', array() ),
 	);
 	foreach ( $vendor as $handle => list( $file, $deps ) ) {
-		wp_register_script( $handle, SMASH_URI . '/assets/js/vendor/' . $file, $deps, $v, array( 'in_footer' => true, 'strategy' => 'defer' ) );
+		wp_register_script( $handle, SMASH_URI . '/assets/js/vendor/' . $file, $deps, smash_asset_ver( '/assets/js/vendor/' . $file ), array( 'in_footer' => true, 'strategy' => 'defer' ) );
 	}
 
-	wp_enqueue_script( 'smash-core', SMASH_URI . '/assets/js/core.js', array( 'gsap', 'gsap-scrolltrigger', 'gsap-splittext', 'lenis' ), $v, array( 'in_footer' => true, 'strategy' => 'defer' ) );
+	wp_enqueue_script( 'smash-core', SMASH_URI . '/assets/js/core.js', array( 'gsap', 'gsap-scrolltrigger', 'gsap-splittext', 'lenis' ), smash_asset_ver( '/assets/js/core.js' ), array( 'in_footer' => true, 'strategy' => 'defer' ) );
 } );
 
 /**
@@ -33,7 +40,7 @@ function smash_page_script( $name ) {
 	add_action( 'wp_enqueue_scripts', function () use ( $name ) {
 		$file = '/assets/js/pages/' . $name . '.js';
 		if ( file_exists( SMASH_DIR . $file ) ) {
-			wp_enqueue_script( 'smash-page-' . $name, SMASH_URI . $file, array( 'smash-core' ), SMASH_VERSION, array( 'in_footer' => true, 'strategy' => 'defer' ) );
+			wp_enqueue_script( 'smash-page-' . $name, SMASH_URI . $file, array( 'smash-core' ), smash_asset_ver( $file ), array( 'in_footer' => true, 'strategy' => 'defer' ) );
 		}
 	}, 20 );
 }

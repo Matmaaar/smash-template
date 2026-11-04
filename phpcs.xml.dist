@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--
+	Vérifications automatiques du code PHP du thème (sécurité, base de données, traductions, compatibilité PHP 8.0+).
+	Installation : composer global require wp-coding-standards/wpcs:^3 phpcompatibility/phpcompatibility-wp
+	Lancement    : phpcs   (à la racine du thème)
+-->
+<ruleset name="smash">
+	<description>Règles du thème smash.</description>
+
+	<file>.</file>
+	<exclude-pattern>/maquette/*</exclude-pattern>
+	<exclude-pattern>/demo/*</exclude-pattern>
+	<exclude-pattern>/tools/*</exclude-pattern>
+	<exclude-pattern>/vendor/*</exclude-pattern>
+	<exclude-pattern>/node_modules/*</exclude-pattern>
+
+	<arg name="extensions" value="php"/>
+	<arg name="colors"/>
+	<arg value="sp"/>
+
+	<!-- Sécurité : échappement des sorties, nonces, validation des entrées. -->
+	<rule ref="WordPress.Security"/>
+	<!-- Fonctions du thème qui renvoient du HTML déjà échappé. -->
+	<rule ref="WordPress.Security.EscapeOutput">
+		<properties>
+			<property name="customAutoEscapedFunctions" type="array">
+				<element value="smash_multiline"/>
+				<element value="smash_label_img"/>
+				<element value="smash_front_img"/>
+			</property>
+		</properties>
+	</rule>
+	<!-- Requêtes SQL préparées, pas de requêtes lentes évidentes. -->
+	<rule ref="WordPress.DB">
+		<!-- Les filtres par gamme (taxonomie) sont le cœur du catalogue : attendus. -->
+		<exclude name="WordPress.DB.SlowDBQuery.slow_db_query_tax_query"/>
+	</rule>
+	<!-- Fonctions de traduction bien utilisées, domaine « smash ». -->
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array"><element value="smash"/></property>
+		</properties>
+	</rule>
+	<!-- Fonctions obsolètes, fonctions de débogage oubliées. -->
+	<rule ref="WordPress.WP.DeprecatedFunctions"/>
+	<rule ref="WordPress.PHP.DevelopmentFunctions"/>
+
+	<!-- Compatibilité avec « Requires PHP: 8.0 » de style.css. -->
+	<rule ref="PHPCompatibilityWP"/>
+	<config name="testVersion" value="8.0-"/>
+	<config name="minimum_wp_version" value="6.5"/>
+</ruleset>

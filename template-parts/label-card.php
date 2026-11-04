@@ -18,7 +18,9 @@ $smash_tag  = in_array( $args['heading'] ?? 'h3', array( 'h2', 'h3', 'h4' ), tru
 		<?php endif; ?>
 	</div>
 	<div class="lab__row">
+		<?php // phpcs:disable WordPress.Security.EscapeOutput -- $smash_tag vient d'une liste fermée (h2, h3, h4). ?>
 		<<?php echo $smash_tag; ?>><?php echo esc_html( $smash_beer['name'] ); ?></<?php echo $smash_tag; ?>>
+		<?php // phpcs:enable ?>
 		<span class="lab__go blk dark" aria-hidden="true"><?php esc_html_e( 'La fiche', 'smash' ); ?></span>
 	</div>
 	<div class="mono"><?php echo esc_html( smash_beer_meta( $smash_beer ) ); ?></div>

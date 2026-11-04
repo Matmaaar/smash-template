@@ -18,12 +18,13 @@ defined( 'ABSPATH' ) || exit;
  * Le formulaire Gravity Forms de location, s'il existe sur le site.
  */
 function smash_gf_location_form() {
-	$id = (int) ( smash_map( 'gf' )['location'] ?? 0 );
-	if ( ! $id || ! class_exists( 'GFAPI' ) ) {
-		return null;
+	static $form = false;
+	if ( false === $form ) {
+		$id   = (int) ( smash_map( 'gf' )['location'] ?? 0 );
+		$form = $id && class_exists( 'GFAPI' ) ? GFAPI::get_form( $id ) : null;
+		$form = is_array( $form ) ? $form : null;
 	}
-	$form = GFAPI::get_form( $id );
-	return is_array( $form ) ? $form : null;
+	return $form;
 }
 
 /**
@@ -97,8 +98,16 @@ function smash_rental() {
 			$field = smash_gf_field( $form, $field_id );
 			return $field ? smash_to_number( $field->basePrice ?? 0 ) : null;
 		};
+		$posts = array();
+		foreach ( get_posts( array(
+			'post_type'      => 'bieres',
+			'post_name__in'  => array_keys( $map['kegs'] ),
+			'posts_per_page' => count( $map['kegs'] ),
+		) ) as $post ) {
+			$posts[ $post->post_name ] = $post;
+		}
 		foreach ( $map['kegs'] as $slug => list( $part, $pro ) ) {
-			$post  = get_page_by_path( $slug, OBJECT, 'bieres' );
+			$post  = $posts[ $slug ] ?? null;
 			$field = smash_gf_field( $form, $part );
 			if ( ! $post || ! $field ) {
 				continue;
@@ -260,7 +269,7 @@ add_action( 'init', function () {
 			'singular_name' => __( 'Demande', 'smash' ),
 		),
 		'public'          => false,
-		'show_ui'         => ! smash_gf_location_form(),
+		'show_ui'         => is_admin() && ! smash_gf_location_form(), // évite de lire le formulaire GF à chaque page publique
 		'menu_icon'       => 'dashicons-clipboard',
 		'supports'        => array( 'title', 'editor' ),
 		'capability_type' => 'post',
@@ -283,11 +292,12 @@ add_action( 'rest_api_init', function () {
 function smash_rest_devis( WP_REST_Request $request ) {
 	$in = (array) $request->get_json_params();
 
-	if ( ! wp_verify_nonce( (string) $request->get_header( 'X-Smash-Nonce' ), 'smash_devis' ) ) {
-		return new WP_Error( 'smash_nonce', __( 'La page a expiré : recharge-la puis renvoie ta demande.', 'smash' ), array( 'status' => 403 ) );
-	}
 	if ( ! empty( $in['website'] ) ) { // champ piège : rempli = robot
 		return rest_ensure_response( array( 'ok' => true ) );
+	}
+	$guard = smash_form_guard( 'devis', $request, $in );
+	if ( $guard ) {
+		return $guard;
 	}
 
 	$contact = array(
@@ -308,9 +318,21 @@ function smash_rest_devis( WP_REST_Request $request ) {
 		$errors['phone'] = __( 'Indique ton téléphone.', 'smash' );
 	}
 	$dates = array();
-	foreach ( array( 'pickup', 'return' ) as $key ) {
-		$date          = DateTime::createFromFormat( '!Y-m-d', (string) ( $in[ $key ] ?? '' ) );
+	$rules = smash_location_rules();
+	foreach ( array( 'pickup' => 'pickup_days', 'return' => 'return_days' ) as $key => $allowed ) {
+		$date          = DateTime::createFromFormat( '!Y-m-d', (string) ( $in[ $key ] ?? '' ), wp_timezone() );
 		$dates[ $key ] = $date ?: null;
+		if ( ! $date ) {
+			$errors[ $key ] = 'pickup' === $key ? __( 'Indique une date de retrait.', 'smash' ) : __( 'Indique une date de retour.', 'smash' );
+		} elseif ( $rules[ $allowed ] && ! in_array( (int) $date->format( 'N' ), $rules[ $allowed ], true ) ) {
+			$errors[ $key ] = 'pickup' === $key ? __( "Ce jour-là, on ne fait pas de retrait : choisis un autre jour.", 'smash' ) : __( "Ce jour-là, on ne fait pas de retour : choisis un autre jour.", 'smash' );
+		}
+	}
+	if ( $dates['pickup'] && $dates['pickup'] < new DateTime( 'today', wp_timezone() ) ) {
+		$errors['pickup'] = __( 'La date de retrait est déjà passée.', 'smash' );
+	}
+	if ( $dates['pickup'] && $dates['return'] && $dates['return'] <= $dates['pickup'] ) {
+		$errors['return'] = __( 'Le retour doit être après le retrait.', 'smash' );
 	}
 
 	$quote = smash_rental_quote( $in );
@@ -324,12 +346,12 @@ function smash_rest_devis( WP_REST_Request $request ) {
 	$form = smash_gf_location_form();
 	if ( $form ) {
 		$result = GFAPI::submit_form( (int) $form['id'], smash_gf_location_values( $form, $quote, $contact, $dates ) );
-		if ( is_wp_error( $result ) ) {
-			return new WP_Error( 'smash_gf', $result->get_error_message(), array( 'status' => 500 ) );
-		}
-		if ( empty( $result['is_valid'] ) ) {
-			$messages = array_map( 'wp_strip_all_tags', (array) ( $result['validation_messages'] ?? array() ) );
-			return new WP_Error( 'smash_gf_invalid', implode( ' ', $messages ) ?: __( "Le formulaire n'a pas été accepté.", 'smash' ), array( 'status' => 422 ) );
+		if ( is_wp_error( $result ) || empty( $result['is_valid'] ) ) {
+			// Le détail (ID de champs, messages internes de Gravity Forms) va dans le journal, pas au visiteur.
+			if ( defined( 'WP_DEBUG_LOG' ) && WP_DEBUG_LOG ) {
+				error_log( 'smash devis : ' . wp_json_encode( is_wp_error( $result ) ? $result->get_error_message() : ( $result['validation_messages'] ?? array() ) ) ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions
+			}
+			return new WP_Error( 'smash_gf', __( "L'envoi n'a pas marché. Réessaie, ou appelle-nous.", 'smash' ), array( 'status' => is_wp_error( $result ) ? 500 : 422 ) );
 		}
 		return rest_ensure_response( array( 'ok' => true, 'entry' => (int) ( $result['entry_id'] ?? 0 ) ) );
 	}
@@ -417,7 +439,8 @@ function smash_gf_location_values( $form, $quote, $contact, $dates ) {
 		$extra[] = __( 'Matériel souhaité : ', 'smash' ) . implode( ', ', $quote['gear'] );
 	}
 	if ( $quote['free'] && $quote['taps']['t1'] ) {
-		$extra[] = __( 'Une tireuse 1 bec offerte (3 fûts ou plus).', 'smash' );
+		/* translators: %d : nombre de fûts à partir duquel une tireuse est offerte */
+		$extra[] = sprintf( __( 'Une tireuse 1 bec offerte (%d fûts ou plus).', 'smash' ), smash_location_rules()['free_tap_from'] );
 	}
 	$values[ 'input_' . $map['notes'] ] = trim( $contact['notes'] . ( $extra ? "\n\n— " . implode( "\n— ", $extra ) : '' ) );
 

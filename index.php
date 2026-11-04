@@ -15,7 +15,7 @@ get_header();
 				<?php smash_kick( is_singular( 'post' ) ? get_the_date() : '' ); ?>
 				<h1 class="big" data-lines><?php the_title(); ?></h1>
 			</div>
-			<section class="sec" style="padding-top:0">
+			<section class="sec sec--flush">
 				<div class="prose"><?php the_content(); ?></div>
 			</section>
 		<?php endwhile; ?>
@@ -36,7 +36,7 @@ get_header();
 				?>
 			</h1>
 		</div>
-		<section class="sec" style="padding-top:0">
+		<section class="sec sec--flush">
 			<?php if ( have_posts() ) : ?>
 				<div class="posts">
 					<?php while ( have_posts() ) : the_post(); ?>

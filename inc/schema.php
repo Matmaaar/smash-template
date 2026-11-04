@@ -87,7 +87,7 @@ function smash_schema_entities() {
 	}
 
 	// FAQ de la page location : les blocs « Détails » du contenu (question = résumé, réponse = le reste).
-	if ( is_page( 'location-tireuses-a-bieres' ) ) {
+	if ( smash_page_slug( 'location' ) && is_page( smash_page_slug( 'location' ) ) ) {
 		$questions = array();
 		foreach ( parse_blocks( get_post_field( 'post_content', get_queried_object_id() ) ) as $block ) {
 			if ( 'core/details' !== $block['blockName'] ) {
@@ -131,5 +131,6 @@ add_action( 'wp_head', function () {
 		return;
 	}
 	$graph = array( '@context' => 'https://schema.org', '@graph' => $entities );
-	echo '<script type="application/ld+json">' . wp_json_encode( $graph, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) . "</script>\n";
+	// JSON_HEX_TAG : un « </script> » dans un champ ne peut pas fermer la balise.
+	echo '<script type="application/ld+json">' . wp_json_encode( $graph, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG ) . "</script>\n";
 } );

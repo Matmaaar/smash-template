@@ -4,19 +4,33 @@
 	if (!$) return;
 
 	// Mur : trois rangées qui défilent, plus vite quand on scrolle. Figé si mouvement réduit.
-	const rows = $$('[data-wall] .wall__row');
+	// L'animation ne tourne que quand le mur est à l'écran (avant : en permanence, même tout en bas de page).
+	// La demi-largeur de chaque rangée est mesurée une fois (et au redimensionnement), pas à chaque image.
+	const wall = $('[data-wall]'), rows = $$('[data-wall] .wall__row');
 	if (animate && rows.length) {
 		const pos = [0, -400, -200];
-		gsap.ticker.add(() => {
+		let halves = [], running = false;
+		const measure = () => { halves = rows.map(r => r.scrollWidth / 2); };
+		const tick = () => {
 			const v = (window.smash.lenis && window.smash.lenis.velocity) || 0;
 			rows.forEach((r, i) => {
+				const half = halves[i];
 				pos[i] += (i % 2 ? 1 : -1) * (.6 + Math.abs(v) * .5);
-				const half = r.scrollWidth / 2;
 				if (pos[i] <= -half) pos[i] += half;
 				if (pos[i] > 0) pos[i] -= half;
-				r.style.transform = `translateX(${pos[i]}px)`;
+				r.style.transform = `translate3d(${pos[i]}px,0,0)`;
 			});
-		});
+		};
+		const run = on => {
+			if (on === running) return;
+			running = on;
+			on ? gsap.ticker.add(tick) : gsap.ticker.remove(tick);
+		};
+		measure();
+		addEventListener('resize', measure);
+		document.fonts && document.fonts.ready.then(measure);
+		$$('img', wall).forEach(img => img.complete || img.addEventListener('load', measure, { once: true }));
+		new IntersectionObserver(([e]) => run(e.isIntersecting), { rootMargin: '100px 0px' }).observe(wall);
 	}
 
 	if (!animate) return;

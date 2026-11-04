@@ -89,3 +89,11 @@ function smash_label_img( $beer, $size = 'smash-label', $decorative = false, $at
 function smash_label_card( $beer, $heading = 'h3' ) {
 	get_template_part( 'template-parts/label-card', null, array( 'beer' => $beer, 'heading' => $heading ) );
 }
+
+/**
+ * Image d'un champ de la page d'accueil (fond ou section ; décorative : le texte à côté porte le sens).
+ */
+function smash_front_img( $name, $attr = array(), $size = 'large' ) {
+	$id = (int) smash_front( $name );
+	return $id ? wp_get_attachment_image( $id, $size, false, array_merge( array( 'alt' => '', 'loading' => 'lazy' ), $attr ) ) : '';
+}

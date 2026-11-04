@@ -17,7 +17,7 @@ $smash_posts = get_posts( array( 'numberposts' => -1 ) );
 ?>
 <main class="page light" id="contenu">
 	<?php get_template_part( 'template-parts/page-head' ); ?>
-	<section class="sec" style="padding-top:0">
+	<section class="sec sec--flush">
 		<div class="smap">
 			<div>
 				<h2 class="smap__t mono"><?php esc_html_e( 'Pages', 'smash' ); ?></h2>

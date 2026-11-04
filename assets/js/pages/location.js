@@ -170,13 +170,19 @@
 		send.disabled = true; send.textContent = T.sending;
 		const v = s => $(s).value.trim();
 		try {
+			// Jeton demandé maintenant (pas dans le HTML : la page peut rester en cache). Pas d'en-tête X-WP-Nonce :
+			// la demande et l'envoi sont faits en visiteur anonyme, le jeton correspond donc toujours.
+			const tok = await fetch(C.token, { credentials: 'same-origin', cache: 'no-store' }).then(r => r.json()).catch(() => ({}));
+			if (!tok.nonce) throw new Error(tok.message || T.error);
+			const ts = $('[name="cf-turnstile-response"]', form);
 			const res = await fetch(C.rest, {
 				method: 'POST',
-				headers: { 'Content-Type': 'application/json', 'X-Smash-Nonce': C.nonce, 'X-WP-Nonce': C.wpNonce },
+				headers: { 'Content-Type': 'application/json', 'X-Smash-Nonce': tok.nonce },
 				body: JSON.stringify({
 					prof: S.prof, kegs: S.qty, eph: S.eph, taps: S.taps, gear: Object.keys(S.gear).filter(g => S.gear[g]),
 					cups: S.cups, cups_n: S.cupsN, pickup: v('#r-pick'), return: v('#r-back'),
 					name: v('#t-name'), email: v('#t-mail'), phone: v('#t-tel'), event: v('#t-event'), notes: v('#t-notes'), website: v('#t-website'),
+					turnstile: ts ? ts.value : '',
 				}),
 			});
 			const data = await res.json().catch(() => ({}));
@@ -187,6 +193,7 @@
 			gsap.timeline().to('#t-form, #t-nudge, .ticket__foot', { opacity: 0, height: 0, marginTop: 0, paddingTop: 0, duration: .4 }).add(show).from(done, { y: 20, opacity: 0, duration: .5 });
 		} catch (ex) {
 			err.textContent = ex.message || T.error; err.hidden = false;
+			window.turnstile && window.turnstile.reset();
 			send.disabled = false; send.innerHTML = label;
 		}
 	});

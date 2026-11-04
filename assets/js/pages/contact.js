@@ -13,8 +13,13 @@
 		if (bad) { bad.focus(); return; }
 		btn.disabled = true;
 		const data = Object.fromEntries(new FormData(form));
+		data.turnstile = data['cf-turnstile-response'] || '';
+		delete data['cf-turnstile-response'];
 		try {
-			const res = await fetch(form.dataset.rest, { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Smash-Nonce': form.dataset.nonce, 'X-WP-Nonce': form.dataset.wpnonce }, body: JSON.stringify(data) });
+			// Jeton demandé à l'envoi (voir inc/forms.php) : la page peut rester en cache.
+			const tok = await fetch(form.dataset.token, { credentials: 'same-origin', cache: 'no-store' }).then(r => r.json()).catch(() => ({}));
+			if (!tok.nonce) throw new Error(tok.message || '');
+			const res = await fetch(form.dataset.rest, { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Smash-Nonce': tok.nonce }, body: JSON.stringify(data) });
 			const json = await res.json().catch(() => ({}));
 			if (!res.ok || !json.ok) throw new Error(json.message || '');
 			[...form.children].forEach(c => { if (c !== done) c.hidden = true; });
@@ -22,6 +27,7 @@
 		} catch (ex) {
 			err.textContent = ex.message || err.dataset.fallback || '';
 			err.hidden = !err.textContent; btn.disabled = false;
+			window.turnstile && window.turnstile.reset();
 		}
 	});
 })();

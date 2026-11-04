@@ -14,7 +14,7 @@ $smash_files = array_filter(
 ?>
 <main class="page light" id="contenu">
 	<?php get_template_part( 'template-parts/page-head' ); ?>
-	<section class="sec" style="padding-top:0">
+	<section class="sec sec--flush">
 		<?php if ( $smash_files ) : ?>
 			<ul class="dl">
 				<?php foreach ( $smash_files as $smash_file ) : ?>
@@ -32,7 +32,7 @@ $smash_files = array_filter(
 		<?php endif; ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 			<?php if ( trim( get_the_content() ) ) : ?>
-				<div class="prose" style="margin-top:6vh"><?php the_content(); ?></div>
+				<div class="prose prose--after"><?php the_content(); ?></div>
 			<?php endif; ?>
 		<?php endwhile; ?>
 	</section>

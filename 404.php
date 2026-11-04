@@ -17,7 +17,7 @@ $smash_catalog = smash_catalog_page();
 		'text'  => __( "Elle n'existe pas, ou plus. Les éphémères, ça ne dure jamais longtemps.", 'smash' ),
 	) );
 	?>
-	<section class="sec" style="padding-top:0">
+	<section class="sec sec--flush">
 		<div class="e404">
 			<?php smash_btn( __( "Retour à l'accueil", 'smash' ), home_url( '/' ), 'dark' ); ?>
 			<?php if ( $smash_catalog ) : ?>

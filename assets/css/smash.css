@@ -5,7 +5,6 @@
 @font-face{font-family:"Switzer";font-style:normal;font-weight:600;font-display:swap;src:url(../fonts/switzer-latin-600-normal.woff2) format("woff2")}
 @font-face{font-family:"Switzer";font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/switzer-latin-700-normal.woff2) format("woff2")}
 @font-face{font-family:"Switzer";font-style:normal;font-weight:800;font-display:swap;src:url(../fonts/switzer-latin-800-normal.woff2) format("woff2")}
-@font-face{font-family:"Switzer";font-style:normal;font-weight:900;font-display:swap;src:url(../fonts/switzer-latin-900-normal.woff2) format("woff2")}
 @font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/jetbrains-mono-latin-400-normal.woff2) format("woff2")}
 @font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:500;font-display:swap;src:url(../fonts/jetbrains-mono-latin-500-normal.woff2) format("woff2")}
 
@@ -305,7 +304,7 @@ html.lenis,html.lenis body{height:auto}
 .keg.has .keg__minus{display:block}
 .keg.eph .keg__lab{background:#ebe9e3;display:grid;place-items:center;font-weight:800;letter-spacing:-.03em;font-size:1.2rem;border:2px dashed #b8b6b0}
 /* tireuses */
-.taps{grid-template-columns:1fr 1fr;gap:.8rem}
+.taps{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
 .tapt{display:grid;grid-template-columns:1fr auto;gap:.15rem 1rem;text-align:left;border:2px solid var(--black);border-radius:18px 0 18px 0;padding:1rem 1.2rem;transition:background .25s,color .25s}
 .tapt b{font-size:1.5rem;font-weight:800;letter-spacing:-.04em}
 .tapt span{grid-column:1;font-size:.88rem;opacity:.7}
@@ -596,3 +595,13 @@ body.nav-hidden .fab-cta{transform:none;opacity:1;visibility:visible;transition:
 .drop-sec__sub b{font-size:var(--fs-card);font-weight:var(--fw-display);letter-spacing:-.04em}
 .drop-sec__sub .mono{color:var(--grey)}
 .drop-sec__sub + p{margin-top:1.2rem}
+
+/* Utilitaires (anciens style="" des templates) */
+.sec--flush{padding-top:0}
+.sec--catalog{padding-top:2vh}
+.head--wall{padding-bottom:6vh;margin-bottom:0}
+.prose--after{margin-top:6vh}
+.lab--static{cursor:default}
+.faq--page{margin-top:12vh;max-width:900px}
+/* « hidden » doit gagner sur le display des blocs particulier / pro du devis */
+.part-only[hidden],.pro-only[hidden]{display:none!important}

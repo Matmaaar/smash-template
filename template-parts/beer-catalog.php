@@ -24,7 +24,7 @@ $smash_labels   = array(
 );
 $smash_first    = 6;  // anciennes visibles au départ ; « voir plus » en ajoute 12 à chaque clic.
 ?>
-<section class="sec" style="padding-top:2vh" data-catalog data-selected="<?php echo esc_attr( smash_range_anchors()[ $smash_selected ] ); ?>">
+<section class="sec sec--catalog" data-catalog data-selected="<?php echo esc_attr( smash_range_anchors()[ $smash_selected ] ); ?>">
 	<div class="tabs" role="tablist" aria-label="<?php esc_attr_e( 'Gammes', 'smash' ); ?>" hidden>
 		<?php foreach ( smash_range_anchors() as $smash_range => $smash_anchor ) : ?>
 			<button type="button" class="tab" role="tab" id="tab-<?php echo esc_attr( $smash_anchor ); ?>" aria-controls="<?php echo esc_attr( $smash_anchor ); ?>"

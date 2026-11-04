@@ -52,6 +52,15 @@ return array(
 		'old'  => 'bieres-archivees',
 	),
 
+	// Pages clés : rôle dans le thème => slug de la page sur le site.
+	'pages'  => array(
+		'catalog'   => 'nos-bieres',
+		'location'  => 'location-tireuses-a-bieres',
+		'brewery'   => 'la-brasserie',
+		'contact'   => 'contact',
+		'downloads' => 'telechargements',
+	),
+
 	// Gravity Forms (relevé public du 29/10/2026 ; à revérifier dans l'admin).
 	'gf'     => array(
 		'location'   => 7,

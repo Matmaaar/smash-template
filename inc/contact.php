@@ -21,11 +21,12 @@ add_action( 'rest_api_init', function () {
 		'permission_callback' => '__return_true',
 		'callback'            => function ( WP_REST_Request $request ) {
 			$in = (array) $request->get_json_params();
-			if ( ! wp_verify_nonce( (string) $request->get_header( 'X-Smash-Nonce' ), 'smash_contact' ) ) {
-				return new WP_Error( 'smash_nonce', __( 'La page a expiré : recharge-la puis renvoie ton message.', 'smash' ), array( 'status' => 403 ) );
-			}
 			if ( ! empty( $in['website'] ) ) { // champ piège : rempli = robot
 				return rest_ensure_response( array( 'ok' => true ) );
+			}
+			$guard = smash_form_guard( 'contact', $request, $in );
+			if ( $guard ) {
+				return $guard;
 			}
 			$name    = sanitize_text_field( $in['name'] ?? '' );
 			$email   = sanitize_email( $in['email'] ?? '' );

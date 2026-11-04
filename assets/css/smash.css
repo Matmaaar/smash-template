@@ -596,3 +596,10 @@ body.nav-hidden .fab-cta{transform:none;opacity:1;visibility:visible;transition:
 .drop-sec__sub b{font-size:var(--fs-card);font-weight:var(--fw-display);letter-spacing:-.04em}
 .drop-sec__sub .mono{color:var(--grey)}
 .drop-sec__sub + p{margin-top:1.2rem}
+
+/* Accueil, bloc la brasserie : accroche en gros, texte courant, deux boutons */
+.teaser p:has(+ .teaser__body){margin-bottom:1.4rem}
+.teaser__body{max-width:52ch;margin-bottom:2.4rem}
+.teaser .teaser__body p{font-size:1.05rem;font-weight:400;letter-spacing:0;line-height:1.55;margin:0;opacity:.85}
+.teaser .teaser__body p + p{margin-top:.8rem}
+.teaser .btns{display:flex;flex-wrap:wrap;gap:.8rem}

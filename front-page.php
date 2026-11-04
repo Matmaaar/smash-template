@@ -128,10 +128,16 @@ $smash_img = function ( $name, $attr = array(), $size = 'large' ) {
 				<?php if ( $smash_f( 'brew_title' ) ) : ?>
 					<h2 class="big big--sm" data-up><?php echo smash_multiline( $smash_f( 'brew_title' ) ); ?></h2>
 				<?php endif; ?>
-				<?php if ( $smash_f( 'brew_text' ) ) : ?>
-					<p><?php echo esc_html( $smash_f( 'brew_text' ) ); ?></p>
+				<?php if ( $smash_f( 'brew_lead' ) ) : ?>
+					<p><?php echo esc_html( $smash_f( 'brew_lead' ) ); ?></p>
 				<?php endif; ?>
-				<?php smash_btn( $smash_f( 'brew_btn_label' ), smash_link_url( $smash_f( 'brew_btn_link' ) ) ); ?>
+				<?php if ( $smash_f( 'brew_text' ) ) : ?>
+					<div class="teaser__body"><?php echo wp_kses_post( wpautop( esc_html( $smash_f( 'brew_text' ) ) ) ); ?></div>
+				<?php endif; ?>
+				<div class="btns">
+					<?php smash_btn( $smash_f( 'brew_btn_label' ), smash_link_url( $smash_f( 'brew_btn_link' ) ) ); ?>
+					<?php smash_btn( $smash_f( 'brew_btn2_label' ), smash_link_url( $smash_f( 'brew_btn2_link' ) ), 'ghost' ); ?>
+				</div>
 			</div>
 		</div>
 	</section>

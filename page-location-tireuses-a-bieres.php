@@ -94,7 +94,7 @@ $smash_conf  = array(
 					<div class="kegs" id="kegs">
 						<?php foreach ( $smash_r['kegs'] as $smash_keg ) : $smash_b = $smash_keg['beer']; ?>
 							<div class="keg" data-k="<?php echo esc_attr( get_post_field( 'post_name', $smash_b['id'] ) ); ?>" data-price="<?php echo esc_attr( $smash_keg['price'] ); ?>" data-name="<?php echo esc_attr( $smash_b['name'] ); ?>">
-								<button type="button" class="keg__lab" tabindex="-1" aria-hidden="true"><?php echo smash_label_img( $smash_b, 'smash-label-sm', true ); ?></button>
+								<button type="button" class="keg__lab" style="<?php echo esc_attr( smash_label_ratio( $smash_b ) ); ?>" tabindex="-1" aria-hidden="true"><?php echo smash_label_img( $smash_b, 'smash-label-sm', true ); ?></button>
 								<div class="keg__meta">
 									<div><b><?php echo esc_html( $smash_b['name'] ); ?></b><small><?php echo esc_html( implode( ' · ', array_filter( array( $smash_b['style'], $smash_keg['volume'] ) ) ) ); ?></small></div>
 									<span data-p="<?php echo esc_attr( smash_money( $smash_keg['price'] ) ); ?>"><?php echo esc_html( smash_money( $smash_keg['price'] ) ); ?></span>

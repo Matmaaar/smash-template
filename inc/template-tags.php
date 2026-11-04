@@ -84,6 +84,18 @@ function smash_label_img( $beer, $size = 'smash-label', $decorative = false, $at
 }
 
 /**
+ * Proportion réelle de l'étiquette, pour que son cadre ne la recadre pas : « aspect-ratio:1024/512 ».
+ * Sans étiquette ou sans dimensions connues : 7:4, le format le plus courant.
+ */
+function smash_label_ratio( $beer ) {
+	$meta = ! empty( $beer['label'] ) ? wp_get_attachment_metadata( $beer['label'] ) : array();
+	if ( ! empty( $meta['width'] ) && ! empty( $meta['height'] ) ) {
+		return sprintf( 'aspect-ratio:%d/%d', $meta['width'], $meta['height'] );
+	}
+	return 'aspect-ratio:7/4';
+}
+
+/**
  * Carte étiquette cliquable (template-parts/label-card.php).
  */
 function smash_label_card( $beer, $heading = 'h3' ) {

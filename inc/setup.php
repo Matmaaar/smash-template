@@ -19,9 +19,10 @@ add_action( 'after_setup_theme', function () {
 		'legal'   => __( 'Liens légaux', 'smash' ),
 	) );
 
-	// Les étiquettes sont au format 7:4 (celui des visuels du catalogue de smash.bzh).
-	add_image_size( 'smash-label', 1200, 686, true );
-	add_image_size( 'smash-label-sm', 600, 343, true );
+	// Étiquettes : redimensionnées sans recadrage (les permanentes sont en 2:1, les éphémères plutôt en 7:4).
+	// Le cadre prend la proportion de chaque image : smash_label_ratio().
+	add_image_size( 'smash-label', 1200, 0, false );
+	add_image_size( 'smash-label-sm', 600, 0, false );
 } );
 
 // Pas d'emojis WordPress : inutile ici et ça charge un script.

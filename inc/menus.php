@@ -157,7 +157,7 @@ function smash_panel_beers( $item ) {
 	<div class="mega__labs mega__in">
 		<?php foreach ( $perm as $beer ) : ?>
 			<a href="<?php echo esc_url( $beer['url'] ); ?>">
-				<i><?php echo $beer['label'] ? wp_get_attachment_image( $beer['label'], 'smash-label-sm', false, array( 'alt' => '', 'loading' => 'lazy' ) ) : ''; ?></i>
+				<i style="<?php echo esc_attr( smash_label_ratio( $beer ) ); ?>"><?php echo $beer['label'] ? wp_get_attachment_image( $beer['label'], 'smash-label-sm', false, array( 'alt' => '', 'loading' => 'lazy' ) ) : ''; ?></i>
 				<span><b><?php echo esc_html( $beer['name'] ); ?></b><small><?php echo esc_html( $beer['style'] ); ?></small></span>
 			</a>
 		<?php endforeach; ?>

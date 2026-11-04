@@ -603,3 +603,10 @@ body.nav-hidden .fab-cta{transform:none;opacity:1;visibility:visible;transition:
 .teaser .teaser__body p{font-size:1.05rem;font-weight:400;letter-spacing:0;line-height:1.55;margin:0;opacity:.85}
 .teaser .teaser__body p + p{margin-top:.8rem}
 .teaser .btns{display:flex;flex-wrap:wrap;gap:.8rem}
+
+/* Étiquettes à leur vraie proportion (style aspect-ratio posé par smash_label_ratio) : rien n'est recadré.
+   Dans une grille, les cartes s'alignent par le bas, donc les noms restent sur la même ligne. */
+.labels{align-items:end}
+.wall__row{align-items:center}
+/* Accueil, permanentes : 3 colonnes, étiquettes 8 % plus petites, l'espace en plus va entre elles */
+@media (min-width:701px){.labels--row{grid-template-columns:repeat(3,29.6%);justify-content:space-between}}

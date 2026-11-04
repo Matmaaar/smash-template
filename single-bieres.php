@@ -52,7 +52,7 @@ $smash_rentable = $smash_location && has_term( '', 'type-de-location', $smash_b[
 		<div class="fiche" id="fiche">
 			<div class="fiche__label">
 				<div class="lab" style="cursor:default">
-					<div class="lab__card">
+					<div class="lab__card" style="<?php echo esc_attr( smash_label_ratio( $smash_b ) ); ?>">
 						<?php echo smash_label_img( $smash_b, 'smash-label', false, array( 'loading' => false, 'fetchpriority' => 'high', 'sizes' => '(max-width: 900px) 100vw, 40vw' ) ); ?>
 						<?php if ( ! $smash_b['label'] ) : ?>
 							<span class="lab__ph" aria-hidden="true"><?php echo esc_html( $smash_b['name'] ); ?></span>

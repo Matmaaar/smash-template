@@ -70,13 +70,13 @@
       "intro_kick": "Location de tireuses & fûts",
       "intro_title": "Ton devis\nen 1 minute.",
       "intro_text": "Tout est sur un seul écran : clique, le prix se met à jour pendant que tu choisis.",
-      "intro_image": 2005
+      "intro_image": 2006
     },
     "la-brasserie": {
       "intro_kick": "La brasserie",
       "intro_title": "Craft,\nmais carré.",
       "intro_text": "Smash, c’est la nouvelle microbrasserie craft sur la place rennaise !",
-      "brew_photo": 2006,
+      "brew_photo": 2005,
       "brew_text": "Nous brassons des bières avec passion et en totale indépendance, sans limite dans notre créativité et avec une recherche constante de la qualité optimale de nos produits.",
       "stat_1_value": "10",
       "stat_1_label": "HL · salle de brassage",
@@ -164,7 +164,7 @@
     "loc_text": "Tireuse, fûts, éco-cups : le devis se calcule en direct, en 2 minutes.",
     "loc_btn_label": "Préparer ma location",
     "loc_btn_link": "page:location-tireuses-a-bieres",
-    "loc_image": 2005,
+    "loc_image": 2006,
     "insta_kick": "@brasserie_smash",
     "insta_title": "La suite\nsur insta.",
     "insta_btn_label": "Nous suivre",

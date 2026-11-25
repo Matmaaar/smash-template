@@ -3181,7 +3181,7 @@
     "loc_text": "Tireuse, fûts, éco-cups : le devis se calcule en direct, en 2 minutes.",
     "loc_btn_label": "Préparer ma location",
     "loc_btn_link": "page:location-tireuses-a-bieres",
-    "loc_image": "img:scraped/pages/home-location.webp",
+    "loc_image": "img:scraped/pages/location-fut.webp",
     "insta_kick": "@brasserie_smash",
     "insta_title": "La suite\nsur insta.",
     "insta_btn_label": "Nous suivre",
@@ -3199,7 +3199,7 @@
       "intro_kick": "Location de tireuses & fûts",
       "intro_title": "Ton devis\nen 1 minute.",
       "intro_text": "Tout est sur un seul écran : clique, le prix se met à jour pendant que tu choisis.",
-      "intro_image": "img:scraped/pages/home-location.webp"
+      "intro_image": "img:scraped/pages/location-fut.webp"
     },
     "la-brasserie": {
       "intro_kick": "La brasserie",

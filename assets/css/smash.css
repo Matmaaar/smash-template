@@ -614,7 +614,7 @@ body.nav-hidden .fab-cta{transform:none;opacity:1;visibility:visible;transition:
 /* Le CTA « Devis tireuse » est le dernier élément de la barre (bouton blanc) ; sur mobile, il reste à côté de « Menu » */
 .top nav .top__cta--nav{height:42px;padding:0 1.15rem;margin-left:.3rem;font-size:1.05rem;box-shadow:none;border-radius:10px 0 10px 0;color:var(--black);background:var(--white)}
 .top nav .top__cta--nav:hover{background:#fff;color:var(--black);border-radius:0 10px 0 10px}
-.top nav .top__cta--nav.on{background:#fff;box-shadow:inset 0 0 0 2px var(--black)}
+.top nav .top__cta--nav.on{background:#fff;color:var(--black);box-shadow:inset 0 0 0 2px var(--black)}
 .top__cta--end{display:none}
 @media (max-width:860px){.top__cta--end{display:flex}}
 /* Écrans moyens : avec le CTA dedans, la barre est plus longue. Elle se cale à droite (son panneau aussi), puis se resserre. */
@@ -666,7 +666,7 @@ body.nav-hidden .fab-cta{transform:none;opacity:1;visibility:visible;transition:
 /* Nav mobile : logo empilé (le S carré, « smash » en dessous), un peu plus grand */
 @media (max-width:860px){
   .top{top:14px;height:60px}
-  .top__logo{top:10px;height:auto;flex-direction:column;align-items:center;gap:.2rem;font-size:1.05rem;line-height:1}
+  .top__logo{top:15px;height:auto;flex-direction:column;align-items:center;gap:.2rem;font-size:1.05rem;line-height:1}
   .top__logo img{height:38px}
   .top__menu{width:52px;height:52px}
   .burger{width:22px;height:14px}

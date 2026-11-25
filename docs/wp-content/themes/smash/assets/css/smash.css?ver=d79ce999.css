@@ -674,21 +674,9 @@ body.nav-hidden .fab-cta{transform:none;opacity:1;visibility:visible;transition:
   [aria-expanded="true"] .burger i:first-child,[aria-expanded="true"] .burger i:last-child{top:6px}
 }
 
-/* En-tête de page avec bloc à droite (location : chiffres clés) et sous-titre */
+/* Sous-titre d'en-tête de page */
 .ph-head .ph-head__sub{font-size:var(--fs-lead);font-weight:700;letter-spacing:-.035em;line-height:1.15;margin-top:2.2vh}
 .ph-head .ph-head__sub + p{margin-top:1.4vh}
-.ph-head--aside{display:grid;grid-template-columns:1fr 1fr;gap:4vw;align-items:end}
-@media (max-width:860px){.ph-head--aside{grid-template-columns:1fr;gap:2.4rem}}
-.keynums{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line-d);border:1px solid var(--line-d);border-radius:22px 0 22px 0;overflow:hidden}
-.keynums li{background:var(--white);padding:1.4rem 1.3rem}
-.keynums b{display:block;font-size:clamp(1.8rem,3.4vw,3rem);font-weight:var(--fw-display);letter-spacing:-.05em;line-height:1}
-.keynums span{display:block;margin-top:.55rem;font-size:.92rem;line-height:1.35;color:#3d3c39}
-.keynums .is-dark{background:var(--black);color:var(--white)}
-.keynums .is-dark span{color:#cfcdc6}
-@media (max-width:480px){.keynums li{padding:1.1rem 1rem}.keynums span{font-size:.85rem}}
-/* Accueil, bloc location : les chiffres clés entre le texte et le bouton */
-.teaser .keynums{margin:0 0 2.2rem;max-width:560px}
-.teaser .keynums span{font-size:.88rem}
 
 /* Hero : parallaxe plus légère, l'image est moins agrandie (plus nette) */
 .hero__img{inset:-5% 0}
@@ -709,3 +697,16 @@ body.nav-hidden .fab-cta{transform:none;opacity:1;visibility:visible;transition:
 }
 @keyframes smash-vt-out{to{opacity:0}}
 @keyframes smash-vt-in{from{opacity:0}}
+
+/* Location : colonnes de fûts de même largeur, et toutes les étiquettes au même format (2:1) */
+.kegs{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:760px){.kegs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.kegs .keg__lab{aspect-ratio:2/1!important}
+
+/* Accueil, bloc location : les arguments en liste cochée (icône centrée sur son texte, même sur 2 lignes) */
+.ticks{list-style:none;margin:0 0 2.2rem;padding:0;border-top:2px solid currentColor;max-width:540px}
+.ticks li{display:flex;align-items:center;gap:.8rem;padding:.85rem 0;border-bottom:1px solid var(--line-d);font-size:1.05rem;line-height:1.35}
+.ticks b{font-weight:800}
+.ticks i{flex:none;display:grid;place-items:center;width:24px;height:24px;border-radius:7px 0 7px 0;background:var(--black);color:var(--white)}
+.ticks svg{width:12px;height:12px}
+.teaser .ticks + .blk{margin-top:0}

@@ -153,7 +153,7 @@ $smash_img = function ( $name, $attr = array(), $size = 'large' ) {
 				<?php if ( $smash_f( 'loc_text' ) ) : ?>
 					<p><?php echo esc_html( $smash_f( 'loc_text' ) ); ?></p>
 				<?php endif; ?>
-				<?php echo smash_location_keys(); // phpcs:ignore WordPress.Security.EscapeOutput -- échappé dans la fonction. ?>
+				<?php echo smash_location_points(); // phpcs:ignore WordPress.Security.EscapeOutput -- échappé dans la fonction. ?>
 				<?php smash_btn( $smash_f( 'loc_btn_label' ), smash_link_url( $smash_f( 'loc_btn_link' ) ), 'dark' ); ?>
 			</div>
 			<div class="teaser__img"><div data-par><?php echo $smash_img( 'loc_image' ); ?></div></div>

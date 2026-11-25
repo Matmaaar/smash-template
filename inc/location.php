@@ -425,34 +425,41 @@ function smash_gf_location_values( $form, $quote, $contact, $dates ) {
 }
 
 /**
- * Chiffres clés de la location (bloc de l'accueil), tirés des tarifs et des règles : rien à ressaisir.
- * Renvoie le HTML d'une grille 2 × 2, ou '' s'il n'y a rien à montrer.
+ * Arguments de la location (bloc de l'accueil), en phrases, tirés des tarifs et des règles : rien à ressaisir.
+ * Renvoie le HTML d'une liste cochée, ou '' s'il n'y a rien à montrer.
  */
-function smash_location_keys() {
-	$rental = smash_rental();
-	$rules  = $rental['rules'];
-	$prices = array_filter( array_map( fn( $k ) => (float) $k['price'], $rental['kegs'] ) );
-	$keys   = array();
+function smash_location_points() {
+	$rental  = smash_rental();
+	$rules   = $rental['rules'];
+	$prices  = array_filter( array_map( fn( $k ) => (float) $k['price'], $rental['kegs'] ) );
+	$volumes = array_unique( array_filter( array_map( fn( $k ) => (int) $k['volume'], $rental['kegs'] ) ) );
+	sort( $volumes );
+	$points = array();
 	if ( $prices ) {
-		$keys[] = array( smash_money( min( $prices ) ), __( 'le fût, à partir de', 'smash' ), false );
+		/* translators: 1 : prix ; 2 : volumes, ex. « 20 ou 30 » */
+		$points[] = $volumes
+			? sprintf( __( '<b>Dès %1$s</b> le fût de %2$s L', 'smash' ), esc_html( smash_money( min( $prices ) ) ), esc_html( implode( ' ' . __( 'ou', 'smash' ) . ' ', $volumes ) ) )
+			: sprintf( __( '<b>Dès %s</b> le fût', 'smash' ), esc_html( smash_money( min( $prices ) ) ) );
 	}
 	if ( ! empty( $rules['free_tap_from'] ) ) {
 		/* translators: %d : nombre de fûts */
-		$keys[] = array( __( 'Offerte', 'smash' ), sprintf( __( 'la tireuse 1 bec dès %d fûts', 'smash' ), $rules['free_tap_from'] ), true );
+		$points[] = sprintf( __( '<b>Tireuse offerte</b> dès %d fûts', 'smash' ), (int) $rules['free_tap_from'] );
 	}
 	if ( $rental['kegs'] ) {
-		$keys[] = array( (string) count( $rental['kegs'] ), __( 'bières au choix en fût, + une éphémère', 'smash' ), false );
+		/* translators: %d : nombre de bières */
+		$points[] = sprintf( __( '<b>%d bières</b> au choix, + une éphémère', 'smash' ), count( $rental['kegs'] ) );
 	}
 	if ( ! empty( $rules['pro_free_delivery_from'] ) ) {
 		/* translators: %d : nombre de fûts */
-		$keys[] = array( sprintf( _n( '%d fût', '%d fûts', (int) $rules['pro_free_delivery_from'], 'smash' ), $rules['pro_free_delivery_from'] ), __( 'livraison offerte pour les pros', 'smash' ), false );
+		$points[] = sprintf( __( '<b>Livraison offerte</b> pour les pros dès %d fûts', 'smash' ), (int) $rules['pro_free_delivery_from'] );
 	}
-	if ( ! $keys ) {
+	if ( ! $points ) {
 		return '';
 	}
-	$html = '<ul class="keynums">';
-	foreach ( $keys as list( $value, $label, $dark ) ) {
-		$html .= sprintf( '<li%s><b>%s</b><span>%s</span></li>', $dark ? ' class="is-dark"' : '', esc_html( $value ), esc_html( $label ) );
+	$tick = '<i aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.4 2.4 4.6-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></i>';
+	$html = '<ul class="ticks">';
+	foreach ( $points as $point ) {
+		$html .= '<li>' . $tick . '<span>' . wp_kses( $point, array( 'b' => array() ) ) . '</span></li>';
 	}
 	return $html . '</ul>';
 }

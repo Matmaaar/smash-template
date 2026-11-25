@@ -610,3 +610,21 @@ body.nav-hidden .fab-cta{transform:none;opacity:1;visibility:visible;transition:
 .wall__row{align-items:center}
 /* Accueil, permanentes : 3 colonnes, étiquettes 8 % plus petites, l'espace en plus va entre elles */
 @media (min-width:701px){.labels--row{grid-template-columns:repeat(3,29.6%);justify-content:space-between}}
+
+/* Le CTA « Devis tireuse » est le dernier élément de la barre (bouton blanc) ; sur mobile, il reste à côté de « Menu » */
+.top nav .top__cta--nav{height:42px;padding:0 1.15rem;margin-left:.3rem;font-size:1.05rem;box-shadow:none;border-radius:10px 0 10px 0;color:var(--black);background:var(--white)}
+.top nav .top__cta--nav:hover{background:#fff;color:var(--black);border-radius:0 10px 0 10px}
+.top nav .top__cta--nav.on{background:#fff;box-shadow:inset 0 0 0 2px var(--black)}
+.top__cta--end{display:none}
+@media (max-width:860px){.top__cta--end{display:flex}}
+/* Écrans moyens : avec le CTA dedans, la barre est plus longue. Elle se cale à droite (son panneau aussi), puis se resserre. */
+@media (min-width:861px) and (max-width:1240px){
+  .top nav{grid-column:2/4;justify-self:end}
+  .mega{left:auto;right:0;margin-left:0}
+}
+@media (min-width:861px) and (max-width:1040px){
+  .top nav{font-size:.95rem}
+  .top nav > a,.top nav .dd > a{padding:0 .72rem}
+  .top nav .dd > a svg{display:none}
+  .top nav .top__cta--nav{padding:0 .9rem;font-size:.95rem}
+}

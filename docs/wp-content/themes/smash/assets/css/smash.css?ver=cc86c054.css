@@ -638,3 +638,17 @@ body.nav-hidden .fab-cta{transform:none;opacity:1;visibility:visible;transition:
   .lab__row{margin-top:.8rem}
   .lab .mono{display:block;line-height:1.4}
 }
+
+/* Nav mobile : logo au centre, burger à droite ; « Devis tireuse » est dans le menu plein écran */
+@media (max-width:860px){
+  .top__logo{left:0;right:0;margin:0 auto;width:max-content}
+  .top__cta--end{display:none}
+  .top__menu{width:46px;height:46px;padding:0;display:grid;place-items:center;border-radius:14px 0 14px 0}
+}
+.burger{position:relative;display:block;width:20px;height:12px}
+.burger i{position:absolute;left:0;right:0;height:2px;border-radius:2px;background:currentColor;transition:transform .35s cubic-bezier(.7,0,.2,1),top .35s cubic-bezier(.7,0,.2,1)}
+.burger i:first-child{top:0}
+.burger i:last-child{top:10px}
+[aria-expanded="true"] .burger i:first-child{top:5px;transform:rotate(45deg)}
+[aria-expanded="true"] .burger i:last-child{top:5px;transform:rotate(-45deg)}
+.mnav__cta{margin-top:2.4rem;font-size:1.15rem;padding:1.05rem 1.5rem}

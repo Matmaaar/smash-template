@@ -100,7 +100,8 @@
 	if (logo) {
 		const bgUnder = () => {
 			const r = logo.getBoundingClientRect();
-			const stack = document.elementsFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+			// Position de repos du logo (sa propriété top), pas sa position animée : caché au scroll, il est hors de l'écran.
+			const stack = document.elementsFromPoint(r.left + r.width / 2, parseFloat(getComputedStyle(logo).top) + r.height / 2);
 			for (const el of stack) {
 				if (el.closest('#logo, #top, #wpadminbar')) continue;
 				if (el.tagName === 'IMG' || el.closest('.hero__img')) return 0; // photo : logo blanc
@@ -122,7 +123,7 @@
 		const toggle = open => {
 			mnav.hidden = !open;
 			menuBtn.setAttribute('aria-expanded', String(open));
-			menuBtn.textContent = open ? menuBtn.dataset.close : menuBtn.dataset.open;
+			menuBtn.setAttribute('aria-label', open ? menuBtn.dataset.close : menuBtn.dataset.open);
 			document.documentElement.classList.toggle('menu-open', open);
 			smash.updateLogo && smash.updateLogo();
 			smash.lenis && (open ? smash.lenis.stop() : smash.lenis.start());

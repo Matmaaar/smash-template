@@ -423,3 +423,36 @@ function smash_gf_location_values( $form, $quote, $contact, $dates ) {
 
 	return $values;
 }
+
+/**
+ * Chiffres clés de la location (bloc de l'accueil), tirés des tarifs et des règles : rien à ressaisir.
+ * Renvoie le HTML d'une grille 2 × 2, ou '' s'il n'y a rien à montrer.
+ */
+function smash_location_keys() {
+	$rental = smash_rental();
+	$rules  = $rental['rules'];
+	$prices = array_filter( array_map( fn( $k ) => (float) $k['price'], $rental['kegs'] ) );
+	$keys   = array();
+	if ( $prices ) {
+		$keys[] = array( smash_money( min( $prices ) ), __( 'le fût, à partir de', 'smash' ), false );
+	}
+	if ( ! empty( $rules['free_tap_from'] ) ) {
+		/* translators: %d : nombre de fûts */
+		$keys[] = array( __( 'Offerte', 'smash' ), sprintf( __( 'la tireuse 1 bec dès %d fûts', 'smash' ), $rules['free_tap_from'] ), true );
+	}
+	if ( $rental['kegs'] ) {
+		$keys[] = array( (string) count( $rental['kegs'] ), __( 'bières au choix en fût, + une éphémère', 'smash' ), false );
+	}
+	if ( ! empty( $rules['pro_free_delivery_from'] ) ) {
+		/* translators: %d : nombre de fûts */
+		$keys[] = array( sprintf( _n( '%d fût', '%d fûts', (int) $rules['pro_free_delivery_from'], 'smash' ), $rules['pro_free_delivery_from'] ), __( 'livraison offerte pour les pros', 'smash' ), false );
+	}
+	if ( ! $keys ) {
+		return '';
+	}
+	$html = '<ul class="keynums">';
+	foreach ( $keys as list( $value, $label, $dark ) ) {
+		$html .= sprintf( '<li%s><b>%s</b><span>%s</span></li>', $dark ? ' class="is-dark"' : '', esc_html( $value ), esc_html( $label ) );
+	}
+	return $html . '</ul>';
+}

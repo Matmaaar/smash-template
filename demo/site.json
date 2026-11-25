@@ -70,7 +70,7 @@
       "intro_kick": "",
       "intro_title": "Location\nde tireuses",
       "intro_sub": "Ton devis en 1 minute.",
-      "intro_text": "Tout est sur un seul écran : clique, le prix se met à jour pendant que tu choisis.",
+      "intro_text": "",
       "intro_image": ""
     },
     "la-brasserie": {
@@ -162,7 +162,7 @@
     "brew_btn2_link": "page:contact",
     "brew_image": 2003,
     "loc_title": "Location\nde tireuses",
-    "loc_text": "Tireuse, fûts, éco-cups : le devis se calcule en direct, en 2 minutes.",
+    "loc_text": "Tireuse, fûts, éco-cups : tout pour ta soirée, à récupérer à la brasserie.",
     "loc_btn_label": "Préparer ma location",
     "loc_btn_link": "page:location-tireuses-a-bieres",
     "loc_image": 2006,

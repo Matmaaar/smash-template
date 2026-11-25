@@ -3160,7 +3160,7 @@
     "hero_kick": "Microbrasserie craft · rennes",
     "hero_title": "Fabrique\nde bières.",
     "hero_text": "Des bières artisanales de qualité, innovantes et créatives. Une gamme permanente, et des éphémères qui ne restent jamais longtemps.",
-    "hero_image": "img:scraped/pages/home-hero-mur.webp",
+    "hero_image": "img:scraped/pages/home-hero-rouge.webp",
     "hero_image_2": "",
     "perm_title": "Nos bières\npermanentes",
     "perm_btn_label": "Toutes nos bières",
@@ -3178,7 +3178,7 @@
     "brew_btn2_link": "page:contact",
     "brew_image": "img:scraped/pages/brasserie-vue.webp",
     "loc_title": "Location\nde tireuses",
-    "loc_text": "Tireuse, fûts, éco-cups : le devis se calcule en direct, en 2 minutes.",
+    "loc_text": "Tireuse, fûts, éco-cups : tout pour ta soirée, à récupérer à la brasserie.",
     "loc_btn_label": "Préparer ma location",
     "loc_btn_link": "page:location-tireuses-a-bieres",
     "loc_image": "img:scraped/pages/location-fut.webp",
@@ -3199,7 +3199,7 @@
       "intro_kick": "",
       "intro_title": "Location\nde tireuses",
       "intro_sub": "Ton devis en 1 minute.",
-      "intro_text": "Tout est sur un seul écran : clique, le prix se met à jour pendant que tu choisis.",
+      "intro_text": "",
       "intro_image": ""
     },
     "la-brasserie": {

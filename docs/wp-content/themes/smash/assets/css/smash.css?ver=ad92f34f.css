@@ -686,3 +686,6 @@ body.nav-hidden .fab-cta{transform:none;opacity:1;visibility:visible;transition:
 .keynums .is-dark{background:var(--black);color:var(--white)}
 .keynums .is-dark span{color:#cfcdc6}
 @media (max-width:480px){.keynums li{padding:1.1rem 1rem}.keynums span{font-size:.85rem}}
+/* Accueil, bloc location : les chiffres clés entre le texte et le bouton */
+.teaser .keynums{margin:0 0 2.2rem;max-width:560px}
+.teaser .keynums span{font-size:.88rem}

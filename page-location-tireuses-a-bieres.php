@@ -67,34 +67,7 @@ $smash_conf  = array(
 );
 ?>
 <main class="page light" id="contenu">
-	<?php
-	// À droite du titre : les chiffres clés, tirés des tarifs et des règles (rien à ressaisir).
-	$smash_prices = array_filter( array_map( fn( $k ) => (float) $k['price'], $smash_r['kegs'] ) );
-	$smash_keys   = array();
-	if ( $smash_prices ) {
-		$smash_keys[] = array( smash_money( min( $smash_prices ) ), __( 'le fût, à partir de', 'smash' ), false );
-	}
-	if ( ! empty( $smash_rules['free_tap_from'] ) ) {
-		/* translators: %d : nombre de fûts */
-		$smash_keys[] = array( __( 'Offerte', 'smash' ), sprintf( __( 'la tireuse 1 bec dès %d fûts', 'smash' ), $smash_rules['free_tap_from'] ), true );
-	}
-	if ( $smash_r['kegs'] ) {
-		$smash_keys[] = array( (string) count( $smash_r['kegs'] ), __( 'bières au choix en fût, + une éphémère', 'smash' ), false );
-	}
-	if ( ! empty( $smash_rules['pro_free_delivery_from'] ) ) {
-		/* translators: %d : nombre de fûts */
-		$smash_keys[] = array( sprintf( _n( '%d fût', '%d fûts', (int) $smash_rules['pro_free_delivery_from'], 'smash' ), $smash_rules['pro_free_delivery_from'] ), __( 'livraison offerte pour les pros', 'smash' ), false );
-	}
-	$smash_aside = '';
-	if ( $smash_keys ) {
-		$smash_aside = '<ul class="keynums">';
-		foreach ( $smash_keys as list( $smash_v, $smash_l, $smash_dark ) ) {
-			$smash_aside .= sprintf( '<li%s><b>%s</b><span>%s</span></li>', $smash_dark ? ' class="is-dark"' : '', esc_html( $smash_v ), esc_html( $smash_l ) );
-		}
-		$smash_aside .= '</ul>';
-	}
-	get_template_part( 'template-parts/page-head', null, array( 'aside' => $smash_aside ) );
-	?>
+	<?php get_template_part( 'template-parts/page-head' ); ?>
 
 	<section class="sec" style="padding-top:0">
 		<div class="rent" id="rent" data-config="<?php echo esc_attr( wp_json_encode( $smash_conf ) ); ?>">

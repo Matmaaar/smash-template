@@ -56,3 +56,14 @@ add_action( 'wp_head', function () {
 		);
 	}
 }, 1 );
+
+/**
+ * Styles de l'éditeur de blocs : inutiles ici (thème classique, le seul bloc utilisé, « Détails »
+ * de la FAQ, est stylé par smash.css). Environ 100 Ko de moins sur chaque page.
+ * Si des articles utilisent un jour des blocs mis en page (colonnes, galeries…), retirer cette fonction.
+ */
+add_action( 'wp_enqueue_scripts', function () {
+	foreach ( array( 'wp-block-library', 'wp-block-library-theme', 'classic-theme-styles', 'global-styles' ) as $handle ) {
+		wp_dequeue_style( $handle );
+	}
+}, 100 );

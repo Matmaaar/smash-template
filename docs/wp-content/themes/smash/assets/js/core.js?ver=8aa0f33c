@@ -1,7 +1,7 @@
 /* smash : JS commun à toutes les pages (repris de la maquette : common(), bindTilt, méga-menu, porte d'âge). */
 (() => {
 	// Inertie du scroll fluide (Lenis) : 0,1 = très doux, 0,2 = presque natif. La maquette était à 0,09.
-	const SCROLL_LERP = .16;
+	const SCROLL_LERP = .22;
 	const $ = (s, c = document) => c.querySelector(s);
 	const $$ = (s, c = document) => [...c.querySelectorAll(s)];
 	const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -175,12 +175,12 @@
 		(s.masks || []).forEach(m => { m.style.paddingBottom = '.18em'; m.style.marginBottom = '-.18em'; });
 		return s;
 	};
-	$$('[data-lines]').forEach(el => { const s = split(el); gsap.from(s.lines, { yPercent: 110, duration: 1.15, ease: 'expo.out', stagger: .09, delay: .25, onComplete: () => s.revert() }); });
-	$$('[data-up]').forEach(el => { const s = split(el); gsap.from(s.lines, { yPercent: 110, duration: 1.1, ease: 'expo.out', stagger: .08, onComplete: () => s.revert(), scrollTrigger: { trigger: el, start: 'top 88%' } }); });
+	$$('[data-lines]').forEach(el => { const s = split(el); gsap.from(s.lines, { yPercent: 110, duration: .8, ease: 'expo.out', stagger: .06, delay: .08, onComplete: () => s.revert() }); });
+	$$('[data-up]').forEach(el => { const s = split(el); gsap.from(s.lines, { yPercent: 110, duration: .8, ease: 'expo.out', stagger: .06, onComplete: () => s.revert(), scrollTrigger: { trigger: el, start: 'top 92%' } }); });
 	$$('[data-words]').forEach(el => { const s = new SplitText(el, { type: 'words' }); gsap.fromTo(s.words, { opacity: .14 }, { opacity: 1, stagger: .1, ease: 'none', scrollTrigger: { trigger: el, start: 'top 80%', end: 'bottom 50%', scrub: true } }); });
 	$$('[data-par]').forEach(el => { const a = +el.dataset.par || 6; gsap.fromTo(el, { yPercent: -a }, { yPercent: a, ease: 'none', scrollTrigger: { trigger: el.parentElement, start: 'top bottom', end: 'bottom top', scrub: true } }); });
-	$$('.ph-head .kick, .ph-head p').forEach(el => gsap.from(el, { y: 20, opacity: 0, duration: .9, ease: 'expo.out', delay: .4 }));
-	ScrollTrigger.batch($$('.lab, .mate, .equip > div, .post, .post-row, .dl a, .cbox'), { start: 'top 92%', once: true, onEnter: b => gsap.from(b, { y: 70, opacity: 0, duration: 1, ease: 'expo.out', stagger: .06 }) });
+	$$('.ph-head .kick, .ph-head p').forEach(el => gsap.from(el, { y: 20, opacity: 0, duration: .6, ease: 'expo.out', delay: .12 }));
+	ScrollTrigger.batch($$('.lab, .mate, .equip > div, .post, .post-row, .dl a, .cbox'), { start: 'top 96%', once: true, onEnter: b => gsap.from(b, { y: 40, opacity: 0, duration: .7, ease: 'expo.out', stagger: .04 }) });
 
 	document.fonts && document.fonts.ready.then(() => ScrollTrigger.refresh());
 })();

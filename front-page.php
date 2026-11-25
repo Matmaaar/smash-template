@@ -79,7 +79,7 @@ $smash_img = function ( $name, $attr = array(), $size = 'large' ) {
 						<?php foreach ( array_slice( $smash_series, 0, 4 ) as $smash_i => $smash_beer ) : ?>
 							<a class="flat" href="<?php echo esc_url( $smash_beer['url'] ); ?>" data-rot="<?php echo (int) $smash_rots[ $smash_i ]; ?>"
 								style="<?php echo esc_attr( smash_label_ratio( $smash_beer ) ); ?>;left:<?php echo 4 + $smash_i * 9; ?>%;top:<?php echo 6 + $smash_i * 15; ?>%;z-index:<?php echo (int) $smash_i; ?>;transform:rotate(<?php echo (int) $smash_rots[ $smash_i ]; ?>deg)">
-								<?php echo smash_label_img( $smash_beer, 'smash-label' ); ?>
+								<?php echo smash_label_img( $smash_beer, 'smash-label', false, array( 'sizes' => '(max-width: 900px) 52vw, 27vw' ) ); ?>
 							</a>
 						<?php endforeach; ?>
 					</div>

@@ -10,7 +10,7 @@
 
 	const reveal = cards => {
 		window.smash.bindTilt(root);
-		if (animate && cards.length) gsap.from(cards, { y: 50, opacity: 0, duration: .8, ease: 'expo.out', stagger: .05 });
+		if (animate && cards.length) gsap.from(cards, { y: 36, opacity: 0, duration: .6, ease: 'expo.out', stagger: .04 });
 	};
 	const select = (id, { focus = false, push = true, anim = true } = {}) => {
 		if (!ids.includes(id)) id = ids[0];

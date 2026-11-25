@@ -703,9 +703,9 @@ body.nav-hidden .fab-cta{transform:none;opacity:1;visibility:visible;transition:
   .fiche__label .lab__card{view-transition-name:label}
   #top{view-transition-name:top}
   #logo{view-transition-name:logo}
-  ::view-transition-group(label){animation-duration:.55s;animation-timing-function:cubic-bezier(.7,0,.2,1)}
-  ::view-transition-old(root){animation:.25s ease both smash-vt-out}
-  ::view-transition-new(root){animation:.35s ease .12s both smash-vt-in}
+  ::view-transition-group(label){animation-duration:.4s;animation-timing-function:cubic-bezier(.7,0,.2,1)}
+  ::view-transition-old(root){animation:.18s ease both smash-vt-out}
+  ::view-transition-new(root){animation:.25s ease both smash-vt-in}
 }
 @keyframes smash-vt-out{to{opacity:0}}
 @keyframes smash-vt-in{from{opacity:0}}

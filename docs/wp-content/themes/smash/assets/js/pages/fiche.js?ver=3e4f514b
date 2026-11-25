@@ -4,6 +4,6 @@
 	if (!animate) return;
 	// Arrivée depuis une autre page du site : l'étiquette arrive déjà par la transition entre pages (inc/transitions.php).
 	const viaTransition = 'onpagereveal' in window && window.navigation && navigation.activation && navigation.activation.from;
-	if (!viaTransition) gsap.from('.fiche__label .lab__card', { rotationY: -50, x: -80, opacity: 0, duration: 1.2, ease: 'expo.out', delay: .2 });
-	gsap.from('.fiche__key > div, .fiche__grid > div', { x: 30, opacity: 0, duration: .7, ease: 'expo.out', stagger: .04, delay: .4 });
+	if (!viaTransition) gsap.from('.fiche__label .lab__card', { rotationY: -40, x: -60, opacity: 0, duration: .8, ease: 'expo.out', delay: .05 });
+	gsap.from('.fiche__key > div, .fiche__grid > div', { x: 24, opacity: 0, duration: .5, ease: 'expo.out', stagger: .03, delay: .12 });
 })();

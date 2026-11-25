@@ -205,6 +205,7 @@ function smash_front_fields() {
 		'hero_btn_label'  => array( 'text', __( 'Bouton : texte', 'smash' ) ),
 		'hero_btn_link'   => array( 'page_link', __( 'Bouton : page', 'smash' ) ),
 		'hero_image'      => array( 'image', __( 'Image de fond', 'smash' ) ),
+		'hero_image_2'    => array( 'image', __( 'Image de fond n° 2 (facultative : le hero alterne entre les deux)', 'smash' ) ),
 		'tab_perm'        => array( 'tab', __( 'Gamme permanente', 'smash' ) ),
 		'perm_title'      => array( 'textarea', __( 'Titre', 'smash' ) ),
 		'perm_btn_label'  => array( 'text', __( 'Bouton : texte', 'smash' ) ),

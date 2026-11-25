@@ -3,6 +3,18 @@
 	const { $, $$, animate, hoverable } = window.smash || {};
 	if (!$) return;
 
+	// Hero : avec deux images, fondu de l'une à l'autre toutes les 4 s (pas d'alternance si mouvement réduit).
+	const slides = $$('.hero__img img');
+	if (slides.length > 1 && !window.smash.reduce) {
+		let n = 0;
+		setInterval(() => {
+			if (document.hidden) return;
+			slides[n].classList.remove('is-on');
+			n = (n + 1) % slides.length;
+			slides[n].classList.add('is-on');
+		}, 4000);
+	}
+
 	// Mur : trois rangées qui défilent, plus vite quand on scrolle. Figé si mouvement réduit.
 	const rows = $$('[data-wall] .wall__row');
 	if (animate && rows.length) {

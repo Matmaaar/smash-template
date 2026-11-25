@@ -657,3 +657,8 @@ body.nav-hidden .fab-cta{transform:none;opacity:1;visibility:visible;transition:
 .gate__text{font-size:1.05rem;line-height:1.5;opacity:.85;margin:0 0 -1.2rem;max-width:40ch}
 .gate__btns .blk{min-width:8.5rem;justify-content:center;font-size:1.05rem;padding:.95rem 1.4rem}
 @media (max-width:900px){.teaser{gap:2.6rem}}  /* mobile : de l'air entre l'image et le titre */
+
+/* Hero : 2 images en fondu (la 2e est facultative) */
+.hero__img img{opacity:0;transition:opacity 1.4s ease,transform 6s ease-out;transform:scale(1.04)}
+.hero__img img.is-on{opacity:1;transform:scale(1)}
+.hero__img img:only-child{opacity:1;transform:none}

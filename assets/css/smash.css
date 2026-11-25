@@ -662,3 +662,14 @@ body.nav-hidden .fab-cta{transform:none;opacity:1;visibility:visible;transition:
 .hero__img img{opacity:0;transition:opacity 1.4s ease,transform 6s ease-out;transform:scale(1.04)}
 .hero__img img.is-on{opacity:1;transform:scale(1)}
 .hero__img img:only-child{opacity:1;transform:none}
+
+/* Nav mobile : logo empilé (le S carré, « smash » en dessous), un peu plus grand */
+@media (max-width:860px){
+  .top{top:14px;height:60px}
+  .top__logo{top:10px;height:auto;flex-direction:column;align-items:center;gap:.2rem;font-size:1.05rem;line-height:1}
+  .top__logo img{height:38px}
+  .top__menu{width:52px;height:52px}
+  .burger{width:22px;height:14px}
+  .burger i:last-child{top:12px}
+  [aria-expanded="true"] .burger i:first-child,[aria-expanded="true"] .burger i:last-child{top:6px}
+}

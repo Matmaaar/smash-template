@@ -628,3 +628,13 @@ body.nav-hidden .fab-cta{transform:none;opacity:1;visibility:visible;transition:
   .top nav .dd > a svg{display:none}
   .top nav .top__cta--nav{padding:0 .9rem;font-size:.95rem}
 }
+
+/* Mobile (retours du 25/11) */
+@media (max-width:860px){.fab-cta{display:none}}            /* plus de bouton flottant : il cachait le contenu ; le CTA reste dans le header */
+.head > .blk{justify-self:start}                            /* « Toutes nos bières » : un bouton, pas une bande sur toute la largeur */
+@media (max-width:700px){
+  .labels{align-items:start}                                /* étiquettes alignées par le haut : un style sur 2 lignes ne décale plus rien */
+  .lab__go{display:none}                                    /* pas de bouton « La fiche » : toute la carte est cliquable */
+  .lab__row{margin-top:.8rem}
+  .lab .mono{display:block;line-height:1.4}
+}

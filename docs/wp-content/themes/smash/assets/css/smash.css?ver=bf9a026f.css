@@ -689,3 +689,6 @@ body.nav-hidden .fab-cta{transform:none;opacity:1;visibility:visible;transition:
 /* Accueil, bloc location : les chiffres clés entre le texte et le bouton */
 .teaser .keynums{margin:0 0 2.2rem;max-width:560px}
 .teaser .keynums span{font-size:.88rem}
+
+/* Hero : parallaxe plus légère, l'image est moins agrandie (plus nette) */
+.hero__img{inset:-5% 0}

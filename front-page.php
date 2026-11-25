@@ -24,7 +24,7 @@ $smash_img = function ( $name, $attr = array(), $size = 'large' ) {
 <main class="page" id="contenu">
 
 	<section class="hero">
-		<div class="hero__img" data-par>
+		<div class="hero__img" data-par="4">
 			<?php // Le hero est recadré pour remplir l'écran : sur un écran plus étroit que 16:9, l'image affichée est bien plus large que l'écran (≈ 2 × sa hauteur). ?>
 			<?php echo $smash_img( 'hero_image', array( 'loading' => false, 'fetchpriority' => 'high', 'sizes' => '(max-aspect-ratio: 16/9) 210vh, 100vw', 'class' => 'is-on' ), 'full' ); ?>
 			<?php // 2e image facultative : le hero alterne entre les deux (home.js). ?>

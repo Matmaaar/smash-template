@@ -25,6 +25,10 @@ add_action( 'after_setup_theme', function () {
 	add_image_size( 'smash-label-sm', 600, 0, false );
 } );
 
+// WordPress réduit (et recompresse) toute image de plus de 2 560 px : on monte le seuil à 3 200 px,
+// la taille utile pour un hero plein écran sur écran haute densité. Au-delà, il réduit toujours.
+add_filter( 'big_image_size_threshold', fn() => 3200 );
+
 // Pas d'emojis WordPress : inutile ici et ça charge un script.
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );

@@ -652,3 +652,6 @@ body.nav-hidden .fab-cta{transform:none;opacity:1;visibility:visible;transition:
 [aria-expanded="true"] .burger i:first-child{top:5px;transform:rotate(45deg)}
 [aria-expanded="true"] .burger i:last-child{top:5px;transform:rotate(-45deg)}
 .mnav__cta{margin-top:2.4rem;font-size:1.15rem;padding:1.05rem 1.5rem}
+
+/* Porte d'âge : phrase d'introduction au-dessus de la question */
+.gate__text{font-size:1.05rem;line-height:1.5;opacity:.85;margin:0 0 -1.2rem;max-width:40ch}

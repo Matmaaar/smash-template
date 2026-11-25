@@ -31,7 +31,8 @@
     "success_message": "On revient vers toi très vite pour confirmer.",
     "tap1_price": "50",
     "tap2_price": "80",
-    "cup_price": "0.3"
+    "cup_price": "0.3",
+    "share_image": "img:scraped/pages/partage.jpg"
   },
   "beers": [
     {

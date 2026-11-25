@@ -12,7 +12,7 @@ $smash_social = array_filter( array(
 	'untappd'   => smash_option( 'untappd' ),
 ) );
 ?>
-<footer class="foot">
+<footer class="foot" id="smash-foot">
 	<div class="foot__word"><b><?php bloginfo( 'name' ); ?></b><span><?php bloginfo( 'description' ); ?></span></div>
 	<div class="foot__cols">
 		<?php if ( smash_option( 'address' ) ) : ?>

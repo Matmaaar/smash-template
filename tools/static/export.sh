@@ -4,6 +4,7 @@
 #   1. WordPress local avec les images, sur http://127.0.0.1:9400, NON connecté :
 #      (cd demo && python3 -m http.server 8765) ; python3 -I tools/demo/build.py --base-url http://127.0.0.1:8765/media/
 #      puis tools/local/serve.sh avec "login": False ; remettre demo/ en état ensuite (git checkout demo).
+#      Copier tools/static/mu-export-fr.php dans wp-content/mu-plugins/ du WordPress local (dates et langue en français).
 #   2. tools/static/export.sh [dossier_de_sortie=docs] [url_publique=https://matmaaar.github.io/smash-template/]
 #
 # Ce que fait le script :

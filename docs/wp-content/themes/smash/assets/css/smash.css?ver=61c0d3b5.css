@@ -692,3 +692,20 @@ body.nav-hidden .fab-cta{transform:none;opacity:1;visibility:visible;transition:
 
 /* Hero : parallaxe plus légère, l'image est moins agrandie (plus nette) */
 .hero__img{inset:-5% 0}
+
+/* Fiche bière : un style ou des formats longs restent dans la largeur (mobile) */
+.fiche__key > div{min-width:0;max-width:100%}
+.fiche__key dd{overflow-wrap:anywhere}
+
+/* Transition « étiquette qui grandit » entre les pages (inc/transitions.php) */
+@media (prefers-reduced-motion:no-preference){
+  @view-transition{navigation:auto}
+  .fiche__label .lab__card{view-transition-name:label}
+  #top{view-transition-name:top}
+  #logo{view-transition-name:logo}
+  ::view-transition-group(label){animation-duration:.55s;animation-timing-function:cubic-bezier(.7,0,.2,1)}
+  ::view-transition-old(root){animation:.25s ease both smash-vt-out}
+  ::view-transition-new(root){animation:.35s ease .12s both smash-vt-in}
+}
+@keyframes smash-vt-out{to{opacity:0}}
+@keyframes smash-vt-in{from{opacity:0}}

@@ -44,6 +44,7 @@ add_action( 'acf/init', function () {
 		'linkedin'  => array( 'url', __( 'LinkedIn', 'smash' ) ),
 		'untappd'   => array( 'url', __( 'Untappd', 'smash' ) ),
 		'warning'   => array( 'text', __( 'Mention « abus d\'alcool »', 'smash' ) ),
+		'share_image' => array( 'image', __( 'Image de partage (aperçu des liens, 1200 × 630 px)', 'smash' ) ),
 		'age_text'    => array( 'text', __( 'Porte d\'âge : phrase d\'introduction', 'smash' ) ),
 		'age_title'   => array( 'text', __( 'Porte d\'âge : question', 'smash' ) ),
 		'age_yes'     => array( 'text', __( 'Porte d\'âge : bouton oui', 'smash' ) ),

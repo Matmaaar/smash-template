@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-US" class="no-js">
+<html lang="fr-FR" class="no-js">
 <head>
 <script>(function(){var f=window.fetch;window.fetch=function(u,o){if(String(u).indexOf("smash/v1/")>-1){return new Promise(function(r){setTimeout(function(){r(new Response('{"ok":true}',{status:200,headers:{"Content-Type":"application/json"}}))},600)})}return f.apply(this,arguments)}})();</script>
 <meta charset="UTF-8">
@@ -10,6 +10,56 @@
 <link rel="preload" href="../../../wp-content/themes/smash/assets/fonts/switzer-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../../wp-content/themes/smash/assets/fonts/switzer-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../../wp-content/themes/smash/assets/fonts/jetbrains-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="expect" href="index.html#smash-foot" blocking="render">
+<script>
+(function () {
+	if (!('onpagereveal' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+	var slug = function (u) { var m = String(u || '').match(/\/bieres\/([^\/?#]+)/); return m && m[1]; };
+	var clicked = null;
+	// La carte d'étiquette d'un lien vers la bière « s » : d'abord le lien cliqué, sinon le premier visible dans le contenu.
+	var card = function (s) {
+		var pick = function (a) {
+			if (!a || slug(a.href) !== s) return null;
+			var el = a.querySelector('.lab__card') || a.querySelector('i') || (a.matches('.tile, .flat') ? a : null);
+			return el && el.getBoundingClientRect().width ? el : null;
+		};
+		var hit = pick(clicked);
+		if (hit) return hit;
+		var links = document.querySelectorAll('#contenu a[href]');
+		for (var i = 0; i < links.length; i++) { if ((hit = pick(links[i]))) return hit; }
+		return null;
+	};
+	addEventListener('click', function (e) { clicked = e.target.closest && e.target.closest('a[href]'); }, true);
+	// Départ d'une liste vers une fiche : la carte cliquée prend le nom « label ».
+	addEventListener('pageswap', function (e) {
+		if (!e.viewTransition || !e.activation || document.querySelector('.fiche__label')) return;
+		var el = card(slug(e.activation.entry.url));
+		if (el) el.style.viewTransitionName = 'label';
+	});
+	// Arrivée sur une liste depuis une fiche (retour) : la carte de cette bière reprend le nom « label ».
+	addEventListener('pagereveal', function (e) {
+		if (!e.viewTransition || document.querySelector('.fiche__label')) return;
+		var from = window.navigation && navigation.activation && navigation.activation.from;
+		var el = from && card(slug(from.url));
+		if (!el) return;
+		el.style.viewTransitionName = 'label';
+		e.viewTransition.finished.finally(function () { el.style.viewTransitionName = ''; });
+	});
+})();
+</script>
+	<link rel="icon" href="../../../wp-content/themes/smash/assets/img/favicon-48.png" sizes="48x48">
+<link rel="icon" href="../../../wp-content/themes/smash/assets/img/favicon-512.png" sizes="512x512">
+<link rel="apple-touch-icon" href="../../../wp-content/themes/smash/assets/img/apple-touch-icon.png">
+<meta name="description" content="Chaque nouvelle série d&#039;éphémères, annoncée ici, avec les étiquettes des bières de la série.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="smash">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Le blog &#8211; Page 4 &#8211; smash">
+<meta property="og:description" content="Chaque nouvelle série d&#039;éphémères, annoncée ici, avec les étiquettes des bières de la série.">
+<meta property="og:url" content="https://matmaaar.github.io/smash-template/le-blog/">
+<meta property="og:image" content="https://matmaaar.github.io/smash-template/wp-content/uploads/2026/11/partage-1024x538.jpg">
+<meta property="og:image:width" content="1024"><meta property="og:image:height" content="538">
+<meta name="twitter:card" content="summary_large_image">
 <link rel='stylesheet' id='wp-block-library-css' href='../../../wp-includes/css/dist/block-library/style.min.css%3Fver=6.5.5.html' media='all' />
 <link rel='stylesheet' id='classic-theme-styles-css' href='../../../wp-includes/css/classic-themes.min.css%3Fver=6.5.5.html' media='all' />
 <style id='global-styles-inline-css'>
@@ -19,7 +69,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 :where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
 .wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
 </style>
-<link rel='stylesheet' id='smash-css' href='../../../wp-content/themes/smash/assets/css/smash.css%3Fver=bf9a026f.css' media='all' />
+<link rel='stylesheet' id='smash-css' href='../../../wp-content/themes/smash/assets/css/smash.css%3Fver=61c0d3b5.css' media='all' />
 <meta name="generator" content="WordPress 6.5.5" />
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Brewery","@id":"https://matmaaar.github.io/smash-template/#brewery","name":"smash","url":"https://matmaaar.github.io/smash-template/","logo":"https://matmaaar.github.io/smash-template/wp-content/themes/smash/assets/img/logo-white.png","telephone":"02 90 22 87 00","email":"contact@smash.bzh","sameAs":["https://www.instagram.com/brasserie_smash/","https://www.facebook.com/profile.php?id=61550190754099","https://www.linkedin.com/company/brasserie-smash/","https://untappd.com/brasserie_smash"],"hasMap":"https://www.google.com/maps/search/?api=1&query=4+bis+K+rue+du+Lieutenant+Colonel+Dubois+35000+Rennes","address":{"@type":"PostalAddress","streetAddress":"4 bis K, rue du Lieutenant Colonel Dubois","postalCode":"35000","addressLocality":"Rennes","addressCountry":"FR"}}]}</script>
 </head>
@@ -109,7 +159,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 											<i><img width="600" height="342" src="../../../wp-content/uploads/2026/01/tropicool-600x342.webp" class="attachment-smash-label-sm size-smash-label-sm" alt="" loading="lazy" decoding="async" srcset="../../../wp-content/uploads/2026/01/tropicool-600x342.webp 600w, ../../../wp-content/uploads/2026/01/tropicool-300x171.webp 300w, ../../../wp-content/uploads/2026/01/tropicool-1024x583.webp 1024w, ../../../wp-content/uploads/2026/01/tropicool-768x437.webp 768w, ../../../wp-content/uploads/2026/01/tropicool.webp 1200w" sizes="(max-width: 600px) 100vw, 600px" /></i>
 											<i><img width="600" height="338" src="../../../wp-content/uploads/2026/01/fungarr-600x338.webp" class="attachment-smash-label-sm size-smash-label-sm" alt="" loading="lazy" decoding="async" srcset="../../../wp-content/uploads/2026/01/fungarr-600x338.webp 600w, ../../../wp-content/uploads/2026/01/fungarr-300x169.webp 300w, ../../../wp-content/uploads/2026/01/fungarr-1024x577.webp 1024w, ../../../wp-content/uploads/2026/01/fungarr-768x433.webp 768w, ../../../wp-content/uploads/2026/01/fungarr.webp 1200w" sizes="(max-width: 600px) 100vw, 600px" /></i>
 									</span>
-				<span class="mono">28 April 2026</span>
+				<span class="mono">28 avril 2026</span>
 				<b>Bières éphémères : Série #21</b>
 			</a>
 					<a href="../../../bieres-ephemeres-serie-20/index.html">
@@ -118,7 +168,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 											<i><img width="600" height="342" src="../../../wp-content/uploads/2026/01/pull-600x342.webp" class="attachment-smash-label-sm size-smash-label-sm" alt="" loading="lazy" decoding="async" srcset="../../../wp-content/uploads/2026/01/pull-600x342.webp 600w, ../../../wp-content/uploads/2026/01/pull-300x171.webp 300w, ../../../wp-content/uploads/2026/01/pull-1024x583.webp 1024w, ../../../wp-content/uploads/2026/01/pull-768x437.webp 768w, ../../../wp-content/uploads/2026/01/pull.webp 1200w" sizes="(max-width: 600px) 100vw, 600px" /></i>
 											<i><img width="600" height="336" src="../../../wp-content/uploads/2026/01/push-600x336.webp" class="attachment-smash-label-sm size-smash-label-sm" alt="" loading="lazy" decoding="async" srcset="../../../wp-content/uploads/2026/01/push-600x336.webp 600w, ../../../wp-content/uploads/2026/01/push-300x168.webp 300w, ../../../wp-content/uploads/2026/01/push-1024x573.webp 1024w, ../../../wp-content/uploads/2026/01/push-768x430.webp 768w, ../../../wp-content/uploads/2026/01/push.webp 1200w" sizes="(max-width: 600px) 100vw, 600px" /></i>
 									</span>
-				<span class="mono">23 March 2026</span>
+				<span class="mono">23 mars 2026</span>
 				<b>Bières éphémères : Série #20</b>
 			</a>
 					<a href="../../../bieres-ephemeres-serie-19/index.html">
@@ -127,7 +177,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 											<i><img width="600" height="342" src="../../../wp-content/uploads/2026/01/contrebande-600x342.webp" class="attachment-smash-label-sm size-smash-label-sm" alt="" loading="lazy" decoding="async" srcset="../../../wp-content/uploads/2026/01/contrebande-600x342.webp 600w, ../../../wp-content/uploads/2026/01/contrebande-300x171.webp 300w, ../../../wp-content/uploads/2026/01/contrebande-1024x583.webp 1024w, ../../../wp-content/uploads/2026/01/contrebande-768x437.webp 768w, ../../../wp-content/uploads/2026/01/contrebande.webp 1200w" sizes="(max-width: 600px) 100vw, 600px" /></i>
 											<i><img width="600" height="342" src="../../../wp-content/uploads/2026/01/panorama-600x342.webp" class="attachment-smash-label-sm size-smash-label-sm" alt="" loading="lazy" decoding="async" srcset="../../../wp-content/uploads/2026/01/panorama-600x342.webp 600w, ../../../wp-content/uploads/2026/01/panorama-300x171.webp 300w, ../../../wp-content/uploads/2026/01/panorama-1024x583.webp 1024w, ../../../wp-content/uploads/2026/01/panorama-768x437.webp 768w, ../../../wp-content/uploads/2026/01/panorama.webp 1200w" sizes="(max-width: 600px) 100vw, 600px" /></i>
 									</span>
-				<span class="mono">5 March 2026</span>
+				<span class="mono">5 mars 2026</span>
 				<b>Bières éphémères : Série #19</b>
 			</a>
 			</div>		</div>
@@ -185,69 +235,69 @@ du moment.</h1>
 	<section class="sec" style="padding-top:0">
 					<div class="posts">
 									<a class="post-row" href="../../../bieres-ephemeres-thabor-ddh-neipa-serie-8/index.html">
-						<span class="mono">2 January 2025</span>
+						<span class="mono">2 janvier 2025</span>
 						<h2>Bières éphémères : Thabor – DDH NEIPA / Série #8</h2>
 						<span class="mini" aria-hidden="true">
 															<i><img width="600" height="336" src="../../../wp-content/uploads/2026/01/thabor-600x336.webp" class="attachment-smash-label-sm size-smash-label-sm" alt="" loading="lazy" decoding="async" srcset="../../../wp-content/uploads/2026/01/thabor-600x336.webp 600w, ../../../wp-content/uploads/2026/01/thabor-300x168.webp 300w, ../../../wp-content/uploads/2026/01/thabor-1024x573.webp 1024w, ../../../wp-content/uploads/2026/01/thabor-768x430.webp 768w, ../../../wp-content/uploads/2026/01/thabor.webp 1200w" sizes="(max-width: 600px) 100vw, 600px" /></i>
 													</span>
 					</a>
 									<a class="post-row" href="../../../bieres-ephemeres-blosne-double-brut-ipa-serie-8/index.html">
-						<span class="mono">12 December 2024</span>
+						<span class="mono">12 décembre 2024</span>
 						<h2>Bières éphémères : Blosne – Double Brut IPA / Série #8</h2>
 						<span class="mini" aria-hidden="true">
 															<i><img width="600" height="336" src="../../../wp-content/uploads/2026/01/blosne-600x336.webp" class="attachment-smash-label-sm size-smash-label-sm" alt="" loading="lazy" decoding="async" srcset="../../../wp-content/uploads/2026/01/blosne-600x336.webp 600w, ../../../wp-content/uploads/2026/01/blosne-300x168.webp 300w, ../../../wp-content/uploads/2026/01/blosne-1024x573.webp 1024w, ../../../wp-content/uploads/2026/01/blosne-768x430.webp 768w, ../../../wp-content/uploads/2026/01/blosne.webp 1200w" sizes="(max-width: 600px) 100vw, 600px" /></i>
 													</span>
 					</a>
 									<a class="post-row" href="../../../une-brut-ipa-cest-quoi/index.html">
-						<span class="mono">10 December 2024</span>
+						<span class="mono">10 décembre 2024</span>
 						<h2>Une Brut IPA c’est quoi ?</h2>
 						<span class="mini" aria-hidden="true">
 															<i><img width="600" height="336" src="../../../wp-content/uploads/2026/01/blosne-600x336.webp" class="attachment-smash-label-sm size-smash-label-sm" alt="" loading="lazy" decoding="async" srcset="../../../wp-content/uploads/2026/01/blosne-600x336.webp 600w, ../../../wp-content/uploads/2026/01/blosne-300x168.webp 300w, ../../../wp-content/uploads/2026/01/blosne-1024x573.webp 1024w, ../../../wp-content/uploads/2026/01/blosne-768x430.webp 768w, ../../../wp-content/uploads/2026/01/blosne.webp 1200w" sizes="(max-width: 600px) 100vw, 600px" /></i>
 													</span>
 					</a>
 									<a class="post-row" href="../../../du-cafe-en-cans/index.html">
-						<span class="mono">4 December 2024</span>
+						<span class="mono">4 décembre 2024</span>
 						<h2>Du café en cans ?</h2>
 						<span class="mini" aria-hidden="true">
 													</span>
 					</a>
 									<a class="post-row" href="../../../bieres-ephemeres-superkraft-neipa-serie-7/index.html">
-						<span class="mono">25 October 2024</span>
+						<span class="mono">25 octobre 2024</span>
 						<h2>Bières éphémères : SuperKraft – NEIPA / Série #7</h2>
 						<span class="mini" aria-hidden="true">
 															<i><img width="600" height="342" src="../../../wp-content/uploads/2026/01/superkraft-600x342.webp" class="attachment-smash-label-sm size-smash-label-sm" alt="" loading="lazy" decoding="async" srcset="../../../wp-content/uploads/2026/01/superkraft-600x342.webp 600w, ../../../wp-content/uploads/2026/01/superkraft-300x171.webp 300w, ../../../wp-content/uploads/2026/01/superkraft-1024x584.webp 1024w, ../../../wp-content/uploads/2026/01/superkraft-768x438.webp 768w, ../../../wp-content/uploads/2026/01/superkraft.webp 1200w" sizes="(max-width: 600px) 100vw, 600px" /></i>
 													</span>
 					</a>
 									<a class="post-row" href="../../../bieres-ephemeres-mountain-top-cold-ipa-serie-7/index.html">
-						<span class="mono">25 October 2024</span>
+						<span class="mono">25 octobre 2024</span>
 						<h2>Bières éphémères : Mountain Top – Cold IPA / Série #7</h2>
 						<span class="mini" aria-hidden="true">
 															<i><img width="600" height="342" src="../../../wp-content/uploads/2026/01/mountaintop-600x342.webp" class="attachment-smash-label-sm size-smash-label-sm" alt="" loading="lazy" decoding="async" srcset="../../../wp-content/uploads/2026/01/mountaintop-600x342.webp 600w, ../../../wp-content/uploads/2026/01/mountaintop-300x171.webp 300w, ../../../wp-content/uploads/2026/01/mountaintop-1024x584.webp 1024w, ../../../wp-content/uploads/2026/01/mountaintop-768x438.webp 768w, ../../../wp-content/uploads/2026/01/mountaintop.webp 1200w" sizes="(max-width: 600px) 100vw, 600px" /></i>
 													</span>
 					</a>
 									<a class="post-row" href="../../../bieres-ephemeres-chili-mango-sour-mangue-piment-serie-7/index.html">
-						<span class="mono">25 October 2024</span>
+						<span class="mono">25 octobre 2024</span>
 						<h2>Bières éphémères : Chili Mango – Sour Mangue Piment / Série #7</h2>
 						<span class="mini" aria-hidden="true">
 															<i><img width="600" height="343" src="../../../wp-content/uploads/2026/01/chilimango-600x343.webp" class="attachment-smash-label-sm size-smash-label-sm" alt="" loading="lazy" decoding="async" srcset="../../../wp-content/uploads/2026/01/chilimango-600x343.webp 600w, ../../../wp-content/uploads/2026/01/chilimango-300x171.webp 300w, ../../../wp-content/uploads/2026/01/chilimango-1024x585.webp 1024w, ../../../wp-content/uploads/2026/01/chilimango-768x438.webp 768w, ../../../wp-content/uploads/2026/01/chilimango.webp 1200w" sizes="(max-width: 600px) 100vw, 600px" /></i>
 													</span>
 					</a>
 									<a class="post-row" href="../../../bieres-ephemeres-bulliks-triple-ipa-serie-7/index.html">
-						<span class="mono">25 October 2024</span>
+						<span class="mono">25 octobre 2024</span>
 						<h2>Bières éphémères : Bulliks – Triple IPA / Série #7</h2>
 						<span class="mini" aria-hidden="true">
 															<i><img width="600" height="342" src="../../../wp-content/uploads/2026/01/bulliks-600x342.webp" class="attachment-smash-label-sm size-smash-label-sm" alt="" loading="lazy" decoding="async" srcset="../../../wp-content/uploads/2026/01/bulliks-600x342.webp 600w, ../../../wp-content/uploads/2026/01/bulliks-300x171.webp 300w, ../../../wp-content/uploads/2026/01/bulliks-1024x583.webp 1024w, ../../../wp-content/uploads/2026/01/bulliks-768x437.webp 768w, ../../../wp-content/uploads/2026/01/bulliks.webp 1200w" sizes="(max-width: 600px) 100vw, 600px" /></i>
 													</span>
 					</a>
 									<a class="post-row" href="../../../bieres-ephemeres-maverick-rye-ipa-serie-6/index.html">
-						<span class="mono">25 September 2024</span>
+						<span class="mono">25 septembre 2024</span>
 						<h2>Bières éphémères : Maverick – Rye IPA / Série #6</h2>
 						<span class="mini" aria-hidden="true">
 															<i><img width="600" height="345" src="../../../wp-content/uploads/2026/01/maverick-600x345.webp" class="attachment-smash-label-sm size-smash-label-sm" alt="" loading="lazy" decoding="async" srcset="../../../wp-content/uploads/2026/01/maverick-600x345.webp 600w, ../../../wp-content/uploads/2026/01/maverick-300x172.webp 300w, ../../../wp-content/uploads/2026/01/maverick-1024x588.webp 1024w, ../../../wp-content/uploads/2026/01/maverick-768x441.webp 768w, ../../../wp-content/uploads/2026/01/maverick.webp 1200w" sizes="(max-width: 600px) 100vw, 600px" /></i>
 													</span>
 					</a>
 									<a class="post-row" href="../../../bieres-ephemeres-ipea-neipa-serie-6/index.html">
-						<span class="mono">22 September 2024</span>
+						<span class="mono">22 septembre 2024</span>
 						<h2>Bières éphémères : IPEA – NEIPA / Série #6</h2>
 						<span class="mini" aria-hidden="true">
 															<i><img width="600" height="344" src="../../../wp-content/uploads/2026/01/ipea-600x344.webp" class="attachment-smash-label-sm size-smash-label-sm" alt="" loading="lazy" decoding="async" srcset="../../../wp-content/uploads/2026/01/ipea-600x344.webp 600w, ../../../wp-content/uploads/2026/01/ipea-300x172.webp 300w, ../../../wp-content/uploads/2026/01/ipea-1024x587.webp 1024w, ../../../wp-content/uploads/2026/01/ipea-768x440.webp 768w, ../../../wp-content/uploads/2026/01/ipea.webp 1200w" sizes="(max-width: 600px) 100vw, 600px" /></i>
@@ -267,7 +317,7 @@ du moment.</h1>
 <a class="next page-numbers" href="../5/index.html">Suivants</a></div>
 	</nav>			</section>
 </main>
-<footer class="foot">
+<footer class="foot" id="smash-foot">
 	<div class="foot__word"><b>smash</b><span>fabrique de bières</span></div>
 	<div class="foot__cols">
 					<div><div class="mono">Adresse</div>4 bis K, rue du Lieutenant Colonel Dubois<br>35000 Rennes</div>

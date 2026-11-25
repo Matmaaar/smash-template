@@ -67,8 +67,9 @@
       "intro_text": "Une gamme permanente de classiques revisités, et une gamme éphémère brassée selon nos envies. Clique sur une étiquette pour ouvrir sa fiche."
     },
     "location-tireuses-a-bieres": {
-      "intro_kick": "Location de tireuses & fûts",
-      "intro_title": "Ton devis\nen 1 minute.",
+      "intro_kick": "",
+      "intro_title": "Location\nde tireuses",
+      "intro_sub": "Ton devis en 1 minute.",
       "intro_text": "Tout est sur un seul écran : clique, le prix se met à jour pendant que tu choisis.",
       "intro_image": ""
     },

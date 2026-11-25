@@ -15,11 +15,13 @@ OUT="${1:-docs}"
 PUBLIC="${2:-https://matmaaar.github.io/smash-template/}"
 LOCAL="http://127.0.0.1:9400"
 
+if [ -z "${NO_WGET:-}" ]; then   # NO_WGET=1 : seulement le nettoyage, sur une copie déjà aspirée
 rm -rf "$OUT" && mkdir -p "$OUT"
 wget --no-proxy --quiet --mirror --page-requisites --convert-links --adjust-extension \
 	--no-host-directories --execute robots=off --directory-prefix="$OUT" \
 	--reject-regex '(wp-admin|wp-json|xmlrpc|wp-login|/feed/|/comments/|\?s=|\?p=|replytocom|/embed/|oembed)' \
 	"$LOCAL/" "$LOCAL/sitemap/" || true   # wget renvoie 8 dès qu'une ressource manque : on vérifie après.
+fi
 
 python3 - "$OUT" "$LOCAL" "$PUBLIC" <<'PY'
 import pathlib, re, sys
@@ -31,6 +33,8 @@ fake = ('<script>(function(){var f=window.fetch;window.fetch=function(u,o){if(St
 n = 0
 for p in out.rglob('*.html'):
     s = p.read_text(encoding='utf-8', errors='replace')
+    # Liens techniques de WordPress (API, oEmbed, RSD) : inutiles sur une copie statique.
+    s = re.sub(r'<link[^>]+(?:oembed|api\.w\.org|EditURI|wp-json|dns-prefetch)[^>]*>\n?', '', s)
     s = s.replace(local + '/', public).replace(local, public.rstrip('/'))
     s = s.replace(local.replace('/', '\\/') + '\\/', public.replace('/', '\\/'))  # JSON échappé
     if '<head>' in s and 'smash/v1/' not in s.split('<head>', 1)[1][:400]:

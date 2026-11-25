@@ -48,7 +48,7 @@ html.lenis,html.lenis body{height:auto}
 .blk.ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 2px currentColor}
 .blk.dark{background:var(--black);color:var(--white)}
 .light{background:var(--white);color:var(--black)}
-.sec{padding:12vh 3vw 10vh;position:relative}
+.sec{padding:8vh 3vw 8vh;position:relative}
 .head{display:grid;grid-template-columns:1fr auto;align-items:end;gap:2rem;margin-bottom:5vh}
 .head h2,.head h1{font-size:var(--fs-h2)}
 .big--sm{font-size:var(--fs-h2-sm)}

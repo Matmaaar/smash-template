@@ -33,12 +33,16 @@ $smash_cta   = array_values( wp_list_filter( $smash_items, array( 'cta' => true 
 				}
 				smash_nav_item( $smash_item );
 			}
+			// Le CTA (« Devis tireuse ») ferme la barre, en bouton blanc. Sur mobile, il est à côté de « Menu ».
+			if ( $smash_cta ) {
+				smash_menu_link( $smash_cta[0], 'top__cta top__cta--nav' );
+			}
 			?>
 		</nav>
 	<?php endif; ?>
 	<div class="top__end">
 		<?php if ( $smash_cta ) : ?>
-			<?php smash_menu_link( $smash_cta[0], 'top__cta' ); ?>
+			<?php smash_menu_link( $smash_cta[0], 'top__cta top__cta--end' ); ?>
 		<?php endif; ?>
 		<?php if ( $smash_items ) : ?>
 			<button type="button" class="top__menu" id="menu-btn" aria-expanded="false" aria-controls="mnav" data-open="<?php esc_attr_e( 'Menu', 'smash' ); ?>" data-close="<?php esc_attr_e( 'Fermer', 'smash' ); ?>"><?php esc_html_e( 'Menu', 'smash' ); ?></button>

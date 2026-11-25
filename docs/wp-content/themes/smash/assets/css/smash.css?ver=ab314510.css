@@ -666,7 +666,7 @@ body.nav-hidden .fab-cta{transform:none;opacity:1;visibility:visible;transition:
 /* Nav mobile : logo empilé (le S carré, « smash » en dessous), un peu plus grand */
 @media (max-width:860px){
   .top{top:14px;height:60px}
-  .top__logo{top:15px;height:auto;flex-direction:column;align-items:center;gap:.2rem;font-size:1.05rem;line-height:1}
+  .top__logo{top:18px;height:auto;flex-direction:column;align-items:center;gap:.2rem;font-size:1.05rem;line-height:1}
   .top__logo img{height:38px}
   .top__menu{width:52px;height:52px}
   .burger{width:22px;height:14px}

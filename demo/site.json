@@ -69,7 +69,8 @@
     "location-tireuses-a-bieres": {
       "intro_kick": "Location de tireuses & fûts",
       "intro_title": "Ton devis\nen 1 minute.",
-      "intro_text": "Tout est sur un seul écran : clique, le prix se met à jour pendant que tu choisis."
+      "intro_text": "Tout est sur un seul écran : clique, le prix se met à jour pendant que tu choisis.",
+      "intro_image": 2005
     },
     "la-brasserie": {
       "intro_kick": "La brasserie",

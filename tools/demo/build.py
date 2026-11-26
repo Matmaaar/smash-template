@@ -232,7 +232,9 @@ def main():
     pid = 1450
     for order, dl in enumerate(DATA.get('downloads', [])):
         target = MEDIA / 'downloads' / dl['file']
-        if dl['file'].endswith('.zip'):
+        if dl.get('src'):  # vrai fichier repris du site actuel (demo/scraped/…)
+            shutil.copy(ROOT / 'demo' / dl['src'], target)
+        elif dl['file'].endswith('.zip'):
             with zipfile.ZipFile(target, 'w') as z:
                 for logo in ('logo-white.png', 's-white.png', 's-black.png'):
                     z.write(SOURCE_IMG / logo, logo)
@@ -245,7 +247,8 @@ def main():
     # Pages.
     pid, roles = 1500, {}
     for order, page in enumerate(DATA['pages']):
-        content = p(page['content']) if page['content'] else ''
+        # « html » : texte repris tel quel du site actuel (pages légales) ; sinon un paragraphe.
+        content = page['html'] if page.get('html') else (p(page['content']) if page['content'] else '')
         # FAQ en blocs « Détails » (page location) : question = résumé, réponse = paragraphe.
         for q, a in page.get('faq', []):
             content += (f'<!-- wp:details -->\n<details class="wp-block-details"><summary>{escape(q)}</summary>'

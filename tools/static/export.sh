@@ -31,6 +31,18 @@ out, local, public = pathlib.Path(sys.argv[1]), sys.argv[2], sys.argv[3]
 fake = ('<script>(function(){var f=window.fetch;window.fetch=function(u,o){if(String(u).indexOf("smash/v1/")>-1)'
         '{return new Promise(function(r){setTimeout(function(){r(new Response(\'{"ok":true}\',{status:200,'
         'headers:{"Content-Type":"application/json"}}))},600)})}return f.apply(this,arguments)}})();</script>')
+# Page 404 pour GitHub Pages : servie à n'importe quelle profondeur, donc avec des adresses complètes.
+# Les fichiers aspirés avec « ?ver= » portent ce suffixe dans leur nom (wget) : on le reproduit.
+import urllib.request, urllib.error
+try:
+    urllib.request.build_opener(urllib.request.ProxyHandler({})).open(local + '/page-introuvable-smash/')
+    html404 = ''
+except urllib.error.HTTPError as e:
+    html404 = e.read().decode('utf-8', 'replace')
+if html404:
+    html404 = re.sub(re.escape(local) + r'(/[^"\'\s?]+)\?ver=([^"\'\s&]+)',
+                     lambda m: local + m.group(1) + '%3Fver=' + m.group(2) + ('.css' if m.group(1).endswith('.css') else ''), html404)
+    (out / '404.html').write_text(html404, encoding='utf-8')
 n = 0
 for p in out.rglob('*.html'):
     s = p.read_text(encoding='utf-8', errors='replace')

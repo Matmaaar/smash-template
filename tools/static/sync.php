@@ -45,6 +45,26 @@ function smash_sync_image( $rel, $theme, &$added ) {
 	return (int) $id;
 }
 
+/** ID de la pièce jointe d'un fichier quelconque (téléchargements), ajoutée si absente. */
+function smash_sync_file( $src, &$added ) {
+	$name = pathinfo( $src, PATHINFO_FILENAME );
+	$hit  = get_posts( array( 'post_type' => 'attachment', 'name' => sanitize_title( $name ), 'posts_per_page' => 1, 'post_status' => 'inherit', 'fields' => 'ids' ) );
+	if ( $hit ) {
+		return (int) $hit[0];
+	}
+	if ( ! is_file( $src ) ) {
+		return 0;
+	}
+	$tmp = wp_tempnam( basename( $src ) );
+	copy( $src, $tmp );
+	$id = media_handle_sideload( array( 'name' => basename( $src ), 'tmp_name' => $tmp ), 0, $name );
+	if ( is_wp_error( $id ) ) {
+		return 0;
+	}
+	$added[] = basename( $src );
+	return (int) $id;
+}
+
 /** Valeur de démo → valeur stockée : « img:… » = ID d'image, « page:slug » = ID de page. */
 function smash_sync_value( $value, $theme, &$added ) {
 	if ( ! is_string( $value ) ) {
@@ -73,6 +93,30 @@ foreach ( $data['page_fields'] ?? array() as $slug => $fields ) {
 		foreach ( $fields as $key => $value ) {
 			update_post_meta( $page->ID, $key, smash_sync_value( $value, $theme, $added ) );
 		}
+	}
+}
+
+// Contenu des pages repris tel quel (pages légales).
+foreach ( $data['pages'] ?? array() as $page_data ) {
+	$page = ! empty( $page_data['html'] ) ? get_page_by_path( $page_data['slug'] ) : null;
+	if ( $page && $page->post_content !== $page_data['html'] ) {
+		wp_update_post( array( 'ID' => $page->ID, 'post_content' => $page_data['html'] ) );
+	}
+}
+
+// Téléchargements : fichiers de demo/media/downloads/ (générés par build.py), les absents de data.json sont retirés.
+$keep = array();
+foreach ( $data['downloads'] ?? array() as $order => $dl ) {
+	$keep[] = $dl['slug'];
+	$file   = smash_sync_file( $theme . '/demo/media/downloads/' . $dl['file'], $added );
+	$post   = get_page_by_path( $dl['slug'], OBJECT, 'telechargement' );
+	$id     = $post ? $post->ID : wp_insert_post( array( 'post_type' => 'telechargement', 'post_status' => 'publish', 'post_name' => $dl['slug'], 'post_title' => $dl['title'], 'menu_order' => $order ) );
+	wp_update_post( array( 'ID' => $id, 'post_title' => $dl['title'], 'menu_order' => $order ) );
+	update_post_meta( $id, 'fichier', $file );
+}
+foreach ( get_posts( array( 'post_type' => 'telechargement', 'posts_per_page' => -1 ) ) as $old ) {
+	if ( ! in_array( $old->post_name, $keep, true ) ) {
+		wp_delete_post( $old->ID, true );
 	}
 }
 

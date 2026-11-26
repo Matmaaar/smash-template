@@ -96,8 +96,12 @@ foreach ( $data['page_fields'] ?? array() as $slug => $fields ) {
 	}
 }
 
-// Contenu des pages repris tel quel (pages légales).
+// Titres des pages, et contenu repris tel quel (pages légales).
 foreach ( $data['pages'] ?? array() as $page_data ) {
+	$titled = get_page_by_path( $page_data['slug'] );
+	if ( $titled && ! empty( $page_data['title'] ) && $titled->post_title !== $page_data['title'] ) {
+		wp_update_post( array( 'ID' => $titled->ID, 'post_title' => $page_data['title'] ) );
+	}
 	$page = ! empty( $page_data['html'] ) ? get_page_by_path( $page_data['slug'] ) : null;
 	if ( $page && $page->post_content !== $page_data['html'] ) {
 		wp_update_post( array( 'ID' => $page->ID, 'post_content' => $page_data['html'] ) );

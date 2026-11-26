@@ -3112,7 +3112,7 @@
     },
     {
       "slug": "telechargements",
-      "title": "Téléchargements",
+      "title": "Ressources",
       "content": "",
       "html": " "
     },
@@ -3257,8 +3257,8 @@
     },
     "telechargements": {
       "intro_kick": "",
-      "intro_title": "À télé-\ncharger.",
-      "intro_text": "Les logos et les modes d'emploi des tireuses."
+      "intro_title": "Ressources.",
+      "intro_text": "Les logos smash et les modes d'emploi de nos tireuses, à télécharger."
     },
     "sitemap": {
       "intro_kick": "Plan du site",

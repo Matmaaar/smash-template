@@ -725,3 +725,12 @@ body.nav-hidden .fab-cta{transform:none;opacity:1;visibility:visible;transition:
 
 /* Filtres du catalogue : nombre de bières en exposant */
 .tab__n{font-size:.62em;font-weight:600;margin-left:.2em;vertical-align:super;line-height:0;opacity:.75}
+
+/* Mobile : les grilles d'étiquettes (catalogue, gammes) en 2 colonnes, comme les permanentes de l'accueil */
+@media (max-width:560px){
+  .labels{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.4rem .8rem}
+  .labels .lab__row h3{font-size:1.05rem}
+  .labels .lab .mono{font-size:.62rem}
+}
+/* Mobile : filtres du catalogue sur une seule ligne, qu'on fait défiler au doigt */
+@media (max-width:560px){.tabs{flex-wrap:nowrap;overflow-x:auto;margin:0 -3vw 4vh;padding:2px 3vw 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.tabs::-webkit-scrollbar{display:none}.tab{flex:none;white-space:nowrap;font-size:.9rem;padding:.55rem .85rem}}

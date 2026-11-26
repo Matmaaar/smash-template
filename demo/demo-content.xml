@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!-- Contenu de démo du thème smash, généré par tools/demo/build.py le 2026-11-25. Ne pas modifier à la main. -->
+<!-- Contenu de démo du thème smash, généré par tools/demo/build.py le 2026-11-26. Ne pas modifier à la main. -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -18,74 +18,11 @@
 <wp:term><wp:term_taxonomy>type-de-bieres</wp:term_taxonomy><wp:term_slug><![CDATA[bieres-permanentes]]></wp:term_slug><wp:term_name><![CDATA[Bières permanentes]]></wp:term_name><wp:term_description><![CDATA[Nos classiques, toujours à la pompe.]]></wp:term_description></wp:term><wp:term><wp:term_taxonomy>type-de-bieres</wp:term_taxonomy><wp:term_slug><![CDATA[bieres-ephemeres]]></wp:term_slug><wp:term_name><![CDATA[Bières éphémères]]></wp:term_name><wp:term_description><![CDATA[Brassées en petite quantité, disponibles jusqu'à épuisement.]]></wp:term_description></wp:term><wp:term><wp:term_taxonomy>type-de-bieres</wp:term_taxonomy><wp:term_slug><![CDATA[bieres-archivees]]></wp:term_slug><wp:term_name><![CDATA[Bières archivées]]></wp:term_name><wp:term_description><![CDATA[Toutes les éphémères déjà sorties, depuis le premier brassin.]]></wp:term_description></wp:term><wp:term><wp:term_taxonomy>type-de-location</wp:term_taxonomy><wp:term_slug><![CDATA[particuliers]]></wp:term_slug><wp:term_name><![CDATA[Particuliers]]></wp:term_name><wp:term_description><![CDATA[]]></wp:term_description></wp:term><wp:term><wp:term_taxonomy>type-de-location</wp:term_taxonomy><wp:term_slug><![CDATA[evenementiel]]></wp:term_slug><wp:term_name><![CDATA[Événementiel]]></wp:term_name><wp:term_description><![CDATA[]]></wp:term_description></wp:term>
 
 <item>
-<title><![CDATA[can-affluence]]></title>
-<dc:creator><![CDATA[smash]]></dc:creator>
-<content:encoded><![CDATA[]]></content:encoded>
-<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-<wp:post_id>2000</wp:post_id>
-<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
-<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
-<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-<wp:post_name><![CDATA[can-affluence]]></wp:post_name>
-<wp:status><![CDATA[inherit]]></wp:status>
-<wp:post_parent>0</wp:post_parent>
-<wp:menu_order>0</wp:menu_order>
-<wp:post_type><![CDATA[attachment]]></wp:post_type>
-<wp:post_password><![CDATA[]]></wp:post_password>
-<wp:is_sticky>0</wp:is_sticky>
-<wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/media/can-affluence.jpg]]></wp:attachment_url>
-
-<wp:postmeta><wp:meta_key><![CDATA[_wp_attachment_image_alt]]></wp:meta_key><wp:meta_value><![CDATA[]]></wp:meta_value></wp:postmeta>
-</item>
-<item>
-<title><![CDATA[hero]]></title>
-<dc:creator><![CDATA[smash]]></dc:creator>
-<content:encoded><![CDATA[]]></content:encoded>
-<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-<wp:post_id>2001</wp:post_id>
-<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
-<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
-<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-<wp:post_name><![CDATA[hero]]></wp:post_name>
-<wp:status><![CDATA[inherit]]></wp:status>
-<wp:post_parent>0</wp:post_parent>
-<wp:menu_order>0</wp:menu_order>
-<wp:post_type><![CDATA[attachment]]></wp:post_type>
-<wp:post_password><![CDATA[]]></wp:post_password>
-<wp:is_sticky>0</wp:is_sticky>
-<wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/media/hero.jpg]]></wp:attachment_url>
-
-<wp:postmeta><wp:meta_key><![CDATA[_wp_attachment_image_alt]]></wp:meta_key><wp:meta_value><![CDATA[]]></wp:meta_value></wp:postmeta>
-</item>
-<item>
-<title><![CDATA[label-affluence]]></title>
-<dc:creator><![CDATA[smash]]></dc:creator>
-<content:encoded><![CDATA[]]></content:encoded>
-<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-<wp:post_id>2002</wp:post_id>
-<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
-<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
-<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-<wp:post_name><![CDATA[label-affluence]]></wp:post_name>
-<wp:status><![CDATA[inherit]]></wp:status>
-<wp:post_parent>0</wp:post_parent>
-<wp:menu_order>0</wp:menu_order>
-<wp:post_type><![CDATA[attachment]]></wp:post_type>
-<wp:post_password><![CDATA[]]></wp:post_password>
-<wp:is_sticky>0</wp:is_sticky>
-<wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/media/label-affluence.jpg]]></wp:attachment_url>
-
-<wp:postmeta><wp:meta_key><![CDATA[_wp_attachment_image_alt]]></wp:meta_key><wp:meta_value><![CDATA[]]></wp:meta_value></wp:postmeta>
-</item>
-<item>
 <title><![CDATA[brasserie-vue]]></title>
 <dc:creator><![CDATA[smash]]></dc:creator>
 <content:encoded><![CDATA[]]></content:encoded>
 <excerpt:encoded><![CDATA[]]></excerpt:encoded>
-<wp:post_id>2003</wp:post_id>
+<wp:post_id>2000</wp:post_id>
 <wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
 <wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
 <wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -106,7 +43,7 @@
 <dc:creator><![CDATA[smash]]></dc:creator>
 <content:encoded><![CDATA[]]></content:encoded>
 <excerpt:encoded><![CDATA[]]></excerpt:encoded>
-<wp:post_id>2004</wp:post_id>
+<wp:post_id>2001</wp:post_id>
 <wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
 <wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
 <wp:comment_status><![CDATA[closed]]></wp:comment_status>
@@ -119,6 +56,69 @@
 <wp:post_password><![CDATA[]]></wp:post_password>
 <wp:is_sticky>0</wp:is_sticky>
 <wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/scraped/pages/home-hero-rouge-3200.webp]]></wp:attachment_url>
+
+<wp:postmeta><wp:meta_key><![CDATA[_wp_attachment_image_alt]]></wp:meta_key><wp:meta_value><![CDATA[]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[insta-canettes-s21]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>2002</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[insta-canettes-s21]]></wp:post_name>
+<wp:status><![CDATA[inherit]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[attachment]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/scraped/pages/insta-canettes-s21.webp]]></wp:attachment_url>
+
+<wp:postmeta><wp:meta_key><![CDATA[_wp_attachment_image_alt]]></wp:meta_key><wp:meta_value><![CDATA[]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[insta-equipe]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>2003</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[insta-equipe]]></wp:post_name>
+<wp:status><![CDATA[inherit]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[attachment]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/scraped/pages/insta-equipe.webp]]></wp:attachment_url>
+
+<wp:postmeta><wp:meta_key><![CDATA[_wp_attachment_image_alt]]></wp:meta_key><wp:meta_value><![CDATA[]]></wp:meta_value></wp:postmeta>
+</item>
+<item>
+<title><![CDATA[insta-etiquettes-s19]]></title>
+<dc:creator><![CDATA[smash]]></dc:creator>
+<content:encoded><![CDATA[]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>2004</wp:post_id>
+<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[insta-etiquettes-s19]]></wp:post_name>
+<wp:status><![CDATA[inherit]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[attachment]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/scraped/pages/insta-etiquettes-s19.webp]]></wp:attachment_url>
 
 <wp:postmeta><wp:meta_key><![CDATA[_wp_attachment_image_alt]]></wp:meta_key><wp:meta_value><![CDATA[]]></wp:meta_value></wp:postmeta>
 </item>
@@ -13045,7 +13045,7 @@ Mais surtout de faire fondre nos petits coeurs attendris au quotidien !]]></wp:m
 <wp:postmeta><wp:meta_key><![CDATA[fichier]]></wp:meta_key><wp:meta_value><![CDATA[2284]]></wp:meta_value></wp:postmeta>
 </item>
 <item>
-<title><![CDATA[Fiches produits]]></title>
+<title><![CDATA[Mode d'emploi : tireuse CO2]]></title>
 <dc:creator><![CDATA[smash]]></dc:creator>
 <content:encoded><![CDATA[]]></content:encoded>
 <excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -13054,19 +13054,19 @@ Mais surtout de faire fondre nos petits coeurs attendris au quotidien !]]></wp:m
 <wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
 <wp:comment_status><![CDATA[closed]]></wp:comment_status>
 <wp:ping_status><![CDATA[closed]]></wp:ping_status>
-<wp:post_name><![CDATA[fiches-produits]]></wp:post_name>
+<wp:post_name><![CDATA[mode-emploi-tireuse-co2]]></wp:post_name>
 <wp:status><![CDATA[inherit]]></wp:status>
 <wp:post_parent>0</wp:post_parent>
 <wp:menu_order>0</wp:menu_order>
 <wp:post_type><![CDATA[attachment]]></wp:post_type>
 <wp:post_password><![CDATA[]]></wp:post_password>
 <wp:is_sticky>0</wp:is_sticky>
-<wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/media/downloads/fiches-produits.pdf]]></wp:attachment_url>
+<wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/media/downloads/mode-emploi-tireuse-co2.png]]></wp:attachment_url>
 
 <wp:postmeta><wp:meta_key><![CDATA[_wp_attachment_image_alt]]></wp:meta_key><wp:meta_value><![CDATA[]]></wp:meta_value></wp:postmeta>
 </item>
 <item>
-<title><![CDATA[Fiches produits]]></title>
+<title><![CDATA[Mode d'emploi : tireuse CO2]]></title>
 <dc:creator><![CDATA[smash]]></dc:creator>
 <content:encoded><![CDATA[]]></content:encoded>
 <excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -13075,7 +13075,7 @@ Mais surtout de faire fondre nos petits coeurs attendris au quotidien !]]></wp:m
 <wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
 <wp:comment_status><![CDATA[closed]]></wp:comment_status>
 <wp:ping_status><![CDATA[closed]]></wp:ping_status>
-<wp:post_name><![CDATA[fiches-produits]]></wp:post_name>
+<wp:post_name><![CDATA[mode-emploi-tireuse-co2]]></wp:post_name>
 <wp:status><![CDATA[publish]]></wp:status>
 <wp:post_parent>0</wp:post_parent>
 <wp:menu_order>1</wp:menu_order>
@@ -13086,7 +13086,7 @@ Mais surtout de faire fondre nos petits coeurs attendris au quotidien !]]></wp:m
 <wp:postmeta><wp:meta_key><![CDATA[fichier]]></wp:meta_key><wp:meta_value><![CDATA[2285]]></wp:meta_value></wp:postmeta>
 </item>
 <item>
-<title><![CDATA[Guide tireuse CO2]]></title>
+<title><![CDATA[Mode d'emploi : tireuse froid sec]]></title>
 <dc:creator><![CDATA[smash]]></dc:creator>
 <content:encoded><![CDATA[]]></content:encoded>
 <excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -13095,19 +13095,19 @@ Mais surtout de faire fondre nos petits coeurs attendris au quotidien !]]></wp:m
 <wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
 <wp:comment_status><![CDATA[closed]]></wp:comment_status>
 <wp:ping_status><![CDATA[closed]]></wp:ping_status>
-<wp:post_name><![CDATA[guide-tireuse-co2]]></wp:post_name>
+<wp:post_name><![CDATA[mode-emploi-tireuse-froid-sec]]></wp:post_name>
 <wp:status><![CDATA[inherit]]></wp:status>
 <wp:post_parent>0</wp:post_parent>
 <wp:menu_order>0</wp:menu_order>
 <wp:post_type><![CDATA[attachment]]></wp:post_type>
 <wp:post_password><![CDATA[]]></wp:post_password>
 <wp:is_sticky>0</wp:is_sticky>
-<wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/media/downloads/guide-tireuse-co2.pdf]]></wp:attachment_url>
+<wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/media/downloads/mode-emploi-tireuse-froid-sec.png]]></wp:attachment_url>
 
 <wp:postmeta><wp:meta_key><![CDATA[_wp_attachment_image_alt]]></wp:meta_key><wp:meta_value><![CDATA[]]></wp:meta_value></wp:postmeta>
 </item>
 <item>
-<title><![CDATA[Guide tireuse CO2]]></title>
+<title><![CDATA[Mode d'emploi : tireuse froid sec]]></title>
 <dc:creator><![CDATA[smash]]></dc:creator>
 <content:encoded><![CDATA[]]></content:encoded>
 <excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -13116,7 +13116,7 @@ Mais surtout de faire fondre nos petits coeurs attendris au quotidien !]]></wp:m
 <wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
 <wp:comment_status><![CDATA[closed]]></wp:comment_status>
 <wp:ping_status><![CDATA[closed]]></wp:ping_status>
-<wp:post_name><![CDATA[guide-tireuse-co2]]></wp:post_name>
+<wp:post_name><![CDATA[mode-emploi-tireuse-froid-sec]]></wp:post_name>
 <wp:status><![CDATA[publish]]></wp:status>
 <wp:post_parent>0</wp:post_parent>
 <wp:menu_order>2</wp:menu_order>
@@ -13125,47 +13125,6 @@ Mais surtout de faire fondre nos petits coeurs attendris au quotidien !]]></wp:m
 <wp:is_sticky>0</wp:is_sticky>
 
 <wp:postmeta><wp:meta_key><![CDATA[fichier]]></wp:meta_key><wp:meta_value><![CDATA[2286]]></wp:meta_value></wp:postmeta>
-</item>
-<item>
-<title><![CDATA[Guide tireuse froid sec]]></title>
-<dc:creator><![CDATA[smash]]></dc:creator>
-<content:encoded><![CDATA[]]></content:encoded>
-<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-<wp:post_id>2287</wp:post_id>
-<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
-<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
-<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-<wp:post_name><![CDATA[guide-tireuse-froid-sec]]></wp:post_name>
-<wp:status><![CDATA[inherit]]></wp:status>
-<wp:post_parent>0</wp:post_parent>
-<wp:menu_order>0</wp:menu_order>
-<wp:post_type><![CDATA[attachment]]></wp:post_type>
-<wp:post_password><![CDATA[]]></wp:post_password>
-<wp:is_sticky>0</wp:is_sticky>
-<wp:attachment_url><![CDATA[https://raw.githubusercontent.com/matmaaar/smash-template/claude/bold-ramanujan-he85fr/demo/media/downloads/guide-tireuse-froid-sec.pdf]]></wp:attachment_url>
-
-<wp:postmeta><wp:meta_key><![CDATA[_wp_attachment_image_alt]]></wp:meta_key><wp:meta_value><![CDATA[]]></wp:meta_value></wp:postmeta>
-</item>
-<item>
-<title><![CDATA[Guide tireuse froid sec]]></title>
-<dc:creator><![CDATA[smash]]></dc:creator>
-<content:encoded><![CDATA[]]></content:encoded>
-<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-<wp:post_id>1453</wp:post_id>
-<wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
-<wp:post_date_gmt><![CDATA[2026-01-01 10:00:00]]></wp:post_date_gmt>
-<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-<wp:post_name><![CDATA[guide-tireuse-froid-sec]]></wp:post_name>
-<wp:status><![CDATA[publish]]></wp:status>
-<wp:post_parent>0</wp:post_parent>
-<wp:menu_order>3</wp:menu_order>
-<wp:post_type><![CDATA[telechargement]]></wp:post_type>
-<wp:post_password><![CDATA[]]></wp:post_password>
-<wp:is_sticky>0</wp:is_sticky>
-
-<wp:postmeta><wp:meta_key><![CDATA[fichier]]></wp:meta_key><wp:meta_value><![CDATA[2287]]></wp:meta_value></wp:postmeta>
 </item>
 <item>
 <title><![CDATA[Accueil]]></title>
@@ -13322,9 +13281,7 @@ Mais surtout de faire fondre nos petits coeurs attendris au quotidien !]]></wp:m
 <item>
 <title><![CDATA[Téléchargements]]></title>
 <dc:creator><![CDATA[smash]]></dc:creator>
-<content:encoded><![CDATA[<!-- wp:paragraph -->
-<p>Logos, fiches produits et guides des tireuses.</p>
-<!-- /wp:paragraph -->]]></content:encoded>
+<content:encoded><![CDATA[ ]]></content:encoded>
 <excerpt:encoded><![CDATA[]]></excerpt:encoded>
 <wp:post_id>1506</wp:post_id>
 <wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
@@ -13344,9 +13301,36 @@ Mais surtout de faire fondre nos petits coeurs attendris au quotidien !]]></wp:m
 <item>
 <title><![CDATA[Mentions légales]]></title>
 <dc:creator><![CDATA[smash]]></dc:creator>
-<content:encoded><![CDATA[<!-- wp:paragraph -->
-<p>Texte provisoire : le contenu réel de cette page sera repris du site actuel.</p>
-<!-- /wp:paragraph -->]]></content:encoded>
+<content:encoded><![CDATA[<h2>1 - Édition du site</h2>
+<p>En vertu de <a href="https://www.legifrance.gouv.fr/affichTexte.do?cidTexte=JORFTEXT000000801164#LEGIARTI000042038977">l'article 6 de la loi n° 2004-575 du 21 juin 2004</a> pour la confiance dans l'économie numérique, il est précisé aux utilisateurs du site internet <strong>https://smash.bzh</strong> l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi:</p>
+<p><strong>Propriétaire du site : </strong>BRASSERIE SMASH - Contact : contact@smash.bzh - Adresse : 4 bis K, Rue du Lieutenant Colonel Dubois, 35000 Rennes.</p>
+<p><strong>Identification de l'entreprise :</strong> SAS BRASSERIE SMASH au capital social de 5000€€ - SIREN : 921977443 - RCS ou RM : Rennes B 921 977 443 - Adresse postale : 4 bis K, Rue du Lieutenant Colonel Dubois, 35000 Rennes -</p>
+<p><strong>Directeur de la publication : </strong>Monsieur Jean Tanguy - Contact : contact@smash.bzh.</p>
+<p><strong>Hébergeur :</strong> O2Switch - 222 Boulevard Gustave Flaubert, 63000 Clermont-Ferrand - Téléphone : 04.44.44.60.40</p>
+<p><strong>Délégué à la protection des données : </strong>Monsieur Jean Tanguy - contact@smash.bzh</p>
+<p><strong>Autres contributeurs :</strong></p>
+<h2>2 - Propriété intellectuelle et contrefaçons.</h2>
+<p><strong>BRASSERIE SMASH</strong> est propriétaire des droits de propriété intellectuelle et détient les droits d’usage sur tous les éléments accessibles sur le site internet, notamment les textes, images, graphismes, logos, vidéos, architecture, icônes et sons.</p>
+<p>Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable de <strong>BRASSERIE SMASH</strong>.</p>
+<p>Toute exploitation non autorisée du site ou de l’un quelconque des éléments qu’il contient sera considérée comme constitutive d’une contrefaçon et poursuivie conformément aux dispositions des articles <a href="https://www.legifrance.gouv.fr/affichCodeArticle.do?idArticle=LEGIARTI000032655082&amp;cidTexte=LEGITEXT000006069414&amp;dateTexte=20160605">L.335-2 et suivants du Code de Propriété Intellectuelle</a>.</p>
+<h2>3 - Limitations de responsabilité.</h2>
+<p><strong>BRASSERIE SMASH</strong> ne pourra être tenu pour responsable des dommages directs et indirects causés au matériel de l’utilisateur, lors de l’accès au site <strong>https://smash.bzh</strong>.</p>
+<p><strong>BRASSERIE SMASH</strong> décline toute responsabilité quant à l’utilisation qui pourrait être faite des informations et contenus présents sur <strong>https://smash.bzh</strong>.</p>
+<p><strong>BRASSERIE SMASH</strong> s’engage à sécuriser au mieux le site <strong>https://smash.bzh</strong>, cependant sa responsabilité ne pourra être mise en cause si des données indésirables sont importées et installées sur son site à son insu.</p>
+<p>Des espaces interactifs (espace contact ou commentaires) sont à la disposition des utilisateurs. <strong>BRASSERIE SMASH</strong> se réserve le droit de supprimer, sans mise en demeure préalable, tout contenu déposé dans cet espace qui contreviendrait à la législation applicable en France, en particulier aux dispositions relatives à la protection des données.</p>
+<p>Le cas échéant, <strong>BRASSERIE SMASH</strong> se réserve également la possibilité de mettre en cause la responsabilité civile et/ou pénale de l’utilisateur, notamment en cas de message à caractère raciste, injurieux, diffamant, ou pornographique, quel que soit le support utilisé (texte, photographie …).</p>
+<h2>4 - CNIL et gestion des données personnelles.</h2>
+<p>Conformément aux dispositions de <a href="https://www.legifrance.gouv.fr/affichTexte.do?cidTexte=JORFTEXT000000886460">la loi 78-17 du 6 janvier 1978 modifiée</a>, l’utilisateur du site <strong>https://smash.bzh</strong> dispose d’un droit d’accès, de modification et de suppression des informations collectées. Pour exercer ce droit, envoyez un message à notre Délégué à la Protection des Données : <strong>Monsieur Jean Tanguy</strong> - <strong>contact@smash.bzh</strong>.</p>
+<p>Pour plus d'informations sur la façon dont nous traitons vos données (type de données, finalité, destinataire...), lisez notre <strong>https://smash.bzh</strong>.</p>
+<h2>5 - Liens hypertextes et cookies</h2>
+<p>Le site <strong>https://smash.bzh</strong> contient des liens hypertextes vers d’autres sites et dégage toute responsabilité à propos de ces liens externes ou des liens créés par d’autres sites vers <strong>https://smash.bzh</strong>.</p>
+<p>La navigation sur le site <strong>https://smash.bzh</strong> est susceptible de provoquer l’installation de cookie(s) sur l’ordinateur de l’utilisateur.</p>
+<p>Un "cookie" est un fichier de petite taille qui enregistre des informations relatives à la navigation d’un utilisateur sur un site. Les données ainsi obtenues permettent d'obtenir des mesures de fréquentation, par exemple.</p>
+<p>Vous avez la possibilité <strong>d’accepter ou de refuser les cookies</strong> en modifiant les paramètres de votre navigateur. Aucun cookie ne sera déposé sans votre consentement.</p>
+<p>Les cookies sont enregistrés pour une durée maximale de 1 mois.</p>
+<p>Pour plus d'informations sur la façon dont nous faisons usage des cookies, lisez notre <strong>https://smash.bzh</strong>.</p>
+<h2>6 - Droit applicable et attribution de juridiction.</h2>
+<p>Tout litige en relation avec l’utilisation du site <strong>https://smash.bzh</strong> est soumis au droit français. En dehors des cas où la loi ne le permet pas, il est fait attribution exclusive de juridiction aux tribunaux compétents de <strong>Rennes</strong>.</p>]]></content:encoded>
 <excerpt:encoded><![CDATA[]]></excerpt:encoded>
 <wp:post_id>1507</wp:post_id>
 <wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>
@@ -13366,9 +13350,14 @@ Mais surtout de faire fondre nos petits coeurs attendris au quotidien !]]></wp:m
 <item>
 <title><![CDATA[Politique de confidentialité]]></title>
 <dc:creator><![CDATA[smash]]></dc:creator>
-<content:encoded><![CDATA[<!-- wp:paragraph -->
-<p>Texte provisoire : le contenu réel de cette page sera repris du site actuel.</p>
-<!-- /wp:paragraph -->]]></content:encoded>
+<content:encoded><![CDATA[<h2>Données collectées</h2>
+<p>Ce site ne collecte des données personnelles que lorsque vous nous les transmettez : formulaire de demande de devis (location de tireuses) et formulaire de contact. Les informations demandées (nom, adresse e-mail, téléphone, dates et détail de la demande) servent uniquement à vous répondre et à préparer votre location.</p>
+<h2>Destinataire et durée de conservation</h2>
+<p>Ces données sont destinées à la SAS Brasserie Smash. Elles ne sont ni vendues ni transmises à des tiers, et sont conservées le temps nécessaire au traitement de votre demande.</p>
+<h2>Cookies</h2>
+<p>Le site dépose un seul cookie, après votre réponse à la question sur l'âge : il mémorise que vous avez plus de 18 ans, pour ne pas vous la reposer pendant un an. Il n'y a ni cookie publicitaire ni outil de mesure d'audience.</p>
+<h2>Vos droits</h2>
+<p>Vous pouvez demander l'accès à vos données, leur rectification ou leur suppression en écrivant à contact@smash.bzh. Vous pouvez aussi adresser une réclamation à la CNIL.</p>]]></content:encoded>
 <excerpt:encoded><![CDATA[]]></excerpt:encoded>
 <wp:post_id>1508</wp:post_id>
 <wp:post_date><![CDATA[2026-01-01 10:00:00]]></wp:post_date>

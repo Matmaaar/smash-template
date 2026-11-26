@@ -17,7 +17,7 @@
 
 	// Mur : trois rangées qui défilent toutes seules (plus vite quand on scrolle la page).
 	// On peut aussi les prendre en main : glisser à la souris ou au doigt, ou défiler au trackpad.
-	// La rangée suit le geste, garde un peu d'élan, puis reprend son défilement 2,5 s plus tard.
+	// La rangée suit le geste, garde un peu d'élan, puis reprend son défilement 1,5 s plus tard.
 	// Mouvement réduit : pas de défilement automatique, mais la prise en main reste possible.
 	const wall = $('[data-wall]');
 	const rows = $$('[data-wall] .wall__row');
@@ -38,25 +38,30 @@
 		};
 		window.gsap ? gsap.ticker.add(tick) : (function loop() { tick(); requestAnimationFrame(loop); })();
 
+		// Il faut une vraie intention pour prendre la main : glisser de plus de 10 px, plus à l'horizontale
+		// qu'à la verticale. Un simple toucher, ou un scroll vertical qui passe sur le mur, ne l'arrête pas.
 		let drag = null, suppress = false;
 		wall.addEventListener('pointerdown', e => {
 			const r = e.target.closest('.wall__row');
 			if (!r || e.button > 0) return;
-			const s = st[rows.indexOf(r)];
-			drag = { s, x0: e.clientX, x: e.clientX, moved: false, id: e.pointerId };
-			s.drag = true; s.vel = 0;
+			drag = { s: st[rows.indexOf(r)], x0: e.clientX, y0: e.clientY, x: e.clientX, moved: false, id: e.pointerId };
 		});
 		wall.addEventListener('pointermove', e => {
 			if (!drag || e.pointerId !== drag.id) return;
-			const dx = e.clientX - drag.x;
+			const dx = e.clientX - drag.x, ax = Math.abs(e.clientX - drag.x0), ay = Math.abs(e.clientY - drag.y0);
 			drag.x = e.clientX;
-			if (!drag.moved && Math.abs(e.clientX - drag.x0) > 6) { drag.moved = true; wall.classList.add('is-dragging'); wall.setPointerCapture(e.pointerId); }
-			if (drag.moved) { drag.s.x += dx; drag.s.vel = dx; }
+			if (!drag.moved) {
+				if (ay > 10 && ay >= ax) { drag = null; return; }       // scroll vertical : on laisse faire
+				if (ax <= 10 || ax < ay * 1.2) return;                  // pas encore d'intention claire
+				drag.moved = true; drag.s.drag = true; drag.s.vel = 0;
+				wall.classList.add('is-dragging'); wall.setPointerCapture(e.pointerId);
+			}
+			drag.s.x += dx; drag.s.vel = dx;
 		});
 		const end = () => {
 			if (!drag) return;
-			drag.s.drag = false; drag.s.hold = performance.now() + 2500;
-			suppress = drag.moved; drag = null;
+			if (drag.moved) { drag.s.drag = false; drag.s.hold = performance.now() + 1500; suppress = true; }
+			drag = null;
 			wall.classList.remove('is-dragging');
 		};
 		wall.addEventListener('pointerup', end);
@@ -70,7 +75,7 @@
 			e.preventDefault();
 			const r = e.target.closest('.wall__row') || rows[1];
 			const s = st[rows.indexOf(r)];
-			s.x -= e.deltaX; s.vel = 0; s.hold = performance.now() + 2500;
+			s.x -= e.deltaX; s.vel = 0; s.hold = performance.now() + 1500;
 		}, { passive: false });
 	}
 

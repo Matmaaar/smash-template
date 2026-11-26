@@ -34,7 +34,7 @@ html.lenis,html.lenis body{height:auto}
 .lenis.lenis-smooth{scroll-behavior:auto!important}
 .lenis.lenis-stopped{overflow:hidden}
 .mono{font-family:var(--mono);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase}
-.big{font-weight:var(--fw-display);letter-spacing:-.055em;line-height:.86}
+.big{font-weight:var(--fw-display);letter-spacing:-.055em;line-height:.94}
 .line-mask{padding-top:.1em;margin-top:-.1em}
 /* Motifs tirés du logo : flèche (boutons, liens), bloc aux coins asymétriques (sur-titres), mini S (scroll) */
 .arw{display:inline-block;flex:none;width:1.15em;height:.77em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 16'%3E%3Cpath d='M0 7h19.2l-5.6-5.6L15 0l8 8-8 8-1.4-1.4L19.2 9H0z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 16'%3E%3Cpath d='M0 7h19.2l-5.6-5.6L15 0l8 8-8 8-1.4-1.4L19.2 9H0z'/%3E%3C/svg%3E") center/contain no-repeat;transition:transform .4s}

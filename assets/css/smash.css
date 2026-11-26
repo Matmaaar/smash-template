@@ -734,3 +734,7 @@ body.nav-hidden .fab-cta{transform:none;opacity:1;visibility:visible;transition:
 }
 /* Mobile : filtres du catalogue sur une seule ligne, qu'on fait défiler au doigt */
 @media (max-width:560px){.tabs{flex-wrap:nowrap;overflow-x:auto;margin:0 -3vw 4vh;padding:2px 3vw 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.tabs::-webkit-scrollbar{display:none}.tab{flex:none;white-space:nowrap;font-size:.9rem;padding:.55rem .85rem}}
+
+/* Accueil : phrase courte sous les titres de section (permanentes, éphémères) */
+.head .head__lead,.drop-sec .drop-sec__lead{font-size:var(--fs-lead);font-weight:600;letter-spacing:-.03em;line-height:1.2;margin:1.2rem 0 0;max-width:34ch}
+.drop-sec .drop-sec__lead{color:var(--white);margin-bottom:0}

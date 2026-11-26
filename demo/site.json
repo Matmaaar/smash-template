@@ -1,7 +1,7 @@
 {
   "site": {
     "name": "smash",
-    "description": "fabrique de bières"
+    "description": "Fabrique de bières craft à Rennes"
   },
   "options": {
     "address": "4 bis K, rue du Lieutenant Colonel Dubois<br>35000 Rennes",
@@ -142,18 +142,20 @@
     }
   },
   "front": {
-    "hero_kick": "Microbrasserie craft · rennes",
+    "hero_kick": "Microbrasserie craft · Rennes",
     "hero_title": "Fabrique\nde bières.",
-    "hero_text": "Des bières artisanales de qualité, innovantes et créatives. Une gamme permanente, et des éphémères qui ne restent jamais longtemps.",
+    "hero_text": "Des bières craft brassées à Rennes, jamais filtrées. Une gamme permanente, et des éphémères qui ne restent jamais longtemps.",
     "hero_image": 2001,
     "hero_image_2": "",
     "perm_title": "Nos bières\npermanentes",
+    "perm_text": "Six classiques, brassés toute l'année à Rennes.",
     "perm_btn_label": "Toutes nos bières",
     "perm_btn_link": "page:nos-bieres",
     "series_title": "Nos bières\néphémères",
+    "series_text": "Une nouvelle série régulièrement, en quantités limitées. Quand c'est bu, c'est bu.",
     "series_btn_label": "Lire l'article",
     "wall_title": "Toutes nos\nétiquettes.",
-    "wall_text": "Chaque éphémère a sa propre étiquette. Elles sont toutes là, depuis le premier brassin.",
+    "wall_text": "Plus de 160 étiquettes depuis le premier brassin, toutes dessinées pour la brasserie.",
     "wall_btn_label": "Voir toutes nos bières",
     "brew_title": "La brasserie",
     "brew_lead": "Smash, une brasserie craft & créative à Rennes.",

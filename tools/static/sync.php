@@ -80,6 +80,9 @@ function smash_sync_value( $value, $theme, &$added ) {
 	return $value;
 }
 
+if ( ! empty( $data['site']['description'] ) ) {
+	update_option( 'blogdescription', $data['site']['description'] );
+}
 foreach ( $data['options'] ?? array() as $key => $value ) {
 	update_option( 'options_' . $key, smash_sync_value( $value, $theme, $added ) );
 }

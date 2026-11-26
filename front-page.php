@@ -50,6 +50,9 @@ $smash_img = function ( $name, $attr = array(), $size = 'large' ) {
 			<div class="head">
 				<div>
 					<h2 class="big" data-up><?php echo smash_multiline( $smash_f( 'perm_title' ) ); ?></h2>
+					<?php if ( $smash_f( 'perm_text' ) ) : ?>
+						<p class="head__lead"><?php echo esc_html( $smash_f( 'perm_text' ) ); ?></p>
+					<?php endif; ?>
 				</div>
 				<?php smash_btn( $smash_f( 'perm_btn_label' ), smash_link_url( $smash_f( 'perm_btn_link' ) ), 'dark' ); ?>
 			</div>
@@ -70,6 +73,9 @@ $smash_img = function ( $name, $attr = array(), $size = 'large' ) {
 			<div class="drop-sec">
 				<div>
 					<h2 class="big" data-up><?php echo smash_multiline( $smash_f( 'series_title' ) ?: $smash_short ); ?></h2>
+					<?php if ( $smash_f( 'series_text' ) ) : ?>
+						<p class="drop-sec__lead"><?php echo esc_html( $smash_f( 'series_text' ) ); ?></p>
+					<?php endif; ?>
 					<p class="drop-sec__sub"><b><?php echo esc_html( $smash_short ); ?></b><span class="mono"><?php echo esc_html( get_the_date( '', $smash_latest ) ); ?></span></p>
 					<p><?php echo esc_html( get_the_excerpt( $smash_latest ) ); ?></p>
 					<?php smash_btn( $smash_f( 'series_btn_label' ), get_permalink( $smash_latest ) ); ?>

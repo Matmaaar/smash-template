@@ -15,20 +15,63 @@
 		}, 4000);
 	}
 
-	// Mur : trois rangées qui défilent, plus vite quand on scrolle. Figé si mouvement réduit.
+	// Mur : trois rangées qui défilent toutes seules (plus vite quand on scrolle la page).
+	// On peut aussi les prendre en main : glisser à la souris ou au doigt, ou défiler au trackpad.
+	// La rangée suit le geste, garde un peu d'élan, puis reprend son défilement 2,5 s plus tard.
+	// Mouvement réduit : pas de défilement automatique, mais la prise en main reste possible.
+	const wall = $('[data-wall]');
 	const rows = $$('[data-wall] .wall__row');
-	if (animate && rows.length) {
-		const pos = [0, -400, -200];
-		gsap.ticker.add(() => {
-			const v = (window.smash.lenis && window.smash.lenis.velocity) || 0;
+	if (wall && rows.length) {
+		const st = rows.map((r, i) => ({ x: [0, -400, -200][i] || 0, dir: i % 2 ? 1 : -1, vel: 0, hold: 0, drag: false }));
+		const wrap = (s, r) => { const half = r.scrollWidth / 2; if (s.x <= -half) s.x += half; if (s.x > 0) s.x -= half; };
+		const tick = () => {
+			const now = performance.now(), v = (window.smash.lenis && window.smash.lenis.velocity) || 0;
 			rows.forEach((r, i) => {
-				pos[i] += (i % 2 ? 1 : -1) * (.6 + Math.abs(v) * .5);
-				const half = r.scrollWidth / 2;
-				if (pos[i] <= -half) pos[i] += half;
-				if (pos[i] > 0) pos[i] -= half;
-				r.style.transform = `translateX(${pos[i]}px)`;
+				const s = st[i];
+				if (!s.drag) {
+					if (Math.abs(s.vel) > .05) { s.x += s.vel; s.vel *= .9; }
+					else if (animate && now > s.hold) s.x += s.dir * (.6 + Math.abs(v) * .5);
+				}
+				wrap(s, r);
+				r.style.transform = `translateX(${s.x}px)`;
 			});
+		};
+		window.gsap ? gsap.ticker.add(tick) : (function loop() { tick(); requestAnimationFrame(loop); })();
+
+		let drag = null, suppress = false;
+		wall.addEventListener('pointerdown', e => {
+			const r = e.target.closest('.wall__row');
+			if (!r || e.button > 0) return;
+			const s = st[rows.indexOf(r)];
+			drag = { s, x0: e.clientX, x: e.clientX, moved: false, id: e.pointerId };
+			s.drag = true; s.vel = 0;
 		});
+		wall.addEventListener('pointermove', e => {
+			if (!drag || e.pointerId !== drag.id) return;
+			const dx = e.clientX - drag.x;
+			drag.x = e.clientX;
+			if (!drag.moved && Math.abs(e.clientX - drag.x0) > 6) { drag.moved = true; wall.classList.add('is-dragging'); wall.setPointerCapture(e.pointerId); }
+			if (drag.moved) { drag.s.x += dx; drag.s.vel = dx; }
+		});
+		const end = () => {
+			if (!drag) return;
+			drag.s.drag = false; drag.s.hold = performance.now() + 2500;
+			suppress = drag.moved; drag = null;
+			wall.classList.remove('is-dragging');
+		};
+		wall.addEventListener('pointerup', end);
+		wall.addEventListener('pointercancel', end);
+		// Après un glisser, le relâchement ne doit pas ouvrir la fiche.
+		wall.addEventListener('click', e => { if (suppress) { e.preventDefault(); e.stopPropagation(); suppress = false; } }, true);
+		wall.addEventListener('dragstart', e => e.preventDefault());
+		// Trackpad / molette horizontale.
+		wall.addEventListener('wheel', e => {
+			if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+			e.preventDefault();
+			const r = e.target.closest('.wall__row') || rows[1];
+			const s = st[rows.indexOf(r)];
+			s.x -= e.deltaX; s.vel = 0; s.hold = performance.now() + 2500;
+		}, { passive: false });
 	}
 
 	if (!animate) return;

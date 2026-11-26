@@ -710,3 +710,18 @@ body.nav-hidden .fab-cta{transform:none;opacity:1;visibility:visible;transition:
 .ticks i{flex:none;display:grid;place-items:center;width:24px;height:24px;border-radius:7px 0 7px 0;background:var(--black);color:var(--white)}
 .ticks svg{width:12px;height:12px}
 .teaser .ticks + .blk{margin-top:0}
+
+/* Mur d'étiquettes : on peut le prendre en main (glisser), bouton vers le catalogue dessous */
+.wall{touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
+.wall.is-dragging{cursor:grabbing}
+.wall.is-dragging .tile{pointer-events:none}
+.wall img{-webkit-user-drag:none}
+.wall__cta{display:flex;justify-content:center;margin:-6vh 0 0;padding-bottom:10vh}
+
+/* Catalogue : titre de chaque gamme, visible seulement dans « Toutes nos bières » */
+.cat-title{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+[data-catalog].is-all .cat-title{position:static;width:auto;height:auto;overflow:visible;clip:auto;white-space:normal;font-size:var(--fs-card);font-weight:var(--fw-display);letter-spacing:-.04em;margin:0 0 1.4rem}
+[data-catalog].is-all .tabpanel + .tabpanel{margin-top:9vh}
+
+/* Filtres du catalogue : nombre de bières en exposant */
+.tab__n{font-size:.62em;font-weight:600;margin-left:.2em;vertical-align:super;line-height:0;opacity:.75}

@@ -10,7 +10,7 @@ get_header();
 ?>
 <main class="page light" id="contenu">
 	<?php get_template_part( 'template-parts/page-head' ); ?>
-	<?php get_template_part( 'template-parts/beer-catalog', null, array( 'selected' => 'perm' ) ); ?>
+	<?php get_template_part( 'template-parts/beer-catalog', null, array( 'selected' => 'all' ) ); ?>
 </main>
 <?php
 get_footer();

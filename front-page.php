@@ -122,6 +122,10 @@ $smash_img = function ( $name, $attr = array(), $size = 'large' ) {
 					</div>
 				<?php endfor; ?>
 			</div>
+			<?php $smash_catalog = smash_catalog_page(); ?>
+			<?php if ( $smash_catalog ) : ?>
+				<div class="wall__cta"><?php smash_btn( $smash_f( 'wall_btn_label' ), untrailingslashit( get_permalink( $smash_catalog ) ) . '/#toutes', 'dark' ); ?></div>
+			<?php endif; ?>
 		</section>
 	<?php endif; ?>
 

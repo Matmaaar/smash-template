@@ -1,11 +1,12 @@
 <?php
 /**
- * Catalogue des bières : onglets permanentes / éphémères / anciennes.
+ * Catalogue des bières : onglets « toutes » / permanentes / éphémères / anciennes.
+ * « Toutes » affiche les trois listes à la suite, chacune avec son titre (#toutes).
  *
  * Les trois listes sont rendues ici (SEO, fonctionne sans JS) ; assets/js/pages/bieres.js
  * transforme le tout en onglets. Les ancres #permanentes, #ephemeres, #anciennes ouvrent l'onglet.
  *
- * @var array $args { selected: 'perm' | 'eph' | 'old' }
+ * @var array $args { selected: 'all' | 'perm' | 'eph' | 'old' }
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -17,26 +18,31 @@ $smash_lists    = array(
 	'old'  => smash_beers( 'old' ),
 );
 $smash_labels   = array(
-	/* translators: %d : nombre de bières permanentes */
-	'perm' => sprintf( __( 'Permanentes · %d', 'smash' ), count( $smash_lists['perm'] ) ),
+	'perm' => __( 'Permanentes', 'smash' ),
 	'eph'  => __( 'Éphémères en ce moment', 'smash' ),
 	'old'  => __( 'Anciennes éphémères', 'smash' ),
 );
+$smash_anchors  = smash_range_anchors();
+$smash_start    = 'all' === $smash_selected ? 'toutes' : $smash_anchors[ $smash_selected ];
 $smash_first    = 6;  // anciennes visibles au départ ; « voir plus » en ajoute 12 à chaque clic.
 ?>
-<section class="sec" style="padding-top:2vh" data-catalog data-selected="<?php echo esc_attr( smash_range_anchors()[ $smash_selected ] ); ?>">
+<section class="sec" style="padding-top:2vh" data-catalog data-selected="<?php echo esc_attr( $smash_start ); ?>">
 	<div class="tabs" role="tablist" aria-label="<?php esc_attr_e( 'Gammes', 'smash' ); ?>" hidden>
+		<button type="button" class="tab" role="tab" id="tab-toutes" aria-controls="<?php echo esc_attr( implode( ' ', $smash_anchors ) ); ?>"
+			aria-selected="<?php echo 'all' === $smash_selected ? 'true' : 'false'; ?>" tabindex="<?php echo 'all' === $smash_selected ? '0' : '-1'; ?>">
+			<?php esc_html_e( 'Tout', 'smash' ); ?><sup class="tab__n"><?php echo (int) array_sum( array_map( 'count', $smash_lists ) ); ?></sup>
+		</button>
 		<?php foreach ( smash_range_anchors() as $smash_range => $smash_anchor ) : ?>
 			<button type="button" class="tab" role="tab" id="tab-<?php echo esc_attr( $smash_anchor ); ?>" aria-controls="<?php echo esc_attr( $smash_anchor ); ?>"
-				aria-selected="<?php echo $smash_range === $smash_selected ? 'true' : 'false'; ?>" tabindex="<?php echo $smash_range === $smash_selected ? '0' : '-1'; ?>">
-				<?php echo esc_html( $smash_labels[ $smash_range ] ); ?>
+				aria-selected="<?php echo $smash_range === $smash_selected ? 'true' : 'false'; ?>" tabindex="<?php echo $smash_range === $smash_selected ? '0' : '-1'; ?>" data-anchor="<?php echo esc_attr( $smash_anchor ); ?>">
+				<?php echo esc_html( $smash_labels[ $smash_range ] ); ?><sup class="tab__n"><?php echo (int) count( $smash_lists[ $smash_range ] ); ?></sup>
 			</button>
 		<?php endforeach; ?>
 	</div>
 
 	<?php foreach ( smash_range_anchors() as $smash_range => $smash_anchor ) : ?>
 		<div class="tabpanel" role="tabpanel" id="<?php echo esc_attr( $smash_anchor ); ?>" aria-labelledby="tab-<?php echo esc_attr( $smash_anchor ); ?>" tabindex="0">
-			<h2 class="screen-reader-text"><?php echo esc_html( $smash_labels[ $smash_range ] ); ?></h2>
+			<h2 class="cat-title"><?php echo esc_html( $smash_labels[ $smash_range ] ); ?></h2>
 			<?php if ( $smash_lists[ $smash_range ] ) : ?>
 				<div class="labels">
 					<?php

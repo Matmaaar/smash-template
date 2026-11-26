@@ -218,6 +218,7 @@ function smash_front_fields() {
 		'tab_wall'        => array( 'tab', __( 'Mur d\'étiquettes', 'smash' ) ),
 		'wall_title'      => array( 'textarea', __( 'Titre', 'smash' ) ),
 		'wall_text'       => array( 'textarea', __( 'Texte', 'smash' ) ),
+		'wall_btn_label'  => array( 'text', __( 'Bouton vers le catalogue : texte', 'smash' ) ),
 		'tab_brew'        => array( 'tab', __( 'La brasserie', 'smash' ) ),
 		'brew_title'      => array( 'textarea', __( 'Titre', 'smash' ) ),
 		'brew_lead'       => array( 'textarea', __( 'Accroche (en gros)', 'smash' ) ),

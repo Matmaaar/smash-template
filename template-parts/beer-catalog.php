@@ -27,6 +27,10 @@ $smash_start    = 'all' === $smash_selected ? 'toutes' : $smash_anchors[ $smash_
 $smash_first    = 6;  // anciennes visibles au départ ; « voir plus » en ajoute 12 à chaque clic.
 ?>
 <section class="sec" style="padding-top:2vh" data-catalog data-selected="<?php echo esc_attr( $smash_start ); ?>">
+	<div class="view-toggle" role="group" aria-label="<?php esc_attr_e( 'Affichage', 'smash' ); ?>" hidden>
+		<button type="button" data-cols="2" aria-pressed="true" aria-label="<?php esc_attr_e( 'Deux colonnes', 'smash' ); ?>"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg></button>
+		<button type="button" data-cols="1" aria-pressed="false" aria-label="<?php esc_attr_e( 'Une colonne', 'smash' ); ?>"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="1" width="14" height="6" rx="1"/><rect x="1" y="9" width="14" height="6" rx="1"/></svg></button>
+	</div>
 	<div class="tabs" role="tablist" aria-label="<?php esc_attr_e( 'Gammes', 'smash' ); ?>" hidden>
 		<button type="button" class="tab" role="tab" id="tab-toutes" aria-controls="<?php echo esc_attr( implode( ' ', $smash_anchors ) ); ?>"
 			aria-selected="<?php echo 'all' === $smash_selected ? 'true' : 'false'; ?>" tabindex="<?php echo 'all' === $smash_selected ? '0' : '-1'; ?>">

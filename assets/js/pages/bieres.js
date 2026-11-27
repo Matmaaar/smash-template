@@ -11,7 +11,7 @@
 
 	const reveal = cards => {
 		window.smash.bindTilt(root);
-		if (animate && cards.length) gsap.from(cards.slice(0, 16), { y: 36, opacity: 0, duration: .6, ease: 'expo.out', stagger: .04 });
+		if (animate && cards.length) gsap.fromTo(cards.slice(0, 16), { y: 36, opacity: 0 }, { y: 0, opacity: 1, duration: .6, ease: 'expo.out', stagger: .04, overwrite: 'auto', clearProps: 'transform,opacity' });
 	};
 	const select = (id, { focus = false, push = true, anim = true } = {}) => {
 		if (!ids.includes(id)) id = ids[ids.length - 1];
@@ -39,6 +39,21 @@
 			select(tabId(tabs[(i + d + tabs.length) % tabs.length]), { focus: true });
 		});
 	});
+
+	// Affichage 1 ou 2 colonnes (mobile), mémorisé dans le navigateur.
+	const toggle = $('.view-toggle', root);
+	if (toggle) {
+		toggle.hidden = false;
+		const setCols = n => {
+			root.classList.toggle('is-1col', n === '1');
+			$$('[data-cols]', toggle).forEach(b => b.setAttribute('aria-pressed', b.dataset.cols === n));
+			try { localStorage.setItem('smash-cols', n); } catch (e) {}
+		};
+		let saved = '2';
+		try { saved = localStorage.getItem('smash-cols') || '2'; } catch (e) {}
+		setCols(saved);
+		$$('[data-cols]', toggle).forEach(b => b.addEventListener('click', () => { setCols(b.dataset.cols); window.ScrollTrigger && ScrollTrigger.refresh(); }));
+	}
 
 	// « voir plus » : 12 anciennes de plus à chaque clic.
 	$$('[data-more]', root).forEach(btn => btn.addEventListener('click', () => {

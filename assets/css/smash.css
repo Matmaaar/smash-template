@@ -753,3 +753,11 @@ body.nav-hidden .fab-cta{transform:none;opacity:1;visibility:visible;transition:
   [data-catalog].is-1col .labels .lab__row h3{font-size:var(--fs-card)}
   [data-catalog].is-1col .labels .lab .mono{font-size:.7rem}
 }
+
+/* Grilles d'étiquettes : colonnes toujours égales, même avec un nom très long (sinon la colonne s'élargit) */
+.labels{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:1200px){.labels{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:1000px){.labels{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.article .labels{grid-template-columns:repeat(var(--n,2),minmax(0,1fr))}
+@media (min-width:701px){.labels--row{grid-template-columns:repeat(3,29.6%)}}
+.lab{min-width:0}

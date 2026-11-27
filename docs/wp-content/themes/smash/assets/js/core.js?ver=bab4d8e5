@@ -180,7 +180,8 @@
 	$$('[data-words]').forEach(el => { const s = new SplitText(el, { type: 'words' }); gsap.fromTo(s.words, { opacity: .14 }, { opacity: 1, stagger: .1, ease: 'none', scrollTrigger: { trigger: el, start: 'top 80%', end: 'bottom 50%', scrub: true } }); });
 	$$('[data-par]').forEach(el => { const a = +el.dataset.par || 6; gsap.fromTo(el, { yPercent: -a }, { yPercent: a, ease: 'none', scrollTrigger: { trigger: el.parentElement, start: 'top bottom', end: 'bottom top', scrub: true } }); });
 	$$('.ph-head .kick, .ph-head p').forEach(el => gsap.from(el, { y: 20, opacity: 0, duration: .6, ease: 'expo.out', delay: .12 }));
-	ScrollTrigger.batch($$('.lab, .mate, .equip > div, .post, .post-row, .dl a, .cbox'), { start: 'top 96%', once: true, onEnter: b => gsap.from(b, { y: 40, opacity: 0, duration: .7, ease: 'expo.out', stagger: .04 }) });
+	// Le catalogue anime lui-même ses étiquettes (bieres.js) : on ne les anime pas deux fois (sinon certaines restent à moitié transparentes).
+	ScrollTrigger.batch($$('.lab, .mate, .equip > div, .post, .post-row, .dl a, .cbox').filter(el => !el.closest('[data-catalog]')), { start: 'top 96%', once: true, onEnter: b => gsap.fromTo(b, { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: .7, ease: 'expo.out', stagger: .04, overwrite: 'auto', clearProps: 'transform,opacity' }) });
 
 	document.fonts && document.fonts.ready.then(() => ScrollTrigger.refresh());
 })();
